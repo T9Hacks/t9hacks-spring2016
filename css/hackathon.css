@@ -1,0 +1,370 @@
+/*
+Blue: 			#5AB8E2 	80, 184, 226
+Cream:			#FDFDCE 	
+Light purple: 	#AA88AA 	170, 136, 170
+Medium purple:	#553377 	85, 51, 119
+Dark purple: 	#331155		51, 17, 85
+*/
+/* *************** */
+/*      Styles     */
+/* *************** */
+body, html {
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+* { 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+	font-family: "Gruppo", Helvetica, sans-serif;
+	 font-weight: bold;
+}
+h1 { font-size: 2.5em; line-height: 1.5em; color: #ffffff; text-shadow: 2px 2px #333; }
+	h1.blue { color: #5ab8e2; text-shadow: none; }
+h2 { font-size: 1.5em; line-height: 1.5em; color: #5ab8e2; }
+	h2.white { color: #ffffff; }
+margin: 15px 0 5px;
+	h3:first-child { margin: 0 0 5px; }
+h4 {
+    font-size: 1.3em;
+}
+
+p {
+	margin-bottom: 10px;
+    font-size: inherit;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #000;
+}
+a:hover, a:focus, a:active, a:active{
+	text-decoration: none;
+	cursor: pointer;
+	color: #5ab8e2;
+	border-bottom: 1px solid #5ab8e2;
+}
+a.btn {
+	color: white;
+}
+
+ul {
+	margin-left: 20px;	
+}
+li {
+	margin-bottom: 10px;
+}
+
+.btn {
+	-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}
+.btn, .btn-l, .btn-xl, .navbar-default .navbar-nav > .active > a {
+	background: #5ab8e2;
+	border: 0;
+	
+	transition: all .3s;
+}
+.btn:hover, .btn:focus, .btn:active,
+.btn-l:hover, .btn-l:focus, .btn-l:active,
+.btn-xl:hover, .btn-xl:focus, .btn-xl:active, 
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:active {
+	background: #3a98c2;
+	border: 0;
+	color: white;
+}
+.btn-circle {
+	border-radius: 50%;
+}
+
+
+
+
+
+/* **************** */
+/*		Layout		*/
+/* **************** */
+/* Head/Intro */
+.bg-head {
+	background: #AA88AA;
+}
+/* About */
+.bg-womenCode {
+	background-image: url(../images/backgrounds/LadiesCode_Purple.png);
+}
+/* Questions */
+.bg-cream {
+	background: #FDFDCE;
+}
+/* Join */
+.bg-sign-up {
+    background-image: url(../images/backgrounds/LadiesLearningCode2.jpg);
+}
+/* Schedule */
+.bg-purple {
+	background-color: #AA88AA;
+	background-image: url(../images/backgrounds/new_year_background_AA88AA.png);
+	background-position: center center;
+}
+/* Sponsors */
+
+/* FAQ */
+.bg-grey {
+	background: #BBB;
+}
+
+
+.bg-image {
+	background-attachment: scroll;
+    background-position: center center;
+    background-repeat: none;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	}
+
+.bg-text {
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.95);
+}
+
+
+.bg-hack {
+	background-image: url(../images/backgrounds/LadiesLearningCode3-2.jpg);
+}
+
+	
+section {
+    padding: 80px 0;
+}
+.section-heading {
+    padding: 30px;
+    background-color: rgba(40, 40, 40, 0.4);
+    color: white;
+    margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+    .section-heading {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* ***************** */
+/*      Nav Bar      */
+/* ***************** */
+nav a {
+	text-decoration: none !important;
+    border-bottom: 0;
+	transition: all .3s;
+}
+nav a:hover, nav a:focus, nav a:active, nav a:active {
+    border-bottom: 0;
+}
+.navbar-default {
+    padding: 20px 0;
+    background-color: rgba(51, 17, 85, 0.4);
+    font-size: .8em;
+}
+.navbar-default.navbar-shrink {
+	background-color: #331155;
+}
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-brand {
+	color: #5ab8e2;
+	transition: all .3s;
+}
+	
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:active, 
+.navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
+	color: #3a98c2;
+}
+.navbar-default .navbar-toggle {
+	border-color: #5ab8e2;
+	background-color: #5ab8e2;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:active {
+	background-color: #3a98c2;
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar-default {
+	    padding: 10px 0;
+	}
+}
+
+
+/* ************************ */
+/*		Section Styles		*/
+/* ************************ */
+/* header styles */
+header {
+	position: relative;
+}
+#header-canvas {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+#header-container {
+	position: relative;
+	z-index: 2;
+}
+.hack-header {
+	padding: 120px 0 60px;
+}
+.logo {
+	width: 300px;
+}
+.hack-header .down {
+	font-size: 2.5em;
+	margin: 8px 6px 3px;
+}
+
+
+
+
+/* questions */
+#questions {}
+#questions p {
+	text-align: justify;
+}
+.faq { position: relative; }
+.faq-icon {
+	font-size: 2em;
+	width: 40px;
+	margin-top: 11px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.faq-question {
+	margin-left: 58px;
+}
+
+
+
+
+/* register */
+#join {
+	color: white;
+}
+#join h1, #join h2 {
+	font-weight: bold;
+}
+#join h1 {
+	margin-bottom: 10px;
+}
+#join h2 {
+	margin-bottom: 100px;
+}
+
+
+
+/* sponsors */
+#sponsors {}
+.sponsor {
+	text-align: center;
+}
+.sponsor1 {
+	width: 350px;
+	height: 350px;
+	line-height: 340px;
+	border: 5px solid #AA88AA;
+	border-radius: 50%;
+	background: white;
+	display: inline-block;
+}
+.sponsor1 img{
+	max-width: 300px;
+	max-height: 300px;
+	margin: 20px;
+	text-align: center;
+	display: inline-block;
+}
+@media (max-width: 1200px) {
+	.sponsor1 {
+		width: 300px;
+		height: 300px;
+		line-height: 290px;
+	}
+	.sponsor1 img{
+		max-width: 250px;
+		max-height: 250px;
+	}
+}
+@media (max-width: 991px) {
+	.sponsor1 {
+		width: 230px;
+		height: 230px;
+		line-height: 220px;
+	}
+	.sponsor1 img{
+		max-width: 180px;
+		max-height: 180px;
+	}
+}
+
+
+/* info */
+#info .fa { 
+	font-size: 100px;
+	color: white;
+}
+.hack-def {
+	line-height: 1.1em;
+}
+.hack-def i, .hack-def span {
+	font-size: .8em;
+}
+.hack-def span {
+	display: block;
+	margin-left: 20px;
+}
+.code-conduct, .why-conduct {
+	text-align: center;
+}
+.code-conduct h2, .why-conduct h2 {
+	margin: 20px 0;
+}
+
+
+
+
+/* **************** */
+/*		Footer		*/
+/* **************** */
+footer {
+	background-color: #331155;
+}
+footer, footer a {
+	color: white;
+	border-color: white;
+}
+footer ul.social-buttons li a {
+	background-color: white;
+	color: black;
+}
+ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
+	background-color: #5ab8e2;
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
