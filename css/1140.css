@@ -2,7 +2,7 @@
  * 1140 - The lite 1140px resoponsive framework
  * URI: http://kodestudios.com/code/1140.css
  * 
- * Version: 2.1 | 2015-11-05
+ * Version: 2.2 | 2015-12-13
  * 
  * License: Kode Studios Educational License Version 1.0 
  * License URI: http://kodestudios.com/licenses/educational_v1-0.html
@@ -40,7 +40,7 @@ figure img
     position: relative;
     width: 1140px;
 }
-.row { margin-bottom: 20px; }
+.row { margin: 0 0 20px 0; }
 .column1, .column2, .column3, .column4, .column5, .column6, .column7, .column8, .column9, .column10, .column11, .column12, .column13, .column14, .column15, .column16 {
     display: inline;
     float: left;
@@ -182,8 +182,8 @@ figure img
     .container12, .container16 { width: 768px; }
 }
 
-@media only screen and (max-width: 767px) and (min-width: 480px) {
-    .container12, .container16 { width: 420px; }
+@media only screen and (max-width: 767px) {
+    .container12, .container16 { width: 100%; }
     .column1,  .column1.alpha,  .column1.beta,  .column1.omega,
     .column2,  .column2.alpha,  .column2.beta,  .column2.omega,
     .column3,  .column3.alpha,  .column3.beta,  .column3.omega,
@@ -227,7 +227,7 @@ figure img
     .container16 .column15, .container16 .column15.alpha, .container16 .column15.beta, .container16 .column15.omega,
     .container16 .column16, .container16 .column16.alpha, .container16 .column16.beta, .container16 .column16.omega
 	{
-        margin: 0 0 20px 0;
+        margin: 0 10px 20px;
         width: 100%;
     }
     .prefix1, .prefix2, .prefix3, .prefix4, .prefix5, .prefix6, .prefix7, .prefix8, .prefix9, .prefix10, .prefix11, 
@@ -236,54 +236,7 @@ figure img
     	{ padding-left:0; }
     .row { margin: 0; }
 }
-@media only screen and (max-width: 479px) {
-	.container12, .container16 { width: 320px; }
-	.column1,  .column1.alpha,  .column1.beta,  .column1.omega,
-    .column2,  .column2.alpha,  .column2.beta,  .column2.omega,
-    .column3,  .column3.alpha,  .column3.beta,  .column3.omega,
-    .column4,  .column4.alpha,  .column4.beta,  .column4.omega,
-    .column5,  .column5.alpha,  .column5.beta,  .column5.omega,
-    .column6,  .column6.alpha,  .column6.beta,  .column6.omega,
-    .column7,  .column7.alpha,  .column7.beta,  .column7.omega,
-    .column8,  .column8.alpha,  .column8.beta,  .column8.omega,
-    .column9,  .column9.alpha,  .column9.beta,  .column9.omega,
-    .column10, .column10.alpha, .column10.beta, .column10.omega,
-    .column11, .column11.alpha, .column11.beta, .column11.omega,
-    .column12, .column12.alpha, .column12.beta, .column12.omega,
-    
-    .container12 .column1,  .container12 .column1.alpha,  .container12 .column1.beta,  .container12 .column1.omega,
-    .container12 .column2,  .container12 .column2.alpha,  .container12 .column2.beta,  .container12 .column2.omega,
-    .container12 .column3,  .container12 .column3.alpha,  .container12 .column3.beta,  .container12 .column3.omega,
-    .container12 .column4,  .container12 .column4.alpha,  .container12 .column4.beta,  .container12 .column4.omega,
-    .container12 .column5,  .container12 .column5.alpha,  .container12 .column5.beta,  .container12 .column5.omega,
-    .container12 .column6,  .container12 .column6.alpha,  .container12 .column6.beta,  .container12 .column6.omega,
-    .container12 .column7,  .container12 .column7.alpha,  .container12 .column7.beta,  .container12 .column7.omega,
-    .container12 .column8,  .container12 .column8.alpha,  .container12 .column8.beta,  .container12 .column8.omega,
-    .container12 .column9,  .container12 .column9.alpha,  .container12 .column9.beta,  .container12 .column9.omega,
-    .container12 .column10, .container12 .column10.alpha, .container12 .column10.beta, .container12 .column10.omega,
-    .container12 .column11, .container12 .column11.alpha, .container12 .column11.beta, .container12 .column11.omega,
-    .container12 .column12, .container12 .column12.alpha, .container12 .column12.beta, .container12 .column12.omega,
-    
-	.container16 .column1,  .container16 .column1.alpha,  .container16 .column1.beta,  .container16 .column1.omega,
-    .container16 .column2,  .container16 .column2.alpha,  .container16 .column2.beta,  .container16 .column2.omega,
-    .container16 .column3,  .container16 .column3.alpha,  .container16 .column3.beta,  .container16 .column3.omega,
-    .container16 .column4,  .container16 .column4.alpha,  .container16 .column4.beta,  .container16 .column4.omega,
-    .container16 .column5,  .container16 .column5.alpha,  .container16 .column5.beta,  .container16 .column5.omega,
-    .container16 .column6,  .container16 .column6.alpha,  .container16 .column6.beta,  .container16 .column6.omega,
-    .container16 .column7,  .container16 .column7.alpha,  .container16 .column7.beta,  .container16 .column7.omega,
-    .container16 .column8,  .container16 .column8.alpha,  .container16 .column8.beta,  .container16 .column8.omega,
-    .container16 .column9,  .container16 .column9.alpha,  .container16 .column9.beta,  .container16 .column9.omega,
-    .container16 .column10, .container16 .column10.alpha, .container16 .column10.beta, .container16 .column10.omega,
-    .container16 .column11, .container16 .column11.alpha, .container16 .column11.beta, .container16 .column11.omega,
-    .container16 .column12, .container16 .column12.alpha, .container16 .column12.beta, .container16 .column12.omega,
-    .container16 .column13, .container16 .column13.alpha, .container16 .column13.beta, .container16 .column13.omega,
-    .container16 .column14, .container16 .column14.alpha, .container16 .column14.beta, .container16 .column14.omega,
-    .container16 .column15, .container16 .column15.alpha, .container16 .column15.beta, .container16 .column15.omega,
-    .container16 .column16, .container16 .column16.alpha, .container16 .column16.beta, .container16 .column16.omega
-	{
-        width: 100%;
-    }
-}
+
 
 .container .center,
 .container12 .center,
@@ -322,7 +275,6 @@ figure img
 .row, .clearfix { zoom: 1; }
 img, object, embed { max-width: 100%; }
 img { height: auto; }
-
 
 
 .noMargin { margin-bottom: 0 !important; }
