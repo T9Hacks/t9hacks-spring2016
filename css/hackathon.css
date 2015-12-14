@@ -276,19 +276,31 @@ header {
 
 
 
+/* schedule */
+#schedule {
+	color: white;
+}
+
+
+
+
 /* sponsors */
 #sponsors {}
 .sponsor {
 	text-align: center;
 }
 .sponsor1 {
+	background: white;
+	border: 0;
 	width: 350px;
 	height: 350px;
 	line-height: 340px;
+	display: inline-block;
 	border: 5px solid #AA88AA;
 	border-radius: 50%;
-	background: white;
-	display: inline-block;
+}
+.sponsor1:hover, .sponsor1:focus, .sponsor1:active {
+	background: #5AB8E2;
 }
 .sponsor1 img{
 	max-width: 300px;
