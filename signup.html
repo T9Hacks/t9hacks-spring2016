@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>ATLAS T9Hacks - Signup</title>
+	<title>ATLAS T9Hacks - Sign-up</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -73,10 +73,9 @@
 			</div>
 			
 			<div class="row" id="signupChoice">
-				<div class="prefix2">&nbsp;</div>
-				<div class="column8 signupWrapper">	
+				<div class="signupWrapper">	
 					<div class="row">			
-						<p>
+						<p class="column12">
 							If you are planning on attending T9Hacks, we kindly ask you to register.  This lets allows us to keep track of 
 							tickets to make sure that we can provide enough space, food, and supplies for everyone!  
 						</p>
@@ -91,14 +90,13 @@
 						<p class="column4 beta">
 							If you are an external volunteer, click here:
 						</p>
-						<div class="column8 omega btnHolder"><div class="btn btn-xl" id="mentorBtn">Signup as a mentor</div></div>
+						<div class="column8 omega btnHolder"><div class="btn btn-xl" id="mentorBtn">Sign-up as a mentor</div></div>
 					</div>
 				</div>
 			</div>
 		
 			<div class="row" id="participantSignup">
-				<div class="prefix2">&nbsp;</div>
-				<div class="column8 signupWrapper">
+				<div class="signupWrapper">
 					<div id="participantLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					<div id="participantSuccess" class="signupSuccess">Null</div>
 					<form id="participantForm" class="signupForm" action="http://creative.colorado.edu/~kosba/t9hacks/register.php" method="post" enctype="multipart/form-data">
@@ -171,7 +169,7 @@
 						
 						<div class="row">
 							<p class="column12">
-								As part of your registeration, you will receive a free T9Hacks t-shirt.  This t-shirt will be in a standard unisex sixe.  
+								As part of your registeration, you will receive a free T9Hacks t-shirt.  This t-shirt will be in a standard unisex size.  
 								What size would you like?
 							</p>
 							
@@ -227,15 +225,14 @@
 			
 			
 			<div class="row" id="mentorSignup">
-				<div class="prefix2">&nbsp;</div>
-				<div class="column8 signupWrapper">
+				<div class="signupWrapper">
 					<div id="mentorLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					<div id="mentorSuccess" class="signupSuccess">Null</div>
 					<form id="mentorForm" class="signupForm" action="http://creative.colorado.edu/~kosba/t9hacks/register.php" method="post" enctype="multipart/form-data">
 					
 						<div class="row">
-							<p>
-								Thank you for volunteering as a mentor! To signup we need your name and email.
+							<p class="column12">
+								Thank you for volunteering as a mentor! To sign-up we need your name and email.
 							</p>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Name" name="name" id="mname"/></div>
@@ -278,8 +275,43 @@
 						</div>
 						
 						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-building-o"></i><input type="text" placeholder="Area" name="area"/></div>
+							<p class="column12">
+								As a mentor, you will be working with groups in particular topics.  Which area(s) would you like to be a mentor for?
+							</p>
+							
+							<div class="fieldWrapper column12 areas">
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='webDesign' type='checkbox' name="webDesign" value="Web Design">
+	   								<label class='tgl-btn' data-tg-off='Web Design' data-tg-on='Web Design' for='webDesign'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='webDev' type='checkbox' name="webDev" value="Web Development">
+	   								<label class='tgl-btn' data-tg-off='Web Development' data-tg-on='Web Development' for='webDev'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='android' type='checkbox' name="android" value="Android Development">
+	   								<label class='tgl-btn' data-tg-off='Android Development' data-tg-on='Android Development' for='android'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='iOS' type='checkbox' name="iOS" value="iOS Development">
+	   								<label class='tgl-btn' data-tg-off='iOS Development' data-tg-on='iOS Development' for='iOS'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='uiux' type='checkbox' name="uiux" value="UI/UX Design">
+	   								<label class='tgl-btn' data-tg-off='UI/UX Design' data-tg-on='UI/UX Design' for='uiux'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='gaming' type='checkbox' name="gaming" value="Gaming">
+	   								<label class='tgl-btn' data-tg-off='Gaming' data-tg-on='Gaming' for='gaming'></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='print' type='checkbox' name="print" value="Print Media">
+	   								<label class='tgl-btn' data-tg-off="Print Media" data-tg-on="Print Media" for="print"></label>
+								</div>
+								<div class="fieldRadio">
+									<input class='tgl tgl-flip' id='arduino' type='checkbox' name="arduino" value="Arduino/Electronics">
+	   								<label class='tgl-btn' data-tg-off='Arduino/Electronics' data-tg-on='Arduino/Electronics' for='arduino'></label>
+								</div>
 							</div>
 						</div>
 						

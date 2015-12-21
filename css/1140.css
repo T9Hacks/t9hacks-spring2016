@@ -2,7 +2,7 @@
  * 1140 - The lite 1140px resoponsive framework
  * URI: http://kodestudios.com/code/1140.css
  * 
- * Version: 2.2 | 2015-12-13
+ * Version: 2.3 | 2015-12-20
  * 
  * License: Kode Studios Educational License Version 1.0 
  * License URI: http://kodestudios.com/licenses/educational_v1-0.html
@@ -227,8 +227,8 @@ figure img
     .container16 .column15, .container16 .column15.alpha, .container16 .column15.beta, .container16 .column15.omega,
     .container16 .column16, .container16 .column16.alpha, .container16 .column16.beta, .container16 .column16.omega
 	{
-        margin: 0 10px 20px;
-        width: 100%;
+        margin: 0 1% 20px;
+        width: 98%;
     }
     .prefix1, .prefix2, .prefix3, .prefix4, .prefix5, .prefix6, .prefix7, .prefix8, .prefix9, .prefix10, .prefix11, 
     .container12 .prefix1, .container12 .prefix2, .container12 .prefix3, .container12 .prefix4, .container12 .prefix5, .container12 .prefix6, .container12 .prefix7, .container12 .prefix8, .container12 .prefix9, .container12 .prefix10, .container12 .prefix11, 

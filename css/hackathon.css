@@ -306,6 +306,20 @@ header {
 #schedule {
 	color: white;
 }
+.schedule {}
+@media only screen and (max-width: 767px) {
+	.schedule .times {
+		width: 31.33333%;
+		margin-bottom: 0;
+	}
+	.schedule .events {
+		width: 64.66667%;
+		margin-bottom: 0;
+	}
+	.scheduleSection:first-child {
+		margin-bottom: 0;
+	}
+}
 
 
 
@@ -453,6 +467,8 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	position: relative;
 	background: #FDFDCE;
 	padding: 20px;
+	width: 81.33%;
+	margin: 0 6.33%;
 }
 
 /* loading section */
@@ -612,6 +628,45 @@ input[type=submit] {
 .tgl-label:hover, .tgl-label:focus, .tgl-label:active {
 	cursor: pointer;
 }
+.areas .fieldRadio {
+	width: 23.5%;
+	margin-right: 2%;
+}
+.areas .fieldRadio:nth-child(4n) {
+	margin-right: 0;
+}
+.areas .tgl + .tgl-btn {
+	width: 20em;
+}
+
+@media (max-width: 1200px) {
+	.signupWrapper {
+		width: 100%;
+		margin: 0;
+	}
+}
+@media (max-width: 767px) {
+    .areas .fieldRadio, .areas .fieldRadio:nth-child(4n) {
+		width: 32.66667%;
+		margin-right: 1%;
+	}
+	.areas .fieldRadio:nth-child(3n) { margin-right: 0; }
+	.areas .tgl + .tgl-btn {
+		width: 156px;
+	}
+}
+@media (max-width: 570px) {
+    .areas .fieldRadio, .areas .fieldRadio:nth-child(4n), .areas .fieldRadio:nth-child(3n) {
+		width: 49.5%;
+		margin-right: 1%;
+	}
+	.areas .fieldRadio:nth-child(2n) { margin-right: 0; }
+	.areas .tgl + .tgl-btn {
+		width: 100%;
+	}
+}
+
+
 /* 
  * checkbox flop toggle from:
  * http://codepen.io/mallendeo/pen/eLIiG

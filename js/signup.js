@@ -120,7 +120,7 @@ function submitSignup(event, nameDiv, emailDiv, signupDiv, formDiv, loadingDiv, 
 				} else {
 	    			// print entire json response
 	    			console.log(xhr);
-	    			var errorMessage = error.responseText;
+	    			var errorMessage = xhr.responseText;
 		    		console.log(errorMessage);
 		    	  
 		    		// see if email error
@@ -143,10 +143,10 @@ function submitSignup(event, nameDiv, emailDiv, signupDiv, formDiv, loadingDiv, 
 	    	},
 	    	error: function(xhr, status, error) {
 	    		//console.log("error in ajax form submission");
-	    		//console.log(xhr);
-	    		//console.log(status);
-	    		//console.log(error);
-	    		var errorMessage = error.responseText;
+	    		console.log(xhr);
+	    		console.log(status);
+	    		console.log(error);
+	    		var errorMessage = xhr.responseText;
 	    		console.log(errorMessage);
 	    		//var error = "<p>There was an error processing your request.  Please refresh the page and try again</p>";
 	    		$(successDiv).html(errorMessage).height(h).width(w).css({top: h+"px", display: "block"}).animate({top: "-="+h,});
