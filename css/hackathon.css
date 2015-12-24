@@ -44,7 +44,7 @@ p {
 a {
 	color: #000;
 	text-decoration: none;
-/*	border-bottom: 1px solid #000;*/
+	border-bottom: 1px solid #000;
 }
 a:hover, a:focus, a:active {
 	text-decoration: none;
@@ -438,7 +438,9 @@ footer ul.social-buttons li a {
 ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
 	background-color: #5ab8e2;
 }
-
+.meetTeam {
+	border-bottom: 0;
+}
 
 @media (min-width: 768px) {
 
