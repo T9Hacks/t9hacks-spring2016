@@ -57,10 +57,6 @@ figure img
 	height: 1px;
 }
 
-.column12 {
-    padding-bottom: 50px;
-}
-
 .alpha, .container12 .alpha, .container16 .alpha { margin-right: 0; margin-left: 0; }
 .beta,  .container12 .beta,  .container16 .beta  { margin-left: 0; }
 .omega, .container12 .omega, .container16 .omega { margin-right: 0;}

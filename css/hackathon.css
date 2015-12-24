@@ -25,8 +25,8 @@ h1, h2, h3, h4 {
 	font-family: "Gruppo", Helvetica, sans-serif;
 	 font-weight: bold;
 }
-h1 { font-size: 2.5em; line-height: 1.5em; color: #000;  }
-	h1.blue { color: #5ab8e2; text-shadow: none; }
+h1 { font-size: 2.5em; line-height: 1.5em; color: #fff;  }
+	h1.blue { color: #5ab8e2; }
 h2 { font-size: 1.5em; line-height: 1.5em; color: #5ab8e2; }
 	h2.white { color: #ffffff; }
 h3 {
@@ -113,8 +113,8 @@ li {
 }
 /* Join */
 .bg-sign-up {
-    /*background-image: url(../images/backgrounds/LadiesLearningCode2.jpg);*/
-    background-color: #553377;
+    background-image: url(../images/backgrounds/LadiesLearningCode2.jpg);
+    /*background-color: #553377;*/
 }
 /* Schedule */
 .bg-purple {
@@ -291,14 +291,11 @@ header {
 #join {
 	color: white;
 }
-#join h1, #join h2 {
-	font-weight: bold;
-}
 #join h1 {
-	margin-bottom: 10px;
-}
-#join h2 {
+	font-weight: bold;
 	margin-bottom: 100px;
+	color: white;
+	text-shadow: 2px 2px #333;
 }
 
 
@@ -350,6 +347,11 @@ header {
 	text-align: center;
 	display: inline-block;
 }
+.sponsorInterested {
+	margin: 50px auto 0;
+	display: block;
+	width: 430px;
+}
 @media (max-width: 1200px) {
 	.sponsor1 {
 		width: 300px;
@@ -375,6 +377,12 @@ header {
 
 
 /* info */
+#info {
+	text-align: center;
+}
+#info p {
+	text-align: justify;
+}
 #info .fa { 
 	font-size: 100px;
 	color: white;
@@ -389,10 +397,10 @@ header {
 	display: block;
 	margin-left: 20px;
 }
-.code-conduct, .why-conduct {
-	text-align: center;
+.infoSection {
+	padding: 0 10px;
 }
-.code-conduct h2, .why-conduct h2 {
+.infoSection h2 {
 	margin: 20px 0;
 }
 
@@ -457,7 +465,7 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 }
 .btnHolder { overflow: hidden; }
 
-/* Entire signup sections 9participant and mentor) */
+/* Entire signup sections (participant and mentor) */
 #participantSignup, #mentorSignup {
 	display: none;
 	overflow: hidden;
@@ -768,4 +776,12 @@ input[type=submit] {
 
 
 
+
+
+
+
+
+::selection {
+	background: #5AB8E2;
+}
 
