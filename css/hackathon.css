@@ -531,14 +531,16 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	overflow: hidden;
 }
 
-/* wrapper that holds loading and wrapper */
+/* wrapper that holds loading, success, and form */
 .signupWrapper {
 	position: relative;
 	background: #FDFDCE;
 	padding: 20px;
 	width: 81.33%;
-	margin: 0 6.33%;
+	margin: 0 9.335%;
+	overflow: hidden;
 }
+	.waitMessage { text-align: center; }
 
 /* loading section */
 .signupLoading {
