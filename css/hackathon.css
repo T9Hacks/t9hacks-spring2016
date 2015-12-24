@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
 	font-family: "Gruppo", Helvetica, sans-serif;
 	 font-weight: bold;
 }
-h1 { font-size: 2.5em; line-height: 1.5em; color: #ffffff; text-shadow: 2px 2px #333; }
+h1 { font-size: 2.5em; line-height: 1.5em; color: #000;  }
 	h1.blue { color: #5ab8e2; text-shadow: none; }
 h2 { font-size: 1.5em; line-height: 1.5em; color: #5ab8e2; }
 	h2.white { color: #ffffff; }
@@ -44,13 +44,13 @@ p {
 a {
 	color: #000;
 	text-decoration: none;
-	border-bottom: 1px solid #000;
+/*	border-bottom: 1px solid #000;*/
 }
 a:hover, a:focus, a:active {
 	text-decoration: none;
 	cursor: pointer;
 	color: #5ab8e2;
-	border-bottom: 1px solid #5ab8e2;
+/*	border-bottom: 1px solid #5ab8e2;*/
 }
 a.btn {
 	color: white;
@@ -109,11 +109,12 @@ li {
 }
 /* Questions */
 .bg-cream {
-	background: #FDFDCE;
+	background: #FFFFF0;
 }
 /* Join */
 .bg-sign-up {
-    background-image: url(../images/backgrounds/LadiesLearningCode2.jpg);
+    /*background-image: url(../images/backgrounds/LadiesLearningCode2.jpg);*/
+    background-color: #553377;
 }
 /* Schedule */
 .bg-purple {
@@ -132,7 +133,7 @@ li {
 .bg-image {
 	background-attachment: scroll;
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     
     -webkit-background-size: cover;
     -moz-background-size: cover;
