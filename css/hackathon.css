@@ -534,7 +534,7 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 /* wrapper that holds loading, success, and form */
 .signupWrapper {
 	position: relative;
-	background: #FDFDCE;
+	background: #FFFFF0;
 	padding: 20px;
 	width: 81.33%;
 	margin: 0 9.335%;
