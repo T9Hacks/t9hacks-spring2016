@@ -1,7 +1,7 @@
 /*
 Blue: 			#5AB8E2 	80, 184, 226
 Dark Blue:		#3a98c2
-Cream:			#FDFDCE 	
+Cream:			#FFFFF0 	
 Light purple: 	#AA88AA 	170, 136, 170
 Medium purple:	#553377 	85, 51, 119
 Dark purple: 	#331155		51, 17, 85
@@ -301,7 +301,7 @@ header {
 	font-weight: bold;
 	margin-bottom: 100px;
 	color: white;
-	text-shadow: 2px 2px #333;
+	text-shadow: 2px 2px 1px #000;
 }
 .signupBtn {
 	display: block;
