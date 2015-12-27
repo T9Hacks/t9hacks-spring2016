@@ -41,6 +41,7 @@ function toggleDivs(signupShow, participantShow, mentorShow) {
 /*		Submit Registeration		*/
 /*	Code adapted from: http://www.html5rocks.com/en/tutorials/cors/ */
 /* ******************************** */
+/*
 $("#mentorSubmitBtn").click(function(event){
 	event.preventDefault();
 	var successMessage = '<h1 class="blue">Success!</h1>' +
@@ -57,7 +58,7 @@ $("#participantSubmitBtn").click(function(event){
 	
 	submitSignup(event, "#pname", "#pemail", "#participantSignup", "#participantForm", "#participantLoading", "#participantSuccess", successMessage);
 });
-	
+
 function submitSignup(event, nameDiv, emailDiv, signupDiv, formDiv, loadingDiv, successDiv, successMessage) {
 	// first, prevent default
 	event.preventDefault();
@@ -156,4 +157,4 @@ function submitSignup(event, nameDiv, emailDiv, signupDiv, formDiv, loadingDiv, 
 	} // end if errors, send ajax
 	
 }
-
+*/

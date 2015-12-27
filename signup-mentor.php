@@ -8,50 +8,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-	<!-- Bootstrap Core CSS -->
-	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- Agency Theme CSS -->
-	<link href="plugins/agency/css/agency.css" rel="stylesheet">
-	
-	<!-- Custom Fonts -->
-	<link href="plugins/agency/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
-	
-	<!-- Custom CSS -->
-	<link href="css/1140.css" rel="stylesheet" type="text/css" media="all">
-	<link href="css/hackathon.css" rel="stylesheet" type="text/css" media="all">
-	
-	<!-- reCAPTCHA -->
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<!-- CSS -->
+	<?php include "includes/css.php" ?>
 	
 </head>
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-shrink navbar-fixed-top">
-		<div class="container">
-		
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header page-scroll">
-				<a class="navbar-brand" href="index.html">T9Hacks</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-			
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
+	<?php include "includes/nav-simple.php" ?>
 	
 	
 	<section id="signup-wait" class="bg-purple">
@@ -120,7 +84,7 @@
 				<div class="signupWrapper">
 					<div id="participantLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					<div id="participantSuccess" class="signupSuccess">Null</div>
-					<form id="participantForm" class="signupForm" action="http://creative.colorado.edu/~kosba/t9hacks/register.php" method="post" enctype="multipart/form-data">
+					<form id="participantForm" class="signupForm" action="signup/register.php" method="post" enctype="multipart/form-data">
 					
 						<div class="row">
 							<p class="column12">
@@ -249,7 +213,7 @@
 				<div class="signupWrapper">
 					<div id="mentorLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					<div id="mentorSuccess" class="signupSuccess">Null</div>
-					<form id="mentorForm" class="signupForm" action="http://creative.colorado.edu/~kosba/t9hacks/register.php" method="post" enctype="multipart/form-data">
+					<form id="mentorForm" class="signupForm" action="signup/register.php" method="post" enctype="multipart/form-data">
 					
 						<div class="row">
 							<p class="column12">
@@ -355,56 +319,12 @@
 	
 	
 	<!-- Footer -->
-	<footer>
-		<div class="container">
-
-			<div class="row">
-				<div class="column4">
-					<span class="copyright"><i class="fa fa-copyright"></i> &nbsp;T9Hacks <span id="copyright-year"></span></span>
-				</div>
-				<div class="column4">
-					<ul class="list-inline social-buttons">
-						<li><a href="https://www.facebook.com/groups/414618935414757" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-						<li><a href="https://github.com/T9Hacks" target="_blank"><i class="fa fa-github-square"></i></a></li>
-						<li><a href="https://twitter.com/T9Hacks" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
-						<li><a href="https://www.linkedin.com/groups/8448877" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-					</ul>
-				</div>
-				<div class="column4">
-					<ul class="list-inline quicklinks">
-						<li><a href="team.html">Meet our team</a></li>
-					</ul>
-				</div>
-			</div>
-		
-		</div>
-	</footer>
-	<script>
-		var today = new Date();
-		var year = today.getFullYear();
-		document.getElementById("copyright-year").innerHTML = year;
-	</script>
+	<?php include "includes/footer.php" ?>
 	
 	
-	<!-- jQuery -->
-	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<!-- Javascript -->
+	<?php include "includes/js.php" ?>
 	
-	<!-- Bootstrap Core JavaScript -->
-	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Plugin JavaScript -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	<script src="plugins/agency/js/classie.js"></script>
-	<script src="plugins/agency/js/cbpAnimatedHeader.min.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="plugins/agency/js/agency.js"></script>
-	
-	<!-- Google Analytics -->
-	<script src="js/analyticstracking.js"></script>
-	
-	<!-- Signup Scripts -->
-	<script src="js/signup.js"></script>
 	
 </body>
 </html>

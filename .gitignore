@@ -1,4 +1,8 @@
+# eclipse project file
 .project
 
-/nbproject
-/nbproject/private/
+# netbeans project files
+/nbproject/
+
+# database files
+/hidden/

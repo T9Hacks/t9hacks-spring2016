@@ -81,10 +81,10 @@ li {
 	transition: all .3s;
 }
 .btn:hover, .btn:focus, .btn:active,
-.btn-l:hover, .btn-l:focus, .btn-l:active,
-.btn-xl:hover, .btn-xl:focus, .btn-xl:active, 
+.btn-l:hover, .btn-l:focus, .btn-l:active, .navbar .nav .btn-l:hover, .navbar .nav .btn-l:focus, .navbar .nav .btn-l:active,
+.btn-xl:hover, .btn-xl:focus, .btn-xl:active, .navbar .nav .btn-xl:hover, .navbar .nav .btn-xl:focus, .navbar .nav .btn-xl:active, 
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:active {
-	background: #3a98c2;
+	background-color: #3a98c2;
 	border: 0;
 	color: white;
 }
@@ -213,7 +213,7 @@ nav a:hover, nav a:focus, nav a:active, nav a:active {
 }
 	
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus, .navbar .navbar-brand:active, 
-.navbar .nav li a:hover, .navbar .nav li a:focus {
+.navbar .nav li a:hover, .navbar .nav li a:focus, .navbar .nav li a:active {
 	color: #3a98c2;
 }
 .navbar .navbar-toggle {
@@ -514,8 +514,8 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 /* **************** */
 /*		Signup		*/
 /* **************** */
-#signup { display: none; }
-#signup-wait {}
+#signup {  }
+#signup-wait { display: none; }
 /* Choice participant or mentor */
 #signupChoice {}
 #signupChoice .btn {
