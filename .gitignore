@@ -2,7 +2,7 @@
 .project
 
 # netbeans project files
-#/nbproject/
+/nbproject/
 
 # database files
-#/hidden/
+/hidden/
