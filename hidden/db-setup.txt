@@ -1,0 +1,42 @@
+CREATE TABLE `t9hacks_participants` (
+	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
+	`key`		TEXT,
+	`name`		TEXT,
+	`email`		TEXT,
+	`phone`		TEXT,
+	`school`	TEXT,
+	`major`		TEXT,
+	`linkedin`	TEXT,
+	`resume`	TEXT,
+	`website`	TEXT,
+	`github`	TEXT,
+	`company`	TEXT,
+	`title`		TEXT,
+	`facebook`	TEXT,
+	`twitter`	TEXT,
+	`shirt`		TEXT,
+	`date`		NUMERIC
+);
+
+CREATE TABLE `t9hacks_mentors` (
+	`id`			INTEGER PRIMARY KEY AUTOINCREMENT,
+	`key`			TEXT,
+	`name`			TEXT,
+	`email`			TEXT,
+	`company`		TEXT,
+	`title`			TEXT,
+	`phone`			TEXT,
+	`breakfast`		INTEGER,
+	`lunch`			INTEGER,
+	`dinner`		INTEGER,
+	`area_web_design`		INTEGER,
+	`area_web_development`	INTEGER,
+	`area_android`	INTEGER,
+	`area_ios`		INTEGER,
+	`area_uiux`		INTEGER,
+	`area_gaming`	INTEGER,
+	`area_print`	INTEGER,
+	`area_arduino`	INTEGER,
+	`date`			NUMERIC
+);
+
