@@ -59,7 +59,7 @@ a:hover, a:focus, a:active {
 	text-decoration: none;
 	cursor: pointer;
 	color: #5ab8e2;
-/*	border-bottom: 1px solid #5ab8e2;*/
+	border-bottom: 1px solid #5ab8e2;
 }
 a.btn {
 	color: white;

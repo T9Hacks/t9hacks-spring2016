@@ -9,14 +9,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php" ?>
+	<?php include "../includes/css.php"; css(true); ?>
 	
 	
 </head>
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<?php include "includes/nav-simple.php" ?>
+	<?php include "../includes/nav-simple.php"; nav(true); ?>
 	
 	
 	<section id="signup" class="bg-purple">
@@ -39,7 +39,7 @@
 						<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be send to your email.  We look forward to seeing you!</p>
 						<br/>
 						<br/>
-						<a href="index.php" class="btn btn-l">Back to Website</a>
+						<a href="../index.php" class="btn btn-l">Back to Website</a>
 					</div>
 					
 				</div> <!-- end signupWrapper -->
@@ -53,11 +53,11 @@
 	
 	
 	<!-- Footer -->
-	<?php include "includes/footer.php" ?>
+	<?php include "../includes/footer.php"; footer(true); ?>
 	
 	
 	<!-- Javascript -->
-	<?php include "includes/js.php" ?>
+	<?php include "../includes/js.php"; js(true); ?>
 	
 	
 </body>

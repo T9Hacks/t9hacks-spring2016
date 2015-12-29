@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php" ?>
+	<?php include "../includes/css.php"; css(true); ?>
 	
 	<?php 
 		// get post data
@@ -28,7 +28,7 @@
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<?php include "includes/nav-simple.php" ?>
+	<?php include "../includes/nav-simple.php"; nav(true); ?>
 	
 	
 	<section id="signup" class="bg-purple">
@@ -48,7 +48,7 @@
 				
 					<div class="row">
 						<div class="column12">
-							<h2>Mentor Sign-up</h2>
+							<h2>Participant Sign-up</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -64,27 +64,27 @@
 							</div>
 							<div class="fieldRadio">
 								<input class="tgl tgl-flip" id="friend1" type="radio" name="friends" value="1" <?php echo ($numFriends == 1 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 1 Colleague" data-tg-on="Myself and 1 Colleague" for="friend1"></label>
+   								<label class="tgl-btn" data-tg-off="Myself and 1 Friend" data-tg-on="Myself and 1 Friend" for="friend1"></label>
 							</div>
 							<div class="fieldRadio">
 								<input class="tgl tgl-flip" id="friend2" type="radio" name="friends" value="2"<?php echo ($numFriends == 2 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 2 Colleagues" data-tg-on="Myself and 2 Colleagues" for="friend2"></label>
+   								<label class="tgl-btn" data-tg-off="Myself and 2 Friends" data-tg-on="Myself and 2 Friends" for="friend2"></label>
 							</div>
 							<div class="fieldRadio">
 								<input class="tgl tgl-flip" id="friend3" type="radio" name="friends" value="3"<?php echo ($numFriends == 3 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 3 Colleagues" data-tg-on="Myself and 3 Colleagues" for="friend3"></label>
+   								<label class="tgl-btn" data-tg-off="Myself and 3 Friends" data-tg-on="Myself and 3 Friends" for="friend3"></label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="fieldWrapper column12">
-							<a href="signup.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
-							<a href="signup-mentor2.php?n=<?php echo $numFriends; ?>" class="btn btn-l right regBtn" id="mentorRegBtn">Registration &nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+							<a href="../signup.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
+							<a href="signup-participant2.php?n=<?php echo $numFriends; ?>" class="btn btn-l right regBtn" id="participantRegBtn">Registration &nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
 					</div>
 					
 				</div> <!-- end signupWrapper -->
-			</div> <!-- end mentorSignup -->
+			</div> <!-- end participantSignup -->
 			
 			
 			
@@ -94,12 +94,12 @@
 	
 	
 	<!-- Footer -->
-	<?php include "includes/footer.php" ?>
+	<?php include "../includes/footer.php"; footer(true); ?>
 	
 	
 	<!-- Javascript -->
-	<?php include "includes/js.php" ?>
-	<script src="js/signup.js"></script>
+	<?php include "../includes/js.php"; js(true); ?>
+	<script src="../js/signup.js"></script>
 	
 	
 </body>

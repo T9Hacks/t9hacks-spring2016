@@ -94,6 +94,10 @@ function mPrint() { 	$("#mPrint").html( 		(($("#mentorPrint").prop("checked")) ?
 function mArduino() { 	$("#mArduino").html( 	(($("#mentorArduino").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
 
 
+// turn off reload for reg buttons
+$(".regBtn").click(function(){ canReload = true; });
+
+
 /* ******************************************** */
 /*			Sign-up Form to 					*/
 /* 			Confirmation Table					*/

@@ -9,13 +9,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php" ?>
+	<?php include "includes/css.php"; css(); ?>
 	
 </head>
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<?php include "includes/nav-simple.php" ?>
+	<?php include "includes/nav-simple.php"; nav(); ?>
 	
 	
 	<section class="bg-purple">
@@ -41,7 +41,7 @@
 				</div>
 				</div>
 			</div>
-			<?php if(false) { ?>
+			<?php if(true) { ?>
 			<div class="row" id="signupChoice">
 				<div class="signupWrapper">	
 					<div class="row">			
@@ -57,14 +57,14 @@
 						<p class="column4">
 							If you are a student, click here:
 						</p>	
-						<div class="column8 btnHolder"><a href="signup-participant1.php" class="btn btn-xl">Register as a participant</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Register as a participant</a></div>
 					
 					</div>
 					<div class="row">	
 						<p class="column4">
 							If you are an external volunteer, click here:
 						</p>
-						<div class="column8 btnHolder"><a href="signup-mentor1.php" class="btn btn-xl">Sign-up as a mentor</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Sign-up as a mentor</a></div>
 					</div>
 				</div>
 			</div>
@@ -74,11 +74,11 @@
 	
 	
 	<!-- Footer -->
-	<?php include "includes/footer.php" ?>
+	<?php include "includes/footer.php"; footer(); ?>
 	
 	
 	<!-- Javascript -->
-	<?php include "includes/js.php" ?>
+	<?php include "includes/js.php"; js();	 ?>
 	
 	
 </body>

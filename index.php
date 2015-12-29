@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php" ?>
+	<?php include "includes/css.php"; css(); ?>
 	
 </head>
 <body id="page-top" class="index hackathon">
@@ -335,11 +335,11 @@
 
 
 	<!-- Footer -->
-	<?php include "includes/footer.php" ?>
+	<?php include "includes/footer.php"; footer(); ?>
 
 
 	<!-- Javascript -->
-	<?php include "includes/js.php" ?>
+	<?php include "includes/js.php"; js(); ?>
 	
 	<!-- Processing -->
 	<script src="js/p5.min.js"></script>

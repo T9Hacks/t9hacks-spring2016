@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php" ?>
+	<?php include "../includes/css.php"; css(true); ?>
 	
 	<?php 
 		// get post data
@@ -28,7 +28,7 @@
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<?php include "includes/nav-simple.php" ?>
+	<?php include "../includes/nav-simple.php"; nav(true); ?>
 	
 	
 	<section id="signup" class="bg-purple">
@@ -56,7 +56,7 @@
 				
 					<div id="participantLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					
-					<form id="participantForm" class="signupForm" action="signup/register.php" method="post" enctype="multipart/form-data">
+					<form id="participantForm" class="signupForm" action="../signupScripts/register.php" method="post" enctype="multipart/form-data">
 					
 						<div id="participantResult" class="signupResult"></div>
 						
@@ -334,12 +334,12 @@
 	
 	
 	<!-- Footer -->
-	<?php include "includes/footer.php" ?>
+	<?php include "../includes/footer.php"; footer(true); ?>
 	
 	
 	<!-- Javascript -->
-	<?php include "includes/js.php" ?>
-	<script src="js/signup.js"></script>
+	<?php include "../includes/js.php"; js(true); ?>
+	<script src="../js/signup.js"></script>
 	
 	
 </body>

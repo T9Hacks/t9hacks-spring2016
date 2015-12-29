@@ -1,3 +1,7 @@
+<?php 
+function footer($up = false) {
+	$p = ($up) ? "../" : "";
+?>
 <!-- Footer -->
 <footer>
 	<div class="container">
@@ -16,7 +20,7 @@
 			</div>
 			<div class="column4">
 				<ul class="list-inline quicklinks">
-					<li><a href="team.php">Meet our team</a></li>
+					<li><a href="<?php echo $p; ?>team.php">Meet our team</a></li>
 				</ul>
 			</div>
 		</div>
@@ -28,3 +32,4 @@
 	var year = today.getFullYear();
 	document.getElementById("copyright-year").innerHTML = year;
 </script>
+<?php }?>
