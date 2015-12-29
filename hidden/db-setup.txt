@@ -4,18 +4,19 @@ CREATE TABLE `t9hacks_participants` (
 	`name`		TEXT,
 	`email`		TEXT,
 	`phone`		TEXT,
-	`school`	TEXT,
+	`college`	TEXT,
 	`major`		TEXT,
 	`linkedin`	TEXT,
 	`resume`	TEXT,
 	`website`	TEXT,
 	`github`	TEXT,
 	`company`	TEXT,
-	`title`		TEXT,
+	`position`	TEXT,
 	`facebook`	TEXT,
 	`twitter`	TEXT,
 	`shirt`		TEXT,
-	`date`		NUMERIC
+	`date`		NUMERIC,
+	`complete_registration`	INTEGER DEFAULT 0
 );
 
 CREATE TABLE `t9hacks_mentors` (
@@ -24,19 +25,20 @@ CREATE TABLE `t9hacks_mentors` (
 	`name`			TEXT,
 	`email`			TEXT,
 	`company`		TEXT,
-	`title`			TEXT,
+	`position`		TEXT,
 	`phone`			TEXT,
 	`breakfast`		INTEGER,
 	`lunch`			INTEGER,
 	`dinner`		INTEGER,
 	`area_web_design`		INTEGER,
-	`area_web_development`	INTEGER,
+	`area_web_dev`	INTEGER,
 	`area_android`	INTEGER,
 	`area_ios`		INTEGER,
 	`area_uiux`		INTEGER,
 	`area_gaming`	INTEGER,
 	`area_print`	INTEGER,
 	`area_arduino`	INTEGER,
-	`date`			NUMERIC
+	`date`			NUMERIC,
+	`complete_registration`	INTEGER DEFAULT 0
 );
 

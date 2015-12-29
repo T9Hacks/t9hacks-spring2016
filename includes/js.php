@@ -12,9 +12,5 @@
 <!-- Custom Theme JavaScript -->
 <script src="plugins/agency/js/agency.js"></script>
 
-<!-- Processing -->
-<script src="js/p5.min.js"></script>
-<script src="js/p5_starburst.js"></script>
-
 <!-- Google Analytics -->
 <script src="js/analyticstracking.js"></script>

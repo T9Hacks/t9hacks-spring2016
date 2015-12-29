@@ -124,7 +124,7 @@ class EmailHelperClass {
 	
 	function createAndSendEmail_Register($resultArray, $inputValues) {
 		// res
-		$res = ( ($resultArray['success'] == 1) ? "Success" : "Failure" );
+		$res = ( ($resultArray['SUCCESS'] == 1) ? "Success" : "Failure" );
 		
 		// create subject
 		$subject = "ATLAS T9Hacks – Register Message – $res";

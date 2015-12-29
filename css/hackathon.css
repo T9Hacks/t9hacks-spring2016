@@ -6,6 +6,9 @@ Light purple: 	#AA88AA 	170, 136, 170
 Medium purple:	#553377 	85, 51, 119
 Dark purple: 	#331155		51, 17, 85
 Grey:			#BBBBBB
+
+Red: 			#EF124D
+Pink:			#FFEAF0
 */
 /* *************** */
 /*      Styles     */
@@ -193,10 +196,17 @@ nav a:hover, nav a:focus, nav a:active, nav a:active {
     background-color: rgba(51, 17, 85, 0.4);
     font-size: .8em;
 }
+.navbar li { margin-bottom: 0; }
+.navbar-header { float: left; }
+.navbar-right { float: right; }
 .navbar-default {
     /*padding: 20px 0;
     background-color: rgba(51, 17, 85, 0.4);
     font-size: .8em;*/
+}
+@media (max-width: 768px) {
+	.navbar-default .navbar-collapse { clear: both; }
+	.navbar-default .navbar-collapse .navbar-right { float: none; }
 }
 .navbar.navbar-shrink {
 	background-color: #331155;
@@ -515,23 +525,30 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 /*		Signup		*/
 /* **************** */
 #signup {  }
-#signup-wait { display: none; }
-/* Choice participant or mentor */
-#signupChoice {}
+#signup h1 {
+	margin-bottom: 10px;
+}
+.noTop { margin-top: 0; }
+.error {
+	padding: 10px;
+	display: block;
+	border: 3px solid #EF124D;
+	background: #FFEAF0;
+	color: #EF124D;
+}
+
+/* Page 1 - Choose Participant or mentor */
+#signupWait {  }
+#signupChoice { display: none; }
 #signupChoice .btn {
 	display: block;
 	overflow: hidden;
 	float: none;
 }
 .btnHolder { overflow: hidden; }
+.waitMessage { text-align: center; }
 
-/* Entire signup sections (participant and mentor) */
-#participantSignup, #mentorSignup {
-	display: none;
-	overflow: hidden;
-}
-
-/* wrapper that holds loading, success, and form */
+/* Page 2 - Wrapper that holds loading, result, form, and cnfirmation */
 .signupWrapper {
 	position: relative;
 	background: #FFFFF0;
@@ -540,16 +557,20 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	margin: 0 9.335%;
 	overflow: hidden;
 }
-	.waitMessage { text-align: center; }
+
+/* confirmation section */
+.signupConfirmation { display: none; }
 
 /* loading section */
 .signupLoading {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: none;
 	z-index: 10;
 	background: rgba(200, 200, 200, 0.6);
+	width: 100%;
+	height: 100%;
 }
 .signupLoading i {
 	width: 80px;
@@ -562,26 +583,15 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 }
 
 /* signupSuccess */
-.signupSuccess {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 11;
-	background: #FDFDCE;
+.signupResult {
 	display: none;
 	overflow: hidden;
-	background: #FDFDCE;
-	padding: 20px;
 }
-.signupSuccess.error {
-	position: relative;
-	padding: 10px;
+.signupResult.error {
 	margin-bottom: 20px;
 	display: block;
-	border: 3px solid red;
-	background: #F99;
-	color: white;
 }
+
 
 /* form with all inputs */
 .signupForm {
@@ -621,9 +631,9 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	text-align: center;
 }
 .fieldError {
-	color: red;
-	font-size: .8em;
+	font-size: .9em;
 	margin-top: 3px;
+	padding: 7px 10px;
 }
 #upload {
 	position: relative;
@@ -674,6 +684,7 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	float: left;
 	display: inline-block;
 	border-bottom: 0;
+	line-height: 44px;
 }
 .backBtn:hover, .backBtn:focus, .backBtn:active {
 	border-bottom: 0;
@@ -757,7 +768,7 @@ input[type=submit] {
 .tgl + .tgl-btn {
 	outline: 0;
 	display: inline-block;
-	width: 4.8em;
+	width: 5.5em;
 	height: 2em;
 	position: relative;
 	cursor: pointer;
@@ -783,6 +794,7 @@ input[type=submit] {
 .tgl:checked + .tgl-btn:after {
 	left: 50%;
 }
+
 .tgl-flip + .tgl-btn {
 	padding: 2px;
 	-webkit-transition: all .2s ease;
@@ -836,6 +848,22 @@ input[type=submit] {
 
 
 
+.confirmationTable {
+	width: 100%;
+}
+.confirmationTable tr:nth-child(2n-1) {
+	background: #EEE;
+}
+.confirmationTable tr:nth-child(2n) {
+	background: white;
+}
+.confirmationTable td {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+}
+.confirmationTable td:nth-child(2n) {
+    word-wrap: break-word;
+}
 
 
 
@@ -846,4 +874,28 @@ input[type=submit] {
 ::selection {
 	background: #5AB8E2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

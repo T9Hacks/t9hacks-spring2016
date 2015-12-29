@@ -53,7 +53,7 @@
 				<th>Website</th>
 				<th>Github</th>
 				<th>Company</th>
-				<th>Title</th>
+				<th>Position</th>
 				<th>Facebook</th>
 				<th>Twitter</th>
 				<th>Shirt</th>
@@ -80,7 +80,7 @@
 				<th>Name</th>
 				<th>Email</th>
 				<th>Company</th>
-				<th>Title</th>
+				<th>Position</th>
 				<th>Breakfast</th>
 				<th>Lunch</th>
 				<th>Dinner</th>

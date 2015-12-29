@@ -18,16 +18,17 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 
-			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
 				<a class="navbar-brand page-scroll" href="#page-top">T9Hacks</a>
 			</div>
+			
+			<!-- Mobile nav button -->
+			<button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,10 +40,8 @@
 					<li><a class="page-scroll" href="#sponsors">Sponsors</a></li>
 				</ul>
 			</div>
-			<!-- /.navbar-collapse -->
 
 		</div>
-		<!-- /.container-fluid -->
 	</nav>
 
 
@@ -341,6 +340,11 @@
 
 	<!-- Javascript -->
 	<?php include "includes/js.php" ?>
+	
+	<!-- Processing -->
+	<script src="js/p5.min.js"></script>
+	<script src="js/p5_starburst.js"></script>
+	
 
 	</body>
 </html>
