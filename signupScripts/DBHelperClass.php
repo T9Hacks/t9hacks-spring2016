@@ -15,9 +15,7 @@ class DBHelperClass {
 			//echo "Connected successfully"; 
 			*/
 			
-			$sqlFile = 'sqlite:db.sqlite';
-			$sqlFile = '../hidden/sqlite:db.sqlite';
-			$sqlFile = 'sqlite:../hidden/db.sqlite';
+			$sqlFile = 'sqlite:../../protected/db.sqlite';
 			
 			$this->conn = new PDO($sqlFile, "", "");
 			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
