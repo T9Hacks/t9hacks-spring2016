@@ -9,9 +9,6 @@ function css($up = false) {
 <!-- Bootstrap Core CSS -->
 <link href="<?php echo $p; ?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Agency Theme CSS -->
-<link href="<?php echo $p; ?>plugins/agency/css/agency.css" rel="stylesheet">
-
 <!-- Custom Fonts -->
 <link href="<?php echo $p; ?>plugins/agency/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>

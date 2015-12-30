@@ -31,7 +31,7 @@
 	<?php include "../includes/nav-simple.php"; nav(true); ?>
 	
 	
-	<section id="signup" class="bg-purple">
+	<section id="signup" class="bg-trianglePurple">
 		<div class="container">
 		
 			<div class="row">

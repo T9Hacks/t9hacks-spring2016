@@ -9,10 +9,13 @@ $(function() {
     $('a.page-scroll').bind('click', function(event) {
     	event.preventDefault();
     	
+    	// offset by height 
+    	/*
         var $anchor = $(this);
         var navHeight = $(".navbar").innerHeight();
         var offset = $($anchor.attr('href')).offset().top;
         if(! $anchor.hasClass("navbar-brand")) { offset-=navHeight; }
+        */
         	
         $('html, body').stop().animate({
             scrollTop: offset
@@ -23,7 +26,7 @@ $(function() {
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
-    target: '.navbar-fixed-top'
+    target: '.navbar'
 });
 
 // Closes the Responsive Menu on Menu Item Click

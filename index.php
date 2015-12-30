@@ -15,25 +15,25 @@
 <body id="page-top" class="index hackathon">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container">
 
+			<!-- Brand -->
 			<div class="navbar-header page-scroll">
 				<a class="navbar-brand page-scroll" href="#page-top">T9Hacks</a>
 			</div>
 			
 			<!-- Mobile nav button -->
-			<button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+			<div class="navbar-right" data-toggle="collapse" data-target="#navbar">
+				<button type="button" class="navbar-toggle btn btn-l">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="fa fa-bars"></i>
+				</button>
+			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="hidden"><a href="#page-top"></a></li>
 					<li><a class="page-scroll" href="#questions">About</a></li>
 					<li><a class="page-scroll" href="#join">Join</a></li>
 					<li><a class="page-scroll" href="#schedule">Schedule</a></li>
@@ -48,7 +48,7 @@
 
 
 	<!-- Header -->
-	<header id="header" class="bg-head">
+	<header id="header" class="bg-medPurple">
 
 		<canvas id="header-canvas"></canvas>
 
@@ -180,7 +180,7 @@
 
 
 	<!-- Join Section -->
-	<section id="join" class="bg-image bg-sign-up">
+	<section id="join" class="bg-image bg-signup">
 		<div class="container">
 			<div class="column12">
 				<div class="row">
@@ -196,7 +196,7 @@
 
 
 	<!-- Schedule Section -->
-	<section id="schedule" class="bg-purple">
+	<section id="schedule" class="bg-trianglePurple">
 		<div class="container">
 
 			<div class="row">

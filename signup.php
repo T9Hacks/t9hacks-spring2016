@@ -18,7 +18,7 @@
 	<?php include "includes/nav-simple.php"; nav(); ?>
 	
 	
-	<section class="bg-purple">
+	<section class="bg-trianglePurple">
 		<div class="container">
 		
 			<div class="row">

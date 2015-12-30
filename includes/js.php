@@ -10,7 +10,6 @@ function js($up = false) {
 
 <!-- Plugin JavaScript -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="<?php echo $p; ?>plugins/agency/js/classie.js"></script>
 <script src="<?php echo $p; ?>plugins/agency/js/cbpAnimatedHeader.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
