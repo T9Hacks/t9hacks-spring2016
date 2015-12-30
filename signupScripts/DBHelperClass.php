@@ -24,14 +24,20 @@ class DBHelperClass {
 		} catch(PDOException $e) {
 			//echo "Connection failed: <pre>" . print_r($e, true) . '</pre>';
 		}
+		
+		// set correct time size
+		date_default_timezone_set('America/Denver');
 		//die();
 	}
 	
 	function addParticipant($inputValues, $key) {
+		// get current datetime
+		$datetime = date("Y-m-d H:i:s");
+		
 		// prepare statement
 		$prepStmt = "INSERT INTO `t9hacks_participants` 
-				(`key`, `name`, `email`, `college`, `major`, `phone`, `linkedin`, `resume`, `website`, `github`, `company`, `position`, `facebook`, `twitter`, `shirt`) 
-				VALUES (:key, :name, :email, :college, :major, :phone, :linkedin, :resume, :website, :github, :company, :position, :facebook, :twitter, :shirt)";
+				(`key`, `name`, `email`, `college`, `major`, `phone`, `linkedin`, `resume`, `website`, `github`, `company`, `position`, `facebook`, `twitter`, `shirt`, `date`, `complete_registration`) 
+				VALUES (:key, :name, :email, :college, :major, :phone, :linkedin, :resume, :website, :github, :company, :position, :facebook, :twitter, :shirt, :datetime, 1)";
 		$stmt = $this->conn->prepare($prepStmt);
 		$stmt->bindParam(':key', 		$key);
 		$stmt->bindParam(':name', 		$inputValues['name']);
@@ -48,6 +54,7 @@ class DBHelperClass {
 		$stmt->bindParam(':facebook',	$inputValues['facebook']);
 		$stmt->bindParam(':twitter', 	$inputValues['twitter']);
 		$stmt->bindParam(':shirt', 		$inputValues['shirt']);
+		$stmt->bindParam(':datetime', 	$datetime);
 		
 		// use exec() because no results are returned
 		$stmt->execute();
@@ -58,10 +65,13 @@ class DBHelperClass {
 	}
 	
 	function addMentor($inputValues, $key) {
+		// get current datetime
+		$datetime = date("Y-m-d H:i:s");
+		
 		// prepare statement
 		$prepStmt = "INSERT INTO `t9hacks_mentors` 
-				(`key`, `name`, `email`, `phone`, `company`, `position`, `breakfast`, `lunch`, `dinner`, `area_web_design`, `area_web_dev`, `area_android`, `area_ios`, `area_uiux`, `area_gaming`, `area_print`, `area_arduino`)  
-				VALUES (:key, :name, :email, :phone, :company, :position, :breakfast, :lunch, :dinner, :area_web_design, :area_web_dev, :area_android, :area_ios, :area_uiux, :area_gaming, :area_print, :area_arduino)";
+				(`key`, `name`, `email`, `phone`, `company`, `position`, `breakfast`, `lunch`, `dinner`, `area_web_design`, `area_web_dev`, `area_android`, `area_ios`, `area_uiux`, `area_gaming`, `area_print`, `area_arduino`, `date`, `complete_registration`)  
+				VALUES (:key, :name, :email, :phone, :company, :position, :breakfast, :lunch, :dinner, :area_web_design, :area_web_dev, :area_android, :area_ios, :area_uiux, :area_gaming, :area_print, :area_arduino, :datetime, 1)";
 		$stmt = $this->conn->prepare($prepStmt);
 		$stmt->bindParam(':key', 			$key);
 		$stmt->bindParam(':name', 			$inputValues['name']);
@@ -80,6 +90,7 @@ class DBHelperClass {
 		$stmt->bindParam(':area_gaming',	$inputValues['gaming']);
 		$stmt->bindParam(':area_print',		$inputValues['print']);
 		$stmt->bindParam(':area_arduino',	$inputValues['arduino']);
+		$stmt->bindParam(':datetime', 		$datetime);
 		
 		// use exec() because no results are returned
 		$stmt->execute();

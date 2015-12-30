@@ -258,8 +258,8 @@
 			<div class="row">
 				<div class="column4 sponsor">&nbsp;</div>
 				<div class="column4 sponsor">
-					<div class="sponsor1">
-						<img src="images/sponsors/atlas_logo_transparent.png" />
+					<div class="sponsor1 atlas">
+						<img src="images/sponsors/ATLAS-transparent.png" />
 					</div>
 				</div>
 			</div>
@@ -267,8 +267,59 @@
 			<div class="row">
 				<div class="column12">
 					<div class="sponsorInterested">
-						<a href="MAILTO:brittany.kos@colorado.edu, jessica.albarian@colorado.edu" class="btn btn-xl">Interested in becoming a sponsor?</a>
+						<div class="sponsorBtnContainer">
+							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in becoming a sponsor?</div>
+						</div>
 					</div>
+				</div>
+			</div>
+			
+			<div id="sponsorEmailDiv" class="row">
+				<div class="column2">&nbsp;</div>
+				<div class="column8">
+				
+					<div id="sponsorEmailOuterForm">
+					
+						<div id="sponsorEmailArrow"></div>
+						
+						<form id="sponsorEmailForm" action="signupScripts/email.php">
+							
+							<div id="sponsorEmailResult">Null</div>
+							
+							<div class="row">
+								<div class="fieldWrapper column6">
+									<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Your Name" name="name" id="sponsorName"/></div>
+								</div>
+								<div class="fieldWrapper column6">
+									<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Your Email" name="email" id="sponsorEmail"/></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<div class="fieldInput"><i class="fa fa-pencil-square-o"></i><input type="text" placeholder="Subject" name="subject" id="sponsorSubject"/></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<div class="fieldInput textarea">
+										<textarea name="message" placeholder="Message" id="sponsorMessage"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<button id="sponsorEmailSubmit" class="btn btn-l right">Send &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+								</div>
+							</div>
+						</form>
+						
+						<div id="sponsorEmailSuccess">
+							<h3>Email successfully sent!</h3>
+							<p>Thank you for contacting us, we'll get back to you shortly.</p>
+						</div>
+					
+					</div>
+					
 				</div>
 			</div>
 			
@@ -340,10 +391,12 @@
 
 	<!-- Javascript -->
 	<?php include "includes/js.php"; js(); ?>
+	<script src="js/sponsorEmail.js"></script>
 	
 	<!-- Processing -->
 	<script src="js/p5.min.js"></script>
 	<script src="js/p5_starburst.js"></script>
+	
 	
 
 	</body>

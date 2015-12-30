@@ -13,8 +13,10 @@ ini_set("smtp_port","25");
 ini_set('sendmail_from', 'example@YourDomain.com');
 */
 
+// set correct time zone
+date_default_timezone_set('America/Denver');
+
 include 'DBHelperClass.php';
-//include 'DropboxHelperClass.php';
 include 'EmailHelperClass.php';
 
 // global variables

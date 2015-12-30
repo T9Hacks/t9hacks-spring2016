@@ -74,7 +74,7 @@
 					
 						<div class="row">
 							<p class="column12">
-								To register we need a few pieces of information.  Please register with your university email account.
+								To register we require a few pieces of information.  Please register with your university email account.
 							</p>
 							
 							<div class="fieldWrapper column6">
@@ -103,7 +103,8 @@
 						<div class="row">
 							<p class="column12">
 								By participating in T9Hacks, you get special access to our sponsors, their recruiters, and 
-								additional technology opportunities.  We will never allow the sale of your information to any third-parties.
+								additional technology opportunities.  The following information is optional and will be shared with our sponsors.
+								We will never allow the sale of your information to any third-parties.
 							</p>
 							
 							<div class="fieldWrapper column6">

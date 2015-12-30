@@ -21,7 +21,6 @@
 	
 	<?php 
 	include 'DBHelperClass.php';
-	include 'DropboxHelperClass.php';
 	
 	// create helper
 	$db = new DBHelperClass();
@@ -48,6 +47,9 @@
 				<th>Key</th>
 				<th>Name</th>
 				<th>Email</th>
+				<th>College</th>
+				<th>Major</th>
+				<th>Phone</th>
 				<th>Linkedin</th>
 				<th>Resume</th>
 				<th>Website</th>
@@ -58,6 +60,7 @@
 				<th>Twitter</th>
 				<th>Shirt</th>
 				<th>Date</th>
+				<th>Complete</th>
 			</tr>
 		</thead>
 		<?php 
@@ -79,6 +82,7 @@
 				<th>Key</th>
 				<th>Name</th>
 				<th>Email</th>
+				<th>Phone</th>
 				<th>Company</th>
 				<th>Position</th>
 				<th>Breakfast</th>
@@ -93,6 +97,7 @@
 				<th>Area Print Media</th>
 				<th>Area Arduino</th>
 				<th>Date</th>
+				<th>Complete</th>
 			</tr>
 		</thead>
 		<?php 
