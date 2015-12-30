@@ -2,14 +2,14 @@
 
 class EmailHelperClass {
 	
-	function createHeaders($subject, $to, $replyAddress = "brittany.kos@colorado.edu") {
+	function createHeaders($subject, $sendTo, $replyTo = "Brittany Ann Kos <brittany.kos@colorado.edu>") {
 		$headers   = array();
 		$headers[] = "MIME-Version: 1.0";
 		$headers[] = "Content-Type: text/html; charset=ISO-8859-1";
-		$headers[] = "To: $to";
-		$headers[] = "From: ATLAS T9Hacks <no-reply@t9hacks.org>";
+		$headers[] = "To: $sendTo";
+		$headers[] = "From: \"T9Hacks\" <no-reply@t9hacks.org>";
 		$headers[] = "Subject: $subject";
-		$headers[] = "Reply-To: $replyAddress";
+		$headers[] = "Reply-To: $replyTo";
 		$headers[] = "X-Mailer: PHP/" . phpversion();
 		
 		$h = implode("\r\n", $headers);
@@ -22,7 +22,7 @@ class EmailHelperClass {
 		// create email message
 		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, 0);
 		
-		return EmailHelperClass::finishEmail($inputValues, "Your Ticket for ATLAS T9Hacks Spring 2016");
+		return EmailHelperClass::finishEmail($inputValues, "Your Ticket for T9Hacks Spring 2016");
 		
 	}
 	
@@ -30,16 +30,16 @@ class EmailHelperClass {
 		// create email message
 		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, 1);
 		
-		return EmailHelperClass::finishEmail($inputValues, "Your Confirmation for ATLAS T9Hacks Spring 2016");
+		return EmailHelperClass::finishEmail($inputValues, "Your Confirmation for T9Hacks Spring 2016");
 	}
 	
 	function finishEmail($inputValues, $subject) {
 		// create headers
-		$to = "To: " . $inputValues['name'] . "<" . $inputValues['email'] . ">";
-		$h = EmailHelperClass::createHeaders($subject, $to);
+		$sendTo = $inputValues['name'] . " <" . $inputValues['email'] . ">";
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
 		
 		// send email
-		$emailResult = mail($inputValues['email'], $subject, $message, $h);
+		$emailResult = mail($sendTo, $subject, $message, $headers);
 		
 		// return result
 		return $emailResult;
@@ -74,7 +74,7 @@ class EmailHelperClass {
 						<table style='width: 600px; max-width: 600px; margin: 0 auto; background: white; border-collapse: collapse;'>
 						
 							<tr><td style='padding: 20px 20px 0 20px;'>
-								<h2>Hi $name, this is your signup confirmation for ATLAS T9Hacks Spring 2016</h2>
+								<h2>Hi $name, this is your signup confirmation for T9Hacks Spring 2016</h2>
 							</td></tr>
 							
 							<tr><td style='padding: 0 20px;'>
@@ -144,40 +144,47 @@ class EmailHelperClass {
 		}
 		$message .= "</table></body></html>";
 		
+		// create send to
+		$sendTo = "Brittany <britkos@gmail.com>";
+		
 		// create headers
-		$to = "To: Brittany <britkos@gmail.com>";
-		$h = EmailHelperClass::createHeaders($subject, $to);
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
 		
 		// send email
-		$emailResult = mail("britkos@gmail.com", $subject, $message, $h);
+		$emailResult = mail($sendTo, $subject, $message, $headers);
 		
 		// return result
 		return $emailResult;
 	}
 	
 	
-	function createAndSendEmail_SponsorEmail($name, $email, $subject, $message) {
+	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorSubject, $sponsorMessage) {
 		// create subject
-		$subject = "Sponsor Email From T9Hacks";
+		$sendSubject = "Sponsor Email From T9Hacks";
 		
 		// create message
-		$message = "<html><head></head><body><h1>Email send from T9Hacks.org</h1><table>";
-		$message .= "<tr><td><h2>Name: </h2><p>$name</p></td></tr>";
-		$message .= "<tr><td><h2>Email: </h2><p>$email</p></td></tr>";
-		$message .= "<tr><td><h2>Subject: </h2><p>$subject</p></td></tr>";
-		$message .= "<tr><td><h2>Message: </h2><p>$message</p></td></tr>";
-		$message .= "</table></body></html>";
+		$sendMessage = "<html><head></head><body><h2>Here is the sponsor email sent from T9Hacks.org</h2><table style='border-collapse: collapse'>";
+		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Name: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorName</p></td></tr>";
+		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Email: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorEmail</p></td></tr>";
+		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Subject: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorSubject</p></td></tr>";
+		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Message: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorMessage</p></td></tr>";
+		$sendMessage .= "</table></body></html>";
+		
+		// create sender's reply to
+		$replyTo = "$sponsorName <$sponsorEmail>";
+		
+		// create send to
+		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
+		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
 		
 		// create headers
-		$to = 'To: Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian<jessica.albarian@colorado.edu>';
-		$h = EmailHelperClass::createHeaders($subject, $to, $email);
+		$sendHeaders = EmailHelperClass::createHeaders($sendSubject, $sendTo, $replyTo);
 		
 		// send email
-		$emailResult1 = mail("brittany.kos@colorado.edu", $subject, $message, $h);
-		$emailResult2 = mail("jessica.albarian@colorado.edu", $subject, $message, $h);
+		$emailResult = mail($sendTo, $sendSubject, $sendMessage, $sendHeaders);
 		
 		// return result
-		return ($emailResult1 && $emailResult2);
+		return ($emailResult);
 	}
 	
 } // end class

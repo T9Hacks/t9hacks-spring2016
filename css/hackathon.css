@@ -454,6 +454,10 @@ header {
 	top: 20px;
 }
 #sponsorEmailSuccess { display: none; }
+#sponsorEmailResult.error {
+	margin-bottom: 20px;
+	display: block;
+}
 
 @media (max-width: 1200px) {
 	.sponsor1 { width: 200px; height: 200px; line-height: 200px; }
@@ -571,7 +575,7 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 
 /* Page 1 - Choose Participant or mentor */
 #signupWait {  }
-#signupChoice { display: none; }
+#signupChoice {  }
 #signupChoice .btn {
 	display: block;
 	overflow: hidden;

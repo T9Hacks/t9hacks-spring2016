@@ -37,7 +37,7 @@ $("#sponsorEmailSubmit").click(function(event){
 	if(errorCount > 0) {
 		$("#sponsorEmailResult").show().addClass("error").html("It looks like there was a problem with your submission.  Please fix any problems and submit again.");
 	}
-	console.log("errorCount: " + errorCount);
+	//console.log("errorCount: " + errorCount);
 	
 	
 	// if no errors, submit
