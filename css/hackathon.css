@@ -126,6 +126,12 @@ hr { border-top: 1px solid #DAC8DA; }
 img::selection, img::-moz-selection {
 	background: 0 0;
 }
+.mobileOnly { display: none; }
+@media (max-width: 991px) {
+	.mobileOnly { 
+		display: block;
+	}
+}
 
 
 
@@ -526,7 +532,9 @@ header {
 
 .sponsorInterested { text-align: center; margin-top: 50px; }
 .sponsorBtnContainer { display: block; }
-#sponsorEmailBtn { display: inline-block; }
+#sponsorEmailBtn { 
+	display: inline-block;
+}
 
 #sponsorEmailDiv { display: none;  }
 #sponsorEmailResult { display: none; }
@@ -558,6 +566,7 @@ header {
 	margin-bottom: 20px;
 	display: block;
 }
+
 
 @media (max-width: 1200px) {
 	.sponsor1 { width: 200px; height: 200px; line-height: 200px; }

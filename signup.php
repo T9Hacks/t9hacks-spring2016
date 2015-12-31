@@ -57,14 +57,14 @@
 						<p class="column4">
 							If you are a student, click here:
 						</p>	
-						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Register as a participant</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Register as <span class="mobileOnly">&nbsp;</span> participant</a></div>
 					
 					</div>
 					<div class="row">	
 						<p class="column4">
 							If you are an external volunteer, click here:
 						</p>
-						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Sign-up as a mentor</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Sign-up as <span class="mobileOnly">&nbsp;</span>a mentor</a></div>
 					</div>
 				</div>
 			</div>

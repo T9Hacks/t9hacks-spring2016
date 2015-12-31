@@ -268,7 +268,7 @@
 				<div class="column12">
 					<div class="sponsorInterested">
 						<div class="sponsorBtnContainer">
-							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in becoming a sponsor?</div>
+							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a sponsor?</div>
 						</div>
 					</div>
 				</div>
