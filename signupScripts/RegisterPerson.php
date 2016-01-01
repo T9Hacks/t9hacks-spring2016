@@ -39,7 +39,7 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 	$isComplete = ($regType == 2) ? true : false;
 	$isUpdate = ($regType == 3) ? true : false;
 	
-	
+	// set initial keys
 	if($isParticipant) 
 		$resultArray[$PARTICIPANT_KEY] = $key;
 	else if($isMentor) 
@@ -293,6 +293,18 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 					if($isNew) {
 						$keyPrefix = ($isParticipant || $isParticipantFriend) ? "P-" : "M-";
 						$key = $keyPrefix . substr(str_shuffle("abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789"), 0, 6);
+						
+						// set new keys
+						if($isParticipant) 
+							$resultArray[$PARTICIPANT_KEY] = $key;
+						else if($isMentor) 
+							$resultArray[$MENTOR_KEY] = $key;
+						else if($isFriend1) 
+							$resultArray[$FRIEND_1_KEY] = $key;
+						else if($isFriend2) 
+							$resultArray[$FRIEND_2_KEY] = $key;
+						else if($isFriend3) 
+							$resultArray[$FRIEND_3_KEY] = $key;
 					}
 					
 					// add record

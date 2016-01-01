@@ -77,6 +77,8 @@ $resultArray = array(
 	$SELF_EMAIL_ERROR		=> -1,
 	$PARTICIPANT_SUCCESS	=> -1,
 	$MENTOR_SUCCESS			=> -1,
+	$PARTICIPANT_KEY		=> -1,
+	$MENTOR_KEY				=> -1,
 	
 	$FILE_SIZE_TOO_LARGE	=> -1,
 	$FILE_UPLOAD_ERROR		=> -1,
@@ -90,6 +92,9 @@ $resultArray = array(
 	$FRIEND_1_SUCCESS		=> 0,
 	$FRIEND_2_SUCCESS		=> 0,
 	$FRIEND_3_SUCCESS		=> 0,
+	$FRIEND_1_KEY			=> -1,
+	$FRIEND_2_KEY			=> -1,
+	$FRIEND_3_KEY			=> -1,
 );
 
 

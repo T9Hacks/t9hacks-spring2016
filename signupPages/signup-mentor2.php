@@ -140,16 +140,16 @@
 									<p>We will be providing food for everyone who comes to the hackathon.  Which meals are you planning on being present for?</p>
 								</div>
 								<div class="fieldCheckbox">
+									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
+	   								<label class="tgl-btn" data-tg-off="Dinner" data-tg-on="Dinner" for="mentorDinner"></label>
+								</div>
+								<div class="fieldCheckbox">
 									<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox" <?php echo (!is_null($key) && $data['breakfast'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class="tgl-btn" data-tg-off="Breakfast" data-tg-on="Breakfast" for="mentorBreakfast"></label>
 								</div>
 								<div class="fieldCheckbox">
 									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (is_null($key) || $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class="tgl-btn" data-tg-off="Lunch" data-tg-on="Lunch" for="mentorLunch"></label>
-								</div>
-								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Dinner" data-tg-on="Dinner" for="mentorDinner"></label>
 								</div>
 							</div>
 						</div>

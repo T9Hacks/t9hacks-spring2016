@@ -223,9 +223,9 @@ class EmailHelperClass {
 			$ticketName = "Ticket";
 			$ticketType = "Mentor";
 			$extras = "
-				<tr><td style='padding: 5px 10px;'>Breakfast: </td>	<td style='padding: 5px 10px;'>" . ($inputValues['breakfast']==1?"Yes":"No") . "</td></tr>
-				<tr><td style='padding: 5px 10px;'>Lunch: </td>	<td style='padding: 5px 10px;'>" . ($inputValues['lunch']==1?"Yes":"No") . "</td></tr>
-				<tr><td style='padding: 5px 10px;'>Dinner: </td>	<td style='padding: 5px 10px;'>" . ($inputValues['dinner']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Dinner: </td><td style='padding: 5px 10px;'>" . ($inputValues['dinner']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Breakfast: </td><td style='padding: 5px 10px;'>" . ($inputValues['breakfast']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Lunch: </td><td style='padding: 5px 10px;'>" . ($inputValues['lunch']==1?"Yes":"No") . "</td></tr>
 			";
 			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=".$key;
 		}
@@ -314,10 +314,8 @@ class EmailHelperClass {
 		
 		if(array_key_exists("extra", $inputValues)) {
 			$message .= "<tr><td colspan='2'><h2>Input Values - Extra</h2></td></tr>";
-			foreach($inputValues["extra"] as $k => $friend) {
-				foreach($friend as $key => $value)
-					$message .= "<tr><td>$key</td><td>$value</td></tr>";
-			}
+			foreach($inputValues["extra"] as $key => $value)
+				$message .= "<tr><td>$key</td><td>$value</td></tr>";
 		}
 		
 		$message .= "</table></body></html>";
