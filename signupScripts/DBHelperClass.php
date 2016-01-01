@@ -282,6 +282,23 @@ class DBHelperClass {
 		return($updateCount>0);
 	}
 	
+	function checkInRecord($id, $type) {
+		// prepare statement
+		if($type == 1)
+			$prepStmt = "UPDATE `t9hacks_participants` SET `checked_in` = 1 WHERE `id` = :id";
+		if($type == 2)
+			$prepStmt = "UPDATE `t9hacks_mentors` SET `checked_in` = 1 WHERE `id` = :id";
+		$stmt = $this->conn->prepare($prepStmt);
+		$stmt->bindParam(':id',$id);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
 	
 	
 	
