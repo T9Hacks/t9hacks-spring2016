@@ -1,6 +1,6 @@
 <?php 
 
-function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $friendType = 0) {
+function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType = 0) {
 	
 	// create index keys for result array
 	include 'resultArrayIndex.php';
@@ -35,14 +35,9 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $frie
 	$numReqInputs = $inputs['numReqInputs'];
 	$numTextInputs = $inputs['numTextInputs'];
 	
-	// get key
-	$key = $_POST["key"];
-	$isNew = false;
-	$isUpdate = false;
-	if($key == -1)
-		$isNew = true;
-	else
-		$isUpdate = true;
+	$isNew = ($regType == 1);
+	$isComplete = ($regType == 2);
+	$isUpdate = ($regType == 3);
 	
 	
 	
@@ -325,7 +320,7 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $frie
 						/* ******************************** */
 						$emailSuccess = false;
 						// if new, send email
-						if($isNew) {
+						if($isNew && $isComplete) {
 							// send email
 							$emailResult = false;
 							if($isParticipant || $isMentor)

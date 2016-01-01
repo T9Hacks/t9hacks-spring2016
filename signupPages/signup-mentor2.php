@@ -25,6 +25,7 @@
 		
 		// get key
 		$key = null;
+		$regType = 1; // new
 		// check if key exists
 		if(array_key_exists("key", $_GET)) {
 			$key = $_GET['key'];
@@ -34,6 +35,15 @@
 			include '../signupScripts/finishRegistration.php';
 			$data = getMentorData($key);
 			//echo '<pre>'.print_r($data, true).'</pre>'; //die();
+			
+			// get registration type
+			if(array_key_exists("t", $_GET)) {
+				$t = $_GET["t"];
+				if($t == 2)
+					$regType = 2; // need to complete
+				else
+					$regType = 3; // update
+			}
 		}
 	?>
 	
@@ -231,6 +241,7 @@
 								<input type="text" name="honeypot" placeholder="Leave Blank" class="honeypot" />
 								<input type="hidden" name="type" value="mentor" />
 								<input type="hidden" name="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
+								<input type="hidden" name="regType" value="<?php echo $regType; ?>" />
 								<input type="hidden" name="friends" value="<?php echo $numFriends; ?>"/>
 								<button id="mentorConfirmationBtn" class="btn btn-l right confirmationBtn">Confirmation &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
 							</div>

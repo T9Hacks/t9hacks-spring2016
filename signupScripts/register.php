@@ -105,7 +105,7 @@ include 'RegisterPerson.php';
 /* 		Test For Hidden Inputs			*/
 /* ************************************ */
 // test - hiden inputs
-if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) || !array_key_exists('friends', $_POST) || !array_key_exists('key', $_POST) ) {
+if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) || !array_key_exists('friends', $_POST) || !array_key_exists('key', $_POST) || !array_key_exists('regType', $_POST) ) {
 	
 	// bad - hiden inputs
 	$resultArray[$HIDDEN_INPUTS_MISSING] = 1;
@@ -119,10 +119,19 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 	
 	
 	
+	/* ******************************** */
+	/* 			Get hidden data			*/
+	/* ******************************** */
+	// get hidden data
+	$type = $_POST["type"];
+	$numFriends = $_POST['friends'];
+	$regType = $_POST['regType'];
+	$key = $_POST["key"];
+	
+	
 	/* ************************************************ */
 	/* 			Test For Correct Number of Friends		*/
 	/* ************************************************ */
-	$numFriends = $_POST['friends'];
 	// test - num friends
 	if( $numFriends != 0 && $numFriends != 1 && $numFriends != 2 && $numFriends != 3) {
 		
@@ -161,7 +170,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 			/* 		Test For Correct Signup Type		*/
 			/* **************************************** */
 			// test - signup type
-			if( $_POST['type'] != "participant" && $_POST['type'] != "mentor") {
+			if( $type != "participant" && $type != "mentor") {
 				
 				// bad - signup type
 				$resultArray[$WRONG_SIGNUP_TYPE] = 1;
@@ -177,17 +186,13 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 				// create database helper
 				$db = new DBHelperClass();
 				
-				// create array to store inputs
-				$selfInputNames = array();
-				$numReqInputs = 3;
-				
 				
 				
 				/* ************************************ */
 				/* 		Participant Registration		*/
 				/* ************************************ */
 				// test - participant flag
-				if($_POST['type'] == "participant") {
+				if($type == "participant") {
 				
 					// success - participant flag
 					$resultArray[$PARTICIPANT] = 1;
@@ -195,7 +200,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isParticipant = true;
 					
 					// input data
-					$inputNames = array( "name", "email", "college", "major", "phone", "linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "key", "resumeOld");
+					$inputNames = array( "name", "email", "college", "major", "phone", "linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "resumeOld");
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
 						'numReqInputs'	=> 5,
@@ -204,7 +209,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					
 					// register participant
 					//printArray($resultArray);
-					$resultArray = registerPerson(1, $db, $resultArray, $errorMessages, $inputs);
+					$resultArray = registerPerson(1, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
 					//printArray($resultArray);
 					
 					
@@ -212,7 +217,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 				/* 		Mentor Registration		*/
 				/* **************************** */
 				// test - mentor flag
-				} else if($_POST['type'] == "mentor") {
+				} else if($type == "mentor") {
 					
 					// success - mentor flag
 					$resultArray[$PARTICIPANT] = 0;
@@ -229,7 +234,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					
 					
 					// register mentor
-					$resultArray = registerPerson(2, $db, $resultArray, $errorMessages, $inputs);
+					$resultArray = registerPerson(2, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
 				}
 				
 				
@@ -254,7 +259,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 						
 						// register friend
 						$friendType = ($isParticipant) ? 1 : 2;
-						$resultArray = registerPerson((3+$i), $db, $resultArray, $errorMessages, $inputs, $friendType);
+						$resultArray = registerPerson((3+$i), $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType);
 					}
 				}
 				

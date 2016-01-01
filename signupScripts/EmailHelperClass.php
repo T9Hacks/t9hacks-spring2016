@@ -121,11 +121,11 @@ class EmailHelperClass {
 		
 		if($friendType == 1) {
 			$type = "participant";
-			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=".$key;
+			$link = "www.t9hacks.org/signupPages/signup-participant2.php?t=2&key=".$key;
 			
 		} else if ($friendType == 2) {
 			$type = "mentor";
-			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=".$key;
+			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?t=2&key=".$key;
 		}
 		
 		$message = EmailHelperClass::createEmailHeader() . "
