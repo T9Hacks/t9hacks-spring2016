@@ -223,7 +223,7 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $frie
 						$inputValues['resume'] = $inputValues['resumeOld'];
 						
 					} else {
-						echo "uploading resume";
+						//echo "uploading resume";
 						
 						// get unique date
 						$date = date("YmdHis");

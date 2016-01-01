@@ -16,7 +16,7 @@ $(document).ready(function(){
 	pFacebook();
 	pTwitter();
 	
-	pShirt();
+	pShirt($("input[name=shirt][checked=checked]").val());
 	
 	
 	/* get initial values of mentor form */
@@ -55,7 +55,7 @@ $("#participantPosition")	.change(function(){	pPosition(); 	});
 $("#participantFacebook")	.change(function(){ pFacebook(); 	});
 $("#participantTwitter")	.change(function(){ pTwitter(); 	});
 
-$("input[type=radio][name=shirt]").change(function(){ pShirt(); });
+$("input[name=shirt]")		.change(function(){ pShirt($(this).val());		});
 
 /* On change event for resume uploading */
 $("#resumeUploadInput").change(function() {
@@ -63,7 +63,6 @@ $("#resumeUploadInput").change(function() {
 	var file = res[res.length-1];
 	$("#resumeName").val(file);
 	$("#pResume").html(file);
-	console.log(file);
 });
 
 /* Functions for participant confirmation table */
@@ -82,7 +81,7 @@ function pPosition()	{ $("#pPosition")	.html($("#participantPosition")	.val()); 
 function pFacebook() 	{ $("#pFacebook")	.html($("#participantFacebook")	.val()); }
 function pTwitter() 	{ $("#pTwitter")	.html($("#participantTwitter")	.val()); }
 
-function pShirt()		{ $("#pShirt")		.html( $("input[type=radio][name=shirt][checked=checked]").val() ); }
+function pShirt(val)	{ $("#pShirt")		.html(val);								 }
 
 
 /* On change events for	mentor confirmation table */

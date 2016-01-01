@@ -61,7 +61,7 @@ class EmailHelperClass {
 							</td></tr>
 							
 							<tr><td style='padding: 0 20px;'>
-								<h3>Questions about the event?</h3>
+								<h3>Questions about this event?</h3>
 							</td></tr>
 							<tr><td style='padding: 0 20px 20px;'>
 								<p>

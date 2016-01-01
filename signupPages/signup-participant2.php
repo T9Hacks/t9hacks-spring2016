@@ -201,11 +201,11 @@
 							
 							<div class="fieldWrapper column12">
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xs' type='radio' name="shirt" value="X-Small" <?php echo (!is_null($key) && $data['shirt'] == "X-Small" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-xs' type='radio' name="shirt" value="X-Small" <?php echo (!is_null($key) && $data['shirt'] == "X-Small" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='X-Small' data-tg-on='X-Small' for='shirt-xs'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-s' type='radio' name="shirt" value="Small" <?php echo (!is_null($key) && $data['shirt'] == "Small" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-s' type='radio' name="shirt" value="Small" <?php echo (!is_null($key) && $data['shirt'] == "Small" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Small' data-tg-on='Small' for='shirt-s'></label>
 								</div>
 								<div class="fieldRadio">
@@ -215,23 +215,23 @@
 											$checked = 'checked="checked"';
 										}
 									?>
-									<input class='tgl tgl-flip' id='shirt-med' type='radio' name="shirt" value="Medium" <?php echo $checked; ?>>
+									<input class="tgl tgl-flip" id='shirt-med' type='radio' name="shirt" value="Medium" <?php echo $checked; ?>>
 	   								<label class='tgl-btn' data-tg-off='Medium' data-tg-on='Medium' for='shirt-med'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-lg' type='radio' name="shirt" value="Large" <?php echo (!is_null($key) && $data['shirt'] == "Large" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-lg' type='radio' name="shirt" value="Large" <?php echo (!is_null($key) && $data['shirt'] == "Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Large' data-tg-on='Large' for='shirt-lg'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xl' type='radio' name="shirt" value="X-Large" <?php echo (!is_null($key) && $data['shirt'] == "X-Large" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-xl' type='radio' name="shirt" value="X-Large" <?php echo (!is_null($key) && $data['shirt'] == "X-Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='X-Large' data-tg-on='X-Large' for='shirt-xl'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xxl' type='radio' name="shirt" value="XX-Large" <?php echo (!is_null($key) && $data['shirt'] == "XX-Large" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-xxl' type='radio' name="shirt" value="XX-Large" <?php echo (!is_null($key) && $data['shirt'] == "XX-Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='XX-Large' data-tg-on='XX-Large' for='shirt-xxl'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-none' type='radio' name="shirt" value="None" <?php echo (!is_null($key) && $data['shirt'] == "None" ) ? 'checked="checked"' : ""; ?>>
+									<input class="tgl tgl-flip" id='shirt-none' type='radio' name="shirt" value="None" <?php echo (!is_null($key) && $data['shirt'] == "None" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='None' data-tg-on='None' for='shirt-none'></label>
 								</div>
 							</div>
