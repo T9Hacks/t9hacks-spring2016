@@ -35,6 +35,26 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		}
 	}
 	
+	if(array_key_exists("checkIn", $_POST) && $_POST["checkIn"] == 1) {
+	
+		// check if id exists
+		if(array_key_exists("id", $_POST)) {
+			// get id
+			$id = $_POST["id"];
+			$type = $_POST["type"];
+			
+			// check in id
+			$db->checkInRecord($id, $type);
+			
+			// close helper
+			$db->close();
+			
+			// relocate to same page without post data
+			header('Location: view.php');
+			
+		}
+	}
+	
 	// get participants
 	$participants = $db->getParticipants();
 	
@@ -129,109 +149,66 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		</form>
 		<?php 
 	} else if($isSession) {
-		?>
-		<h1>Participants</h1>
-		<table>
-			<thead>
-				<tr>
-					<th>Delete</th>
-					<th>ID</th>
-					<th>Key</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>College</th>
-					<th>Major</th>
-					<th>Phone</th>
-					<th>Linkedin</th>
-					<th>Resume</th>
-					<th>Website</th>
-					<th>Github</th>
-					<th>Company</th>
-					<th>Position</th>
-					<th>Facebook</th>
-					<th>Twitter</th>
-					<th>Shirt</th>
-					<th>Date</th>
-					<th>Complete</th>
-					<th>Signed-in</th>
-				</tr>
-			</thead>
-			<?php 
-			foreach($participants as $key => $participant) {
-				if($participant["deleted"] == 0) {
-					?>
-					<tr>
-						<td>
-							<form action="view.php" method="POST">
-								<input type="hidden" name="id" value="<?php echo $participant["id"]; ?>">
-								<input type="hidden" name="delete" value="1">
-								<input type="hidden" name="type" value="1">
-								<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
-							</form>
-						</td>
-						<?php 
-						foreach($participant as $k => $value) {
-							if($k != "deleted")
-								echo '<td>' . $value . '</td>';
-						}
-					echo '</tr>';
-				}
-			}
-			?>
-		</table>
+
+		$allPeople = array("Participants" => $participants, "Mentors" => $mentors);
 		
-		<h1>Mentors</h1>
-		<table>
-			<thead>
-				<tr>
-					<th>Delete</th>
-					<th>ID</th>
-					<th>Key</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Phone</th>
-					<th>Company</th>
-					<th>Position</th>
-					<th>Breakfast</th>
-					<th>Lunch</th>
-					<th>Dinner</th>
-					<th>Area Web Design</th>
-					<th>Area Web Dev</th>
-					<th>Area Android</th>
-					<th>Area iOS</th>
-					<th>Area UI/UX</th>
-					<th>Area Gaming</th>
-					<th>Area Print Media</th>
-					<th>Area Arduino</th>
-					<th>Date</th>
-					<th>Complete</th>
-					<th>Signed-in</th>
-				</tr>
-			</thead>
-			<?php 
-			foreach($mentors as $key => $mentor) {
-				if($mentor["deleted"] == 0) {
-					?>
-					<tr>
-						<td>
-							<form action="view.php" method="POST">
-								<input type="hidden" name="id" value="<?php echo $mentor["id"]; ?>">
-								<input type="hidden" name="delete" value="1">
-								<input type="hidden" name="type" value="2">
-								<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
-							</form>
-						</td>
-						<?php
-						foreach($mentor as $k => $value) {
-							if($k != "deleted")
-								echo '<td>' . $value . '</td>';
-						}
-						echo '</tr>';
-				}
-			}
+		foreach($allPeople as $name => $peopleArray) {
 			?>
-		</table>
-		<?php 
+			<h1><?php echo $name; ?></h1>
+			<table>
+				<?php 
+				$printedHeaders = false;
+				foreach($peopleArray as $key => $person) {
+					// print headers
+					if(!$printedHeaders) {
+						echo "<thead><tr>";
+						echo "<th class='action'>Delete</th>";
+						echo "<th class='action'>Check-in</th>";
+						foreach($person as $k => $value) {
+							if($k != "deleted") 
+								echo "<th>" . $k . "</th>"; 
+						}
+						echo "</tr></thead>";
+						$printedHeaders = true;
+					}
+					
+					// only print row if deleted is false
+					if($person["deleted"] == 0) {
+						?>
+						<tr>
+							<td>
+								<form action="view.php" method="POST">
+									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+									<input type="hidden" name="delete" value="1">
+									<input type="hidden" name="type" value="<?php echo ($name == "Participants") ? 1 : 2; ?>">
+									<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
+								</form>
+							</td>
+							<td>
+								<form action="view.php" method="POST">
+									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+									<input type="hidden" name="checkIn" value="1">
+									<input type="hidden" name="type" value="<?php echo ($name == "Participant") ? 1 : 2; ?>">
+									<button type="submit" class="checkInBtn"><i class="fa fa-check"></i></button>
+								</form>
+							</td>
+							<?php 
+							foreach($person as $k => $value) {
+								if($k != "deleted") {
+									echo '<td>' . $value . '</td>';
+								}
+							}
+							?>
+						</tr>
+						<?php 
+					} // end if for deleted
+					
+				} // end foreach
+				?>
+			</table>
+			
+		<?php
+		}
 	}
 	?>
 	
