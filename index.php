@@ -66,61 +66,61 @@
 				</div>
 
 
-<div class="countdown countdown-container container" data-border-color="rgba(255, 255, 255, .8)">
-    <div class="clock row">
-        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
-            <div class="wrap">
-                <div class="inner">
-                    <div id="canvas-days" class="clock-canvas"></div>
+				<div class="countdown countdown-container container" data-border-color="rgba(255, 255, 255, .8)">
+				    <div class="clock row">
+				        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+				            <div class="wrap">
+				                <div class="inner">
+				                    <div id="canvas-days" class="clock-canvas"></div>
 
-                    <div class="text">
-                        <p class="type-days type-time">DAYS</p>
-                        <p class="val">0</p>
-                    </div><!-- /.text -->
-                </div><!-- /.inner -->
-            </div><!-- /.wrap -->
-        </div><!-- /.clock-item -->
+				                    <div class="text">
+				                        <p class="type-days type-time">DAYS</p>
+				                        <p class="val">0</p>
+				                    </div><!-- /.text -->
+				                </div><!-- /.inner -->
+				            </div><!-- /.wrap -->
+				        </div><!-- /.clock-item -->
 
-        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
-            <div class="wrap">
-                <div class="inner">
-                    <div id="canvas-hours" class="clock-canvas"></div>
+				        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+				            <div class="wrap">
+				                <div class="inner">
+				                    <div id="canvas-hours" class="clock-canvas"></div>
 
-                    <div class="text">
-                        <p class="type-hours type-time">HOURS</p>
-                        <p class="val">0</p>
-                    </div><!-- /.text -->
-                </div><!-- /.inner -->
-            </div><!-- /.wrap -->
-        </div><!-- /.clock-item -->
+				                    <div class="text">
+				                        <p class="type-hours type-time">HOURS</p>
+				                        <p class="val">0</p>
+				                    </div><!-- /.text -->
+				                </div><!-- /.inner -->
+				            </div><!-- /.wrap -->
+				        </div><!-- /.clock-item -->
 
-        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
-            <div class="wrap">
-                <div class="inner">
-                    <div id="canvas-minutes" class="clock-canvas"></div>
+				        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+				            <div class="wrap">
+				                <div class="inner">
+				                    <div id="canvas-minutes" class="clock-canvas"></div>
 
-                    <div class="text">
-                        <p class="type-minutes type-time">MINUTES</p>
-                        <p class="val">0</p>
-                    </div><!-- /.text -->
-                </div><!-- /.inner -->
-            </div><!-- /.wrap -->
-        </div><!-- /.clock-item -->
+				                    <div class="text">
+				                        <p class="type-minutes type-time">MINUTES</p>
+				                        <p class="val">0</p>
+				                    </div><!-- /.text -->
+				                </div><!-- /.inner -->
+				            </div><!-- /.wrap -->
+				        </div><!-- /.clock-item -->
 
-        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
-            <div class="wrap">
-                <div class="inner">
-                    <div id="canvas-seconds" class="clock-canvas"></div>
+				        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+				            <div class="wrap">
+				                <div class="inner">
+				                    <div id="canvas-seconds" class="clock-canvas"></div>
 
-                    <div class="text">
-                        <p class="type-seconds type-time">SECONDS</p>
-                        <p class="val">0</p>
-                    </div><!-- /.text -->
-                </div><!-- /.inner -->
-            </div><!-- /.wrap -->
-        </div><!-- /.clock-item -->
-    </div><!-- /.clock -->
-</div><!-- /.countdown-wrapper -->
+				                    <div class="text">
+				                        <p class="type-seconds type-time">SECONDS</p>
+				                        <p class="val">0</p>
+				                    </div><!-- /.text -->
+				                </div><!-- /.inner -->
+				            </div><!-- /.wrap -->
+				        </div><!-- /.clock-item -->
+				    </div><!-- /.clock -->
+				</div><!-- /.countdown-wrapper -->
 
 
 
@@ -171,14 +171,6 @@
 						those numbers!
 					</p>
 				</div>
-<!--					<div class="column8">
-						<p>
-							Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
-							students to explore new technologies, solve problems, and create something amazing with a 
-							team. Women occupy only 26% of IT positions and 18% of engineering majors in universities, and we want to help raise
-							those numbers!
-						</p>
-					</div>-->
 			</div>
 
 			<div class="row">
@@ -474,20 +466,20 @@
 	<script src="js/p5_starburst.js"></script>
 	
 	<!-- Clockwork -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/kinetic.js"></script>
-<script type="text/javascript" src="js/jquery.final-countdown.min.js"></script>
-<script type="text/javascript">  
-    $('document').ready(function() {
-        'use strict';
-        
-    	$('.countdown').final_countdown({
-            'start': 1362139200,
-            'end': 1455984000,
-            'now': $.now()/1000        
-        });
-    });
-</script>
+	<script type="text/javascript" src="js/kinetic.js"></script>
+	<script type="text/javascript" src="js/jquery.final-countdown.min.js"></script>
+	<script type="text/javascript">  
+	    $('document').ready(function() {
+	        'use strict';
+
+	        
+	    	$('.countdown').final_countdown({
+	            'start': 1362139200,
+	            'end': 1455984000,
+	            'now': $.now()/1000        
+	        });
+	    });
+	</script>
 	
 
 	</body>
