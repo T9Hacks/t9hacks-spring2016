@@ -1,5 +1,5 @@
 
-
+/*
 html {
 	background-image: url('../img/sample.jpg');
 	background-position: center center;
@@ -14,7 +14,11 @@ body {
 	background-repeat: repeat;
 	font-family: 'Raleway', 'Arial', sans-serif;
 }
+*/
 
+body{
+	background-color: orange;
+}
 .clock {
 	height: 100px;
 }
@@ -36,6 +40,7 @@ canvas {
 .clock-item {
 	max-width: 200px;
 	max-height: 200px;
+	height: auto;
 }
 
 .clock-item .inner {
