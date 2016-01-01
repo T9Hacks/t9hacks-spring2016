@@ -27,7 +27,7 @@ body, html {
 	-webkit-box-sizing: border-box;
 }
 h1, h2, h3, h4 {
-	font-family: "Gruppo", Helvetica, sans-serif;
+	font-family: "Raleway", Helvetica, sans-serif;
 	 font-weight: bold;
 }
 h1 { 
@@ -58,6 +58,12 @@ a {
 	border-bottom: 1px solid #000;
 	outline: 0;
 }
+
+a.hiddenLink {
+    color: #fff;
+    border: none;
+}
+
 a:hover, a:focus, a:active {
 	text-decoration: none;
 	cursor: pointer;
@@ -159,7 +165,7 @@ img::selection, img::-moz-selection {
 }
 /* Info */
 .bg-grey {
-	background: #BBB;
+	background: #553377;
 }
 
 /* Any background with an image */
@@ -618,6 +624,7 @@ header {
 }
 .infoSection {
 	padding: 0 10px;
+        color: #000;
 }
 .infoSection h2 {
 	margin: 20px 0;
@@ -687,7 +694,7 @@ footer .copyright {
 }
 
 /* ************************ */
-/*		Social Buttons		*/
+/*    Social Buttons        */
 /* ************************ */
 .socialButtons {
 	list-style-type: none;
