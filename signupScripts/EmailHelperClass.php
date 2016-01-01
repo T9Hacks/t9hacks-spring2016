@@ -312,6 +312,14 @@ class EmailHelperClass {
 			}
 		}
 		
+		if(array_key_exists("extra", $inputValues)) {
+			$message .= "<tr><td colspan='2'><h2>Input Values - Extra</h2></td></tr>";
+			foreach($inputValues["extra"] as $k => $friend) {
+				foreach($friend as $key => $value)
+					$message .= "<tr><td>$key</td><td>$value</td></tr>";
+			}
+		}
+		
 		$message .= "</table></body></html>";
 		//echo $message; die();
 		

@@ -123,10 +123,11 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 	/* 			Get hidden data			*/
 	/* ******************************** */
 	// get hidden data
-	$type = $_POST["type"];
-	$numFriends = $_POST['friends'];
-	$regType = $_POST['regType'];
-	$key = $_POST["key"];
+	$type		= $_POST["type"];		$allInputValues["extra"]["type"] 		= $type;
+	$numFriends	= $_POST['friends'];	$allInputValues["extra"]["numFriends"]	= $numFriends;
+	$regType	= $_POST['regType'];	$allInputValues["extra"]["regType"] 	= $regType;
+	$key		= $_POST["key"];		$allInputValues["extra"]["key"] 		= $key;
+	
 	
 	
 	/* ************************************************ */

@@ -40,6 +40,19 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 	$isUpdate = ($regType == 3) ? true : false;
 	
 	
+	if($isParticipant) 
+		$resultArray[$PARTICIPANT_KEY] = $key;
+	else if($isMentor) 
+		$resultArray[$MENTOR_KEY] = $key;
+	else if($isFriend1) 
+		$resultArray[$FRIEND_1_KEY] = $key;
+	else if($isFriend2) 
+		$resultArray[$FRIEND_2_KEY] = $key;
+	else if($isFriend3) 
+		$resultArray[$FRIEND_3_KEY] = $key;
+	
+	
+	
 	
 	
 	

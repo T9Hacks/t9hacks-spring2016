@@ -28,7 +28,7 @@
 					</div>
 				</div>
 			</div>
-			<?php if(true) { ?>
+			<?php if(false) { ?>
 			<div class="row" id="signupWait">
 				<div class="signupWrapper">
 				<div class="column12">

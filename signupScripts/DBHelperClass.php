@@ -285,6 +285,27 @@ class DBHelperClass {
 	
 	
 	
+	function login($username, $password) {
+		$passwordHash = sha1($password);
+		
+		$stmt = $this->conn->prepare("SELECT COUNT(*) AS c FROM `t9hacks_users` WHERE `username` = :username AND `password_hash` = :passwordHash");
+		$stmt->bindParam(':username', $username);
+		$stmt->bindParam(':passwordHash', $passwordHash);
+		$stmt->execute();
+		
+		// store data in array
+		$pCount = array();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
+			$pCount = $row;
+		}
+		
+		// test if email used
+		return ($pCount["c"] == 1);
+	}
+	
+	
+	
+	
 	function close() {
 		$conn = null;
 	}
