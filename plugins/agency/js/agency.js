@@ -10,12 +10,12 @@ $(function() {
     	event.preventDefault();
     	
     	// offset by height 
-    	/*
+    	
         var $anchor = $(this);
         var navHeight = $(".navbar").innerHeight();
         var offset = $($anchor.attr('href')).offset().top;
         if(! $anchor.hasClass("navbar-brand")) { offset-=navHeight; }
-        */
+        
         	
         $('html, body').stop().animate({
             scrollTop: offset
