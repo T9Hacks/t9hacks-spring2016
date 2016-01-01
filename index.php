@@ -64,7 +64,7 @@
 
 				<div class="row">
 					<div class="column12">
-						<p><span class="fa fa-clock-o"></span>&nbsp;&nbsp;20 February 2016</p>
+						<p><span class="fa fa-clock-o"></span>&nbsp;&nbsp;20-21 February 2016</p>
 						<p><span class="fa fa-map-marker"></span>&nbsp;&nbsp;ATLAS Institute, University of Colorado Boulder</p>
 						<p><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;Black Box Experimental Studio</p>
 					</div>
@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="column12">
 					<p>
-						T9Hacks is a 24 hour female hackathon at the University of Colorado Boulder's ATLAS Institute 
+						T9Hacks is a 24 hour hackathon at the University of Colorado Boulder's ATLAS Institute 
 						that brings together students for a day of creativity, building, and hacking.
 						Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
 						students to explore new technologies, solve problems, and create something amazing with a 
@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				<div class="column6 faq">
-					<i class="faq-icon fa fa-bug"></i>
+					<i class="faq-icon fa fa-code-fork"></i>
 					<div class="faq-question">
 						<h2>What is "hacking"?</h2>
 						<p>
@@ -208,33 +208,43 @@
 			<div class="row">
 				<div class="scheduleOuter"><div class="scheduleInner">
 					<div class="scheduleSection">
+						<h2 class="white">Saturday, February 20</h2>
 						<div class="times">
-							<p>8:30am</p>
-							<p>9:00am</p>
-							<p>9:30am</p>
-							<p>10:30am</p>
-							<p>12:00pm</p>
+							<p><i class="fa fa-th-list"></i> 3:00pm</p>
+							<p><i class="fa fa-quote-left"></i> 3:30pm</p>
+							<p><i class="fa fa-battery-full"></i> 4:00pm</p>
+							<p><i class="fa fa-cutlery"></i> 6:30pm</p>
+							<p><i class="fa fa-star"></i> 8:00pm</p>
+							<p><i class="fa fa-star"></i> 11:00pm</p>
+							<p><i class="fa fa-cutlery"></i> 12:00am</p>
 						</div>
 						<div class="events">
-							<p>Check-in and Breakfast</p>
-							<p>Opening ceremonies</p>
+							<p>Check-in Starts</p>
+							<p>Opening Ceremonies</p>
 							<p>Hacking Begins</p>
+							<p>Dinner</p>
+							<p>Mini Challenge #1</p>
+							<p>Mini Challenge #2</p>
 							<p>Snack</p>
-							<p>Lunch</p>
 						</div>
 					</div>
 					<div class="scheduleSection">
+						<h2 class="white">Sunday, February 22</h2>
 						<div class="times">
-							<p>6:00pm</p>
-							<p>7:30pm</p>
-							<p>8:15pm</p>
-							<p>8:30pm</p>
+							<p><i class="fa fa-coffee"></i> 9:00am</p>
+							<p><i class="fa fa-star"></i> 10:00am</p>
+							<p><i class="fa fa-cutlery"></i> 12:30pm</p>
+							<p><i class="fa fa-battery-empty"></i> 4:00pm</p>
+							<p><i class="fa fa-trophy"></i> 4:30pm</p>
+							<p><i class="fa fa-quote-right"></i> 5:30pm</p>
 						</div>
 						<div class="events">
-							<p>Dinner</p>
-							<p>Dessert</p>
+							<p>Breakfast</p>
+							<p>Mini Challenge #3</p>
+							<p>Lunch</p>
 							<p>Hacking Ends</p>
 							<p>Presentations</p>
+							<p>End Ceremonies</p>
 						</div>
 					</div>
 				</div></div>

@@ -450,12 +450,21 @@ header {
 	float: left;
 	margin: 0 100px;
 }
+.scheduleSection h2 {
+	margin-bottom: 20px;
+	text-align: left;
+}
 .times, .events {
 	display: inline-block;
 	float: left;
 	text-align: left;
-	}
-	.times { width: 85px; }
+}
+.times { width: 130px; }
+.times i { 
+	width: 23px; 
+	margin-right: 10px;
+	display: none;
+}
 @media (max-width: 991px) {
 	.scheduleSection {
 		margin: 0 50px;
