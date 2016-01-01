@@ -177,11 +177,6 @@ img::selection, img::-moz-selection {
 section {
 	padding: 100px 0;
 }
-@media (max-width: 767px) {
-	section {
-		padding: 70px 0;
-	}
-}
 
 
 
@@ -635,17 +630,20 @@ header {
 /* ******************** */
 /*		Team Page		*/
 /* ******************** */
+.teamMemberContainer { text-align: center; }
 .teamMember {
+	width: 70%;
+	display: inline-block;
     margin-bottom: 50px;
-    text-align: center;
+    color: white;
 }
 .teamMember img {
-	width: 60%;
+	width: 100%;
     margin: 0 auto;
-    border: 7px solid #553377;
+    border-radius: 12%;
 }
 .teamMember h3 {
-	margin-top: 15px;
+	margin: 15px 0 10px;
 }
 .teamMember p {
     margin-top: 0;
@@ -653,11 +651,10 @@ header {
 .teamMember .socialButtons a {
 	background-color: black;
 	color: white;
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
 	font-size: 20px;
-	
 }
 
 
