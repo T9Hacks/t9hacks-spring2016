@@ -37,13 +37,13 @@
 			//echo '<pre>'.print_r($data, true).'</pre>'; //die();
 			
 			// get registration type
-			if(array_key_exists("t", $_GET)) {
+			$t = -1;
+			if(array_key_exists("t", $_GET))
 				$t = $_GET["t"];
-				if($t == 2)
-					$regType = 2; // need to complete
-				else
-					$regType = 3; // update
-			}
+			if($t == 2)
+				$regType = 2; // need to complete
+			else
+				$regType = 3; // update
 		}
 	?>
 	

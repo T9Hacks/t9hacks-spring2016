@@ -35,9 +35,9 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 	$numReqInputs = $inputs['numReqInputs'];
 	$numTextInputs = $inputs['numTextInputs'];
 	
-	$isNew = ($regType == 1);
-	$isComplete = ($regType == 2);
-	$isUpdate = ($regType == 3);
+	$isNew = ($regType == 1) ? true : false;
+	$isComplete = ($regType == 2) ? true : false;
+	$isUpdate = ($regType == 3) ? true : false;
 	
 	
 	
@@ -319,8 +319,8 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 						/* 		Send Self Email Test		*/
 						/* ******************************** */
 						$emailSuccess = false;
-						// if new, send email
-						if($isNew && $isComplete) {
+						// if new or complete, send email
+						if($isNew || $isComplete) {
 							// send email
 							$emailResult = false;
 							if($isParticipant || $isMentor)
@@ -384,8 +384,8 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 		
 	} // end else for missing inputs test
 	
-	
-	return $resultArray;
+
+	return array("resultArray" => $resultArray, "inputValues" => $inputValues);
 	
 }
 

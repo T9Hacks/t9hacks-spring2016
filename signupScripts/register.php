@@ -25,7 +25,7 @@ date_default_timezone_set('America/Denver');
 $isParticipant = false;
 $isMentor = false;
 $isFriend = false;
-$selfInputValues = array();
+$allInputValues = array();
 
 include 'resultArrayIndex.php';
 
@@ -208,9 +208,9 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					);					
 					
 					// register participant
-					//printArray($resultArray);
-					$resultArray = registerPerson(1, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
-					//printArray($resultArray);
+					$results = registerPerson(1, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
+					$resultArray = $results["resultArray"];
+					$allInputValues["participant"] = $results["inputValues"];
 					
 					
 				/* **************************** */
@@ -234,7 +234,9 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					
 					
 					// register mentor
-					$resultArray = registerPerson(2, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
+					$results = registerPerson(2, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
+					$resultArray = $results["resultArray"];
+					$allInputValues["mentor"] = $results["inputValues"];
 				}
 				
 				
@@ -259,7 +261,9 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 						
 						// register friend
 						$friendType = ($isParticipant) ? 1 : 2;
-						$resultArray = registerPerson((3+$i), $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType);
+						$results = registerPerson((3+$i), $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType);
+						$resultArray = $results["resultArray"];
+						$allInputValues["friends"][] = $results["inputValues"];
 					}
 				}
 				
@@ -297,6 +301,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 				
 				
 				
+				
 			} // end - signup test
 			
 		} // end - honeypot
@@ -314,8 +319,10 @@ $jsonResult = json_encode($resultArray);
 // print array to screen as results
 print_r($jsonResult); 
 
-// send me an email
-EmailHelperClass::createAndSendEmail_Register($resultArray, $selfInputValues);
+// send registration an email
+//printArray($allInputValues); die();
+EmailHelperClass::createAndSendEmail_Register($resultArray, $allInputValues);
+
 
 die();
 

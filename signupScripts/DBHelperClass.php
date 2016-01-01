@@ -235,12 +235,12 @@ class DBHelperClass {
 	
 	
 	function participantEmailRegistered($email) {
-		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_participants` WHERE `email` = :email";
+		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_participants` WHERE `email` = :email AND `deleted` = 0";
 		return $this->emailRegistered($email, $sql);
 	}
 	
 	function mentorEmailRegistered($email) {
-		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_mentors` WHERE `email` = :email";
+		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_mentors` WHERE `email` = :email AND `deleted` = 0";
 		return $this->emailRegistered($email, $sql);
 	}
 	
@@ -261,6 +261,27 @@ class DBHelperClass {
 		// test if email used
 		return ($pCount["c"] != 0);
 	}
+	
+	
+	
+	
+	function deleteRecord($id, $type) {
+		// prepare statement
+		if($type == 1)
+			$prepStmt = "UPDATE `t9hacks_participants` SET `deleted` = 1 WHERE `id` = :id";
+		if($type == 2)
+			$prepStmt = "UPDATE `t9hacks_mentors` SET `deleted` = 1 WHERE `id` = :id";
+		$stmt = $this->conn->prepare($prepStmt);
+		$stmt->bindParam(':id',$id);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
 	
 	
 	

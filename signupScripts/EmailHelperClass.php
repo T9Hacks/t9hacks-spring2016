@@ -273,7 +273,7 @@ class EmailHelperClass {
 	
 	
 	/*
-	 * Create and send email to brittany for every registration
+	 * Create and send email for every registration
 	 */
 	function createAndSendEmail_Register($resultArray, $inputValues) {
 		// res
@@ -284,15 +284,36 @@ class EmailHelperClass {
 		
 		// create message
 		$message = "<html><head></head><body><h1>$res</h1><table>";
+		
 		$message .= "<tr><td colspan='2'><h2>Register Error Results</h2></td></tr>";
 		foreach($resultArray as $key => $value) {
 			$message .= "<tr><td>$key</td><td>$value</td></tr>";
 		}
-		$message .= "<tr><td colspan='2'><h2>Input Values</h2></td></tr>";
-		foreach($inputValues as $key => $value) {
-			$message .= "<tr><td>$key</td><td>$value</td></tr>";
+		
+		if(array_key_exists("participant", $inputValues)) {
+			$message .= "<tr><td colspan='2'><h2>Input Values - Participant</h2></td></tr>";
+			foreach($inputValues["participant"] as $key => $value) {
+				$message .= "<tr><td>$key</td><td>$value</td></tr>";
+			}
 		}
+		
+		if(array_key_exists("mentor", $inputValues)) {
+			$message .= "<tr><td colspan='2'><h2>Input Values - Mentor</h2></td></tr>";
+			foreach($inputValues["mentor"] as $key => $value) {
+				$message .= "<tr><td>$key</td><td>$value</td></tr>";
+			}
+		}
+		
+		if(array_key_exists("friends", $inputValues)) {
+			$message .= "<tr><td colspan='2'><h2>Input Values - Friends</h2></td></tr>";
+			foreach($inputValues["friends"] as $k => $friend) {
+				foreach($friend as $key => $value)
+					$message .= "<tr><td>$key</td><td>$value</td></tr>";
+			}
+		}
+		
 		$message .= "</table></body></html>";
+		//echo $message; die();
 		
 		// create send to
 		$sendTo = "Brittany <britkos@gmail.com>";
