@@ -210,13 +210,14 @@
 					<div class="scheduleSection">
 						<h2 class="white">Saturday, February 20</h2>
 						<div class="times">
-							<p><i class="fa fa-th-list"></i> 3:00pm</p>
-							<p><i class="fa fa-quote-left"></i> 3:30pm</p>
-							<p><i class="fa fa-battery-full"></i> 4:00pm</p>
-							<p><i class="fa fa-cutlery"></i> 6:30pm</p>
-							<p><i class="fa fa-star"></i> 8:00pm</p>
-							<p><i class="fa fa-star"></i> 11:00pm</p>
-							<p><i class="fa fa-cutlery"></i> 12:00am</p>
+							<p>3:00pm</p>
+							<p>3:30pm</p>
+							<p>4:00pm</p>
+							<p>6:30pm</p>
+							<p>8:00pm</p>
+							<p>11:00pm</p>
+							<p>12:00am</p>
+                                                        <p>2:00am</p>
 						</div>
 						<div class="events">
 							<p>Check-in Starts</p>
@@ -224,6 +225,7 @@
 							<p>Hacking Begins</p>
 							<p>Dinner</p>
 							<p>Mini Challenge #1</p>
+                                                        <p>Dessert</p>
 							<p>Mini Challenge #2</p>
 							<p>Snack</p>
 						</div>
@@ -231,12 +233,12 @@
 					<div class="scheduleSection">
 						<h2 class="white">Sunday, February 22</h2>
 						<div class="times">
-							<p><i class="fa fa-coffee"></i> 9:00am</p>
-							<p><i class="fa fa-star"></i> 10:00am</p>
-							<p><i class="fa fa-cutlery"></i> 12:30pm</p>
-							<p><i class="fa fa-battery-empty"></i> 4:00pm</p>
-							<p><i class="fa fa-trophy"></i> 4:30pm</p>
-							<p><i class="fa fa-quote-right"></i> 5:30pm</p>
+							<p>7:30am</p>
+							<p>10:00am</p>
+							<p>12:30pm</p>
+							<p>4:00pm</p>
+							<p>4:30pm</p>
+							<p>5:30pm</p>
 						</div>
 						<div class="events">
 							<p>Breakfast</p>
