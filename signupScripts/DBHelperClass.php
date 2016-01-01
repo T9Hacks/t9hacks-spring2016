@@ -1,7 +1,5 @@
 <?php
 
-include '../hidden/db-info.php';
-
 class DBHelperClass {
 	var $conn = null;
 	
@@ -30,14 +28,35 @@ class DBHelperClass {
 		//die();
 	}
 	
-	function addParticipant($inputValues, $key) {
+	function addParticipant($inputValues, $key, $isNew) {
 		// get current datetime
 		$datetime = date("Y-m-d H:i:s");
 		
 		// prepare statement
-		$prepStmt = "INSERT INTO `t9hacks_participants` 
-				(`key`, `name`, `email`, `college`, `major`, `phone`, `linkedin`, `resume`, `website`, `github`, `company`, `position`, `facebook`, `twitter`, `shirt`, `date`, `complete_registration`) 
+		if($isNew) {
+			$prepStmt = "INSERT INTO `t9hacks_participants` 
+				(`key`, `name`, `email`, `college`, `major`, `phone`, `linkedin`, `resume`, `website`, `github`, `company`, `position`, `facebook`, `twitter`, `shirt`, `datetime`, `complete`) 
 				VALUES (:key, :name, :email, :college, :major, :phone, :linkedin, :resume, :website, :github, :company, :position, :facebook, :twitter, :shirt, :datetime, 1)";
+		} else {
+			$prepStmt = "UPDATE `t9hacks_participants` 
+				SET `name` 		= :name, 
+					`email` 	= :email, 
+					`college`	= :college, 
+					`major`		= :major, 
+					`phone`		= :phone, 
+					`linkedin`	= :linkedin, 
+					`resume`	= :resume, 
+					`website`	= :website, 
+					`github`	= :github, 
+					`company`	= :company, 
+					`position`	= :position, 
+					`facebook`	= :facebook, 
+					`twitter`	= :twitter, 
+					`shirt`		= :shirt, 
+					`datetime`	= :datetime, 
+					`complete`	= 1 
+				WHERE key = :key";
+		}
 		$stmt = $this->conn->prepare($prepStmt);
 		$stmt->bindParam(':key', 		$key);
 		$stmt->bindParam(':name', 		$inputValues['name']);
@@ -64,14 +83,60 @@ class DBHelperClass {
 		return($updateCount>0);
 	}
 	
-	function addMentor($inputValues, $key) {
+	function addParticipantFriend($inputValues, $key) {
 		// get current datetime
 		$datetime = date("Y-m-d H:i:s");
 		
 		// prepare statement
-		$prepStmt = "INSERT INTO `t9hacks_mentors` 
-				(`key`, `name`, `email`, `phone`, `company`, `position`, `breakfast`, `lunch`, `dinner`, `area_web_design`, `area_web_dev`, `area_android`, `area_ios`, `area_uiux`, `area_gaming`, `area_print`, `area_arduino`, `date`, `complete_registration`)  
+		$prepStmt = "INSERT INTO `t9hacks_participants` 
+				(`key`, `name`, `email`, `datetime`, `complete`) 
+				VALUES (:key, :name, :email, :datetime, 0)";
+		$stmt = $this->conn->prepare($prepStmt);
+		$stmt->bindParam(':key', 		$key);
+		$stmt->bindParam(':name', 		$inputValues['name']);
+		$stmt->bindParam(':email', 		$inputValues['email']);
+		$stmt->bindParam(':datetime', 	$datetime);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
+	function addMentor($inputValues, $key, $isNew) {
+		// get current datetime
+		$datetime = date("Y-m-d H:i:s");
+		
+		// prepare statement
+		if($isNew) {
+			$prepStmt = "INSERT INTO `t9hacks_mentors` 
+				(`key`, `name`, `email`, `phone`, `company`, `position`, `breakfast`, `lunch`, `dinner`, `area_web_design`, `area_web_dev`, `area_android`, `area_ios`, `area_uiux`, `area_gaming`, `area_print`, `area_arduino`, `datetime`, `complete`)  
 				VALUES (:key, :name, :email, :phone, :company, :position, :breakfast, :lunch, :dinner, :area_web_design, :area_web_dev, :area_android, :area_ios, :area_uiux, :area_gaming, :area_print, :area_arduino, :datetime, 1)";
+		} else {
+			$prepStmt = "UPDATE `t9hacks_mentors` 
+				SET `key`				= :key, 
+					`name`				= :name, 
+					`email`				= :email, 
+					`phone`				= :phone, 
+					`company`			= :company, 
+					`position`			= :position, 
+					`breakfast`			= :breakfast, 
+					`lunch`				= :lunch, 
+					`dinner`			= :dinner, 
+					`area_web_design`	= :area_web_design, 
+					`area_web_dev`		= :area_web_dev, 
+					`area_android`		= :area_android, 
+					`area_ios`			= :area_ios, 
+					`area_uiux`			= :area_uiux, 
+					`area_gaming`		= :area_gaming, 
+					`area_print`		= :area_print, 
+					`area_arduino`		= :area_arduino, 
+					`datetime`			= :datetime, 
+					`complete`			= 1 
+				WHERE `key` = :key";
+		}
 		$stmt = $this->conn->prepare($prepStmt);
 		$stmt->bindParam(':key', 			$key);
 		$stmt->bindParam(':name', 			$inputValues['name']);
@@ -100,12 +165,39 @@ class DBHelperClass {
 		return($updateCount>0);
 	}
 	
+	function addMentorFriend($inputValues, $key) {
+		// get current datetime
+		$datetime = date("Y-m-d H:i:s");
+		
+		// prepare statement
+		$prepStmt = "INSERT INTO `t9hacks_mentors` 
+				(`key`, `name`, `email`, `datetime`, `complete`)  
+				VALUES (:key, :name, :email, :datetime, 0)";
+		$stmt = $this->conn->prepare($prepStmt);
+		$stmt->bindParam(':key', 			$key);
+		$stmt->bindParam(':name', 			$inputValues['name']);
+		$stmt->bindParam(':email', 			$inputValues['email']);
+		$stmt->bindParam(':datetime', 		$datetime);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
 	
 	
-	// getters for view page
-	function getParticipants() {
-		// get all participants
-		$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_participants`"); 
+	
+	// getters 
+	function getParticipants($key = null) {
+		// get participant(s)
+		if(is_null($key)) {
+			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_participants`"); 
+		} else {
+			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_participants` WHERE `key` = :key");
+			$stmt->bindParam(':key', $key);
+		}
 		
 		// run
 		$stmt->execute();
@@ -119,20 +211,25 @@ class DBHelperClass {
 		return $participants;
 	}
 	
-	function getMentors() {
-		// get all mentors
-		$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_mentors`"); 
+	function getMentors($key = null) {
+		// get mentor(s)
+		if(is_null($key)) {
+			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_mentors`"); 
+		} else {
+			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_mentors` WHERE `key` = :key");
+			$stmt->bindParam(':key', $key);
+		}
 		
 		// run
 		$stmt->execute();
 		
 		// store data in array
-		$participants = array();
+		$mentors = array();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
-			$participants[] = $row;
+			$mentors[] = $row;
 		}
 		
-		return $participants;
+		return $mentors;
 	}
 	
 	

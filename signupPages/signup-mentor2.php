@@ -22,6 +22,19 @@
 				$numFriends = $n;
 			}
 		}
+		
+		// get key
+		$key = null;
+		// check if key exists
+		if(array_key_exists("key", $_GET)) {
+			$key = $_GET['key'];
+			$numFriends = 0;
+			
+			// get data
+			include '../signupScripts/finishRegistration.php';
+			$data = getMentorData($key);
+			//echo '<pre>'.print_r($data, true).'</pre>'; //die();
+		}
 	?>
 	
 </head>
@@ -77,25 +90,37 @@
 								Thank you for volunteering as a mentor! To sign-up we need your name, email, and phone number.
 							</p>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Name" name="name" id="mentorName"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-user"></i><input type="text" placeholder="Name" name="name" id="mentorName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/>
+								</div>
 							</div>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="email" id="mentorEmail"/></div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number" name="phone" id="mentorPhone"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="email" id="mentorEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
 						<div class="row">
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-building-o"></i><input type="text" placeholder="Company/Organization" name="company" id="mentorCompany"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number" name="phone" id="mentorPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="fieldWrapper column6">
+								<div class="fieldInput">
+									<i class="fa fa-building-o"></i>
+									<input type="text" placeholder="Company/Organization" name="company" id="mentorCompany" value="<?php echo (!is_null($key)) ? $data["company"] : ""; ?>"/>
+								</div>
 							</div>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-group"></i><input type="text" placeholder="Position" name="position" id="mentorPosition"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-group"></i>
+									<input type="text" placeholder="Position" name="position" id="mentorPosition" value="<?php echo (!is_null($key)) ? $data["position"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
@@ -105,15 +130,15 @@
 									<p>We will be providing food for everyone who comes to the hackathon.  Which meals are you planning on being present for?</p>
 								</div>
 								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox">
+									<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox" <?php echo (!is_null($key) && $data['breakfast'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class="tgl-btn" data-tg-off="Breakfast" data-tg-on="Breakfast" for="mentorBreakfast"></label>
 								</div>
 								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" checked="checked">
+									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (is_null($key) || $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class="tgl-btn" data-tg-off="Lunch" data-tg-on="Lunch" for="mentorLunch"></label>
 								</div>
 								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox">
+									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class="tgl-btn" data-tg-off="Dinner" data-tg-on="Dinner" for="mentorDinner"></label>
 								</div>
 							</div>
@@ -126,35 +151,35 @@
 							
 							<div class="fieldWrapper column12 areas">
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorWebDesign' type='checkbox' name="webDesign" value="Web Design">
+									<input class='tgl tgl-flip' id='mentorWebDesign' type='checkbox' name="webDesign" value="Web Design" <?php echo (!is_null($key) && $data['area_web_design'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Web Design' data-tg-on='Web Design' for='mentorWebDesign'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorWebDev' type='checkbox' name="webDev" value="Web Development">
+									<input class='tgl tgl-flip' id='mentorWebDev' type='checkbox' name="webDev" value="Web Development" <?php echo (!is_null($key) && $data['area_web_dev'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Web Development' data-tg-on='Web Development' for='mentorWebDev'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorAndroid' type='checkbox' name="android" value="Android Development">
+									<input class='tgl tgl-flip' id='mentorAndroid' type='checkbox' name="android" value="Android Development" <?php echo (!is_null($key) && $data['area_android'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Android Development' data-tg-on='Android Development' for='mentorAndroid'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentoriOS' type='checkbox' name="iOS" value="iOS Development">
+									<input class='tgl tgl-flip' id='mentoriOS' type='checkbox' name="iOS" value="iOS Development" <?php echo (!is_null($key) && $data['area_ios'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='iOS Development' data-tg-on='iOS Development' for='mentoriOS'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorUIUX' type='checkbox' name="uiux" value="UI/UX Design">
+									<input class='tgl tgl-flip' id='mentorUIUX' type='checkbox' name="uiux" value="UI/UX Design" <?php echo (!is_null($key) && $data['area_uiux'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='UI/UX Design' data-tg-on='UI/UX Design' for='mentorUIUX'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorGaming' type='checkbox' name="gaming" value="Gaming">
+									<input class='tgl tgl-flip' id='mentorGaming' type='checkbox' name="gaming" value="Gaming" <?php echo (!is_null($key) && $data['area_gaming'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Gaming' data-tg-on='Gaming' for='mentorGaming'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorPrint' type='checkbox' name="print" value="Print Media">
+									<input class='tgl tgl-flip' id='mentorPrint' type='checkbox' name="print" value="Print Media" <?php echo (!is_null($key) && $data['area_print'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off="Print Media" data-tg-on="Print Media" for="mentorPrint"></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorArduino' type='checkbox' name="arduino" value="Arduino/Electronics">
+									<input class='tgl tgl-flip' id='mentorArduino' type='checkbox' name="arduino" value="Arduino/Electronics" <?php echo (!is_null($key) && $data['area_arduino'] == 1 ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Arduino/Electronics' data-tg-on='Arduino/Electronics' for='mentorArduino'></label>
 								</div>
 							</div>
@@ -205,6 +230,7 @@
 								<a href="signup-mentor1.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
 								<input type="text" name="honeypot" placeholder="Leave Blank" class="honeypot" />
 								<input type="hidden" name="type" value="mentor" />
+								<input type="hidden" name="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
 								<input type="hidden" name="friends" value="<?php echo $numFriends; ?>"/>
 								<button id="mentorConfirmationBtn" class="btn btn-l right confirmationBtn">Confirmation &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
 							</div>

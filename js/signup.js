@@ -1,7 +1,30 @@
 var canReload = false;
 $(document).ready(function(){
-	/* get checked radio/checkboxes */
-	$("#pShirt").html( $("input[type=radio][name=shirt][checked=checked]").val() );
+	/* get initial values of participant form */
+	pName();
+	pEmail();
+	pCollege();
+	pMajor();
+	pPhone();
+	
+	pLinkedin();
+	pResume();
+	pWebsite();
+	pGithub();
+	pCompany();
+	pPosition();
+	pFacebook();
+	pTwitter();
+	
+	pShirt();
+	
+	
+	/* get initial values of mentor form */
+	mName();
+	mEmail();
+	mPhone();
+	mCompany();
+	mPosition();
 	
 	mBreakfast();
 	mLunch();
@@ -17,39 +40,22 @@ $(document).ready(function(){
 	mArduino();
 });
 
-/* On change events for participant friends */
-$("input[type=radio][name=friends]").change(function(){ 
-	var n = $(this).val(); 
-	var h = $(".regBtn").attr("href");
-	$(".regBtn").attr("href", h.slice(0, -1) + n);
-});
-
 /* On change events for	participant confirmation table */
-$("#participantName")		.change(function(){ $("#pName")		.html($(this).val()); });
-$("#participantEmail")		.change(function(){ $("#pEmail")	.html($(this).val()); });
-$("#participantCollege")	.change(function(){	$("#pCollege")	.html($(this).val()); });
-$("#participantMajor")		.change(function(){ $("#pMajor")	.html($(this).val()); });
-$("#participantPhone")		.change(function(){ $("#pPhone")	.html($(this).val()); });
+$("#participantName")		.change(function(){ pName();		});
+$("#participantEmail")		.change(function(){ pEmail();		});
+$("#participantCollege")	.change(function(){	pCollege();		});
+$("#participantMajor")		.change(function(){ pMajor();		});
+$("#participantPhone")		.change(function(){ pPhone();		});
 
-$("#participantLinkedin")	.change(function(){ $("#pLinkedin")	.html($(this).val()); });
-$("#participantWebsite")	.change(function(){	$("#pWebsite")	.html($(this).val()); });
-$("#participantGithub")		.change(function(){ $("#pGithub")	.html($(this).val()); });
-$("#participantCompany")	.change(function(){ $("#pCompany")	.html($(this).val()); });
-$("#participantPosition")	.change(function(){	$("#pPosition")	.html($(this).val()); });
-$("#participantFacebook")	.change(function(){ $("#pFacebook")	.html($(this).val()); });
-$("#participantTwitter")	.change(function(){ $("#pTwitter")	.html($(this).val()); });
+$("#participantLinkedin")	.change(function(){ pLinkedin();	});
+$("#participantWebsite")	.change(function(){	pWebsite(); 	});
+$("#participantGithub")		.change(function(){ pGithub(); 		});
+$("#participantCompany")	.change(function(){ pCompany(); 	});
+$("#participantPosition")	.change(function(){	pPosition(); 	});
+$("#participantFacebook")	.change(function(){ pFacebook(); 	});
+$("#participantTwitter")	.change(function(){ pTwitter(); 	});
 
-$("input[type=radio][name=shirt]").change(function(){ $("#pShirt").html($(this).val()); });
-
-/* on change participant friend confirmation table */
-$("#friendName1")	.change(function(){ $("#fName1")	.html($(this).val()); });
-$("#friendEmail1")	.change(function(){ $("#fEmail1")	.html($(this).val()); });
-
-$("#friendName2")	.change(function(){ $("#fName2")	.html($(this).val()); });
-$("#friendEmail2")	.change(function(){ $("#fEmail2")	.html($(this).val()); });
-
-$("#friendName3")	.change(function(){ $("#fName3")	.html($(this).val()); });
-$("#friendEmail3")	.change(function(){ $("#fEmail3")	.html($(this).val()); });
+$("input[type=radio][name=shirt]").change(function(){ pShirt(); });
 
 /* On change event for resume uploading */
 $("#resumeUploadInput").change(function() {
@@ -57,43 +63,87 @@ $("#resumeUploadInput").change(function() {
 	var file = res[res.length-1];
 	$("#resumeName").val(file);
 	$("#pResume").html(file);
+	console.log(file);
 });
+
+/* Functions for participant confirmation table */
+function pName()		{ $("#pName")		.html($("#participantName")		.val()); }
+function pEmail()		{ $("#pEmail")		.html($("#participantEmail")	.val()); }
+function pCollege()		{ $("#pCollege")	.html($("#participantCollege")	.val()); }
+function pMajor()		{ $("#pMajor")		.html($("#participantMajor")	.val()); }
+function pPhone()		{ $("#pPhone")		.html($("#participantPhone")	.val()); }
+
+function pLinkedin()	{ $("#pLinkedin")	.html($("#participantLinkedin")	.val()); }
+function pResume()		{ $("#pResume")		.html($("#resumeName")			.val()); }
+function pWebsite() 	{ $("#pWebsite")	.html($("#participantWebsite")	.val()); }
+function pGithub() 		{ $("#pGithub")		.html($("#participantGithub")	.val()); }
+function pCompany() 	{ $("#pCompany")	.html($("#participantCompany")	.val()); }
+function pPosition()	{ $("#pPosition")	.html($("#participantPosition")	.val()); }
+function pFacebook() 	{ $("#pFacebook")	.html($("#participantFacebook")	.val()); }
+function pTwitter() 	{ $("#pTwitter")	.html($("#participantTwitter")	.val()); }
+
+function pShirt()		{ $("#pShirt")		.html( $("input[type=radio][name=shirt][checked=checked]").val() ); }
 
 
 /* On change events for	mentor confirmation table */
-$("#mentorName")		.change(function(){ $("#mName")		.html($(this).val()); });
-$("#mentorEmail")		.change(function(){ $("#mEmail")	.html($(this).val()); });
-$("#mentorPhone")		.change(function(){ $("#mPhone")	.html($(this).val()); });
+$("#mentorName")		.change(function(){ mName();		});
+$("#mentorEmail")		.change(function(){ mEmail();		});
+$("#mentorPhone")		.change(function(){ mPhone();		});
+$("#mentorCompany")		.change(function(){ mCompany();		});
+$("#mentorPosition")	.change(function(){ mPosition();	});
 
-$("#mentorCompany")		.change(function(){ $("#mCompany")	.html($(this).val()); });
-$("#mentorPosition")	.change(function(){	$("#mPosition")	.html($(this).val()); });
+$("#mentorBreakfast")	.change(function(){ mBreakfast();	});
+$("#mentorLunch")		.change(function(){ mLunch();		});
+$("#mentorDinner")		.change(function(){ mDinner();		});
 
-$("#mentorBreakfast")	.change(function(){ mBreakfast(); });
-$("#mentorLunch")		.change(function(){ mLunch(); });
-$("#mentorDinner")		.change(function(){ mDinner(); });
+$("#mentorWebDesign")	.change(function(){ mWebDesign();	});
+$("#mentorWebDev")		.change(function(){ mWebDev()		});
+$("#mentorAndroid")		.change(function(){ mAndroid();		});
+$("#mentoriOS")			.change(function(){ miOS();			});
+$("#mentorUIUX")		.change(function(){ mUIUX();		});
+$("#mentorGaming")		.change(function(){ mGaming();		});
+$("#mentorPrint")		.change(function(){ mPrint();		});
+$("#mentorArduino")		.change(function(){ mArduino();		});
 
-$("#mentorWebDesign")	.change(function(){ mWebDesign(); });
-$("#mentorWebDev")		.change(function(){ mWebDev(); });
-$("#mentorAndroid")		.change(function(){ mAndroid(); });
-$("#mentoriOS")			.change(function(){ miOS(); });
-$("#mentorUIUX")		.change(function(){ mUIUX(); });
-$("#mentorGaming")		.change(function(){ mGaming(); });
-$("#mentorPrint")		.change(function(){ mPrint(); });
-$("#mentorArduino")		.change(function(){ mArduino(); });
 
 /* Functions for mentor confirmation table */
-function mBreakfast() {	$("#mBreakfast").html(	(($("#mentorBreakfast").prop( "checked" )) ?	'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mLunch() { 	$("#mLunch").html( 		(($("#mentorLunch").prop( "checked" )) ? 		'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mDinner() { 	$("#mDinner").html( 	(($("#mentorDinner").prop( "checked" )) ? 		'<i class="fa fa-check-square-o"></i>' : "") ); }
+function mName()		{ $("#mName")		.html( $("#mentorName")		.val()); }
+function mEmail()		{ $("#mEmail")		.html( $("#mentorEmail")	.val()); }
+function mPhone()		{ $("#mPhone")		.html( $("#mentorPhone")	.val()); }
+function mCompany()		{ $("#mCompany")	.html( $("#mentorCompany")	.val()); }
+function mPosition()	{ $("#mPosition")	.html( $("#mentorPosition")	.val()); }
 
-function mWebDesign() { $("#mWebDesign").html(	(($("#mentorWebDesign").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mWebDev() { 	$("#mWebDev").html( 	(($("#mentorWebDev").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mAndroid() { 	$("#mAndroid").html( 	(($("#mentorAndroid").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
-function miOS() { 		$("#miOS").html( 		(($("#mentoriOS").prop("checked")) ? 		'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mUIUX() { 		$("#mUIUX").html( 		(($("#mentorUIUX").prop("checked")) ? 		'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mGaming() { 	$("#mGaming").html( 	(($("#mentorGaming").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mPrint() { 	$("#mPrint").html( 		(($("#mentorPrint").prop("checked")) ? 		'<i class="fa fa-check-square-o"></i>' : "") ); }
-function mArduino() { 	$("#mArduino").html( 	(($("#mentorArduino").prop("checked")) ? 	'<i class="fa fa-check-square-o"></i>' : "") ); }
+function mBreakfast()	{ $("#mBreakfast")	.html( (($("#mentorBreakfast")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mLunch()		{ $("#mLunch")		.html( (($("#mentorLunch")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mDinner()		{ $("#mDinner")		.html( (($("#mentorDinner")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+
+function mWebDesign()	{ $("#mWebDesign")	.html( (($("#mentorWebDesign")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mWebDev()		{ $("#mWebDev")		.html( (($("#mentorWebDev")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mAndroid()		{ $("#mAndroid")	.html( (($("#mentorAndroid")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function miOS()			{ $("#miOS")		.html( (($("#mentoriOS")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mUIUX()		{ $("#mUIUX")		.html( (($("#mentorUIUX")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mGaming()		{ $("#mGaming")		.html( (($("#mentorGaming")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mPrint()		{ $("#mPrint")		.html( (($("#mentorPrint")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mArduino()		{ $("#mArduino")	.html( (($("#mentorArduino")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+
+
+/* on change friend confirmation table */
+$("#friendName1")	.change(function(){ $("#fName1")	.html( $("#friendName1").val());	});
+$("#friendEmail1")	.change(function(){ $("#fEmail1")	.html( $("#friendEmail1").val());	});
+
+$("#friendName2")	.change(function(){ $("#fName2")	.html( $("#friendName2").val());	});
+$("#friendEmail2")	.change(function(){ $("#fEmail2")	.html( $("#friendEmail2").val());	});
+
+$("#friendName3")	.change(function(){ $("#fName3")	.html( $("#friendName3").val());	});
+$("#friendEmail3")	.change(function(){ $("#fEmail3")	.html( $("#friendEmail3").val());	});
+
+
+/* On change events for friends */
+$("input[type=radio][name=friends]").change(function(){ 
+	var n = $(this).val(); 
+	var h = $(".regBtn").attr("href");
+	$(".regBtn").attr("href", h.slice(0, -1) + n);
+});
 
 
 // turn off reload for reg buttons

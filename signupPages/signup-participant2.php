@@ -22,6 +22,19 @@
 				$numFriends = $n;
 			}
 		}
+		
+		// get key
+		$key = null;
+		// check if key exists
+		if(array_key_exists("key", $_GET)) {
+			$key = $_GET['key'];
+			$numFriends = 0;
+			
+			// get data
+			include '../signupScripts/finishRegistration.php';
+			$data = getParticipantData($key);
+			//echo '<pre>'.print_r($data, true).'</pre>'; die();
+		}
 	?>
 	
 </head>
@@ -78,25 +91,37 @@
 							</p>
 							
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Full Name" name="name" id="participantName" value="test"/></div>
+								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Full Name" name="name" id="participantName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/></div>
 							</div>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="email" id="participantEmail" value="test"/></div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-university"></i><input type="text" placeholder="College" name="college" id="participantCollege" value="test"/></div>
-							</div>
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-graduation-cap"></i><input type="text" placeholder="Major" name="major" id="participantMajor" value="test"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-envelope-o"></i>
+									<input type="text" placeholder="Email" name="email" id="participantEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
 						<div class="row">
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number" name="phone" id="participantPhone" value="test"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-university"></i>
+									<input type="text" placeholder="College" name="college" id="participantCollege" value="<?php echo (!is_null($key)) ? $data["college"] : ""; ?>"/>
+								</div>
+							</div>
+							<div class="fieldWrapper column6">
+								<div class="fieldInput">
+									<i class="fa fa-graduation-cap"></i>
+									<input type="text" placeholder="Major" name="major" id="participantMajor" value="<?php echo (!is_null($key)) ? $data["major"] : ""; ?>"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="fieldWrapper column6">
+								<div class="fieldInput">
+									<i class="fa fa-mobile"></i>
+									<input type="text" placeholder="Phone Number" name="phone" id="participantPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
@@ -108,13 +133,16 @@
 							</p>
 							
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-linkedin"></i><input type="text" placeholder="Linkedin" name="linkedin" id="participantLinkedin"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-linkedin"></i>
+									<input type="text" placeholder="Linkedin" name="linkedin" id="participantLinkedin" value="<?php echo (!is_null($key)) ? $data["linkedin"] : ""; ?>"/>
+								</div>
 							</div>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput" id="upload">
 									<i class="fa fa-file-text-o"></i>
-									<input id="resumeName" placeholder="Upload Resume" disabled="disabled"/>
-									<input id="resumeUploadInput" class="upload" type="file" name="resume"/>
+									<input type="text" id="resumeName" name="resumeOld" placeholder="Upload Resume" value="<?php echo (!is_null($key)) ? $data["resume"] : ""; ?>" />
+									<input type="file" id="resumeUploadInput" name="resume" class="upload"/>
 									<span id="resumeUploadBtn" class="btn btn-med">Upload</span>
 								</div>
 							</div>
@@ -122,28 +150,46 @@
 						
 						<div class="row">
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-globe"></i><input type="text" placeholder="Personal Website" name="website" id="participantWebsite"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-globe"></i>
+									<input type="text" placeholder="Personal Website" name="website" id="participantWebsite" value="<?php echo (!is_null($key)) ? $data["website"] : ""; ?>"/>
+								</div>
 							</div>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-github"></i><input type="text" placeholder="Github" name="github" id="participantGithub"/></div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-building-o"></i><input type="text" placeholder="Company/Organization" name="company" id="participantCompany"/></div>
-							</div>
-							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-group"></i><input type="text" placeholder="Position" name="position" id="participantPosition"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-github"></i>
+									<input type="text" placeholder="Github" name="github" id="participantGithub" value="<?php echo (!is_null($key)) ? $data["github"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
 						<div class="row">
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-facebook"></i><input type="text" placeholder="Facebook" name="facebook" id="participantFacebook"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-building-o"></i>
+									<input type="text" placeholder="Company/Organization" name="company" id="participantCompany" value="<?php echo (!is_null($key)) ? $data["company"] : ""; ?>"/>
+								</div>
 							</div>
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-twitter"></i><input type="text" placeholder="Twitter" name="twitter" id="participantTwitter"/></div>
+								<div class="fieldInput">
+									<i class="fa fa-group"></i>
+									<input type="text" placeholder="Position" name="position" id="participantPosition" value="<?php echo (!is_null($key)) ? $data["position"] : ""; ?>"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="fieldWrapper column6">
+								<div class="fieldInput">
+									<i class="fa fa-facebook"></i>
+									<input type="text" placeholder="Facebook" name="facebook" id="participantFacebook" value="<?php echo (!is_null($key)) ? $data["facebook"] : ""; ?>"/>
+								</div>
+							</div>
+							<div class="fieldWrapper column6">
+								<div class="fieldInput">
+									<i class="fa fa-twitter"></i>
+									<input type="text" placeholder="Twitter" name="twitter" id="participantTwitter" value="<?php echo (!is_null($key)) ? $data["twitter"] : ""; ?>"/>
+								</div>
 							</div>
 						</div>
 						
@@ -155,31 +201,37 @@
 							
 							<div class="fieldWrapper column12">
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xs' type='radio' name="shirt" value="X-Small">
+									<input class='tgl tgl-flip' id='shirt-xs' type='radio' name="shirt" value="X-Small" <?php echo (!is_null($key) && $data['shirt'] == "X-Small" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='X-Small' data-tg-on='X-Small' for='shirt-xs'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-s' type='radio' name="shirt" value="Small">
+									<input class='tgl tgl-flip' id='shirt-s' type='radio' name="shirt" value="Small" <?php echo (!is_null($key) && $data['shirt'] == "Small" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Small' data-tg-on='Small' for='shirt-s'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-med' type='radio' name="shirt" value="Medium" checked="checked">
+									<?php 
+										$checked = "";
+										if(is_null($key)|| $data['shirt'] == "Medium" || empty($data['shirt']) || is_null($data['shirt'])) {
+											$checked = 'checked="checked"';
+										}
+									?>
+									<input class='tgl tgl-flip' id='shirt-med' type='radio' name="shirt" value="Medium" <?php echo $checked; ?>>
 	   								<label class='tgl-btn' data-tg-off='Medium' data-tg-on='Medium' for='shirt-med'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-lg' type='radio' name="shirt" value="Large">
+									<input class='tgl tgl-flip' id='shirt-lg' type='radio' name="shirt" value="Large" <?php echo (!is_null($key) && $data['shirt'] == "Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='Large' data-tg-on='Large' for='shirt-lg'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xl' type='radio' name="shirt" value="X-Large">
+									<input class='tgl tgl-flip' id='shirt-xl' type='radio' name="shirt" value="X-Large" <?php echo (!is_null($key) && $data['shirt'] == "X-Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='X-Large' data-tg-on='X-Large' for='shirt-xl'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-xxl' type='radio' name="shirt" value="XX-Large">
+									<input class='tgl tgl-flip' id='shirt-xxl' type='radio' name="shirt" value="XX-Large" <?php echo (!is_null($key) && $data['shirt'] == "XX-Large" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='XX-Large' data-tg-on='XX-Large' for='shirt-xxl'></label>
 								</div>
 								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='shirt-none' type='radio' name="shirt" value="None">
+									<input class='tgl tgl-flip' id='shirt-none' type='radio' name="shirt" value="None" <?php echo (!is_null($key) && $data['shirt'] == "None" ) ? 'checked="checked"' : ""; ?>>
 	   								<label class='tgl-btn' data-tg-off='None' data-tg-on='None' for='shirt-none'></label>
 								</div>
 							</div>
@@ -212,10 +264,16 @@
 								</div>
 								<div class="row">
 									<div class="fieldWrapper column6">
-										<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Name" name="friendName<?php echo $fid; ?>" id="friendName<?php echo $fid; ?>" /></div>
+										<div class="fieldInput">
+											<i class="fa fa-user"></i>
+											<input type="text" placeholder="Name" name="friendName<?php echo $fid; ?>" id="friendName<?php echo $fid; ?>" />
+										</div>
 									</div>
 									<div class="fieldWrapper column6">
-										<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="friendEmail<?php echo $fid; ?>" id="friendEmail<?php echo $fid; ?>" /></div>
+										<div class="fieldInput">
+											<i class="fa fa-envelope-o"></i>
+											<input type="text" placeholder="Email" name="friendEmail<?php echo $fid; ?>" id="friendEmail<?php echo $fid; ?>" />
+										</div>
 									</div>
 								</div>
 								<?php
@@ -231,6 +289,7 @@
 								<a href="signup-participant1.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
 								<input class="honeypot" type="text" name="honeypot" placeholder="Leave Blank"/>
 								<input type="hidden" name="type" value="participant" />
+								<input type="hidden" name="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
 								<input type="hidden" name="friends" value="<?php echo $numFriends; ?>"/>
 								<button id="participantConfirmationBtn" class="btn btn-l right confirmationBtn">Confirmation &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
 							</div>

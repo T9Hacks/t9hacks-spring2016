@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="column12">
 					<p>
-						T9Hacks is a 12 hour hackathon at the University of Colorado Boulder's ATLAS Institute 
+						T9Hacks is a 24 hour female hackathon at the University of Colorado Boulder's ATLAS Institute 
 						that brings together students for a day of creativity, building, and hacking.
 						Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
 						students to explore new technologies, solve problems, and create something amazing with a 
