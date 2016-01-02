@@ -177,7 +177,7 @@
             <div class="container">
                 <div class="column12">
                     <div class="row">
-                        <!--					<h1 class="white">Let's build something together!</h1>-->
+                        <h1 class="white">Let's build something together!</h1>
                         <div class="signupBtn">
                             <center><a href="signup.php" class="btn btn-xl">Sign Up</a></center>
                         </div>
