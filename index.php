@@ -66,8 +66,8 @@
 				</div>
 
 
-				<div class="countdown countdown-container container" data-border-color="rgba(255, 255, 255, .8)">
-				    <div class="clock row">
+				<div class="countdown countdown-container" data-border-color="rgba(255, 255, 255, .8)">
+				    <div class="clock">
 				        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
 				            <div class="wrap">
 				                <div class="inner">
