@@ -1,13 +1,7 @@
-.countdown-container {
-	width: auto;
-}
-.clock {
-	height: 200px;
-}
-
-canvas {
-	width: 100px;
-	height: 100px;
+.countdown {
+	margin: 0 auto;
+	width: 800px;
+	margin-bottom: 20px;
 }
 
 .clock-item {
@@ -34,7 +28,7 @@ canvas {
 	color: #fff;	
 	font-size: 30px;
 	font-weight: bold;	
-	margin-top: -50px;
+	margin-top: -32px;
 	position: absolute;
 	top: 50%;
 	text-align: center;
@@ -48,16 +42,21 @@ canvas {
 
 .text .type-time {
 	font-size: 16px;
+	margin-bottom: 0;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 	.clock-item {
-		margin-bottom: 30px;		
+		margin: 0 auto;		
+	}
+
+	.countdown{
+		margin: 0 auto;
 	}
 }
 
 @media (max-width: 767px) {
 	.clock-item {
-		margin: 0px 30px 30px 30px;
+		margin: 0 auto;
 	}
 }

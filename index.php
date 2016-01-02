@@ -67,59 +67,49 @@
 
 
 				<div class="countdown countdown-container" data-border-color="rgba(255, 255, 255, .8)">
-				    <div class="clock">
-				        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
-				            <div class="wrap">
-				                <div class="inner">
-				                    <div id="canvas-days" class="clock-canvas"></div>
+			        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+		                <div class="inner">
+		                    <div id="canvas-days" class="clock-canvas"></div>
 
-				                    <div class="text">
-				                        <p class="type-days type-time">DAYS</p>
-				                        <p class="val">0</p>
-				                    </div><!-- /.text -->
-				                </div><!-- /.inner -->
-				            </div><!-- /.wrap -->
-				        </div><!-- /.clock-item -->
+		                    <div class="text">
+		                        <p class="type-days type-time">DAYS</p>
+		                        <p class="val">0</p>
+		                    </div><!-- /.text -->
+		                </div><!-- /.inner -->
+			        </div><!-- /.clock-item -->
 
-				        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
-				            <div class="wrap">
-				                <div class="inner">
-				                    <div id="canvas-hours" class="clock-canvas"></div>
+			        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+		                <div class="inner">
+		                    <div id="canvas-hours" class="clock-canvas"></div>
 
-				                    <div class="text">
-				                        <p class="type-hours type-time">HOURS</p>
-				                        <p class="val">0</p>
-				                    </div><!-- /.text -->
-				                </div><!-- /.inner -->
-				            </div><!-- /.wrap -->
-				        </div><!-- /.clock-item -->
+		                    <div class="text">
+		                        <p class="type-hours type-time">HOURS</p>
+		                        <p class="val">0</p>
+		                    </div><!-- /.text -->
+		                </div><!-- /.inner -->
+			        </div><!-- /.clock-item -->
 
-				        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
-				            <div class="wrap">
-				                <div class="inner">
-				                    <div id="canvas-minutes" class="clock-canvas"></div>
+			        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+		                <div class="inner">
+		                    <div id="canvas-minutes" class="clock-canvas"></div>
 
-				                    <div class="text">
-				                        <p class="type-minutes type-time">MINUTES</p>
-				                        <p class="val">0</p>
-				                    </div><!-- /.text -->
-				                </div><!-- /.inner -->
-				            </div><!-- /.wrap -->
-				        </div><!-- /.clock-item -->
+		                    <div class="text">
+		                        <p class="type-minutes type-time">MINUTES</p>
+		                        <p class="val">0</p>
+		                    </div><!-- /.text -->
+		                </div><!-- /.inner -->
+			        </div><!-- /.clock-item -->
 
-				        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
-				            <div class="wrap">
-				                <div class="inner">
-				                    <div id="canvas-seconds" class="clock-canvas"></div>
+			        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+		                <div class="inner">
+		                    <div id="canvas-seconds" class="clock-canvas"></div>
 
-				                    <div class="text">
-				                        <p class="type-seconds type-time">SECONDS</p>
-				                        <p class="val">0</p>
-				                    </div><!-- /.text -->
-				                </div><!-- /.inner -->
-				            </div><!-- /.wrap -->
-				        </div><!-- /.clock-item -->
-				    </div><!-- /.clock -->
+		                    <div class="text">
+		                        <p class="type-seconds type-time">SECONDS</p>
+		                        <p class="val">0</p>
+		                    </div><!-- /.text -->
+		                </div><!-- /.inner -->
+			        </div><!-- /.clock-item -->
 				</div><!-- /.countdown-wrapper -->
 
 
