@@ -669,7 +669,7 @@ header {
 .teamMember img {
 	width: 100%;
     margin: 0 auto;
-    border-radius: 12%;
+    border-radius: 50%;
 }
 .teamMember h3 {
 	margin: 15px 0 10px;
