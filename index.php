@@ -201,7 +201,7 @@
                 <div class="row">
                     <div class="scheduleOuter"><div class="scheduleInner">
                             <div class="scheduleSection">
-                                <h1 class="white">Saturday, February 20</h1>
+                                <h2 class="white">Saturday, February 20</h2>
                                 <div class="times">
                                     <p>3:00pm</p>
                                     <p>3:30pm</p>
@@ -222,7 +222,7 @@
                                 </div>
                             </div>
                             <div class="scheduleSection">
-                                <h1 class="white">Sunday, February 22</h1>
+                                <h2 class="white">Sunday, February 22</h2>
                                 <div class="times">
                                     <p>Midnight</p>
                                     <p>2:00am</p>
