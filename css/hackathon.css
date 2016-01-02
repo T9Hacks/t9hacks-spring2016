@@ -27,7 +27,8 @@ body, html {
 	-webkit-box-sizing: border-box;
 }
 h1, h2, h3, h4 {
-	font-family: "Raleway", Helvetica, sans-serif;
+	font-family: "Gruppo", Helvetica, sans-serif;
+	 font-weight: bold;
 }
 h1 { 
 	font-size: 2.5em; 
@@ -57,12 +58,6 @@ a {
 	border-bottom: 1px solid #000;
 	outline: 0;
 }
-
-a.hiddenLink {
-    color: #fff;
-    border: none;
-}
-
 a:hover, a:focus, a:active {
 	text-decoration: none;
 	cursor: pointer;
@@ -82,9 +77,9 @@ hr { border-top: 1px solid #DAC8DA; }
 }
 .btn {
 	border-radius: 0;
-	/*-moz-box-shadow:	0px 0px 3px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:	0px 0px 3px 0px rgba(50, 50, 50, 0.5);
 	-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.5);
-	box-shadow:		 0px 0px 3px 0px rgba(50, 50, 50, 0.5);*/
+	box-shadow:		 0px 0px 3px 0px rgba(50, 50, 50, 0.5);
 }
 .btn, .btn-l, .btn-xl, .navbar-default .navbar-nav > .active > a {
 	background: #5ab8e2;
@@ -164,7 +159,7 @@ img::selection, img::-moz-selection {
 }
 /* Info */
 .bg-grey {
-	background: #553377;
+	background: #BBB;
 }
 
 /* Any background with an image */
@@ -278,24 +273,14 @@ section {
 /* nav toggle button */
 .navbar-toggle {
 	margin: 15px;
-	font-size: 1.0em;
+	font-size: 1.3em;
 }
 
 /* small tablet / large phone */
 @media (max-width: 768px) {
-	/* back navbar - large */
-	.navbar {
-		padding: 0;
-	}
-	
 	/* brand - large */
 	.navbar-brand {	
 		font-size: 1.5em; padding: 24px 15px;
-	}
-	/* brand - large */
-	.navbar-shrink .navbar-brand, .navbar-shrink-perm .navbar-brand {
-		padding: 0 0 0 15px;
-		line-height: 75px;
 	}
 	
 	/* non-active links - large */
@@ -313,7 +298,6 @@ section {
 	.navbar-shrink .navbar-right .btn, .navbar-shrink-perm .navbar-right .btn {
 		margin-right: 15px;
 	}
-	
 }
 
 
@@ -429,6 +413,7 @@ header {
 	color: white;
 }
 #join h1 {
+	font-weight: bold;
 	margin-bottom: 100px;
 	color: white;
 	text-shadow: 2px 2px 1px #000;
@@ -463,25 +448,21 @@ header {
 .scheduleSection h2 {
 	margin-bottom: 20px;
 	text-align: left;
-	font-weight: bold;
 }
 .times, .events {
 	display: inline-block;
 	float: left;
 	text-align: left;
 }
-.times { width: 100px; }
+.times { width: 130px; }
 .times i { 
 	width: 23px; 
 	margin-right: 10px;
 	display: none;
 }
 @media (max-width: 991px) {
-	.scheduleSection:first-child { 
-		margin: 0 50px 0 0;
-	}
-	.scheduleSection:last-child {
-		margin: 0 0 0 50px;
+	.scheduleSection {
+		margin: 0 50px;
 	}
 }
 @media only screen and (max-width: 767px) {
@@ -493,11 +474,11 @@ header {
 		width: 64.66667%;
 		margin-bottom: 0;
 	}
-	.scheduleSection:first-child, .scheduleSection:last-child {
+	.scheduleSection {
 		display: block;
 		float: none;
 		margin: 0;
-	} .scheduleSection:last-child { margin-top: 50px; }
+	}
 }
 
 
@@ -620,16 +601,7 @@ header {
 }
 #info p {
 	text-align: justify;
-	color: white;
 }
-#info a { 
-	color: white;
-	border-color: white;
-}
-	#info a:hover, #info a:focus, #info a:active {
-		color: #3a98c2;
-		border-color: #3a98c2;
-	}
 #info .fa { 
 	font-size: 100px;
 	color: white;
@@ -646,7 +618,6 @@ header {
 }
 .infoSection {
 	padding: 0 10px;
-        color: #000;
 }
 .infoSection h2 {
 	margin: 20px 0;
@@ -669,7 +640,7 @@ header {
 .teamMember img {
 	width: 100%;
     margin: 0 auto;
-    border-radius: 12%;
+    border-radius: 50%;
 }
 .teamMember h3 {
 	margin: 15px 0 10px;
@@ -678,8 +649,8 @@ header {
     margin-top: 0;
 }
 .teamMember .socialButtons a {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
@@ -716,7 +687,7 @@ footer .copyright {
 }
 
 /* ************************ */
-/*    Social Buttons        */
+/*		Social Buttons		*/
 /* ************************ */
 .socialButtons {
 	list-style-type: none;
@@ -728,10 +699,10 @@ footer .copyright {
 }
 .socialButtons a {
 	display: block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	font-size: 25px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 30px;
 	background-color: white;
 	color: black;
 	margin: 0 5px;
@@ -854,10 +825,6 @@ footer .copyright {
 }
 	.fieldInput input { padding-left: 49px; }
 	.fieldInput textarea { height: 200px; resize: none; }
-	
-	.fieldInput.textarea.small { height: 102px; }
-	.fieldInput.textarea.small textarea { height: 100px; }
-	
 .fieldInput .fa {
 	position: absolute;
 	top: 0;
@@ -873,7 +840,6 @@ footer .copyright {
 	font-size: .9em;
 	margin-top: 3px;
 	padding: 7px 10px;
-	clear: both;
 }
 #upload {
 	position: relative;
