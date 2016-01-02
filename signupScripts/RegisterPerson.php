@@ -102,12 +102,19 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 		$inputValues = array();
 		if($isParticipant || $isFriend) {
 			foreach($inputNames as $name) {
-				$inputValues[$name] = $_POST[$name];
+				// agreement
+				if($name == "agree")
+					$inputValues[$name] = 1;
+				// text
+				else 
+					$inputValues[$name] = $_POST[$name];
 			}
 		} else if($isMentor) {
 			$i=0;
 			foreach($inputNames as $name) {
-				if($i < $numTextInputs)
+				if($name == "agree")
+					$inputValues[$name] = 1;
+				else if($i < $numTextInputs)
 					$inputValues[$name] = $_POST[$name];
 				else 
 					$inputValues[$name] = (array_key_exists($name, $_POST) ? 1 : 0);

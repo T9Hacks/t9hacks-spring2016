@@ -6,13 +6,6 @@ class DBHelperClass {
 	function __construct() {
 		
 		try {
-			/*
-			$this->conn = new PDO("mysql: host=localhost; dbname=$dbname", $username ,$password);
-			// set the PDO error mode to exception
-			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo "Connected successfully"; 
-			*/
-			
 			$sqlFile = 'sqlite:../../protected/db.sqlite';
 			
 			$this->conn = new PDO($sqlFile, "", "");
@@ -35,8 +28,48 @@ class DBHelperClass {
 		// prepare statement
 		if($isNew) {
 			$prepStmt = "INSERT INTO `t9hacks_participants` 
-				(`key`, `name`, `email`, `college`, `major`, `phone`, `linkedin`, `resume`, `website`, `github`, `company`, `position`, `facebook`, `twitter`, `shirt`, `datetime`, `complete`) 
-				VALUES (:key, :name, :email, :college, :major, :phone, :linkedin, :resume, :website, :github, :company, :position, :facebook, :twitter, :shirt, :datetime, 1)";
+				(
+					`key`, 
+					`name`, 
+					`email`, 
+					`college`, 
+					`major`, 
+					`phone`, 
+					`linkedin`, 
+					`resume`, 
+					`website`, 
+					`github`, 
+					`company`, 
+					`position`, 
+					`facebook`, 
+					`twitter`, 
+					`shirt`, 
+					`comment`, 
+					`coc_agree`,
+					`datetime`, 
+					`complete`
+				) 
+				VALUES (
+					:key, 
+					:name, 
+					:email, 
+					:college, 
+					:major, 
+					:phone, 
+					:linkedin, 
+					:resume, 
+					:website, 
+					:github, 
+					:company, 
+					:position, 
+					:facebook, 
+					:twitter, 
+					:shirt, 
+					:comment, 
+					:coc_agree, 
+					:datetime, 
+					1
+				)";
 		} else {
 			$prepStmt = "UPDATE `t9hacks_participants` 
 				SET `name` 		= :name, 
@@ -53,6 +86,8 @@ class DBHelperClass {
 					`facebook`	= :facebook, 
 					`twitter`	= :twitter, 
 					`shirt`		= :shirt, 
+					`comment`	= :comment, 
+					`coc_agree`	= :coc_agree,
 					`datetime`	= :datetime, 
 					`complete`	= 1 
 				WHERE key = :key";
@@ -73,6 +108,8 @@ class DBHelperClass {
 		$stmt->bindParam(':facebook',	$inputValues['facebook']);
 		$stmt->bindParam(':twitter', 	$inputValues['twitter']);
 		$stmt->bindParam(':shirt', 		$inputValues['shirt']);
+		$stmt->bindParam(':comment',	$inputValues['comment']);
+		$stmt->bindParam(':coc_agree',	$inputValues['agree']);
 		$stmt->bindParam(':datetime', 	$datetime);
 		
 		// use exec() because no results are returned
@@ -112,8 +149,52 @@ class DBHelperClass {
 		// prepare statement
 		if($isNew) {
 			$prepStmt = "INSERT INTO `t9hacks_mentors` 
-				(`key`, `name`, `email`, `phone`, `company`, `position`, `breakfast`, `lunch`, `dinner`, `area_web_design`, `area_web_dev`, `area_android`, `area_ios`, `area_uiux`, `area_gaming`, `area_print`, `area_arduino`, `datetime`, `complete`)  
-				VALUES (:key, :name, :email, :phone, :company, :position, :breakfast, :lunch, :dinner, :area_web_design, :area_web_dev, :area_android, :area_ios, :area_uiux, :area_gaming, :area_print, :area_arduino, :datetime, 1)";
+				(
+					`key`, 
+					`name`, 
+					`email`, 
+					`phone`, 
+					`company`, 
+					`position`, 
+					`breakfast`, 
+					`lunch`, 
+					`dinner`, 
+					`area_web_design`, 
+					`area_web_dev`, 
+					`area_android`, 
+					`area_ios`, 
+					`area_uiux`, 
+					`area_gaming`, 
+					`area_print`, 
+					`area_arduino`, 
+					`comment`, 
+					`coc_agree`, 
+					`datetime`, 
+					`complete`
+				)  
+				VALUES (
+					:key, 
+					:name, 
+					:email, 
+					:phone, 
+					:company, 
+					:position, 
+					:breakfast, 
+					:lunch, 
+					:dinner, 
+					:area_web_design, 
+					:area_web_dev, 
+					:area_android, 
+					:area_ios, 
+					:area_uiux, 
+					:area_gaming, 
+					:area_print, 
+					:area_arduino, 
+					:comment, 
+					:coc_agree, 
+					:datetime, 
+					1
+				)";
 		} else {
 			$prepStmt = "UPDATE `t9hacks_mentors` 
 				SET `key`				= :key, 
@@ -133,6 +214,8 @@ class DBHelperClass {
 					`area_gaming`		= :area_gaming, 
 					`area_print`		= :area_print, 
 					`area_arduino`		= :area_arduino, 
+					`comment`			= :comment, 
+					`coc_agree`			= :coc_agree,
 					`datetime`			= :datetime, 
 					`complete`			= 1 
 				WHERE `key` = :key";
@@ -155,6 +238,8 @@ class DBHelperClass {
 		$stmt->bindParam(':area_gaming',	$inputValues['gaming']);
 		$stmt->bindParam(':area_print',		$inputValues['print']);
 		$stmt->bindParam(':area_arduino',	$inputValues['arduino']);
+		$stmt->bindParam(':comment',		$inputValues['comment']);
+		$stmt->bindParam(':coc_agree',		$inputValues['agree']);
 		$stmt->bindParam(':datetime', 		$datetime);
 		
 		// use exec() because no results are returned

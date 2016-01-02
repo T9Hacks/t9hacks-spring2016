@@ -43,10 +43,10 @@
 			</div>
 			<?php } else { ?>
 			<div class="row" id="signupChoice">
-				<div class="signupWrapper">	
+				<div class="signupWrapper">
 					<div class="row">			
 						<p class="column12">
-							If you are planning on attending T9Hacks, we kindly ask you to register.  This lets allows us to keep track of 
+							If you are planning on attending T9Hacks, we kindly ask you to register.  This allows us to keep track of 
 							tickets to make sure that we can provide enough space, food, and supplies for everyone.
 						</p>
 						<p class="column12 text-bold">

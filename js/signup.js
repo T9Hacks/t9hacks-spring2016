@@ -16,6 +16,8 @@ $(document).ready(function(){
 	pFacebook();
 	pTwitter();
 	
+	pComment();
+	
 	pShirt($("input[name=shirt][checked=checked]").val());
 	
 	
@@ -38,6 +40,8 @@ $(document).ready(function(){
 	mGaming();
 	mPrint();
 	mArduino();
+	
+	mComment();
 });
 
 /* On change events for	participant confirmation table */
@@ -54,6 +58,8 @@ $("#participantCompany")	.change(function(){ pCompany(); 	});
 $("#participantPosition")	.change(function(){	pPosition(); 	});
 $("#participantFacebook")	.change(function(){ pFacebook(); 	});
 $("#participantTwitter")	.change(function(){ pTwitter(); 	});
+
+$("#participantComment")	.change(function(){ pComment(); 	});
 
 $("input[name=shirt]")		.change(function(){ pShirt($(this).val());		});
 
@@ -81,6 +87,8 @@ function pPosition()	{ $("#pPosition")	.html($("#participantPosition")	.val()); 
 function pFacebook() 	{ $("#pFacebook")	.html($("#participantFacebook")	.val()); }
 function pTwitter() 	{ $("#pTwitter")	.html($("#participantTwitter")	.val()); }
 
+function pComment() 	{ $("#pComment")	.html($("#participantComment")	.val()); }
+
 function pShirt(val)	{ $("#pShirt")		.html(val);								 }
 
 
@@ -104,6 +112,8 @@ $("#mentorGaming")		.change(function(){ mGaming();		});
 $("#mentorPrint")		.change(function(){ mPrint();		});
 $("#mentorArduino")		.change(function(){ mArduino();		});
 
+$("#mentorComment")		.change(function(){ mComment();		});
+
 
 /* Functions for mentor confirmation table */
 function mName()		{ $("#mName")		.html( $("#mentorName")		.val()); }
@@ -111,6 +121,8 @@ function mEmail()		{ $("#mEmail")		.html( $("#mentorEmail")	.val()); }
 function mPhone()		{ $("#mPhone")		.html( $("#mentorPhone")	.val()); }
 function mCompany()		{ $("#mCompany")	.html( $("#mentorCompany")	.val()); }
 function mPosition()	{ $("#mPosition")	.html( $("#mentorPosition")	.val()); }
+
+function mComment()		{ $("#mComment")	.html( $("#mentorComment")	.val()); }
 
 function mBreakfast()	{ $("#mBreakfast")	.html( (($("#mentorBreakfast")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mLunch()		{ $("#mLunch")		.html( (($("#mentorLunch")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
@@ -124,7 +136,6 @@ function mUIUX()		{ $("#mUIUX")		.html( (($("#mentorUIUX")		.prop("checked")) ? 
 function mGaming()		{ $("#mGaming")		.html( (($("#mentorGaming")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mPrint()		{ $("#mPrint")		.html( (($("#mentorPrint")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mArduino()		{ $("#mArduino")	.html( (($("#mentorArduino")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-
 
 /* on change friend confirmation table */
 $("#friendName1")	.change(function(){ $("#fName1")	.html( $("#friendName1").val());	});
@@ -217,6 +228,7 @@ function submitSignup(event, isParticipant, numFriends) {
 	var $phoneDiv	= $(hashPrefix + "Phone");
 	var $collegeDiv	= $(hashPrefix + "College");
 	var $majorDiv	= $(hashPrefix + "Major");
+	var $codeDiv	= $("#agree");
 	
 	var $topDiv		= $(hashPrefix + "Top");
 	var $loadingDiv	= $(hashPrefix + "Loading");
@@ -229,10 +241,11 @@ function submitSignup(event, isParticipant, numFriends) {
 	var errorCount = 0;
 	
 	// array of divs that must be checked
-	var inputDivs = [$nameDiv, $emailDiv, $phoneDiv];
+	var inputDivs = [$codeDiv, $nameDiv, $emailDiv, $phoneDiv];
 	
 	// array of error messages
 	var inputErrors = [
+		"You must agree to the Code of Conduct.",
 		"You must enter your email.",
 		"You must enter your name.",
 		"You must enter your phone number."
@@ -255,10 +268,13 @@ function submitSignup(event, isParticipant, numFriends) {
 	// loop through the inputs
 	for(var i=0; i<inputDivs.length; i++) {
 		var inputVal = inputDivs[i].val();
-		if(inputVal == null || inputVal == "") {
-			errorCount++;
-			inputDivs[i].parent().parent().append('<div class="fieldError error">' + inputErrors[i] + '</div>');
-		} else {}
+		if(
+			( i == 0 && !inputDivs[i].prop("checked") ) ||
+			( i >  0 && (inputVal == null || inputVal == "" ) )
+		) {
+				errorCount++;
+				inputDivs[i].parent().parent().append('<div class="fieldError error">' + inputErrors[i] + '</div>');
+		}
 	}
 	
 	if(errorCount > 0) {

@@ -8,7 +8,10 @@ function footer($up = false) {
 
 		<div class="row">
 			<div class="column4">
-				<span class="copyright"><i class="fa fa-copyright"></i> &nbsp;T9Hacks <span id="copyrightYear"></span></span>
+				<span class="copyright">
+					<!-- <i class="fa fa-copyright"></i> &nbsp;T9Hacks <span id="copyrightYear"></span> -->
+					20-21 February 2016
+				</span>
 			</div>
 			<div class="column4">
 				<ul class="socialButtons">

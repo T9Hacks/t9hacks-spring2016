@@ -39,7 +39,7 @@
 						<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be send to your email.  We look forward to seeing you!</p>
 						<br/>
 						<br/>
-						<a href="../index.php" class="btn btn-l">Back to Website</a>
+						<a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
 					</div>
 					
 				</div> <!-- end signupWrapper -->

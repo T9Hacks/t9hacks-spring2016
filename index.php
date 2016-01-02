@@ -259,9 +259,7 @@
                 <div class="row">
                     <div class="column12">
                         <h1 class="blue">Our Sponsors</h1>
-                        <div class="sponsorBtnContainer">
-                            <center><div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a sponsor?</div></center>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -276,7 +274,11 @@
 
                 <div class="row">
                     <div class="column12">
-
+                    	<div class="sponsorInterested">
+							<div class="sponsorBtnContainer">
+								<div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a sponsor?</div>
+							</div>
+						</div>
                     </div>
                 </div>
 

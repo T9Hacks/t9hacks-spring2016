@@ -206,7 +206,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isParticipant = true;
 					
 					// input data
-					$inputNames = array( "name", "email", "college", "major", "phone", "linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "resumeOld");
+					$inputNames = array("name", "email", "college", "major", "phone", "linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "resumeOld", "comment", "agree");
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
 						'numReqInputs'	=> 5,
@@ -231,7 +231,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isMentor = true;
 					
 					// input data
-					$inputNames = array("name", "email", "phone", "company", "position", "breakfast", "lunch", "dinner", "webDesign", "webDev", "android", "iOS", "uiux", "gaming", "print", "arduino", "key");
+					$inputNames = array("name", "email", "phone", "company", "position", "breakfast", "lunch", "dinner", "webDesign", "webDev", "android", "iOS", "uiux", "gaming", "print", "arduino", "key", "comment", "agree");
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
 						'numReqInputs'	=> 3,	

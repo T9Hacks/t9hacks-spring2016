@@ -61,6 +61,7 @@
 				<div class="column12">
 					<div class="team-title">
 						<h1>Sign-up for T9Hacks</h1>
+						<p>20-21 February 2016</p>
 					</div>
 				</div>
 			</div>
@@ -195,6 +196,27 @@
 							</div>
 						</div>
 						
+						<div class="row">
+							<div class="fieldWrapper column12">
+								<div class="fieldInput textarea small">
+									<textarea name="comment" placeholder="Additional comments (dietary restrictions, etc)" id="mentorComment"><?php echo (!is_null($key)) ? $data["comment"] : ""; ?></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="fieldWrapper column12">
+								<div class="fieldRadio">
+									<p>I agree to follow the <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>.</p>
+								</div>
+								<div class="fieldRadio">
+									<input class="tgl tgl-flip" id="agree" type="checkbox" name="agree" value="agree" <?php echo (!is_null($key) && $data['agree'] == 1 ) ? 'checked="checked"' : ""; ?>>
+	   								<label class='tgl-btn' data-tg-off='Disagree' data-tg-on='Agree' for="agree"></label>
+								</div>
+								
+							</div>
+						</div>
+						
 						<?php 
 						if($numFriends > 0) {
 							?>
@@ -294,6 +316,8 @@
 									<tr><td>Gaming</td>					<td id="mGaming"></td></tr>
 									<tr><td>Print Media</td>			<td id="mPrint"></td></tr>
 									<tr><td>Arduino/Electronics</td>	<td id="mArduino"></td></tr>
+									
+									<tr><td>Comment</td>				<td id="mComment"></td></tr>
 								</tbody>
 								</table>
 							</div>

@@ -49,6 +49,7 @@
 					<div class="row">
 						<div class="column12">
 							<h2>Participant Sign-up</h2>
+							<p>20-21 February 2016</p>
 						</div>
 					</div>
 					<div class="row">
