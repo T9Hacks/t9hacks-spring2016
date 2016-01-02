@@ -66,7 +66,7 @@
 				</div>
 
 
-				<div class="countdown countdown-container" data-border-color="rgba(255, 255, 255, .8)">
+				<div class="countdown" data-border-color="rgba(255, 255, 255, .8)">
 			        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
 		                <div class="inner">
 		                    <div id="canvas-days" class="clock-canvas"></div>
@@ -100,16 +100,16 @@
 		                </div><!-- /.inner -->
 			        </div><!-- /.clock-item -->
 
-			        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+ 			        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
 		                <div class="inner">
 		                    <div id="canvas-seconds" class="clock-canvas"></div>
 
 		                    <div class="text">
 		                        <p class="type-seconds type-time">SECONDS</p>
 		                        <p class="val">0</p>
-		                    </div><!-- /.text -->
-		                </div><!-- /.inner -->
-			        </div><!-- /.clock-item -->
+		                    </div>
+		                </div>
+			        </div>
 				</div><!-- /.countdown-wrapper -->
 
 

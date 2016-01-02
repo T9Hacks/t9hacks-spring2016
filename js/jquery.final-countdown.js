@@ -92,11 +92,11 @@
             settings.end = settings.now;
         }
 
-        if (typeof callback == 'function') { // make sure the callback is a function
+        if (typeof callback === 'function') { // make sure the callback is a function
             callbackFunction = callback;
         }
         
-        responsive();
+        // responsive();
         dispatchTimer();
         prepareCounters();
         startCounters();
@@ -262,7 +262,7 @@
     function startCounters() {        
         var interval = setInterval( function() {                        
             if (timer.seconds > 59 ) {
-                if (60 - timer.minutes == 0 && 24 - timer.hours == 0 && timer.days == 0) {
+                if (60 - timer.minutes === 0 && 24 - timer.hours === 0 && timer.days === 0) {
                     clearInterval(interval);
                     if (callbackFunction !== undefined) {
                         callbackFunction.call(this); // brings the scope to the callback
