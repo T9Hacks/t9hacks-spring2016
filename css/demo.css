@@ -1,13 +1,13 @@
 .countdown {
 	margin: 0 auto;
-	width: 800px;
-	margin-bottom: 20px;
+	width: 600px;
 }
 
 .clock-item {
 	max-width: 200px;
 	max-height: 200px;
 	height: auto;
+	margin-bottom: 40px;
 }
 
 .clock-item .inner {
@@ -20,7 +20,7 @@
 .clock-canvas {
 	background-color: rgba(255, 255, 255, .1);
 	border-radius: 50%;
-	height: 100px;
+	height: 1px;
 	padding-bottom: 100%;
 }
 
@@ -45,13 +45,13 @@
 	margin-bottom: 0;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+/*@media (min-width: 768px) and (max-width: 991px) {
 	.clock-item {
 		margin: 0 auto;		
 	}
 
 	.countdown{
-		margin: 0 auto;
+		margin-right: 0;
 	}
 }
 
@@ -59,4 +59,4 @@
 	.clock-item {
 		margin: 0 auto;
 	}
-}
+}*/
