@@ -61,7 +61,6 @@
 				<div class="column12">
 					<div class="team-title">
 						<h1>Sign-up for T9Hacks</h1>
-						<p>20-21 February 2016</p>
 					</div>
 				</div>
 			</div>
@@ -73,6 +72,7 @@
 					<div class="row">
 						<div class="column12">
 							<h2>Mentor Sign-up</h2>
+							<p>20-21 February 2016</p>
 						</div>
 					</div>
 					
@@ -102,12 +102,12 @@
 							</p>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
-									<i class="fa fa-user"></i><input type="text" placeholder="Name" name="name" id="mentorName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/>
+									<i class="fa fa-user"></i><input type="text" placeholder="Name (Required)" name="name" id="mentorName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/>
 								</div>
 							</div>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
-									<i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="email" id="mentorEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
+									<i class="fa fa-envelope-o"></i><input type="text" placeholder="Email (Required)" name="email" id="mentorEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 						<div class="row">
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
-									<i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number" name="phone" id="mentorPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
+									<i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number (Required)" name="phone" id="mentorPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>

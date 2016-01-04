@@ -7,11 +7,25 @@ function footer($up = false) {
 	<div class="container">
 
 		<div class="row">
-			<div class="column4">
-				<span class="copyright">
-					<!-- <i class="fa fa-copyright"></i> &nbsp;T9Hacks <span id="copyrightYear"></span> -->
-					20-21 February 2016
-				</span>
+			<div class="column4 location">
+				<p>
+					<span class="fa fa-clock-o"></span>
+					<span class="text">20-21 February 2016</span>
+				</p>
+                <p>
+                	<span class="fa fa-map-marker"></span>
+                	<span class="text">
+                		<a href="http://www.colorado.edu/" target="_blank">University of Colorado Boulder</a>
+                		<br/> 
+                		<a href="http://atlas.colorado.edu/" target="_blank">ATLAS Institute</a>
+                	</span>
+                </p>
+                <p>
+                	<span class="fa fa-location-arrow"></span>
+                	<span class="text">
+                		<a href="https://www.google.com/maps/place/ATLAS+Institute,+University+of+Colorado/@40.0076244,-105.2721198,17z/data=!3m1!4b1!4m2!3m1!1s0x876bec3384ff175f:0xe59d1ef9575505f5" target="_blank">Black Box Experimental Studio</a>
+                	</span>
+                </p>
 			</div>
 			<div class="column4">
 				<ul class="socialButtons">
@@ -31,16 +45,15 @@ function footer($up = false) {
 			</div>
 			<div class="column4">
 				<div class="quicklinks">
-					<a href="<?php echo $p; ?>team.php">Meet our team</a>
+					<p><a href="<?php echo $p; ?>team.php">Meet our team</a></p>
+				</div>
+				<div class="copyright">
+					<p>Made by T9 Hackers</p>
+					<p>T9Hacks &nbsp;<i class="fa fa-copyright"></i>&nbsp; <?php echo date("Y"); ?></p>
 				</div>
 			</div>
 		</div>
 	
 	</div>
 </footer>
-<script>
-	var today = new Date();
-	var year = today.getFullYear();
-	document.getElementById("copyrightYear").innerHTML = year;
-</script>
 <?php }?>

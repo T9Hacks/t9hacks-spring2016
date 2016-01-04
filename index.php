@@ -21,7 +21,9 @@
 
                 <!-- Brand -->
                 <div class="navbar-header page-scroll">
-                    <a class="navbar-brand page-scroll" href="#page-top">T9Hacks</a>
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                    	T9Hacks
+                    </a>
                 </div>
 
                 <!-- Mobile nav button -->

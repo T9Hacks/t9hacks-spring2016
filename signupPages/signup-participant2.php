@@ -102,12 +102,12 @@
 							</p>
 							
 							<div class="fieldWrapper column6">
-								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Full Name" name="name" id="participantName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/></div>
+								<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Full Name (Required)" name="name" id="participantName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/></div>
 							</div>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
 									<i class="fa fa-envelope-o"></i>
-									<input type="text" placeholder="Email" name="email" id="participantEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
+									<input type="text" placeholder="Email (Required)" name="email" id="participantEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -116,13 +116,13 @@
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
 									<i class="fa fa-university"></i>
-									<input type="text" placeholder="College" name="college" id="participantCollege" value="<?php echo (!is_null($key)) ? $data["college"] : ""; ?>"/>
+									<input type="text" placeholder="College (Required)" name="college" id="participantCollege" value="<?php echo (!is_null($key)) ? $data["college"] : ""; ?>"/>
 								</div>
 							</div>
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
 									<i class="fa fa-graduation-cap"></i>
-									<input type="text" placeholder="Major" name="major" id="participantMajor" value="<?php echo (!is_null($key)) ? $data["major"] : ""; ?>"/>
+									<input type="text" placeholder="Major (Required)" name="major" id="participantMajor" value="<?php echo (!is_null($key)) ? $data["major"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 							<div class="fieldWrapper column6">
 								<div class="fieldInput">
 									<i class="fa fa-mobile"></i>
-									<input type="text" placeholder="Phone Number" name="phone" id="participantPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
+									<input type="text" placeholder="Phone Number (Required)" name="phone" id="participantPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>
