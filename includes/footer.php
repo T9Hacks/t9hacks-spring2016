@@ -30,16 +30,16 @@ function footer($up = false) {
 			<div class="column4">
 				<ul class="socialButtons">
 					<li>
-						<a href="https://www.facebook.com/groups/414618935414757" target="_blank"><i class="fa fa-facebook-square"></i></a>
+						<a href="https://www.facebook.com/groups/414618935414757" target="_blank"><i class="fa fa-facebook"></i></a>
 					</li>
 					<li>
-						<a href="https://github.com/T9Hacks" target="_blank"><i class="fa fa-github-square"></i></a>
+						<a href="https://github.com/T9Hacks" target="_blank"><i class="fa fa-github"></i></a>
 					</li>
 					<li>
-						<a href="https://twitter.com/T9Hacks" target="_blank"><i class="fa fa-twitter-square"></i></a>
+						<a href="https://twitter.com/T9Hacks" target="_blank"><i class="fa fa-twitter"></i></a>
 					</li>
 					<li>
-						<a href="https://www.linkedin.com/groups/8448877" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+						<a href="https://www.linkedin.com/groups/8448877" target="_blank"><i class="fa fa-linkedin"></i></a>
 					</li>
 				</ul>
 			</div>
