@@ -6,7 +6,11 @@ include 'GeneralHelper.php';
 
 $resultArray = array(
 	"SUCCESS"	=> false,
-	"MESSAGE"	=> "Start"
+	"MESSAGE"	=> "Start",
+	
+	"MISSING_INPUTS"	=> -1,
+	"HONEYPOT_FILLED"	=> -1,
+	"EMPTY_INPUTS"		=> -1,
 );
 $inputValues = array();
 
@@ -15,64 +19,86 @@ $inputValues = array();
 /* 		Test For Inputs			*/
 /* **************************** */
 // test - inputs exist
-if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !array_key_exists('subject', $_POST) || !array_key_exists('message', $_POST) ) {
+if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !array_key_exists('subject', $_POST) || !array_key_exists('message', $_POST)  || !array_key_exists('honeypot', $_POST) ) {
 	
 	// bad - inputs exist
-	$resultArray["missing_inputs"] = 1;
+	$resultArray["MISSING_INPUTS"] = 1;
 	$resultArray["MESSAGE"] = "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again.";
 
 // success - inputs exist
 } else {
 	
 	// good - inputs exist
-	$resultArray["missing_inputs"] = 0;
+	$resultArray["MISSING_INPUTS"] = 0;
 	
 	
 	
-	
-	$inputValues = array(
-		"name"		=> $_POST["name"],
-		"email"		=> $_POST["email"],
-		"subject"	=> $_POST["subject"],
-		"message"	=> $_POST["message"]
-	);
 	
 	
 	/* ******************************** */
-	/* 		Test For Empty Inputs		*/
+	/* 			Test Honeypot			*/
 	/* ******************************** */
-	// count empty inputs
-	$emptyInputs = 0;
-	foreach($inputValues as $k => $v) {
-		if( $v == null || empty($v) || $v == "" || removeWhiteSpace($v) == "" )
-			$emptyInputs++;
-	}
-	
-	// test - empty inputs
-	if($emptyInputs != 0) {
+	// test - honeypot
+	if( !empty($_POST['honeypot']) ) {
 		
-		// bad - empty inputs
-		$resultArray["empty_inputs"] = 1;
-		$resultArray["MESSAGE"] = "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.";
+		// bad - honeypot
+		$resultArray["HONEYPOT_FILLED"] = 1;
+		$resultArray["MESSAGE"] = "There was a problem verifying that you are human. If a field says to leave it blank, please do so.";
 	
-	// success - empty inputs
+	// success - honeypot
 	} else {
 		
-		// good - empty inputs
-		$resultArray["empty_inputs"] = 0;
-
+		// good - honeypot
+		$resultArray["HONEYPOT_FILLED"] = 0;
 	
-		// send email
-		$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["subject"], $inputValues["message"]);
-		$resultMessage = ($result) ? "Success!" : "There was a problem sending a email.  Please resubmit the form.";
-		
-		// create result array
-		$resultArray = array(
-			"SUCCESS"	=> $result, 
-			"MESSAGE"	=> $resultMessage
+	
+	
+	
+		$inputValues = array(
+			"name"		=> $_POST["name"],
+			"email"		=> $_POST["email"],
+			"subject"	=> $_POST["subject"],
+			"message"	=> $_POST["message"]
 		);
+		
+		
+		/* ******************************** */
+		/* 		Test For Empty Inputs		*/
+		/* ******************************** */
+		// count empty inputs
+		$emptyInputs = 0;
+		foreach($inputValues as $k => $v) {
+			if( $v == null || empty($v) || $v == "" || removeWhiteSpace($v) == "" )
+				$emptyInputs++;
+		}
+		
+		// test - empty inputs
+		if($emptyInputs != 0) {
+			
+			// bad - empty inputs
+			$resultArray["EMPTY_INPUTS"] = 1;
+			$resultArray["MESSAGE"] = "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.";
+		
+		// success - empty inputs
+		} else {
+			
+			// good - empty inputs
+			$resultArray["EMPTY_INPUTS"] = 0;
 	
-	} // end - empty test
+		
+			// send email
+			$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["subject"], $inputValues["message"]);
+			$resultMessage = ($result) ? "Success!" : "There was a problem sending a email.  Please resubmit the form.";
+			
+			// create result array
+			$resultArray = array(
+				"SUCCESS"	=> $result, 
+				"MESSAGE"	=> $resultMessage
+			);
+		
+		} // end - empty test
+		
+	} // end - honeypot
 	
 } // end - inputs exist
 

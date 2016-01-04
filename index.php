@@ -318,6 +318,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="fieldWrapper column12">
+                                    	<input class="honeypot" type="text" name="honeypot" placeholder="Leave Blank"/>
                                         <button id="sponsorEmailSubmit" class="btn btn-l right">Send &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
                                     </div>
                                 </div>
