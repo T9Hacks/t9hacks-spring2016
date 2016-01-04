@@ -342,7 +342,13 @@ header {
 	text-align: center;
 	margin-bottom: 20px;
 }
-
+#header .location a {
+	color: white;
+	border: none;
+}
+#header .location a:hover, #header .location a:focus, #header .location a:active {
+	color: #1A78A2;
+}
 
 
 
@@ -640,23 +646,23 @@ footer, footer a {
 footer .row { margin-bottom: 0; }
 
 /* left side - location */
-.location p {
+footer .location p {
 	position: relative;
 	text-align: left;
 }
-.location .fa {	
+footer .location .fa {	
 	position: absolute;
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
 }
-.location .text {
+footer .location .text {
 	display: block;
 	margin-left: 25px;
 }
 
 /* right side - copyright and quicklinks */
-.quicklinks, .copyright {
+footer .quicklinks, footer .copyright {
 	text-align: right;
 	
 }

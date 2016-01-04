@@ -66,10 +66,10 @@
                     </div>
 
                     <div class="row">
-                        <div class="column12">
+                        <div class="column12 location">
                             <p><span class="fa fa-clock-o"></span>&nbsp;&nbsp;20-21 February 2016</p>
-                            <p><span class="fa fa-map-marker"></span>&nbsp;&nbsp;ATLAS Institute, University of Colorado Boulder</p>
-                            <p><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;<a class="hiddenLink" href="https://www.google.com/maps/place/ATLAS+Institute,+University+of+Colorado/@40.0076244,-105.2721198,17z/data=!3m1!4b1!4m2!3m1!1s0x876bec3384ff175f:0xe59d1ef9575505f5">Black Box Experimental Studio</a></p>
+                            <p><span class="fa fa-map-marker"></span>&nbsp;&nbsp;<a href="http://www.atlas.colorado.edu">ATLAS Institute</a>, University of Colorado Boulder</p>
+                            <p><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;<a href="https://www.google.com/maps/place/ATLAS+Institute,+University+of+Colorado/@40.0076244,-105.2721198,17z/data=!3m1!4b1!4m2!3m1!1s0x876bec3384ff175f:0xe59d1ef9575505f5">Black Box Experimental Studio</a></p>
                         </div>
                     </div>
 
@@ -292,27 +292,27 @@
 
                             <div id="sponsorEmailArrow"></div>
 
-                            <form id="sponsorEmailForm" action="signupScripts/email.php">
+                            <form id="sponsorEmailForm" action="signupScripts/sponsorEmail.php">
 
                                 <div id="sponsorEmailResult">Null</div>
 
                                 <div class="row">
                                     <div class="fieldWrapper column6">
-                                        <div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Your Name" name="name" id="sponsorName"/></div>
+                                        <div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Your Name (Required)" name="name" id="sponsorName"/></div>
                                     </div>
                                     <div class="fieldWrapper column6">
-                                        <div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Your Email" name="email" id="sponsorEmail"/></div>
+                                        <div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Your Email (Required)" name="email" id="sponsorEmail"/></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="fieldWrapper column12">
-                                        <div class="fieldInput"><i class="fa fa-pencil-square-o"></i><input type="text" placeholder="Subject" name="subject" id="sponsorSubject"/></div>
+                                        <div class="fieldInput"><i class="fa fa-pencil-square-o"></i><input type="text" placeholder="Subject (Required)" name="subject" id="sponsorSubject"/></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="fieldWrapper column12">
                                         <div class="fieldInput textarea">
-                                            <textarea name="message" placeholder="Message" id="sponsorMessage"></textarea>
+                                            <textarea name="message" placeholder="Message (Required)" id="sponsorMessage"></textarea>
                                         </div>
                                     </div>
                                 </div>

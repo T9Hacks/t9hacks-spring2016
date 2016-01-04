@@ -335,6 +335,48 @@ class EmailHelperClass {
 	}
 	
 	
+/*
+	 * Create and send email for every registration
+	 */
+	function createAndSendEmail_Sponsor($resultArray, $inputValues) {
+		// res
+		$res = ( ($resultArray['SUCCESS'] == 1) ? "Success" : "Failure" );
+		
+		// create subject
+		$subject = "ATLAS T9Hacks – Sponsor Message – $res";
+		
+		
+		// create message
+		$message = "<html><head></head><body><h1>$res</h1><table>";
+		
+		$message .= "<tr><td colspan='2'><h2>Sponsor Error Results</h2></td></tr>";
+		foreach($resultArray as $key => $value) {
+			$message .= "<tr><td>$key</td><td>$value</td></tr>";
+		}
+		
+		$message .= "<tr><td colspan='2'><h2>Input Values</h2></td></tr>";
+		foreach($inputValues as $key => $value) {
+			$message .= "<tr><td>$key</td><td>$value</td></tr>";
+		}
+		
+		$message .= "</table></body></html>";
+		//echo $message; die();
+		
+		
+		// create send to
+		$sendTo = "Brittany <britkos@gmail.com>";
+		
+		// create headers
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $subject, $message, $headers);
+		
+		// return result
+		return $emailResult;
+	}
+	
+	
 	
 	
 	
@@ -360,8 +402,8 @@ class EmailHelperClass {
 		$replyTo = "$sponsorName <$sponsorEmail>";
 		
 		// create send to
-		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
-		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
+		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
+		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
 		
 		// create headers
 		$sendHeaders = EmailHelperClass::createHeaders($sendSubject, $sendTo, $replyTo);
