@@ -46,6 +46,11 @@
 
             </div>
         </nav>
+        
+        <!-- MLH Trust Badge -->
+		<a id="mlh-trust-badge" style="position:fixed;top:0;right:50px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank">
+			<img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" >
+		</a>
 
 
 
@@ -257,19 +262,31 @@
         <!-- Sponsors Section -->
         <section id="sponsors" class="bg-cream">
             <div class="container">
+            
+            	<!-- 
+            	<div class="row">
+                    <div class="column12">
+                        <h1 class="blue">Our Sponsors</h1>
+                    </div>
+                </div>
+                 -->
 
                 <div class="row">
                     <div class="column12">
-                        <h1 class="blue">Our Sponsors</h1>
-                        
+                        <h1 class="blue">Our Partners</h1>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="column4 sponsor">&nbsp;</div>
-                    <div class="column4 sponsor">
+                    <div class="column3 sponsor">&nbsp;</div>
+                    <div class="column3 sponsor">
                         <div class="sponsor1 atlas">
                             <img src="images/sponsors/ATLAS-transparent.png" />
+                        </div>
+                    </div>
+                    <div class="column3 sponsor">
+                        <div class="sponsor1 mlh">
+                            <img src="images/sponsors/mlh-logo.png" />
                         </div>
                     </div>
                 </div>
@@ -278,7 +295,7 @@
                     <div class="column12">
                     	<div class="sponsorInterested">
 							<div class="sponsorBtnContainer">
-								<div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a sponsor?</div>
+								<div class="btn btn-xl" id="sponsorEmailBtn">Interested in becoming <span class="mobileOnly">&nbsp;</span>a sponsor or partner?</div>
 							</div>
 						</div>
                     </div>

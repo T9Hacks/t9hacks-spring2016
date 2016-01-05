@@ -180,6 +180,12 @@ section {
 
 
 
+/* MLH Trust Badge */
+#mlh-trust-badge {
+	border: 0;
+}
+
+
 
 /* ***************** */
 /*	  Nav Bar	  */
@@ -466,6 +472,7 @@ header {
 	margin: 0 auto;
 	}
 	.atlas { background-color: #161616; }
+	.mlh { background-color: #f7f9f9; border: 1px solid #e7e7e7; }
 
 .sponsor1 {
 	width: 250px;
