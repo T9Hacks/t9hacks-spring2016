@@ -409,6 +409,22 @@
 						}
 						?>
 						
+						<hr/>
+						<div class="row">
+							<div class="column12">
+								<h4>Data Sharing Notice</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column12">
+								<p class="dataSharingNotice">
+									We participate in Major League Hacking (MLH) as a MLH Member Event. You authorize us to share certain 
+									application/registration information for event administration, ranking, MLH administration, and occasional 
+									messages about hackathons in line with the <a href="https://mlh.io/privacy" target="_blank">MLH Privacy Policy</a>.
+								</p>
+							</div>
+						</div>
+						
 						<div class="row">
 							<div class="fieldWrapper column12">
 								<a href="#" id="participantBack" class="backBtn backToEditBtn"><i class="fa fa-angle-double-left"></i> Back to Edit</a>
