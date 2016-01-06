@@ -2,7 +2,7 @@
 Blue: 			#5AB8E2 	80, 184, 226
 Dark Blue:		#3A98C2
 Cream:			#FFFFF0 	
-Super Light Purple: #DAC8DA
+Super Light Purple: #DAC8DA	218, 200, 218
 Light purple: 	#AA88AA 	170, 136, 170
 Medium purple:	#553377 	85, 51, 119
 Dark purple: 	#331155		51, 17, 85
@@ -391,12 +391,20 @@ header {
 /* ************************************ */
 #join {
 	color: white;
+	padding: 0;
+}
+.joinn {
+	/* background-color: rgba(218, 200, 218, .3);*/
+}
+.joinWrapper {
+	background-color: rgba(21, 7, 25, .75);
+	padding: 100px 20px;
 }
 #join h1 {
-	margin-bottom: 100px;
 	color: white;
 	text-shadow: 2px 2px 1px #000;
 }
+
 .signupBtn {
 	display: block;
 	margin: 0 auto;
@@ -472,16 +480,32 @@ header {
 /*		Section Styles -- Sponsor		*/
 /* ************************************ */
 #sponsors {}
+.extra { margin-top: 100px; }
 .sponsor {
 	text-align: center;
+}
+.sponsor a { 
+	border: 0;
+	display: block;
+	
+}
+.sponsor1, .sponsor2, .sponsor3 {
+	transition: all .2s ease-in-out;
+}
+.sponsor1:hover, .sponsor2:hover, .sponsor3:hover {
+	transform: scale(1.1);
 }
 
 .sponsor1, .sponsor2, .sponsor3 {
 	display: block;
 	margin: 0 auto;
+	background-color: white;
 	}
-	.atlas { background-color: #161616; }
-	.mlh { background-color: #f7f9f9; border: 1px solid #e7e7e7; }
+	.atlas 			{ background-color: #161616; }
+	.mlh 			{ background-color: #f7f9f9; border: 1px solid #e7e7e7; }
+	.stickergiant	{ background-color: #fcde54; border: 1px solid #fca300; }
+	.invision 		{ background-color: #ff005e; }
+	.trello 		{ background-color: #ffffff; border: 1px solid #5e98ba; }
 
 .sponsor1 {
 	width: 250px;
@@ -489,17 +513,14 @@ header {
 	line-height: 250px;
 }
 .sponsor2 {
-	/*width: 300px;
-	height: 300px;
-	line-height: 290px;*/
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
 }
 .sponsor3 {
-	/*width: 250px;
-	height: 250px;
-	line-height: 240px;*/
-}
-.sponsor a:hover, .sponsor a:focus, .sponsor a:active {
-	background: #5AB8E2;
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
 }
 .sponsor img {
 	margin: 20px;
@@ -511,12 +532,12 @@ header {
 	max-height: 210px;
 }
 .sponsor2 img {
-	/*max-width: 250px;
-	max-height: 250px;*/
+	max-width: 160px;
+	max-height: 160px;
 }
 .sponsor3 img {
-	/*max-width: 200px;
-	max-height: 200px;*/
+	max-width: 110px;
+	max-height: 110px;
 }
 
 .sponsorInterested { text-align: center; margin-top: 50px; }
@@ -559,20 +580,21 @@ header {
 
 @media (max-width: 1200px) {
 	.sponsor1 { width: 200px; height: 200px; line-height: 200px; }
-	.sponsor2 { /*width: 250px; height: 250px; line-height: 240px;*/ }
-	.sponsor3 { /*width: 200px; height: 200px; line-height: 190px;*/ }
+	.sponsor2 { width: 150px; height: 200px; line-height: 200px; }
+	.sponsor3 { width: 100px; height: 100px; line-height: 100px; }
 	.sponsor1 img { max-width: 160px; max-height: 160px; }
-	.sponsor2 img { /*max-width: 200px; max-height: 200px;*/ }
-	.sponsor3 img { /*max-width: 150px; max-height: 150px;*/ }
+	.sponsor2 img { max-width: 110px; max-height: 110px; }
+	.sponsor3 img { max-width: 60px; max-height: 60px; }
 }
 @media (max-width: 991px) {
+	.extra { margin-top: 30px; }
 	.sponsor1 { width: 160px; height: 160px; line-height: 160px; }
-	.sponsor2 { width: 180px; /*height: 180px; line-height: 170px;*/ }
-	.sponsor3 { width: 130px; /*height: 130px; line-height: 120px;*/ }
+	.sponsor2 { width: 180px; height: 180px; line-height: 180px; }
+	.sponsor3 { width: 140px; height: 140px; line-height: 140px; }
 	.sponsor img { margin: 10px; }
 	.sponsor1 img { max-width: 140px; max-height: 140px; }
-	.sponsor2 img { /*max-width: 130px; max-height: 130px;*/ }
-	.sponsor3 img { /*max-width:  80px; max-height:  80px;*/ }
+	.sponsor2 img { max-width: 130px; max-height: 130px; }
+	.sponsor3 img { max-width: 120px; max-height: 120px; }
 }
 
 
