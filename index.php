@@ -164,46 +164,35 @@
 				</div>
 
 				
+				<div class="row">
 				
-				<div class="column6">
-					<div class="row">
-						<div class="column12 alpha faq">
-							<i class="faq-icon fa fa-group"></i>
-							<div class="faq-question">
-								<h2>Do I have to have a team to register?</h2>
-								<p>
-									Nope!  T9Hacks is a great place to meet new people with different skillsets.  You can come with a 
-									pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
-								</p>
+					<div class="column6">
+						<div class="row">
+							<div class="column12 alpha faq">
+								<i class="faq-icon fa fa-group"></i>
+								<div class="faq-question">
+									<h2>Do I have to have a team to register?</h2>
+									<p>
+										Nope!  T9Hacks is a great place to meet new people with different skillsets.  You can come with a 
+										pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column12 alpha faq">
+								<i class="faq-icon fa fa-ticket"></i>
+								<div class="faq-question">
+									<h2>How much does it cost?</h2>
+									<p>
+										Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="column12 alpha faq">
-							<i class="faq-icon fa fa-ticket"></i>
-							<div class="faq-question">
-								<h2>How much does it cost?</h2>
-								<p>
-									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="column12 alpha faq">
-							<i class="faq-icon fa fa-laptop"></i>
-							<div class="faq-question">
-								<h2>What do I have to bring?</h2>
-								<p>
-									Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-					
-				<div class="column6">
-					<div class="row">
+						
+					<div class="column6">
 						<div class="column12 alpha faq">
 							<i class="faq-icon fa fa-object-group"></i>
 							<div class="faq-question">
@@ -220,15 +209,31 @@
 							</div>
 						</div>
 					</div>
-				</div>
-					
 					
 				</div>
+					
 				
 				<div class="row">
-					
+					<div class="column6 faq">
+						<i class="faq-icon fa fa-laptop"></i>
+						<div class="faq-question">
+							<h2>What do I have to bring?</h2>
+							<p>
+								Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
+							</p>
+						</div>
+					</div>
+					<div class="column6 faq">
+						<i class="faq-icon fa fa-plane"></i>
+						<div class="faq-question">
+							<h2>Do you cover travel expenses?</h2>
+							<p>
+								Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, we 
+								are making travel expences a goal for next year's hackathon!
+							</p>
+						</div>
+					</div>
 				</div>
-				
 				
 				
 
