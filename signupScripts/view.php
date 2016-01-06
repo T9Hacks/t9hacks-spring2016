@@ -195,7 +195,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							<?php 
 							foreach($person as $k => $value) {
 								if($k != "deleted") {
-									echo '<td>' . $value . '</td>';
+									if( $k == "linkedin" || $k == "website" || $k == "github" || $k == "facebook" || $k == "twitter" )
+										echo "<th><a href='" . $value . "' target='_blank'>" . $value . "</a></th>";
+									else if($k == "resume")
+										echo "<th><a href='../hidden/resumes/" . $value . "' target='_blank'>" . $value . "</a></th>";
+									else
+										echo '<td>' . $value . '</td>';
 								}
 							}
 							?>

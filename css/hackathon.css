@@ -174,13 +174,26 @@ section {
 	padding: 100px 0;
 }
 
-
-
 /* MLH Trust Badge */
 #mlh-trust-badge {
+	/* their styles */
+	position: fixed;
+	top: 0;
+	right: 50px;
+	max-width: 100px;
+	width: 10%;
+	min-width: 60px;
+	display: block;
+	z-index: 10000;
+	
+	/* our styles */
 	border: 0;
 }
 
+/* small tablet / large phone */
+@media (max-width: 768px) {
+	#mlh-trust-badge { display: none; }
+}
 
 
 /* ***************** */
@@ -403,6 +416,9 @@ header {
 #join h1 {
 	color: white;
 	text-shadow: 2px 2px 1px #000;
+}
+#join p {
+	text-align: justify;
 }
 
 .signupBtn {

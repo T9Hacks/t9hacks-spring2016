@@ -48,7 +48,7 @@
 		</nav>
 		
 		<!-- MLH Trust Badge -->
-		<a id="mlh-trust-badge" style="position:fixed;top:0;right:50px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank">
+		<a id="mlh-trust-badge" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank">
 			<img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" >
 		</a>
 
@@ -153,7 +153,7 @@
 					<div class="column6 faq">
 						<i class="faq-icon fa fa-clock-o"></i>
 						<div class="faq-question">
-							<h2>Do you really mean 24 hours??</h2>
+							<h2>Do you really mean 24 hours?</h2>
 							<p>
 								We know, that sounds like a long time! But it goes quickly when you are collaborating, planning, and creating 
 								projects.  We wanted to see what kinds of projects people would come up with if they were given a full day to 
@@ -163,49 +163,70 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="column6 faq">
-						<i class="faq-icon fa fa-group"></i>
-						<div class="faq-question">
-							<h2>Do I have to have a team to register?</h2>
-							<p>
-								Nope!  T9Hacks is a great place to meet new people with different skillsets.  You can come with a 
-								pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
-							</p>
+				
+				
+				<div class="column6">
+					<div class="row">
+						<div class="column12 alpha faq">
+							<i class="faq-icon fa fa-group"></i>
+							<div class="faq-question">
+								<h2>Do I have to have a team to register?</h2>
+								<p>
+									Nope!  T9Hacks is a great place to meet new people with different skillsets.  You can come with a 
+									pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
+								</p>
+							</div>
 						</div>
 					</div>
-					<div class="column6 faq">
-						<i class="faq-icon fa fa-object-group"></i>
-						<div class="faq-question">
-							<h2>What kinds of projects should I make?</h2>
-							<p>
-								T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
-								where we encourage hackers to build solutions, prototypes, or raise awareness of problems they see in their communities.  
-								If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
-							</p>
+					<div class="row">
+						<div class="column12 alpha faq">
+							<i class="faq-icon fa fa-ticket"></i>
+							<div class="faq-question">
+								<h2>How much does it cost?</h2>
+								<p>
+									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column12 alpha faq">
+							<i class="faq-icon fa fa-laptop"></i>
+							<div class="faq-question">
+								<h2>What do I have to bring?</h2>
+								<p>
+									Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
+					
+				<div class="column6">
+					<div class="row">
+						<div class="column12 alpha faq">
+							<i class="faq-icon fa fa-object-group"></i>
+							<div class="faq-question">
+								<h2>What kind of project should I make?</h2>
+								<p>
+									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
+									where we encourage hackers to build solutions, prototypes, or raise awareness of problems they see in their communities.  
+									If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
+								</p>
+								<p>
+									T9Hacks is also a "creative technology" hackathon.  This means that we encourage our participants to create projects with 
+									tangible, artistic, media, or electronic components.  
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+					
+				</div>
 				
 				<div class="row">
-					<div class="column6 faq">
-						<i class="faq-icon fa fa-ticket"></i>
-						<div class="faq-question">
-							<h2>How much does it cost?</h2>
-							<p>
-								Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.
-							</p>
-						</div>
-					</div>
-					<div class="column6 faq">
-						<i class="faq-icon fa fa-laptop"></i>
-						<div class="faq-question">
-							<h2>What do I have to bring?</h2>
-							<p>
-								Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
-							</p>
-						</div>
-					</div>
+					
 				</div>
 				
 				
