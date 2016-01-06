@@ -306,7 +306,7 @@
 								</div>
 							</div>
 							<div class="scheduleSection">
-								<h2 class="white">Sunday, February 22</h2>
+								<h2 class="white">Sunday, February 21</h2>
 								<div class="times">
 									<p>Midnight</p>
 									<p>2:00am</p>
