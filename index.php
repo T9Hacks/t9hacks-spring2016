@@ -355,13 +355,13 @@
 				<div class="row">
 					<div class="column3 sponsor">&nbsp;</div>
 					<div class="column5 sponsor">
-						<div class="sponsor1 atlas">
-							<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
+						<div class="sponsor1 mlh">
+							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh-logo.png" /></a>
 						</div>
 					</div>
 					<div class="column5 sponsor">
-						<div class="sponsor1 mlh">
-							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh-logo.png" /></a>
+						<div class="sponsor1 atlas">
+							<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
 						</div>
 					</div>
 					<div class="column4 sponsor">&nbsp;</div>
