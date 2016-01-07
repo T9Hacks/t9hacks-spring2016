@@ -177,27 +177,6 @@ section {
 	padding: 100px 0;
 }
 
-/* MLH Trust Badge */
-#mlh-trust-badge {
-	/* their styles */
-	position: fixed;
-	top: 0;
-	right: 50px;
-	max-width: 100px;
-	width: 10%;
-	min-width: 60px;
-	display: block;
-	z-index: 10000;
-	
-	/* our styles */
-	border: 0;
-}
-
-/* small tablet / large phone */
-@media (max-width: 768px) {
-	#mlh-trust-badge { display: none; }
-}
-
 
 
 
@@ -228,6 +207,9 @@ section {
 	-webkit-transition: all .3s;
     -moz-transition: all .3s;
 	transition: all .3s;
+}
+.navbar .container {
+	position: relative;
 }
 
 /* back navbar - small */
@@ -296,6 +278,41 @@ section {
 	font-size: 1.0em;
 }
 
+.nav {
+	margin-right: 120px;
+}
+/* MLH Trust Badge */
+#mlh-trust-badge {
+	/* their styles */
+	position: fixed;
+	top: 0;
+	right: 50px;
+	max-width: 100px;
+	width: 10%;
+	min-width: 60px;
+	display: block;
+	z-index: 10000;
+	
+	/* our styles */
+	border: 0;
+	max-width: 100px;
+	top: -20px;
+	position: absolute;
+	right: 0;
+	
+	-webkit-transition: all .3s;
+    -moz-transition: all .3s;
+	transition: all .3s;
+}
+.navbar-shrink #mlh-trust-badge, .navbar-shrink-perm #mlh-trust-badge {
+	top: 0;
+}
+
+@media (max-width: 991px) {
+	.nav {
+		margin-right: 80px;
+	}
+}
 /* small tablet / large phone */
 @media (max-width: 768px) {
 	/* back navbar - large */
@@ -327,7 +344,11 @@ section {
 	.navbar-shrink .navbar-right .btn, .navbar-shrink-perm .navbar-right .btn {
 		margin-right: 15px;
 	}
+	
+	/* MLH Trust Badge */
+	#mlh-trust-badge { display: none; }
 }
+
 
 
 
