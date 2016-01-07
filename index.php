@@ -431,11 +431,6 @@
 								</div>
 								<div class="row">
 									<div class="fieldWrapper column12">
-										<div class="fieldInput"><i class="fa fa-pencil-square-o"></i><input type="text" placeholder="Subject (Required)" name="subject" id="sponsorSubject"/></div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="fieldWrapper column12">
 										<div class="fieldInput textarea">
 											<textarea name="message" placeholder="Message (Required)" id="sponsorMessage"></textarea>
 										</div>

@@ -19,7 +19,7 @@ $inputValues = array();
 /* 		Test For Inputs			*/
 /* **************************** */
 // test - inputs exist
-if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !array_key_exists('subject', $_POST) || !array_key_exists('message', $_POST)  || !array_key_exists('honeypot', $_POST) ) {
+if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !array_key_exists('message', $_POST)  || !array_key_exists('honeypot', $_POST) ) {
 	
 	// bad - inputs exist
 	$resultArray["MISSING_INPUTS"] = 1;
@@ -57,7 +57,6 @@ if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !
 		$inputValues = array(
 			"name"		=> $_POST["name"],
 			"email"		=> $_POST["email"],
-			"subject"	=> $_POST["subject"],
 			"message"	=> $_POST["message"]
 		);
 		

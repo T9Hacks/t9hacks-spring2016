@@ -386,7 +386,7 @@ class EmailHelperClass {
 	/*
 	 * Create and send email for index page sponsor interest
 	 */
-	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorSubject, $sponsorMessage) {
+	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorMessage) {
 		// create subject
 		$sendSubject = "Sponsor Email From T9Hacks";
 		
@@ -394,7 +394,6 @@ class EmailHelperClass {
 		$sendMessage = "<html><head></head><body><h2>Here is the sponsor email sent from T9Hacks.org</h2><table style='border-collapse: collapse'>";
 		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Name: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorName</p></td></tr>";
 		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Email: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorEmail</p></td></tr>";
-		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Subject: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorSubject</p></td></tr>";
 		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Message: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorMessage</p></td></tr>";
 		$sendMessage .= "</table></body></html>";
 		
@@ -402,8 +401,8 @@ class EmailHelperClass {
 		$replyTo = "$sponsorName <$sponsorEmail>";
 		
 		// create send to
-		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
-		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
+		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
+		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
 		
 		// create headers
 		$sendHeaders = EmailHelperClass::createHeaders($sendSubject, $sendTo, $replyTo);
