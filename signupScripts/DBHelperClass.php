@@ -159,14 +159,7 @@ class DBHelperClass {
 					`breakfast`, 
 					`lunch`, 
 					`dinner`, 
-					`area_web_design`, 
-					`area_web_dev`, 
-					`area_android`, 
-					`area_ios`, 
-					`area_uiux`, 
-					`area_gaming`, 
-					`area_print`, 
-					`area_arduino`, 
+					`area`, 
 					`comment`, 
 					`coc_agree`, 
 					`datetime`, 
@@ -182,14 +175,7 @@ class DBHelperClass {
 					:breakfast, 
 					:lunch, 
 					:dinner, 
-					:area_web_design, 
-					:area_web_dev, 
-					:area_android, 
-					:area_ios, 
-					:area_uiux, 
-					:area_gaming, 
-					:area_print, 
-					:area_arduino, 
+					:area, 
 					:comment, 
 					:coc_agree, 
 					:datetime, 
@@ -197,8 +183,7 @@ class DBHelperClass {
 				)";
 		} else {
 			$prepStmt = "UPDATE `t9hacks_mentors` 
-				SET `key`				= :key, 
-					`name`				= :name, 
+				SET `name`				= :name, 
 					`email`				= :email, 
 					`phone`				= :phone, 
 					`company`			= :company, 
@@ -206,14 +191,7 @@ class DBHelperClass {
 					`breakfast`			= :breakfast, 
 					`lunch`				= :lunch, 
 					`dinner`			= :dinner, 
-					`area_web_design`	= :area_web_design, 
-					`area_web_dev`		= :area_web_dev, 
-					`area_android`		= :area_android, 
-					`area_ios`			= :area_ios, 
-					`area_uiux`			= :area_uiux, 
-					`area_gaming`		= :area_gaming, 
-					`area_print`		= :area_print, 
-					`area_arduino`		= :area_arduino, 
+					`area`				= :area, 
 					`comment`			= :comment, 
 					`coc_agree`			= :coc_agree,
 					`datetime`			= :datetime, 
@@ -230,14 +208,7 @@ class DBHelperClass {
 		$stmt->bindParam(':breakfast',		$inputValues['breakfast']);
 		$stmt->bindParam(':lunch', 			$inputValues['lunch']);
 		$stmt->bindParam(':dinner', 		$inputValues['dinner']);
-		$stmt->bindParam(':area_web_design',$inputValues['webDesign']);
-		$stmt->bindParam(':area_web_dev',	$inputValues['webDev']);
-		$stmt->bindParam(':area_android',	$inputValues['android']);
-		$stmt->bindParam(':area_ios',		$inputValues['iOS']);
-		$stmt->bindParam(':area_uiux',		$inputValues['uiux']);
-		$stmt->bindParam(':area_gaming',	$inputValues['gaming']);
-		$stmt->bindParam(':area_print',		$inputValues['print']);
-		$stmt->bindParam(':area_arduino',	$inputValues['arduino']);
+		$stmt->bindParam(':area',			$inputValues['area']);
 		$stmt->bindParam(':comment',		$inputValues['comment']);
 		$stmt->bindParam(':coc_agree',		$inputValues['agree']);
 		$stmt->bindParam(':datetime', 		$datetime);

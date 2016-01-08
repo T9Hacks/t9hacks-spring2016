@@ -46,7 +46,7 @@
 				
 				<!-- MLH Trust Badge -->
 				<a id="mlh-trust-badge" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank">
-					<img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" >
+					<img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016">
 				</a>
 
 			</div>
@@ -107,7 +107,7 @@
 				<div class="row">
 					<div class="column12">
 						<p>
-							T9Hacks is a 24 hour hackathon at the University of Colorado Boulder's ATLAS Institute 
+							T9Hacks is a 24 hour women's hackathon at the University of Colorado Boulder's ATLAS Institute 
 							that brings together students for two days of creativity, building, and hacking.
 							Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
 							students to explore new technologies, solve problems, and create something amazing with a 
@@ -175,7 +175,7 @@
 								<div class="faq-question">
 									<h2>Do I have to have a team to register?</h2>
 									<p>
-										Nope!  T9Hacks is a great place to meet new people with different skillsets.  You can come with a 
+										Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a 
 										pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
 									</p>
 								</div>
@@ -230,8 +230,8 @@
 						<div class="faq-question">
 							<h2>Do you cover travel expenses?</h2>
 							<p>
-								Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, we 
-								are making travel expences a goal for next year's hackathon!
+								Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger CU hackathon called 
+								<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
 							</p>
 						</div>
 					</div>

@@ -18,7 +18,7 @@
 		if(array_key_exists("n", $_GET)) {
 			$n = $_GET['n'];
 			// check if data is between 0 and 3
-			if($n >= 0 && $n <= 3) {
+			if($n >= 0 && $n <= 2) {
 				$numFriends = $n;
 			}
 		}
@@ -136,62 +136,34 @@
 						</div>
 						
 						<div class="row">
-							<div class="fieldWrapper column12 checkboxes">
+							<div class="fieldWrapper column12 meals">
 								<div class="column12 alpha">
 									<p>We will be providing food for everyone who comes to the hackathon.  Which meals are you planning on being present for?</p>
 								</div>
 								<div class="fieldCheckbox">
 									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Dinner" data-tg-on="Dinner" for="mentorDinner"></label>
+	   								<label class="tgl-btn" data-tg-off="Dinner on the 20th" data-tg-on="Dinner on the 20th" for="mentorDinner"></label>
 								</div>
 								<div class="fieldCheckbox">
 									<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox" <?php echo (!is_null($key) && $data['breakfast'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Breakfast" data-tg-on="Breakfast" for="mentorBreakfast"></label>
+	   								<label class="tgl-btn" data-tg-off="Breakfast on the 21st" data-tg-on="Breakfast on the 21st" for="mentorBreakfast"></label>
 								</div>
 								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (is_null($key) || $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Lunch" data-tg-on="Lunch" for="mentorLunch"></label>
+									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (!is_null($key) && $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
+	   								<label class="tgl-btn" data-tg-off="Lunch on the 21st" data-tg-on="Lunch on the 21st" for="mentorLunch"></label>
 								</div>
 							</div>
 						</div>
 						
 						<div class="row">
 							<p class="column12">
-								As a mentor, you will be working with groups in particular topics.  Which area(s) would you like to be a mentor for?
+								As a mentor, you will be working with groups in particular topics.  What area would you like to be a mentor for? (Examples: Graphic Design, Electronics, iOS Development)
 							</p>
 							
 							<div class="fieldWrapper column12 areas">
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorWebDesign' type='checkbox' name="webDesign" value="Web Design" <?php echo (!is_null($key) && $data['area_web_design'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Web Design' data-tg-on='Web Design' for='mentorWebDesign'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorWebDev' type='checkbox' name="webDev" value="Web Development" <?php echo (!is_null($key) && $data['area_web_dev'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Web Development' data-tg-on='Web Development' for='mentorWebDev'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorAndroid' type='checkbox' name="android" value="Android Development" <?php echo (!is_null($key) && $data['area_android'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Android Development' data-tg-on='Android Development' for='mentorAndroid'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentoriOS' type='checkbox' name="iOS" value="iOS Development" <?php echo (!is_null($key) && $data['area_ios'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='iOS Development' data-tg-on='iOS Development' for='mentoriOS'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorUIUX' type='checkbox' name="uiux" value="UI/UX Design" <?php echo (!is_null($key) && $data['area_uiux'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='UI/UX Design' data-tg-on='UI/UX Design' for='mentorUIUX'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorGaming' type='checkbox' name="gaming" value="Gaming" <?php echo (!is_null($key) && $data['area_gaming'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Gaming' data-tg-on='Gaming' for='mentorGaming'></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorPrint' type='checkbox' name="print" value="Print Media" <?php echo (!is_null($key) && $data['area_print'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off="Print Media" data-tg-on="Print Media" for="mentorPrint"></label>
-								</div>
-								<div class="fieldRadio">
-									<input class='tgl tgl-flip' id='mentorArduino' type='checkbox' name="arduino" value="Arduino/Electronics" <?php echo (!is_null($key) && $data['area_arduino'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Arduino/Electronics' data-tg-on='Arduino/Electronics' for='mentorArduino'></label>
+								<div class="fieldInput">
+									<i class="fa fa-tasks"></i>
+									<input type="text" placeholder="Area (required)" name="area" id="mentorArea" value="<?php echo (!is_null($key)) ? $data["area"] : ""; ?>"/>
 								</div>
 							</div>
 						</div>
@@ -304,20 +276,12 @@
 									<tr><td>Company</td>	<td id="mCompany"></td></tr>
 									<tr><td>Position</td>	<td id="mPosition"></td></tr>
 									
-									<tr><td>Breakfast</td>	<td id="mBreakfast"></td></tr>
-									<tr><td>Lunch</td>		<td id="mLunch"></td></tr>
-									<tr><td>Dinner</td>		<td id="mDinner"></td></tr>
+									<tr><td>Dinner on the 20th</td>		<td id="mDinner"></td></tr>
+									<tr><td>Breakfast on the 21st</td>	<td id="mBreakfast"></td></tr>
+									<tr><td>Lunch on the 21st</td>		<td id="mLunch"></td></tr>
 									
-									<tr><td>Web Design</td>				<td id="mWebDesign"></td></tr>
-									<tr><td>Web Development</td>		<td id="mWebDev"></td></tr>
-									<tr><td>Android Development</td>	<td id="mAndroid"></td></tr>
-									<tr><td>iOS Development</td>		<td id="miOS"></td></tr>
-									<tr><td>UI/UX Design</td>			<td id="mUIUX"></td></tr>
-									<tr><td>Gaming</td>					<td id="mGaming"></td></tr>
-									<tr><td>Print Media</td>			<td id="mPrint"></td></tr>
-									<tr><td>Arduino/Electronics</td>	<td id="mArduino"></td></tr>
-									
-									<tr><td>Comment</td>				<td id="mComment"></td></tr>
+									<tr><td>Area</td>		<td id="mArea"></td></tr>
+									<tr><td>Comment</td>	<td id="mComment"></td></tr>
 								</tbody>
 								</table>
 							</div>

@@ -281,6 +281,9 @@ section {
 .nav {
 	margin-right: 120px;
 }
+.nav-simple {
+	margin-right: 100px;
+}
 /* MLH Trust Badge */
 #mlh-trust-badge {
 	/* their styles */
@@ -304,17 +307,22 @@ section {
     -moz-transition: all .3s;
 	transition: all .3s;
 }
+#mlh-trust-badge img {
+	width: 100%;
+}
+
 .navbar-shrink #mlh-trust-badge, .navbar-shrink-perm #mlh-trust-badge {
 	top: 0;
 }
 
 @media (max-width: 991px) {
-	.nav {
-		margin-right: 80px;
-	}
+	.nav { margin-right: 80px; }
+	.nav-simple { margin-right: 70px; }
 }
 /* small tablet / large phone */
 @media (max-width: 768px) {
+	.nav, .nav-simple { margin-right: -15px; }
+	
 	/* back navbar - large */
 	.navbar {
 		padding: 0;
@@ -991,19 +999,23 @@ input[type=submit] {
 	display: inline-block;
 	float: left;
 }
+
 .tgl-label:hover, .tgl-label:focus, .tgl-label:active {
 	cursor: pointer;
 }
-.areas .fieldRadio {
+.meals .fieldCheckbox, .colleagues .fieldRadio {
+	width: 31%;
+	margin-right: 3.5%;
+}
+.meals .fieldCheckbox:last-child, .colleagues .fieldRadio:last-child { margin-right: 0; }
+.meals .fieldCheckbox .tgl-btn, .colleagues .fieldRadio .tgl-btn { width: 100%; }
+
+.friends .fieldRadio {
 	width: 23.5%;
 	margin-right: 2%;
 }
-.areas .fieldRadio:nth-child(4n) {
-	margin-right: 0;
-}
-.areas .tgl + .tgl-btn {
-	width: 20em;
-}
+.friends .fieldRadio:nth-child(4n) { margin-right: 0; }
+.friends .fieldRadio .tgl-btn { width: 100%; }
 
 @media (max-width: 1200px) {
 	.signupWrapper {
@@ -1012,23 +1024,12 @@ input[type=submit] {
 	}
 }
 @media (max-width: 767px) {
-	.areas .fieldRadio, .areas .fieldRadio:nth-child(4n) {
-		width: 32.66667%;
-		margin-right: 1%;
-	}
-	.areas .fieldRadio:nth-child(3n) { margin-right: 0; }
-	.areas .tgl + .tgl-btn {
-		width: 156px;
-	}
-}
-@media (max-width: 570px) {
-	.areas .fieldRadio, .areas .fieldRadio:nth-child(4n), .areas .fieldRadio:nth-child(3n) {
-		width: 49.5%;
-		margin-right: 1%;
-	}
-	.areas .fieldRadio:nth-child(2n) { margin-right: 0; }
-	.areas .tgl + .tgl-btn {
+	.friends .fieldRadio,
+	.colleagues .fieldRadio,
+	.meals .fieldCheckbox {
 		width: 100%;
+		margin-right: 0;
+		margin-bottom: 5px;
 	}
 }
 

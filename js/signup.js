@@ -32,15 +32,7 @@ $(document).ready(function(){
 	mLunch();
 	mDinner();
 	
-	mWebDesign();
-	mWebDev();
-	mAndroid();
-	miOS();
-	mUIUX();
-	mGaming();
-	mPrint();
-	mArduino();
-	
+	mArea();
 	mComment();
 });
 
@@ -103,15 +95,7 @@ $("#mentorBreakfast")	.change(function(){ mBreakfast();	});
 $("#mentorLunch")		.change(function(){ mLunch();		});
 $("#mentorDinner")		.change(function(){ mDinner();		});
 
-$("#mentorWebDesign")	.change(function(){ mWebDesign();	});
-$("#mentorWebDev")		.change(function(){ mWebDev()		});
-$("#mentorAndroid")		.change(function(){ mAndroid();		});
-$("#mentoriOS")			.change(function(){ miOS();			});
-$("#mentorUIUX")		.change(function(){ mUIUX();		});
-$("#mentorGaming")		.change(function(){ mGaming();		});
-$("#mentorPrint")		.change(function(){ mPrint();		});
-$("#mentorArduino")		.change(function(){ mArduino();		});
-
+$("#mentorArea")		.change(function(){ mArea();		});
 $("#mentorComment")		.change(function(){ mComment();		});
 
 
@@ -122,20 +106,12 @@ function mPhone()		{ $("#mPhone")		.html( $("#mentorPhone")	.val()); }
 function mCompany()		{ $("#mCompany")	.html( $("#mentorCompany")	.val()); }
 function mPosition()	{ $("#mPosition")	.html( $("#mentorPosition")	.val()); }
 
-function mComment()		{ $("#mComment")	.html( $("#mentorComment")	.val()); }
-
 function mBreakfast()	{ $("#mBreakfast")	.html( (($("#mentorBreakfast")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mLunch()		{ $("#mLunch")		.html( (($("#mentorLunch")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mDinner()		{ $("#mDinner")		.html( (($("#mentorDinner")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 
-function mWebDesign()	{ $("#mWebDesign")	.html( (($("#mentorWebDesign")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mWebDev()		{ $("#mWebDev")		.html( (($("#mentorWebDev")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mAndroid()		{ $("#mAndroid")	.html( (($("#mentorAndroid")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function miOS()			{ $("#miOS")		.html( (($("#mentoriOS")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mUIUX()		{ $("#mUIUX")		.html( (($("#mentorUIUX")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mGaming()		{ $("#mGaming")		.html( (($("#mentorGaming")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mPrint()		{ $("#mPrint")		.html( (($("#mentorPrint")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
-function mArduino()		{ $("#mArduino")	.html( (($("#mentorArduino")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mArea()		{ $("#mArea")		.html( $("#mentorArea")		.val()); }
+function mComment()		{ $("#mComment")	.html( $("#mentorComment")	.val()); }
 
 /* on change friend confirmation table */
 $("#friendName1")	.change(function(){ $("#fName1")	.html( $("#friendName1").val());	});
@@ -256,6 +232,9 @@ function submitSignup(event, isParticipant, numFriends) {
 		
 		inputDivs.push($majorDiv);
 		inputErrors.push("You must enter your major.");
+	} else {
+		inputDivs.push($("#mentorArea"));
+		inputErrors.push("You must enter an area.");
 	}
 	for(var i=0; i<numFriends; i++) {
 		var fid = i+1;

@@ -231,11 +231,11 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isMentor = true;
 					
 					// input data
-					$inputNames = array("name", "email", "phone", "company", "position", "breakfast", "lunch", "dinner", "webDesign", "webDev", "android", "iOS", "uiux", "gaming", "print", "arduino", "key", "comment", "agree");
+					$inputNames = array("name", "email", "phone", "area", "company", "position", "comment", "breakfast", "lunch", "dinner", "agree");
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
-						'numReqInputs'	=> 3,	
-						'numTextInputs'	=> 5,						
+						'numReqInputs'	=> 4,	
+						'numTextInputs'	=> 7,						
 					);
 					
 					

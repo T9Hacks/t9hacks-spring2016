@@ -58,7 +58,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="fieldWrapper column12 areas">
+						<div class="fieldWrapper column12 friends">
 							<div class="fieldRadio">
 								<input class="tgl tgl-flip" id="myself" type="radio" name="friends" value="0" <?php echo ($numFriends == 0 ) ? "checked='checked'" : ""; ?> >
    								<label class="tgl-btn" data-tg-off="Myself" data-tg-on="Myself" for="myself"></label>

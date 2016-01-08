@@ -223,9 +223,10 @@ class EmailHelperClass {
 			$ticketName = "Ticket";
 			$ticketType = "Mentor";
 			$extras = "
-				<tr><td style='padding: 5px 10px;'>Dinner: </td><td style='padding: 5px 10px;'>" . ($inputValues['dinner']==1?"Yes":"No") . "</td></tr>
-				<tr><td style='padding: 5px 10px;'>Breakfast: </td><td style='padding: 5px 10px;'>" . ($inputValues['breakfast']==1?"Yes":"No") . "</td></tr>
-				<tr><td style='padding: 5px 10px;'>Lunch: </td><td style='padding: 5px 10px;'>" . ($inputValues['lunch']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Dinner on the 20th: </td><td style='padding: 5px 10px;'>" . ($inputValues['dinner']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Breakfast on the 21st: </td><td style='padding: 5px 10px;'>" . ($inputValues['breakfast']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Lunch on the 21st: </td><td style='padding: 5px 10px;'>" . ($inputValues['lunch']==1?"Yes":"No") . "</td></tr>
+				<tr><td style='padding: 5px 10px;'>Area: </td><td style='padding: 5px 10px;'>" . $inputValues['area'] . "</td></tr>
 			";
 			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=".$key;
 		}
@@ -388,13 +389,13 @@ class EmailHelperClass {
 	 */
 	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorMessage) {
 		// create subject
-		$sendSubject = "Sponsor Email From T9Hacks";
+		$sendSubject = "T9Hacks - Sponsor Question";
 		
 		// create message
-		$sendMessage = "<html><head></head><body><h2>Here is the sponsor email sent from T9Hacks.org</h2><table style='border-collapse: collapse'>";
-		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Name: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorName</p></td></tr>";
-		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Email: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorEmail</p></td></tr>";
-		$sendMessage .= "<tr><td style='border:1px solid black;padding:10px;'><b>Message: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorMessage</p></td></tr>";
+		$sendMessage = "<html><head></head><body><table style='border-collapse: collapse'>";
+		$sendMessage .= "<tr><td><b>Name: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorName</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Email: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorEmail</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Message: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorMessage</p></td></tr>";
 		$sendMessage .= "</table></body></html>";
 		
 		// create sender's reply to
