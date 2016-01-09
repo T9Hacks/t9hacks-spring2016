@@ -117,6 +117,7 @@ class DBHelperClass {
 		
 		// echo a message to say the UPDATE succeeded
 		$updateCount = $stmt->rowCount();
+		//echo $updateCount; echo ($isNew) ? "yes" : "no"; die();
 		return($updateCount>0);
 	}
 	
@@ -247,45 +248,33 @@ class DBHelperClass {
 	
 	// getters 
 	function getParticipants($key = null) {
-		// get participant(s)
-		if(is_null($key)) {
-			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_participants`"); 
-		} else {
-			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_participants` WHERE `key` = :key");
-			$stmt->bindParam(':key', $key);
-		}
-		
-		// run
-		$stmt->execute();
-		
-		// store data in array
-		$participants = array();
-		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
-			$participants[] = $row;
-		}
-		
-		return $participants;
+		return $this->getPeople(1, $key);
 	}
 	
 	function getMentors($key = null) {
-		// get mentor(s)
-		if(is_null($key)) {
-			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_mentors`"); 
-		} else {
-			$stmt = $this->conn->prepare("SELECT * FROM `t9hacks_mentors` WHERE `key` = :key");
+		return $this->getPeople(0, $key);
+	}
+	
+	function getPeople($isParticipant, $key = null) {
+		// prepare statement
+		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
+		if(!is_null($key)) {
+			$stmt = $this->conn->prepare("SELECT * FROM $table WHERE `key` = :key");
 			$stmt->bindParam(':key', $key);
+		} else {
+			$stmt = $this->conn->prepare("SELECT * FROM $table");
 		}
 		
 		// run
 		$stmt->execute();
 		
 		// store data in array
-		$mentors = array();
+		$people = array();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
-			$mentors[] = $row;
+			$people[] = $row;
 		}
 		
-		return $mentors;
+		return $people;
 	}
 	
 	
@@ -346,6 +335,32 @@ class DBHelperClass {
 			$prepStmt = "UPDATE `t9hacks_mentors` SET `checked_in` = 1 WHERE `id` = :id";
 		$stmt = $this->conn->prepare($prepStmt);
 		$stmt->bindParam(':id',$id);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
+	function cancelRegistration($isParticipant, $key) {
+		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
+		$stmt = $this->conn->prepare("UPDATE $table SET `unregistered` = 1 WHERE `key` = :key");
+		$stmt->bindParam(':key', $key);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
+	function redoRegistration($isParticipant, $key) {
+		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
+		$stmt = $this->conn->prepare("UPDATE $table SET `unregistered` = 0 WHERE `key` = :key");
+		$stmt->bindParam(':key', $key);
 		
 		// use exec() because no results are returned
 		$stmt->execute();

@@ -1,6 +1,8 @@
 <?php 
 
-function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType = 0) {
+date_default_timezone_set('America/Denver');
+
+function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeCode) {
 	
 	// create index keys for result array
 	include 'resultArrayIndex.php';
@@ -9,35 +11,39 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 	$isParticipant = false;
 	$isMentor = false;
 	$isFriend = false;
+	$isParticipantFriend = false;
+	$isMentorFriend= false;
 	$isFriend1 = false;
 	$isFriend2 = false;
 	$isFriend3 = false;
-	$isParticipantFriend = false;
-	$isMentorFriend= false;
 	
-	if($type == 1) {
+	if($typeCode == 1)
 		$isParticipant = true;
-	} else if($type == 2) {
+	else if($typeCode == 2)
 		$isMentor = true;
-	} else {
+	else if($typeCode >= 3) {
 		$isFriend = true;
-		( ($friendType == 1) ? $isParticipantFriend = true : $isMentorFriend = true);
-		if($type == 3)
+		
+		if($typeCode >= 6)
+			$isMentorFriend = true;
+		else
+			$isParticipantFriend = true;
+			
+		if($typeCode == 3 || $typeCode == 6)
 			$isFriend1 = true;
-		else if($type == 4)
+		else if($typeCode == 4 || $typeCode == 7)
 			$isFriend2 = true;
-		else if($type == 5)
+		else if($typeCode == 5 || $typeCode == 8)
 			$isFriend3 = true;
 	}
+		
 	
 	// get inputs
 	$inputNames = $inputs['inputNames'];
 	$numReqInputs = $inputs['numReqInputs'];
 	$numTextInputs = $inputs['numTextInputs'];
 	
-	$isNew = ($regType == 1) ? true : false;
-	$isComplete = ($regType == 2) ? true : false;
-	$isUpdate = ($regType == 3) ? true : false;
+	
 	
 	// set initial keys
 	if($isParticipant) 
@@ -124,6 +130,10 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 		/*printArray($_POST);
 		printArray($inputNames);
 		printArray($inputValues);*/
+		
+		// set level of complete
+		$isNew = ($key == -1);
+		$isComplete = (!$isNew);
 		
 		
 		
@@ -313,7 +323,7 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 						else if($isFriend3) 
 							$resultArray[$FRIEND_3_KEY] = $key;
 					}
-					
+					//printArray($inputValues); die();
 					// add record
 					$insertResult = false;
 					if($isParticipant)
@@ -351,40 +361,36 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 						/* 		Send Self Email Test		*/
 						/* ******************************** */
 						$emailSuccess = false;
-						// if new or complete, send email
-						if($isNew || $isComplete) {
-							// send email
-							$emailResult = false;
-							if($isParticipant || $isMentor)
-								$emailResult = EmailHelperClass::createAndSendEmail_Confirmation($inputValues, $key, $type);
-							else if ($isFriend)
-								$emailResult = EmailHelperClass::createAndSendEmail_Registration($inputValues, $key, $friendType);
-							
-							// test - send self email
-							if( !$emailResult ) {
-								// bad - send self email
-								if($isParticipant || $isMentor) {
-									$resultArray[$SELF_EMAIL_ERROR] = 1;
-									$resultArray[$MESSAGE] = $errorMessages[$SELF_EMAIL_ERROR];
-								} else if($isFriend) {
-									$resultArray[$FRIEND_EMAIL_ERROR] = 1;
-									$resultArray[$MESSAGE] = $errorMessages[$FRIEND_EMAIL_ERROR];
-								}
-								
-							// success - send self email
-							} else {
-								// good - send self email
-								if($isParticipant || $isMentor) 
-									$resultArray[$SELF_EMAIL_ERROR] = 0;
-								else if($isFriend)
-									$resultArray[$FRIEND_EMAIL_ERROR] = 0;
-								
-								$emailSuccess = true;
+						
+						// send email
+						$emailResult = false;
+						if($isParticipant || $isMentor)
+							$emailResult = EmailHelperClass::createAndSendEmail_Confirmation($inputValues, $key, $isParticipant);
+						else if ($isFriend)
+							$emailResult = EmailHelperClass::createAndSendEmail_Registration($inputValues, $key, $isParticipant);
+						
+						// test - send self email
+						if( !$emailResult ) {
+							// bad - send self email
+							if($isParticipant || $isMentor) {
+								$resultArray[$SELF_EMAIL_ERROR] = 1;
+								$resultArray[$MESSAGE] = $errorMessages[$SELF_EMAIL_ERROR];
+							} else if($isFriend) {
+								$resultArray[$FRIEND_EMAIL_ERROR] = 1;
+								$resultArray[$MESSAGE] = $errorMessages[$FRIEND_EMAIL_ERROR];
 							}
 							
-						// if not new, email auto "success"
-						} else 
+						// success - send self email
+						} else {
+							// good - send self email
+							if($isParticipant || $isMentor) 
+								$resultArray[$SELF_EMAIL_ERROR] = 0;
+							else if($isFriend)
+								$resultArray[$FRIEND_EMAIL_ERROR] = 0;
+							
 							$emailSuccess = true;
+						}
+						
 							
 						// test - email success - final test?
 						if($emailSuccess) {
@@ -419,6 +425,66 @@ function registerPerson($type, $db, $resultArray, $errorMessages, $inputs, $key,
 
 	return array("resultArray" => $resultArray, "inputValues" => $inputValues);
 	
+}
+
+
+
+
+
+function getPersonData($isParticipant, $key) {
+	include 'GeneralHelper.php';
+	include 'DBHelperClass.php';
+
+	// create database helper
+	$db = new DBHelperClass();
+	
+	// get person data
+	$datas = array();
+	if($isParticipant)
+		$datas = $db->getPeople($isParticipant, $key);
+	else
+		$datas = $db->getPeople($isParticipant, $key);
+	
+	// close database helper
+	$db->close();
+	
+	// check if empty
+	if(empty($datas))
+		return array("success" => false);
+	$data = $datas[0];
+	
+	return array("success" => true, "data" => $data);
+}
+
+
+function unregisterPerson($isParticipant, $key) {
+	include 'DBHelperClass.php';
+	
+	// create database helper
+	$db = new DBHelperClass();
+	
+	// unregister
+	$ret = $db->cancelRegistration($isParticipant, $key);
+	
+	// close database helper
+	$db->close();
+	
+	return $ret;
+}
+
+function reRegisterPerson($isParticipant, $key) {
+	include 'DBHelperClass.php';
+	
+	// create database helper
+	$db = new DBHelperClass();
+	
+	// unregister
+	$ret = $db->redoRegistration($isParticipant, $key);
+	
+	// close database helper
+	$db->close();
+	
+	return $ret;
 }
 
 

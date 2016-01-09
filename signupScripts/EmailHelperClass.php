@@ -89,12 +89,12 @@ class EmailHelperClass {
 	/* 
 	 * Create and send confirmation emails for friends of participant and mentors
 	 */
-	function createAndSendEmail_Registration($inputValues, $key, $friendType) {
+	function createAndSendEmail_Registration($inputValues, $key, $isParticipant) {
 		// create subject
 		$subject = "A friend registered you for T9Hacks! Please complete your registration.";
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_Registration($inputValues, $key, $friendType);
+		$message = EmailHelperClass::createEmail_Registration($inputValues, $key, $isParticipant);
 		
 		// create headers
 		$email = $inputValues['email'];
@@ -112,20 +112,20 @@ class EmailHelperClass {
 /*
 	 * Create email message - registration for participant and mentor
 	 */
-	function createEmail_Registration($inputValues, $key, $friendType) {
+	function createEmail_Registration($inputValues, $key, $isParticipant) {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
 		$name = $inputValues['name'];
 		$friendName = $inputValues['friendName'];
 		
-		if($friendType == 1) {
+		if($isParticipant) {
 			$type = "participant";
-			$link = "www.t9hacks.org/signupPages/signup-participant2.php?t=2&key=".$key;
+			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=".$key;
 			
-		} else if ($friendType == 2) {
+		} else {
 			$type = "mentor";
-			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?t=2&key=".$key;
+			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=".$key;
 		}
 		
 		$message = EmailHelperClass::createEmailHeader() . "
@@ -178,16 +178,16 @@ class EmailHelperClass {
 	/* 
 	 * Create and send confirmation emails for participant and mentors
 	 */
-	function createAndSendEmail_Confirmation($inputValues, $key, $type) {
+	function createAndSendEmail_Confirmation($inputValues, $key, $isParticipant) {
 		// create subject
 		$subject = "";
-		if($type == 1)
+		if($isParticipant)
 			$subject = "Your Ticket for T9Hacks Spring 2016";
-		else if ($type == 2)
+		else 
 			$subject = "Your Confirmation for T9Hacks Spring 2016";
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $type);
+		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
 		
 		// create headers
 		$email = $inputValues['email'];
@@ -205,13 +205,13 @@ class EmailHelperClass {
 	/*
 	 * Create email message - confirmation for participant and mentor
 	 */
-	function createEmail_Confirmation($inputValues, $key, $type) {
+	function createEmail_Confirmation($inputValues, $key, $isParticipant) {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
 		$name = $inputValues['name'];
 		
-		if($type == 1) {
+		if($isParticipant) {
 			$ticketName = "Ticket";
 			$ticketType = "Hacker Participant";
 			$extras = "
@@ -219,7 +219,7 @@ class EmailHelperClass {
 			";
 			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=".$key;
 			
-		} else if ($type == 2) {
+		} else {
 			$ticketName = "Ticket";
 			$ticketType = "Mentor";
 			$extras = "
@@ -336,7 +336,7 @@ class EmailHelperClass {
 	}
 	
 	
-/*
+	/*
 	 * Create and send email for every registration
 	 */
 	function createAndSendEmail_Sponsor($resultArray, $inputValues) {

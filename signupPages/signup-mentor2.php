@@ -25,25 +25,30 @@
 		
 		// get key
 		$key = null;
-		$regType = 1; // new
+		$newReg = true;
+		$completeReg = false;
+		$unregistered = false;
+		$data = array();
 		// check if key exists
 		if(array_key_exists("key", $_GET)) {
 			$key = $_GET['key'];
 			$numFriends = 0;
 			
 			// get data
-			include '../signupScripts/finishRegistration.php';
-			$data = getMentorData($key);
+			include '../signupScripts/RegisterFunctions.php';
+			$returnData = getPersonData(false, $key);
 			//echo '<pre>'.print_r($data, true).'</pre>'; //die();
 			
-			// get registration type
-			$t = -1;
-			if(array_key_exists("t", $_GET))
-				$t = $_GET["t"];
-			if($t == 2)
-				$regType = 2; // need to complete
-			else
-				$regType = 3; // update
+			// check if true key
+			if($returnData["success"]) {
+				$data = $returnData["data"];
+				// set returning person
+				$newReg = false;
+				$completeReg = ($data["complete"] == 1);
+				$unregistered = ($data["unregistered"] == 1);
+			} else {
+				$key = null;
+			}
 		}
 	?>
 	
@@ -75,256 +80,321 @@
 							<p>20-21 February 2016</p>
 						</div>
 					</div>
-					
-					<hr class="noTop"/>
 				
-					<div id="mentorLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					
-					<form id="mentorForm" class="signupForm" action="../signupScripts/register.php" method="post" enctype="multipart/form-data">
-					
-						<div id="mentorResult" class="signupResult"></div>
-					
-						<?php 
-						if($numFriends > 0) {
-						?>
-							<div class="row">
-								<div class="column12">
-									<h3>Your Information</h3>
-								</div>
-							</div>
-						<?php 
-						}
-						?>
+					<?php if(!$unregistered) { ?>
+						<div id="mentorLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 						
-						<div class="row">
-							<p class="column12">
-								Thank you for volunteering as a mentor! To sign-up we need your name, email, and phone number.
-							</p>
-							<div class="fieldWrapper column6">
-								<div class="fieldInput">
-									<i class="fa fa-user"></i><input type="text" placeholder="Name (Required)" name="name" id="mentorName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/>
-								</div>
-							</div>
-							<div class="fieldWrapper column6">
-								<div class="fieldInput">
-									<i class="fa fa-envelope-o"></i><input type="text" placeholder="Email (Required)" name="email" id="mentorEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
-								</div>
-							</div>
-						</div>
+						<form id="mentorForm" class="signupForm" action="../signupScripts/register.php" method="post" enctype="multipart/form-data">
 						
-						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput">
-									<i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number (Required)" name="phone" id="mentorPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
-								</div>
-							</div>
-						</div>
+							<div id="mentorResult" class="signupResult"></div>
 						
-						<div class="row">
-							<div class="fieldWrapper column6">
-								<div class="fieldInput">
-									<i class="fa fa-building-o"></i>
-									<input type="text" placeholder="Company/Organization" name="company" id="mentorCompany" value="<?php echo (!is_null($key)) ? $data["company"] : ""; ?>"/>
-								</div>
-							</div>
-							<div class="fieldWrapper column6">
-								<div class="fieldInput">
-									<i class="fa fa-group"></i>
-									<input type="text" placeholder="Position" name="position" id="mentorPosition" value="<?php echo (!is_null($key)) ? $data["position"] : ""; ?>"/>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column12 meals">
-								<div class="column12 alpha">
-									<p>We will be providing food for everyone who comes to the hackathon.  Which meals are you planning on being present for?</p>
-								</div>
-								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Dinner on the 20th" data-tg-on="Dinner on the 20th" for="mentorDinner"></label>
-								</div>
-								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox" <?php echo (!is_null($key) && $data['breakfast'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Breakfast on the 21st" data-tg-on="Breakfast on the 21st" for="mentorBreakfast"></label>
-								</div>
-								<div class="fieldCheckbox">
-									<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (!is_null($key) && $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class="tgl-btn" data-tg-off="Lunch on the 21st" data-tg-on="Lunch on the 21st" for="mentorLunch"></label>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<p class="column12">
-								As a mentor, you will be working with groups in particular topics.  What area would you like to be a mentor for? (Examples: Graphic Design, Electronics, iOS Development)
-							</p>
-							
-							<div class="fieldWrapper column12 areas">
-								<div class="fieldInput">
-									<i class="fa fa-tasks"></i>
-									<input type="text" placeholder="Area (required)" name="area" id="mentorArea" value="<?php echo (!is_null($key)) ? $data["area"] : ""; ?>"/>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column12">
-								<div class="fieldInput textarea small">
-									<textarea name="comment" placeholder="Additional comments (dietary restrictions, etc)" id="mentorComment"><?php echo (!is_null($key)) ? $data["comment"] : ""; ?></textarea>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="fieldWrapper column12">
-								<div class="fieldRadio">
-									<p>I agree to follow the <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>.</p>
-								</div>
-								<div class="fieldRadio">
-									<input class="tgl tgl-flip" id="agree" type="checkbox" name="agree" value="agree" <?php echo (!is_null($key) && $data['agree'] == 1 ) ? 'checked="checked"' : ""; ?>>
-	   								<label class='tgl-btn' data-tg-off='Disagree' data-tg-on='Agree' for="agree"></label>
-								</div>
-								
-							</div>
-						</div>
-						
-						<?php 
-						if($numFriends > 0) {
+							<?php 
+							if($numFriends > 0) {
 							?>
-							<hr/>
-							<hr/>
-							<div class="row">
-								<div class="column12">
-									<h3>Colleague Registration</h3>
-									<p>
-										By registering your colleague(s), you will start their registration.  They will then be sent an 
-										email asking them to complete this process.
+								<hr class="noTop"/>
+								<div class="row">
+									<div class="column12">
+										<h3>Your Information</h3>
+									</div>
+								</div>
+							<?php 
+							}
+							
+							if($newReg) {
+								?>
+								
+								<div class="row">
+									<p class="column12">
+										Thank you for volunteering as a mentor! To sign-up we need your name, email, and phone number.
 									</p>
 								</div>
-							</div>
-							<?php 
-							for($i=0; $i<$numFriends; $i++) {
-								$fid = $i+1;
+								<?php 
+							} else if ($completeReg) {
 								?>
-								<hr/>
 								<div class="row">
-									<div class="column12">
-										<h3>Colleague #<?php echo $fid; ?></h3>
-									</div>
+									<p class="column12">
+										Congratulations!  You have completed your mentor registraton.  You can edit your information here.
+									</p>
 								</div>
+								<hr class="noTop"/>
+								
+								<?php 
+							} else {
+								?>
 								<div class="row">
-									<div class="fieldWrapper column6">
-										<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Name" name="friendName<?php echo $fid; ?>" id="friendName<?php echo $fid; ?>" /></div>
-									</div>
-									<div class="fieldWrapper column6">
-										<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="friendEmail<?php echo $fid; ?>" id="friendEmail<?php echo $fid; ?>" /></div>
-									</div>
+									<p class="column12">
+										Please complete your registration as a mentor.  To sign-up we need your name, email, and phone number.
+									</p>
 								</div>
-								<?php
+								<?php 
 							}
 							?>
-							<hr/>
-							<?php 
-						}
-						?>
-						
-						<div class="row">
-							<div class="fieldWrapper column12">
-								<a href="signup-mentor1.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
-								<input type="text" name="honeypot" placeholder="Leave Blank" class="honeypot" />
-								<input type="hidden" name="type" value="mentor" />
-								<input type="hidden" name="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
-								<input type="hidden" name="regType" value="<?php echo $regType; ?>" />
-								<input type="hidden" name="friends" value="<?php echo $numFriends; ?>"/>
-								<button id="mentorConfirmationBtn" class="btn btn-l right confirmationBtn">Confirmation &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
-							</div>
-						</div>
-						
-					</form>
-					
-					<div id="mentorConfirmation" class="signupConfirmation">
-						
-						<div class="row">
-							<p class="column12">
-								Please confirm your registeration information and submit when you are done.  An email will be sent to you with your confirmation.
-							</p>
-						</div>
-						
-						<?php 
-						if($numFriends > 0) {
-						?>
-							<hr class="noTop"/>
+							
 							<div class="row">
-								<div class="column12">
-									<h3>Your Information</h3>
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-user"></i><input type="text" placeholder="Name (Required)" name="name" id="mentorName" value="<?php echo (!is_null($key)) ? $data["name"] : ""; ?>"/>
+									</div>
+								</div>
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-envelope-o"></i><input type="text" placeholder="Email (Required)" name="email" id="mentorEmail" value="<?php echo (!is_null($key)) ? $data["email"] : ""; ?>"/>
+									</div>
 								</div>
 							</div>
-						<?php 
-						}
-						?>
-						
-						<div class="row">
-							<div class="column2">&nbsp;</div>
-							<div class="column8">
-								<table class="confirmationTable">
-								<tbody>
-									<tr><td>Name</td>		<td id="mName"></td></tr>
-									<tr><td>Email</td>		<td id="mEmail"></td></tr>
-									<tr><td>Phone</td>		<td id="mPhone"></td></tr>
-									
-									<tr><td>Company</td>	<td id="mCompany"></td></tr>
-									<tr><td>Position</td>	<td id="mPosition"></td></tr>
-									
-									<tr><td>Dinner on the 20th</td>		<td id="mDinner"></td></tr>
-									<tr><td>Breakfast on the 21st</td>	<td id="mBreakfast"></td></tr>
-									<tr><td>Lunch on the 21st</td>		<td id="mLunch"></td></tr>
-									
-									<tr><td>Area</td>		<td id="mArea"></td></tr>
-									<tr><td>Comment</td>	<td id="mComment"></td></tr>
-								</tbody>
-								</table>
+							
+							<div class="row">
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-mobile"></i><input type="text" placeholder="Phone Number (Required)" name="phone" id="mentorPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						
-						<?php 
-						if($numFriends > 0) {
-							for($i=0; $i<$numFriends; $i++) {
-								$fid = $i+1;
+							
+							<div class="row">
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-building-o"></i>
+										<input type="text" placeholder="Company/Organization" name="company" id="mentorCompany" value="<?php echo (!is_null($key)) ? $data["company"] : ""; ?>"/>
+									</div>
+								</div>
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-group"></i>
+										<input type="text" placeholder="Position" name="position" id="mentorPosition" value="<?php echo (!is_null($key)) ? $data["position"] : ""; ?>"/>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="fieldWrapper column12 meals">
+									<div class="column12 alpha">
+										<p>We will be providing food for everyone who comes to the hackathon.  Which meals are you planning on being present for?</p>
+									</div>
+									<div class="fieldCheckbox">
+										<input class="tgl tgl-flip" name="dinner" id="mentorDinner" type="checkbox" <?php echo (!is_null($key) && $data['dinner'] == 1 ) ? 'checked="checked"' : ""; ?>>
+		   								<label class="tgl-btn" data-tg-off="Dinner on the 20th" data-tg-on="Dinner on the 20th" for="mentorDinner"></label>
+									</div>
+									<div class="fieldCheckbox">
+										<input class="tgl tgl-flip" name="breakfast" id="mentorBreakfast" type="checkbox" <?php echo (!is_null($key) && $data['breakfast'] == 1 ) ? 'checked="checked"' : ""; ?>>
+		   								<label class="tgl-btn" data-tg-off="Breakfast on the 21st" data-tg-on="Breakfast on the 21st" for="mentorBreakfast"></label>
+									</div>
+									<div class="fieldCheckbox">
+										<input class="tgl tgl-flip" name="lunch" id="mentorLunch" type="checkbox" <?php echo (!is_null($key) && $data['lunch'] == 1 ) ? 'checked="checked"' : ""; ?>>
+		   								<label class="tgl-btn" data-tg-off="Lunch on the 21st" data-tg-on="Lunch on the 21st" for="mentorLunch"></label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<p class="column12">
+									As a mentor, you will be working with groups in particular topics.  What area would you like to be a mentor for? (Examples: Graphic Design, Electronics, iOS Development)
+								</p>
+								
+								<div class="fieldWrapper column12 areas">
+									<div class="fieldInput">
+										<i class="fa fa-tasks"></i>
+										<input type="text" placeholder="Area (required)" name="area" id="mentorArea" value="<?php echo (!is_null($key)) ? $data["area"] : ""; ?>"/>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<div class="fieldInput textarea small">
+										<textarea name="comment" placeholder="Additional comments (dietary restrictions, etc)" id="mentorComment"><?php echo (!is_null($key)) ? $data["comment"] : ""; ?></textarea>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<div class="fieldRadio">
+										<p>I agree to follow the <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>.</p>
+									</div>
+									<div class="fieldRadio">
+										<input class="tgl tgl-flip" id="agree" type="checkbox" name="agree" value="agree" <?php echo (!is_null($key) && $data['coc_agree'] == 1 ) ? 'checked="checked"' : ""; ?>>
+		   								<label class='tgl-btn' data-tg-off='Disagree' data-tg-on='Agree' for="agree"></label>
+									</div>
+									
+								</div>
+							</div>
+							
+							<?php 
+							if($numFriends > 0) {
 								?>
+								<hr/>
 								<hr/>
 								<div class="row">
 									<div class="column12">
-										<h3>Colleague #<?php echo $fid; ?></h3>
+										<h3>Colleague Registration</h3>
+										<p>
+											By registering your colleague(s), you will start their registration.  They will then be sent an 
+											email asking them to complete this process.
+										</p>
 									</div>
 								</div>
-								<div class="row">
-									<div class="column2">&nbsp;</div>
-									<div class="column8">
-										<table class="confirmationTable">
-										<tbody>
-											<tr><td>Name</td>		<td id="fName<?php echo $fid; ?>"></td></tr>
-											<tr><td>Email</td>		<td id="fEmail<?php echo $fid; ?>"></td></tr>
-										</tbody>
-										</table>
+								<?php 
+								for($i=0; $i<$numFriends; $i++) {
+									$fid = $i+1;
+									?>
+									<hr/>
+									<div class="row">
+										<div class="column12">
+											<h3>Colleague #<?php echo $fid; ?></h3>
+										</div>
 									</div>
-								</div>
-								<?php
+									<div class="row">
+										<div class="fieldWrapper column6">
+											<div class="fieldInput"><i class="fa fa-user"></i><input type="text" placeholder="Name" name="friendName<?php echo $fid; ?>" id="friendName<?php echo $fid; ?>" /></div>
+										</div>
+										<div class="fieldWrapper column6">
+											<div class="fieldInput"><i class="fa fa-envelope-o"></i><input type="text" placeholder="Email" name="friendEmail<?php echo $fid; ?>" id="friendEmail<?php echo $fid; ?>" /></div>
+										</div>
+									</div>
+									<?php
+								}
+								?>
+								<hr/>
+								<?php 
 							}
 							?>
-							<hr/>
+							
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<a href="signup-mentor1.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
+									<input type="text" name="honeypot" placeholder="Leave Blank" class="honeypot" />
+									<input type="hidden" name="type" id="type" value="mentor" />
+									<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
+									<input type="hidden" name="friends" value="<?php echo $numFriends; ?>"/>
+									<button id="mentorConfirmationBtn" class="btn btn-l right confirmationBtn">Confirmation &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+								</div>
+							</div>
+							
 							<?php 
-						}
+							if($completeReg) {
+								?>
+								<hr class="noTop"/>
+								<div class="row">
+									<div class="column12">
+										<p>
+											<a href="#" class="btn btn-med btn-subtle cancelRegBtn" id="mentorCancelRegBtn">Cancel my mentor registration for T9Hacks.</a>
+										</p>
+										<div class="cancelConfirm">
+											<p>Are you sure you want to cancel your registration? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm" id="mentorCancelRegConfirm">Yes</a></p>
+										</div>
+									</div>
+								</div>
+								<?php 
+							}
+							?>
+							
+						</form>
+					
+						<div id="mentorConfirmation" class="signupConfirmation">
+							
+							<div class="row">
+								<p class="column12">
+									Please confirm your registeration information and submit when you are done.  An email will be sent to you with your confirmation.
+								</p>
+							</div>
+							
+							<?php 
+							if($numFriends > 0) {
+							?>
+								<hr class="noTop"/>
+								<div class="row">
+									<div class="column12">
+										<h3>Your Information</h3>
+									</div>
+								</div>
+							<?php 
+							}
+							?>
+							
+							<div class="row">
+								<div class="column2">&nbsp;</div>
+								<div class="column8">
+									<table class="confirmationTable">
+									<tbody>
+										<tr><td>Name</td>		<td id="mName"></td></tr>
+										<tr><td>Email</td>		<td id="mEmail"></td></tr>
+										<tr><td>Phone</td>		<td id="mPhone"></td></tr>
+										
+										<tr><td>Company</td>	<td id="mCompany"></td></tr>
+										<tr><td>Position</td>	<td id="mPosition"></td></tr>
+										
+										<tr><td>Dinner on the 20th</td>		<td id="mDinner"></td></tr>
+										<tr><td>Breakfast on the 21st</td>	<td id="mBreakfast"></td></tr>
+										<tr><td>Lunch on the 21st</td>		<td id="mLunch"></td></tr>
+										
+										<tr><td>Area</td>		<td id="mArea"></td></tr>
+										<tr><td>Comment</td>	<td id="mComment"></td></tr>
+									</tbody>
+									</table>
+								</div>
+							</div>
+							
+							<?php 
+							if($numFriends > 0) {
+								for($i=0; $i<$numFriends; $i++) {
+									$fid = $i+1;
+									?>
+									<hr/>
+									<div class="row">
+										<div class="column12">
+											<h3>Colleague #<?php echo $fid; ?></h3>
+										</div>
+									</div>
+									<div class="row">
+										<div class="column2">&nbsp;</div>
+										<div class="column8">
+											<table class="confirmationTable">
+											<tbody>
+												<tr><td>Name</td>		<td id="fName<?php echo $fid; ?>"></td></tr>
+												<tr><td>Email</td>		<td id="fEmail<?php echo $fid; ?>"></td></tr>
+											</tbody>
+											</table>
+										</div>
+									</div>
+									<?php
+								}
+								?>
+								<hr/>
+								<?php 
+							}
+							?>
+							
+							<div class="row">
+								<div class="fieldWrapper column12">
+									<a href="signup.php" id="mentorBack" class="backBtn backToEditBtn"><i class="fa fa-angle-double-left"></i> Back to Edit</a>
+									<button id="mentorSubmitBtn" class="btn btn-l right" data-friends="<?php echo $numFriends; ?>">Submit &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+								</div>
+							</div>
+							
+						</div>
+					
+					<?php 
+					} // end if for unregistered
+					else {
 						?>
-						
 						<div class="row">
-							<div class="fieldWrapper column12">
-								<a href="signup.php" id="mentorBack" class="backBtn backToEditBtn"><i class="fa fa-angle-double-left"></i> Back to Edit</a>
-								<button id="mentorSubmitBtn" class="btn btn-l right" data-friends="<?php echo $numFriends; ?>">Submit &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+							<div class="column12">
+								<p>
+									Our records show that you have canceled your registration.  Would you like to re-register with T9Hacks?
+									<a href="#" class="btn btn-med btn-subtle reRegBtn" id="mentorReRegBtn">Yes</a>
+									<input type="hidden" name="type" id="type" value="mentor" />
+									<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
+								</p>
+								<br/>
+								<br/>
+								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
 							</div>
 						</div>
-						
-					</div>
+						<?php 
+					}	
+					?>
 					
 					
 				</div> <!-- end signupWrapper -->

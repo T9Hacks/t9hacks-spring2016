@@ -113,6 +113,14 @@ hr { border-top: 1px solid #DAC8DA; }
 .btn.right {
 	float: right;
 }
+a.btn-subtle {
+	background-color: #BBBBBB;
+	color: black;
+}
+.btn-subtle:hover, .btn-subtle:active, .btn-subtle:focus {
+	background-color: #888;
+	color: black;
+}
 
 /* highlights */
 ::selection, ::-moz-selection {
@@ -922,6 +930,7 @@ footer .quicklinks, footer .copyright {
 	font-size: .9em;
 	margin-top: 3px;
 	padding: 7px 10px;
+	clear: both;
 }
 #upload {
 	position: relative;
@@ -1154,6 +1163,11 @@ input[type=submit] {
 }
 .confirmationTable td:nth-child(2n) {
 	word-wrap: break-word;
+}
+
+
+.cancelConfirm {
+	display: none;
 }
 
 

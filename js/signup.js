@@ -360,3 +360,102 @@ window.onbeforeunload = function (e) {
 	}
 };
 
+
+
+
+
+/* **************************************************************** */
+/*					Submit Registeration							*/
+/*	Code adapted from: http://www.html5rocks.com/en/tutorials/cors  */
+/* **************************************************************** */
+$(".cancelRegBtn").click(function(event){
+	event.preventDefault();
+	$(".cancelConfirm").slideToggle();
+});
+$(".cancelRegConfirm").click(function(event){
+	event.preventDefault();
+	var key = $("#key").val();
+	var type = $("#type").val();
+	console.log("key: " + key + " type: " + type);
+	var data = { 
+		"key" : key, 
+		"type" : type
+	};
+	
+	// post the data
+	$.ajax({
+		type: "POST",
+		url: "../signupScripts/cancelRegister.php",
+		data: data,
+		dataType: 'json',
+		success: function(xhr, status, error) {
+			// everything went well
+			if(xhr.SUCCESS) {
+				window.location.href = "unregister-success.php";
+				canReload = true;
+			  
+			// start trouble shooting problems
+			} else {
+				// print entire json response
+				console.log(xhr);
+				console.log(status);
+				console.log(error);
+			}
+			
+		},
+		error: function(xhr, status, error) {
+			//console.log("error in ajax form submission");
+			console.log(xhr);
+			console.log(status);
+			console.log(error);
+			var errorMessage = xhr.responseText;
+			console.log(errorMessage);
+		}
+	});
+});
+
+
+$(".reRegBtn").click(function(event){
+	event.preventDefault();
+	var key = $("#key").val();
+	var type = $("#type").val();
+	console.log("key: " + key + " type: " + type);
+	var data = { 
+		"key" : key, 
+		"type" : type
+	};
+	
+	// post the data
+	$.ajax({
+		type: "POST",
+		url: "../signupScripts/reRegister.php",
+		data: data,
+		dataType: 'json',
+		success: function(xhr, status, error) {
+			// everything went well
+			if(xhr.SUCCESS) {
+				canReload = true;
+				if(type == "participant")
+					window.location.href = "signup-participant2.php?key=" + key;
+				if(type == "mentor")
+					window.location.href = "signup-mentor2.php?key=" + key;
+				
+			// start trouble shooting problems
+			} else {
+				// print entire json response
+				console.log(xhr);
+				console.log(status);
+				console.log(error);
+			}
+			
+		},
+		error: function(xhr, status, error) {
+			//console.log("error in ajax form submission");
+			console.log(xhr);
+			console.log(status);
+			console.log(error);
+			var errorMessage = xhr.responseText;
+			console.log(errorMessage);
+		}
+	});
+});

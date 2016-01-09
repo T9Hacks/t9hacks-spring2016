@@ -31,26 +31,26 @@ include 'resultArrayIndex.php';
 
 // create error messages
 $errorMessages = array(
-	$HIDDEN_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again.",
-	$HONEYPOT_FILLED => "There was a problem verifying that you are human. If a field says to leave it blank, please do so.",
-	$WRONG_SIGNUP_TYPE => "There was a problem with your form. It looks like you are trying to sign-up as a type of person that doesn't exist. Please refresh the page and start again.",
-	$WRONG_NUM_FRIENDS => "There was a problem with your form.  It looks like you are trying to register too many friends.  Please refresh the page and start again.",
+	$HIDDEN_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again. (Error A01)",
+	$HONEYPOT_FILLED => "There was a problem verifying that you are human. If a field says to leave it blank, please do so. (Error A02)",
+	$WRONG_SIGNUP_TYPE => "There was a problem with your form. It looks like you are trying to sign-up as a type of person that doesn't exist. Please refresh the page and start again. (Error A03)",
+	$WRONG_NUM_FRIENDS => "There was a problem with your form.  It looks like you are trying to register too many friends.  Please refresh the page and start again. (Error A04)",
 	
-	$PARTICIPANT_EMAIL_USED => "It looks like the email you are trying to register with has already been used to register a participant.  Please check your email for a confirmation ticket or an invitation to complete the registeration process.",
-	$MENTOR_EMAIL_USED => "It looks like the email you are trying to register with has already been used to register a mentor.  Please check your email for a confirmation ticket or an invitation to complete the registeration process.",
+	$PARTICIPANT_EMAIL_USED => "It looks like the email you are trying to register with has already been used to register a participant.  Please check your email for a confirmation ticket or an invitation to complete the registeration process. (Error B01)",
+	$MENTOR_EMAIL_USED => "It looks like the email you are trying to register with has already been used to register a mentor.  Please check your email for a confirmation ticket or an invitation to complete the registeration process. (Error B02)",
 	
-	$SELF_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again.",
-	$SELF_INPUTS_EMPTY => "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.",
-	$SELF_RECORD_ERROR => "There was a problem submitting your registration. . Please refresh the page and start again.",
-	$SELF_EMAIL_ERROR => "There was a problem sending a confirmation to your email.  Please check the email you entered and resubmit the form.",
+	$SELF_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again. (Error C01)",
+	$SELF_INPUTS_EMPTY => "There was a problem with your registration.  Please check to make sure you have the required information entered in the form. (Error C02)",
+	$SELF_RECORD_ERROR => "There was a problem submitting your registration. Please refresh the page and start again. (Error C03)",
+	$SELF_EMAIL_ERROR => "There was a problem sending a confirmation to your email.  Please check the email you entered and resubmit the form. (Error C04)",
 	
-	$FRIEND_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again.",
-	$FRIEND_INPUTS_EMPTY => "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.",
-	$FRIEND_RECORD_ERROR => "There was a problem submitting your registration. . Please refresh the page and start again.",
-	$FRIEND_EMAIL_ERROR => "There was a problem sending a confirmation to your email.  Please check the email you entered and resubmit the form.",
+	$FRIEND_INPUTS_MISSING => "There was a problem with your form. It looks like pieces of it are missing. Please refresh the page and start again. (Error D01)",
+	$FRIEND_INPUTS_EMPTY => "There was a problem with your registration.  Please check to make sure you have the required information entered in the form. (Error D02)",
+	$FRIEND_RECORD_ERROR => "There was a problem submitting your registration. Please refresh the page and start again. (Error D03)",
+	$FRIEND_EMAIL_ERROR => "There was a problem sending a confirmation to your email.  Please check the email you entered and resubmit the form. (Error D04)",
 	
-	$FILE_SIZE_TOO_LARGE => "The file you are trying to upload is too large.  Please limit your file uploads to 2MB.",
-	$FILE_UPLOAD_ERROR => "There was an error uploading your file.  Please re-choose the file and submit the form again.",
+	$FILE_SIZE_TOO_LARGE => "The file you are trying to upload is too large.  Please limit your file uploads to 2MB. (Error E01)",
+	$FILE_UPLOAD_ERROR => "There was an error uploading your file.  Please re-choose the file and submit the form again. (Error E02)",
 	
 	$END_SUCCESS => "SUCCESS!!!",
 );
@@ -101,7 +101,7 @@ $resultArray = array(
 include 'GeneralHelper.php';
 include 'DBHelperClass.php';
 include 'EmailHelperClass.php';
-include 'RegisterPerson.php';
+include 'RegisterFunctions.php';
 
 //printArray($resultArray);
 
@@ -110,7 +110,7 @@ include 'RegisterPerson.php';
 /* 		Test For Hidden Inputs			*/
 /* ************************************ */
 // test - hiden inputs
-if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) || !array_key_exists('friends', $_POST) || !array_key_exists('key', $_POST) || !array_key_exists('regType', $_POST) ) {
+if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) || !array_key_exists('friends', $_POST) || !array_key_exists('key', $_POST) ) {
 	
 	// bad - hiden inputs
 	$resultArray[$HIDDEN_INPUTS_MISSING] = 1;
@@ -130,7 +130,6 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 	// get hidden data
 	$type		= $_POST["type"];		$allInputValues["extra"]["type"] 		= $type;
 	$numFriends	= $_POST['friends'];	$allInputValues["extra"]["numFriends"]	= $numFriends;
-	$regType	= $_POST['regType'];	$allInputValues["extra"]["regType"] 	= $regType;
 	$key		= $_POST["key"];		$allInputValues["extra"]["key"] 		= $key;
 	
 	
@@ -214,7 +213,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					);					
 					
 					// register participant
-					$results = registerPerson(1, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
+					$results = registerPerson($db, $resultArray, $errorMessages, $inputs, $key, 1);
 					$resultArray = $results["resultArray"];
 					$allInputValues["participant"] = $results["inputValues"];
 					
@@ -240,7 +239,7 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					
 					
 					// register mentor
-					$results = registerPerson(2, $db, $resultArray, $errorMessages, $inputs, $key, $regType);
+					$results = registerPerson($db, $resultArray, $errorMessages, $inputs, $key, 2);
 					$resultArray = $results["resultArray"];
 					$allInputValues["mentor"] = $results["inputValues"];
 				}
@@ -266,8 +265,8 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 						);
 						
 						// register friend
-						$friendType = ($isParticipant) ? 1 : 2;
-						$results = registerPerson((3+$i), $db, $resultArray, $errorMessages, $inputs, $key, $regType, $friendType);
+						$typeCode = (3 + $i) + ($isParticipant ? 0 : 3);
+						$results = registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeCode);
 						$resultArray = $results["resultArray"];
 						$allInputValues["friends"][] = $results["inputValues"];
 					}
