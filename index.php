@@ -108,7 +108,7 @@
 					<div class="column12">
 						<p>
 							T9Hacks is a 24 hour women's hackathon at the University of Colorado Boulder's ATLAS Institute 
-							that brings together students for two days of creativity, building, and hacking.
+							that brings together college students for two days of creativity, building, and hacking.
 							Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
 							students to explore new technologies, solve problems, and create something amazing with a 
 							team. Women occupy only 26% of IT positions and 18% of engineering majors in universities, and we want to help raise
@@ -124,7 +124,7 @@
 							<h2>Do I have to be a programmer?</h2>
 							<p>
 								Absolutely not!  We encourage women with all backgrounds to participate.  It doesn't matter
-								if you are an artist, a journalist, or a programmer, there is a place for you here.
+								if you are an art, a journalism, or a marketing major, there is a place for you here.
 							</p>
 						</div>
 					</div>
@@ -148,7 +148,7 @@
 							<p>
 								Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, we are 
 								expecting our participants to have no experience with hackathons.  We will have fun events, mentors, and a super welcoming 
-								staff to ease people into the experience.  
+								staff to ease everyone into the experience.  
 							</p>
 						</div>
 					</div>
@@ -158,7 +158,7 @@
 							<h2>Do you really mean 24 hours?</h2>
 							<p>
 								We know, that sounds like a long time! But it goes quickly when you are collaborating, planning, and creating 
-								projects.  We wanted to see what kinds of projects people would come up with if they were given a full day to 
+								projects.  We wanted to see what kinds of projects students would come up with if they were given a full day to 
 								devote themselves to one thing.
 							</p>
 						</div>
@@ -201,7 +201,7 @@
 								<h2>What kind of project should I make?</h2>
 								<p>
 									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
-									where we encourage hackers to build solutions, prototypes, or raise awareness of problems they see in their communities.  
+									where we encourage students to build solutions, prototypes, or raise awareness of problems they see in their communities.  
 									If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
 								</p>
 								<p>
@@ -230,7 +230,7 @@
 						<div class="faq-question">
 							<h2>Do you cover travel expenses?</h2>
 							<p>
-								Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger CU hackathon called 
+								Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger student hackathon called 
 								<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
 							</p>
 						</div>
@@ -484,7 +484,7 @@
 						<i class="fa fa-venus"></i>
 						<h2 class="white">Why a women's hackathon?</h2>
 						<p>
-							Hackathons are a great way for students to become exposed to different technology, create new technology, and build 
+							Hackathons are a great way for college students to become exposed to different technology, create new technology, and build 
 							community.  However, most hackathons have very low female participation. We aim to create an opportunity and space for 
 							women to explore creative technologies and solve real world problems.
 						</p>
@@ -497,7 +497,8 @@
 						<i class="fa fa-transgender-alt"></i>
 						<h2 class="white">What about other genders?</h2>
 						<p>
-							We welcome all university students to participate; however, we especially encourage all students who self-identify as female to participate.
+							We welcome all college and university students to participate; however, we especially encourage all students who 
+							self-identify as female to participate.
 						</p>
 					</div>
 					<div class="column6 omega infoSection code-conduct">
