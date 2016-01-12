@@ -166,34 +166,31 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 						?>
 						<div class="person">
 						
-							<div class="row">
-								<div class="basicInfo">
-									<span class="column3">Name: <?php echo $person["name"]; ?></span>
-									<span class="column3">Email: <?php echo $person["email"]; ?></span>
-									<span class="column3">Phone: <?php echo $person["phone"]; ?></span>
-									<span class="column3">#<?php echo $num; ?></span>
-								</div>
+							<div class="basicInfo">
+								<span class="column6">Name: <b><?php echo $person["name"]; ?></b></span>
+								<span class="column6">Email: <b><?php echo $person["email"]; ?></b></span>
+								<span class="column6">Phone: <b><?php echo $person["phone"]; ?></b></span>
+								<span class="num">#<?php echo $num; ?></span>
 							</div>
 							
-							<div class="row">
-								<div class="remainingInfo">
-									<?php 
-									foreach($people["genericInfo"] as $columnKey => $column) {
-										echo "<span class='column3'>$column : ";
-										if( $column == "linkedin" || $column == "website" || $column == "github" || $column == "facebook" || $column == "twitter" )
-											echo "<a href='" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
-										else if($column == "resume")
-											echo "<a href='../hidden/resumes/" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
-										else
-											echo $person[$column];
-										echo "</span>";
-									}
-									?>
-								</div>
+							<div class="remainingInfo">
+								<?php 
+								foreach($people["genericInfo"] as $columnKey => $column) {
+									echo "<span class='column6'>$column: <b>";
+									if( $column == "linkedin" || $column == "website" || $column == "github" || $column == "facebook" || $column == "twitter" )
+										echo "<a href='" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
+									else if($column == "resume")
+										echo "<a href='../hidden/resumes/" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
+									else
+										echo $person[$column];
+									echo "</b></span>";
+								}
+								?>
 							</div>
-						
-							<div class="row">
+					
+							<?php if(false) { ?>
 								<div class="actionBtns">
+									
 									<div class="column3">
 										<form action="view.php" method="POST">
 											<span>Delete Person: </span>
@@ -203,6 +200,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 											<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
 										</form>
 									</div>
+									
 									<div class="column3">
 										<form action="view.php" method="POST">
 											<span>Check-in Person: </span>
@@ -213,7 +211,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										</form>
 									</div>
 								</div>
-							</div>
+							<?php } ?>
 							
 						</div>
 						<?php 

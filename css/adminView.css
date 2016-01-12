@@ -9,7 +9,29 @@ html, body {
 }
 
 .person {
-	border: 1px solid black;
+	border: 1px solid #553377;
 	margin-bottom: 10px;
+}
+
+.basicInfo {
+	position: relative;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.num {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px;
+	background-color: #553377;
+	color: white;
+}
+
+.remainingInfo {
+	overflow: hidden;
+}
+
+.actionBtns {
+	overflow: hidden;
 }
 
