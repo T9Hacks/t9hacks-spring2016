@@ -118,23 +118,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	
 	<!-- CSS -->
 	<?php include "../includes/css.php"; css(true); ?>
+	<link href="../css/adminView.css" rel="stylesheet">
 	
-	<style>
-		html, body {
-			background: white; 
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-		th, td {
-			border: 1px solid black; 
-			padding: 2px 3px;
-		}
-	</style>
 	
 </head>
 <body>
+	<div class="container12">
 
 	<?php 
 	if(!$isSession) {
@@ -150,67 +139,91 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		<?php 
 	} else if($isSession) {
 
-		$allPeople = array("Participants" => $participants, "Mentors" => $mentors);
+		$allPeople = array(
+			array(
+				"name"			=> "Participants",
+				"data"			=> $participants,
+				"genericInfo"	=> array("gender", "college", "major", "linkedin", "resume", "website", "github", "company", "position", "facebook", "twitter", "shirt", "comment"),
+			), 
+			array(
+				"name"			=> "Mentors",
+				"data"			=> $mentors,
+				"genericInfo"	=> array("gender", "company", "position", "dinner", "breakfast", "lunch", "area", "comment"),
+			)
+		);
 		
-		foreach($allPeople as $name => $peopleArray) {
+		
+		foreach($allPeople as $peopleKey => $people) {
 			?>
-			<h1><?php echo $name; ?></h1>
-			<table>
+			<div class="row peopleSection">
+			<h1><?php echo $people["name"]; ?></h1>
 				<?php 
-				$printedHeaders = false;
-				foreach($peopleArray as $key => $person) {
-					// print headers
-					if(!$printedHeaders) {
-						echo "<thead><tr>";
-						echo "<th class='action'>Delete</th>";
-						echo "<th class='action'>Check-in</th>";
-						foreach($person as $k => $value) {
-							if($k != "deleted") 
-								echo "<th>" . $k . "</th>"; 
-						}
-						echo "</tr></thead>";
-						$printedHeaders = true;
-					}
+				$num = 1;
+				foreach($people["data"] as $personKey => $person) {
 					
 					// only print row if deleted is false
 					if($person["deleted"] == 0) {
 						?>
-						<tr>
-							<td>
-								<form action="view.php" method="POST">
-									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
-									<input type="hidden" name="delete" value="1">
-									<input type="hidden" name="type" value="<?php echo ($name == "Participants") ? 1 : 2; ?>">
-									<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
-								</form>
-							</td>
-							<td>
-								<form action="view.php" method="POST">
-									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
-									<input type="hidden" name="checkIn" value="1">
-									<input type="hidden" name="type" value="<?php echo ($name == "Participant") ? 1 : 2; ?>">
-									<button type="submit" class="checkInBtn"><i class="fa fa-check"></i></button>
-								</form>
-							</td>
-							<?php 
-							foreach($person as $k => $value) {
-								if($k != "deleted") {
-									if( $k == "linkedin" || $k == "website" || $k == "github" || $k == "facebook" || $k == "twitter" )
-										echo "<th><a href='" . $value . "' target='_blank'>" . $value . "</a></th>";
-									else if($k == "resume")
-										echo "<th><a href='../hidden/resumes/" . $value . "' target='_blank'>" . $value . "</a></th>";
-									else
-										echo '<td>' . $value . '</td>';
-								}
-							}
-							?>
-						</tr>
+						<div class="person">
+						
+							<div class="row">
+								<div class="basicInfo">
+									<span class="column3">Name: <?php echo $person["name"]; ?></span>
+									<span class="column3">Email: <?php echo $person["email"]; ?></span>
+									<span class="column3">Phone: <?php echo $person["phone"]; ?></span>
+									<span class="column3">#<?php echo $num; ?></span>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="remainingInfo">
+									<?php 
+									foreach($people["genericInfo"] as $columnKey => $column) {
+										echo "<span class='column3'>$column : ";
+										if( $column == "linkedin" || $column == "website" || $column == "github" || $column == "facebook" || $column == "twitter" )
+											echo "<a href='" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
+										else if($column == "resume")
+											echo "<a href='../hidden/resumes/" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
+										else
+											echo $person[$column];
+										echo "</span>";
+									}
+									?>
+								</div>
+							</div>
+						
+							<div class="row">
+								<div class="actionBtns">
+									<div class="column3">
+										<form action="view.php" method="POST">
+											<span>Delete Person: </span>
+											<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+											<input type="hidden" name="delete" value="1">
+											<input type="hidden" name="type" value="<?php echo ($name == "Participants") ? 1 : 2; ?>">
+											<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
+										</form>
+									</div>
+									<div class="column3">
+										<form action="view.php" method="POST">
+											<span>Check-in Person: </span>
+											<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+											<input type="hidden" name="checkIn" value="1">
+											<input type="hidden" name="type" value="<?php echo ($name == "Participant") ? 1 : 2; ?>">
+											<button type="submit" class="checkInBtn"><i class="fa fa-check"></i></button>
+										</form>
+									</div>
+								</div>
+							</div>
+							
+						</div>
 						<?php 
+						
+					$num++;
 					} // end if for deleted
 					
 				} // end foreach
 				?>
-			</table>
+			</div>
 			
 		<?php
 		}
@@ -229,7 +242,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		});
 	</script>
 	
-	
+	</div>
 </body>
 </html>
 

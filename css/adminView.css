@@ -1,0 +1,15 @@
+html, body {
+	background: white; 
+}
+
+.peopleSection h1 {
+	color: black;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.person {
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+

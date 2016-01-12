@@ -35,6 +35,7 @@ class DBHelperClass {
 					`college`, 
 					`major`, 
 					`phone`, 
+					`gender`,
 					`linkedin`, 
 					`resume`, 
 					`website`, 
@@ -56,6 +57,7 @@ class DBHelperClass {
 					:college, 
 					:major, 
 					:phone, 
+					:gender, 
 					:linkedin, 
 					:resume, 
 					:website, 
@@ -77,6 +79,7 @@ class DBHelperClass {
 					`college`	= :college, 
 					`major`		= :major, 
 					`phone`		= :phone, 
+					`gender`	= :gender,
 					`linkedin`	= :linkedin, 
 					`resume`	= :resume, 
 					`website`	= :website, 
@@ -99,6 +102,7 @@ class DBHelperClass {
 		$stmt->bindParam(':college', 	$inputValues['college']);
 		$stmt->bindParam(':major', 		$inputValues['major']);
 		$stmt->bindParam(':phone', 		$inputValues['phone']);
+		$stmt->bindParam(':gender', 	$inputValues['gender']);
 		$stmt->bindParam(':linkedin', 	$inputValues['linkedin']);
 		$stmt->bindParam(':resume', 	$inputValues['resume']);
 		$stmt->bindParam(':website', 	$inputValues['website']);
@@ -155,6 +159,7 @@ class DBHelperClass {
 					`name`, 
 					`email`, 
 					`phone`, 
+					`gender`, 
 					`company`, 
 					`position`, 
 					`breakfast`, 
@@ -171,6 +176,7 @@ class DBHelperClass {
 					:name, 
 					:email, 
 					:phone, 
+					:gender, 
 					:company, 
 					:position, 
 					:breakfast, 
@@ -187,6 +193,7 @@ class DBHelperClass {
 				SET `name`				= :name, 
 					`email`				= :email, 
 					`phone`				= :phone, 
+					`gender`			= :gender,
 					`company`			= :company, 
 					`position`			= :position, 
 					`breakfast`			= :breakfast, 
@@ -204,6 +211,7 @@ class DBHelperClass {
 		$stmt->bindParam(':name', 			$inputValues['name']);
 		$stmt->bindParam(':email', 			$inputValues['email']);
 		$stmt->bindParam(':phone', 			$inputValues['phone']);
+		$stmt->bindParam(':gender', 		$inputValues['gender']);
 		$stmt->bindParam(':company', 		$inputValues['company']);
 		$stmt->bindParam(':position', 		$inputValues['position']);
 		$stmt->bindParam(':breakfast',		$inputValues['breakfast']);

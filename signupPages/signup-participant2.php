@@ -166,6 +166,12 @@
 										<input type="text" placeholder="Phone Number (Required)" name="phone" id="participantPhone" value="<?php echo (!is_null($key)) ? $data["phone"] : ""; ?>"/>
 									</div>
 								</div>
+								<div class="fieldWrapper column6">
+									<div class="fieldInput">
+										<i class="fa fa-transgender-alt"></i>
+										<input type="text" placeholder="Gender (Required)" name="gender" id="participantGender" value="<?php echo (!is_null($key)) ? $data["gender"] : ""; ?>"/>
+									</div>
+								</div>
 							</div>
 							
 							<div class="row">
@@ -408,6 +414,7 @@
 										<tr><td>College</td>	<td id="pCollege"></td></tr>
 										<tr><td>Major</td>		<td id="pMajor"></td></tr>
 										<tr><td>Phone</td>		<td id="pPhone"></td></tr>
+										<tr><td>Gender</td>		<td id="pGender"></td></tr>
 										
 										<tr><td>Linkedin</td>	<td id="pLinkedin"></td></tr>
 										<tr><td>Resume</td>		<td id="pResume"></td></tr>

@@ -6,6 +6,7 @@ $(document).ready(function(){
 	pCollege();
 	pMajor();
 	pPhone();
+	pGender();
 	
 	pLinkedin();
 	pResume();
@@ -25,6 +26,7 @@ $(document).ready(function(){
 	mName();
 	mEmail();
 	mPhone();
+	mGender();
 	mCompany();
 	mPosition();
 	
@@ -42,6 +44,7 @@ $("#participantEmail")		.change(function(){ pEmail();		});
 $("#participantCollege")	.change(function(){	pCollege();		});
 $("#participantMajor")		.change(function(){ pMajor();		});
 $("#participantPhone")		.change(function(){ pPhone();		});
+$("#participantGender")		.change(function(){ pGender();		});
 
 $("#participantLinkedin")	.change(function(){ pLinkedin();	});
 $("#participantWebsite")	.change(function(){	pWebsite(); 	});
@@ -69,6 +72,7 @@ function pEmail()		{ $("#pEmail")		.html($("#participantEmail")	.val()); }
 function pCollege()		{ $("#pCollege")	.html($("#participantCollege")	.val()); }
 function pMajor()		{ $("#pMajor")		.html($("#participantMajor")	.val()); }
 function pPhone()		{ $("#pPhone")		.html($("#participantPhone")	.val()); }
+function pGender()		{ $("#pGender")		.html($("#participantGender")	.val()); }
 
 function pLinkedin()	{ $("#pLinkedin")	.html($("#participantLinkedin")	.val()); }
 function pResume()		{ $("#pResume")		.html($("#resumeName")			.val()); }
@@ -88,6 +92,7 @@ function pShirt(val)	{ $("#pShirt")		.html(val);								 }
 $("#mentorName")		.change(function(){ mName();		});
 $("#mentorEmail")		.change(function(){ mEmail();		});
 $("#mentorPhone")		.change(function(){ mPhone();		});
+$("#mentorGender")		.change(function(){ mGender();		});
 $("#mentorCompany")		.change(function(){ mCompany();		});
 $("#mentorPosition")	.change(function(){ mPosition();	});
 
@@ -103,6 +108,7 @@ $("#mentorComment")		.change(function(){ mComment();		});
 function mName()		{ $("#mName")		.html( $("#mentorName")		.val()); }
 function mEmail()		{ $("#mEmail")		.html( $("#mentorEmail")	.val()); }
 function mPhone()		{ $("#mPhone")		.html( $("#mentorPhone")	.val()); }
+function mGender()		{ $("#mGender")		.html( $("#mentorGender")	.val()); }
 function mCompany()		{ $("#mCompany")	.html( $("#mentorCompany")	.val()); }
 function mPosition()	{ $("#mPosition")	.html( $("#mentorPosition")	.val()); }
 
@@ -204,6 +210,7 @@ function submitSignup(event, isParticipant, numFriends) {
 	var $phoneDiv	= $(hashPrefix + "Phone");
 	var $collegeDiv	= $(hashPrefix + "College");
 	var $majorDiv	= $(hashPrefix + "Major");
+	var $genderDiv	= $(hashPrefix + "Gender");
 	var $codeDiv	= $("#agree");
 	
 	var $topDiv		= $(hashPrefix + "Top");
@@ -217,14 +224,15 @@ function submitSignup(event, isParticipant, numFriends) {
 	var errorCount = 0;
 	
 	// array of divs that must be checked
-	var inputDivs = [$codeDiv, $nameDiv, $emailDiv, $phoneDiv];
+	var inputDivs = [$codeDiv, $nameDiv, $emailDiv, $phoneDiv, $genderDiv];
 	
 	// array of error messages
 	var inputErrors = [
 		"You must agree to the Code of Conduct.",
 		"You must enter your email.",
 		"You must enter your name.",
-		"You must enter your phone number."
+		"You must enter your phone number.",
+		"You must enter your gender."
 	];
 	if(isParticipant) {
 		inputDivs.push($collegeDiv);
@@ -253,6 +261,7 @@ function submitSignup(event, isParticipant, numFriends) {
 		) {
 				errorCount++;
 				inputDivs[i].parent().parent().append('<div class="fieldError error">' + inputErrors[i] + '</div>');
+				console.log("inputVal: " + inputVal + " inputDivs[i]: " + inputDivs[i]);
 		}
 	}
 	
