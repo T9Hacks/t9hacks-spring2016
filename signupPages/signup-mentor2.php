@@ -10,7 +10,7 @@
 	
 	<!-- CSS -->
 	<?php 
-		include "includes/css.php"; 
+		include "../includes/css.php"; 
 		css(true);
 		facebookMeta(4);
 	?>

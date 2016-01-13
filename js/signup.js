@@ -356,9 +356,9 @@ function animateToTop($topDiv) {
 function doSuccess(isParticipant) {
 	canReload = true;
 	if(!isParticipant)
-		window.location.href = "signup-success.php?t=2";
+		window.location.href = "signup-success.php?t=3";
 	else
-		window.location.href = "signup-success.php?t=1";
+		window.location.href = "signup-success.php?t=4";
 }
 
 window.onbeforeunload = function (e) {
