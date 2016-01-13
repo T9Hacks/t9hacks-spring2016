@@ -6,7 +6,7 @@ $(document).ready(function(){
 	canvasWidth = $("header").width();
 	//console.log(canvasHeight + " " + canvasWidth);
 
-	$("#header-canvas")
+	$("#headerCanvas")
 		.height(canvasHeight)
 		.width(canvasWidth);
 });
@@ -40,7 +40,7 @@ var ee1On = false;
 
 function setup() {
 	var canvas = createCanvas(canvasWidth, canvasHeight);
-	canvas.id('header-canvas');
+	canvas.id('headerCanvas');
 	//size(canvasWidth, canvasHeight);
 	background(backRed, backGreen, backBlue);
 	

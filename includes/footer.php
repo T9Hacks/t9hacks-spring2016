@@ -33,13 +33,16 @@ function footer($up = false) {
 						<a href="https://www.facebook.com/groups/414618935414757" target="_blank"><i class="fa fa-facebook"></i></a>
 					</li>
 					<li>
-						<a href="https://github.com/T9Hacks" target="_blank"><i class="fa fa-github"></i></a>
+						<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
 					</li>
 					<li>
-						<a href="https://twitter.com/T9Hacks" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
 					</li>
 					<li>
 						<a href="https://www.linkedin.com/groups/8448877" target="_blank"><i class="fa fa-linkedin"></i></a>
+					</li>
+					<li>
+						<a href="https://github.com/t9hacks" target="_blank"><i class="fa fa-github"></i></a>
 					</li>
 				</ul>
 			</div>
@@ -48,8 +51,8 @@ function footer($up = false) {
 					<p><a href="<?php echo $p; ?>team.php">Meet our team</a></p>
 				</div>
 				<div class="copyright">
-					<p>Made by T9 Hackers</p>
 					<p>T9Hacks &nbsp;<i class="fa fa-copyright"></i>&nbsp; <?php echo date("Y"); ?></p>
+					<p>Made by T9 Hackers</p>
 				</div>
 			</div>
 		</div>

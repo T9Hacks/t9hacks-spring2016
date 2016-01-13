@@ -36,8 +36,9 @@
 		
 			<div class="row">
 				<div class="column12">
-					<div class="team-title">
+					<div class="signupTitle">
 						<h1>Sign-up for T9Hacks</h1>
+						<p class="tagline">CU's first female hackathon!</p>
 					</div>
 				</div>
 			</div>

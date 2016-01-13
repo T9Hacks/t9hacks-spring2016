@@ -38,7 +38,7 @@
 				<div class="navbar-collapse collapse" id="navbar">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="page-scroll" href="#questions">About</a></li>
-						<li><a class="page-scroll" href="#join">Join</a></li>
+						<li><a class="page-scroll" href="#join">Sign-up</a></li>
 						<li><a class="page-scroll" href="#schedule">Schedule</a></li>
 						<li><a class="page-scroll" href="#sponsors">Sponsors</a></li>
 					</ul>
@@ -60,15 +60,21 @@
 		<!-- Header -->
 		<header id="header" class="bg-medPurple">
 
-			<canvas id="header-canvas"></canvas>
+			<canvas id="headerCanvas"></canvas>
 
-			<div id="header-container" class="container">
+			<div id="headerContainer" class="container">
 
-				<div class="hack-header">
+				<div class="headerContent">
 
 					<div class="row">
 						<div class="column12">
 							<img class="logo" src="images/t9hacks_logo_transparent.png" />
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="column12 tagline">
+							<p class>CU's first female hackathon!</p>
 						</div>
 					</div>
 
@@ -82,7 +88,7 @@
 
 					<div class="row">
 						<div class="column12">
-							<p><a href="#questions" class="page-scroll btn btn-circle"><i class="down fa fa-angle-double-down"></i></a></p>
+							<p><a href="#questions" class="page-scroll btn btn-circle"><i class="downBtn fa fa-angle-double-down"></i></a></p>
 						</div>
 					</div>
 
@@ -348,51 +354,50 @@
 		
 			<div class="container16">
 			
+			
 				<div class="row">
 					<div class="column16">
 						<h1 class="blue">Our Sponsors</h1>
 					</div>
 				</div>
 				<div class="row">
-					<div class="column2">&nbsp;</div>
-					<div class="column4 sponsor">
-						<div class="sponsor3 stickergiant">
-							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant-logo.png" /></a>
-						</div>
-					</div>
-					<div class="column4 sponsor">
-						<div class="sponsor3 invision">
-							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision-logo-white.png" /></a>
-						</div>
-					</div>
-					<div class="column4 sponsor">
-						<div class="sponsor3 trello">
-							<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello-logo-blue.svg" /></a>
-						</div>
-					</div>
-					<div class="column2">&nbsp;</div>
-				</div>
-				
-
-				<div class="row extra">
-					<div class="column16">
-						<h1 class="blue">Our Partners</h1>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="column3 sponsor">&nbsp;</div>
-					<div class="column5 sponsor">
-						<div class="sponsor1 mlh">
-							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh-logo.png" /></a>
-						</div>
-					</div>
+					<div class="column4">&nbsp;</div>
 					<div class="column5 sponsor">
 						<div class="sponsor1 atlas">
 							<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
 						</div>
 					</div>
-					<div class="column4 sponsor">&nbsp;</div>
+					<div class="column3 sponsor">
+						<div class="sponsor3 stickergiant">
+							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant-logo.png" /></a>
+						</div>
+					</div>
+				</div>
+				
+
+				
+				<div class="row extra">
+					<div class="column16">
+						<h1 class="blue">Community Partners</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column2">&nbsp;</div>
+					<div class="column3 sponsor">
+						<div class="sponsor3 invision">
+							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision-logo-white.png" /></a>
+						</div>
+					</div>
+					<div class="column6 sponsor">
+						<div class="sponsor1 mlh">
+							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh-logo.png" /></a>
+						</div>
+					</div>
+					<div class="column3 sponsor">
+						<div class="sponsor3 trello">
+							<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello-logo-blue.svg" /></a>
+						</div>
+					</div>
 				</div>
 				
 			</div>
@@ -404,6 +409,7 @@
 						<div class="sponsorInterested">
 							<div class="sponsorBtnContainer">
 								<div class="btn btn-xl" id="sponsorEmailBtn">Interested in becoming <span class="mobileOnly">&nbsp;</span>a sponsor or partner?</div>
+								<p>Interested in volunteering as a mentor?  <a href="signup.php">Register here!</a></p>
 							</div>
 						</div>
 					</div>
