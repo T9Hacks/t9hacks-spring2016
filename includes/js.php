@@ -6,7 +6,7 @@ function js($up = false) {
 <script src="<?php echo $p; ?>js/jquery-1.11.3.min.js" type="text/javascript"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo $p; ?>plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $p; ?>plugins/bootstrap/js/bootstrap.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

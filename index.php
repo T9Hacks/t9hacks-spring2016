@@ -16,27 +16,25 @@
 	<body id="page-top" class="index hackathon">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-fixed-top">
+		<nav id="navigation">
 			<div class="container">
 
 				<!-- Brand -->
-				<div class="navbar-header page-scroll">
-					<a class="navbar-brand page-scroll" href="#page-top">
-						T9Hacks
-					</a>
+				<div class="navigation-brand">
+					<a class="page-scroll" href="#header">T9Hacks</a>
 				</div>
-
+				
 				<!-- Mobile nav button -->
-				<div class="navbar-right" data-toggle="collapse" data-target="#navbar">
-					<button type="button" class="navbar-toggle btn btn-l">
+				<div class="navigation-toggle" data-toggle="collapse" data-target="#navigationLinks">
+					<button type="button" class="btn btn-l">
 						<span class="sr-only">Toggle navigation</span>
 						<i class="fa fa-bars"></i>
 					</button>
 				</div>
-
+				
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="navbar-collapse collapse" id="navbar">
-					<ul class="nav navbar-nav navbar-right">
+				<div class="navigation-links" id="navigationLinks">
+					<ul>
 						<li><a class="page-scroll" href="#questions">About</a></li>
 						<li><a class="page-scroll" href="#join">Sign-up</a></li>
 						<li><a class="page-scroll" href="#schedule">Schedule</a></li>

@@ -39,9 +39,10 @@ var ee1On = false;
 
 
 function setup() {
-	var canvas = createCanvas(canvasWidth, canvasHeight);
-	canvas.id('headerCanvas');
-	//size(canvasWidth, canvasHeight);
+	if(canvasWidth > 768) {
+		var canvas = createCanvas(canvasWidth, canvasHeight);
+		canvas.id('headerCanvas');
+	}
 	background(backRed, backGreen, backBlue);
 	
 	noStroke();
@@ -61,7 +62,6 @@ function setup() {
 			size: size
 		};
 	}
-	
 };
 
 function draw() {

@@ -10,11 +10,10 @@ $(function() {
     	event.preventDefault();
     	
     	// offset by height 
-    	
         var $anchor = $(this);
-        var navHeight = $(".navbar").innerHeight();
+        var navHeight = $("#navigation").innerHeight();
         var offset = $($anchor.attr('href')).offset().top;
-        if(! $anchor.hasClass("navbar-brand")) { offset-=navHeight; }
+        //if(! $anchor.hasClass("navigation-brand")) { offset-=navHeight; }
         
         	
         $('html, body').stop().animate({
@@ -26,10 +25,10 @@ $(function() {
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
-    target: '.navbar'
+    target: '#navigation'
 });
 
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
+$('.navigation-links ul li a').click(function() {
+    $('.navigation-toggle:visible').click();
 });
