@@ -9,7 +9,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "../includes/css.php"; css(true); ?>
+	<?php 
+		$t = 1;
+		if(array_key_exists("t", $_GET))
+			$t = $_GET['t'];
+		if($t != 1 && $t != 2)
+			$t = 1;
+		
+		include "includes/css.php"; 
+		css(true);
+		facebookMeta($t);
+	?>
 	
 	
 </head>
@@ -35,12 +45,16 @@
 			<div class="row signupTop" id="participantTop">
 				<div class="signupWrapper">
 				
-					<div>
+					<div class="column12">
 						<h1 class="blue">Success!</h1>
 						<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be send to your email.  We look forward to seeing you!</p>
 						<br/>
 						<br/>
 						<a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+					</div>
+					
+					<div class="column12">
+						<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
 					</div>
 					
 				</div> <!-- end signupWrapper -->

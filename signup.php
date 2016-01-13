@@ -9,7 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "includes/css.php"; css(); ?>
+	<?php 
+		include "includes/css.php"; 
+		css();
+		facebookMeta(2);
+	?>
 	
 </head>
 <body id="page-top" class="index hackathon">

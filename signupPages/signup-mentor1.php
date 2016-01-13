@@ -9,7 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- CSS -->
-	<?php include "../includes/css.php"; css(true); ?>
+	<?php 
+		include "includes/css.php"; 
+		css(true);
+		facebookMeta(4);
+	?>
 	
 	<?php 
 		// get post data

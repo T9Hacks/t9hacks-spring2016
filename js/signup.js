@@ -303,7 +303,7 @@ function submitSignup(event, isParticipant, numFriends) {
 				if(xhr.SUCCESS) {
 					//console.log("success");
 					setTimeout(function(){
-						doSuccess();
+						doSuccess(isParticipant);
 					}, 1000);
 				  
 				// start trouble shooting problems
@@ -353,9 +353,12 @@ function animateToTop($topDiv) {
 	}, 500);
 }
 
-function doSuccess() {
+function doSuccess(isParticipant) {
 	canReload = true;
-	window.location.href = "signup-success.php";
+	if(!isParticipant)
+		window.location.href = "signup-success.php?t=2";
+	else
+		window.location.href = "signup-success.php?t=1";
 }
 
 window.onbeforeunload = function (e) {

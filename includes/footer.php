@@ -45,6 +45,11 @@ function footer($up = false) {
 						<a href="https://github.com/t9hacks" target="_blank"><i class="fa fa-github"></i></a>
 					</li>
 				</ul>
+				<div class="socialSharing">
+					<div class="column12">
+						<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
+					</div>
+				</div>
 			</div>
 			<div class="column4">
 				<div class="quicklinks">
