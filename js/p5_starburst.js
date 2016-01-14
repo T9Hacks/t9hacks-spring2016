@@ -6,9 +6,12 @@ $(document).ready(function(){
 	canvasWidth = $("header").width();
 	//console.log(canvasHeight + " " + canvasWidth);
 
-	$("#headerCanvas")
-		.height(canvasHeight)
-		.width(canvasWidth);
+	if(canvasWidth > 768) {
+		$("#headerCanvas")
+			.height(canvasHeight)
+			.width(canvasWidth);
+		canvasWidth = canvasHeight = 0;
+	}
 });
 
 var starsStart = 100;

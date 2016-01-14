@@ -428,6 +428,11 @@ header {
 	font-size: 2.5em;
 	margin: 8px 6px 3px;
 }
+@media only screen and (max-width: 767px) {
+	#headerCanvas { display: none; }
+}
+	
+	
 
 
 
@@ -438,6 +443,8 @@ header {
 #questions p {
 	text-align: justify;
 }
+.faqs:first-child { padding-right: 10px; }
+.faqs:last-child { padding-left: 10px; }
 .faq { position: relative; }
 .faq-icon {
 	font-size: 2em;
@@ -464,6 +471,10 @@ header {
 .shareBtns li * {
 	vertical-align: top !important;
 }
+@media only screen and (max-width: 767px) {
+	.faqs:first-child, .faqs:last-child { padding: 0; }
+}
+
 
 
 

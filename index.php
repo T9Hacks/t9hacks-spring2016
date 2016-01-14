@@ -122,75 +122,36 @@
 						those numbers!
 					</p>
 				</div>
-				<div class="column12">
-					<ul class="shareBtns">
-						<li class="fb">
-							<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
-						</li>
-						<li>
-							<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Design.%20Build.%20Create.%20CU's%20first%20women's%20hackathon!%20Hosted%20at%20%40cuatlas%20on%20Feb%2020-21." class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-						</li>
-					</ul>
-				</div>
 			</div>
 			
-
-			<div class="row">
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-code"></i>
-					<div class="faq-question">
-						<h2>Do I have to be a programmer?</h2>
-						<p>
-							Absolutely not!  We encourage women with all backgrounds to participate.  It doesn't matter
-							if you are an art, a journalism, or a marketing major, there is a place for you here.
-						</p>
-					</div>
-				</div>
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-terminal"></i>
-					<div class="faq-question">
-						<h2>What is "hacking"?</h2>
-						<p>
-							"Hacking" doesn't mean malicious programming or breaking into something.  We want you to "hack" 
-							(design, build, create, MacGyver) technology, art, and media together to create something awesome.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-thumbs-o-up"></i>
-					<div class="faq-question">
-						<h2>I've never been to a hackathon before, should I still register?</h2>
-						<p>
-							Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, we are 
-							expecting our participants to have no experience with hackathons.  We will have fun events, mentors, and a super welcoming 
-							staff to ease everyone into the experience.  
-						</p>
-					</div>
-				</div>
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-clock-o"></i>
-					<div class="faq-question">
-						<h2>Do you really mean 24 hours?</h2>
-						<p>
-							We know, that sounds like a long time! But it goes quickly when you are collaborating, planning, and creating 
-							projects.  We wanted to see what kinds of projects students would come up with if they were given a full day to 
-							devote themselves to one thing.
-						</p>
-					</div>
-				</div>
-			</div>
-
 			
 			<div class="row">
+				<div class="column12 alpha">
 			
-				<div class="column6">
-					<div class="row">
-						<div class="column12 alpha faq">
+			
+					<div class="column6 faqs">
+						<div class="row faq">
+							<i class="faq-icon fa fa-code"></i>
+							<div class="faq-question">
+								<h2>Do I have to be a programmer?</h2>
+								<p>
+									Absolutely not!  We encourage women with all backgrounds to participate.  It doesn't matter
+									if you are an art, a journalism, or a marketing major, there is a place for you here.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-thumbs-o-up"></i>
+							<div class="faq-question">
+								<h2>I've never been to a hackathon before, should I still register?</h2>
+								<p>
+									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, we are 
+									expecting our participants to have no experience with hackathons.  We will have fun events, mentors, and a super welcoming 
+									staff to ease everyone into the experience.  
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
 							<i class="faq-icon fa fa-group"></i>
 							<div class="faq-question">
 								<h2>Do I have to have a team to register?</h2>
@@ -200,9 +161,7 @@
 								</p>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="column12 alpha faq">
+						<div class="row faq">
 							<i class="faq-icon fa fa-ticket"></i>
 							<div class="faq-question">
 								<h2>How much does it cost?</h2>
@@ -211,60 +170,85 @@
 								</p>
 							</div>
 						</div>
-					</div>
-				</div>
-					
-				<div class="column6">
-					<div class="column12 alpha faq">
-						<i class="faq-icon fa fa-object-group"></i>
-						<div class="faq-question">
-							<h2>What kind of project should I make?</h2>
-							<p>
-								T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
-								where we encourage students to build solutions, prototypes, or raise awareness of problems they see in their communities.  
-								If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
-							</p>
-							<p>
-								T9Hacks is also a "creative technology" hackathon.  This means that we encourage our participants to create projects with 
-								tangible, artistic, media, or electronic components.  
-							</p>
+						<div class="row faq">
+							<i class="faq-icon fa fa-plane"></i>
+							<div class="faq-question">
+								<h2>Do you cover travel expenses?</h2>
+								<p>
+									Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger student hackathon called 
+									<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-			</div>
-				
-			
-			<div class="row">
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-laptop"></i>
-					<div class="faq-question">
-						<h2>What do I have to bring?</h2>
-						<p>
-							Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
-						</p>
-					</div>
-				</div>
-				<div class="column6 faq">
-					<i class="faq-icon fa fa-plane"></i>
-					<div class="faq-question">
-						<h2>Do you cover travel expenses?</h2>
-						<p>
-							Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger student hackathon called 
-							<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
-						</p>
-					</div>
-				</div>
-			</div>
-				
-			<div class="row">
-				<div class="column12">
 					
+					
+					<div class="column6 faqs">
+						<div class="row faq">
+							<i class="faq-icon fa fa-terminal"></i>
+							<div class="faq-question">
+								<h2>What is "hacking"?</h2>
+								<p>
+									"Hacking" doesn't mean malicious programming or breaking into something.  We want you to "hack" 
+									(design, build, create, MacGyver) technology, art, and media together to create something awesome.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-clock-o"></i>
+							<div class="faq-question">
+								<h2>Do you really mean 24 hours?</h2>
+								<p>
+									We know, that sounds like a long time! But it goes quickly when you are collaborating, planning, and creating 
+									projects.  We wanted to see what kinds of projects students would come up with if they were given a full day to 
+									devote themselves to one thing.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-object-group"></i>
+							<div class="faq-question">
+								<h2>What kind of project should I make?</h2>
+								<p>
+									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
+									where we encourage students to build solutions, prototypes, or raise awareness of problems they see in their communities.  
+									If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
+								</p>
+								<p>
+									T9Hacks is also a "creative technology" hackathon.  This means that we encourage our participants to create projects with 
+									tangible, artistic, media, or electronic components.  
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-laptop"></i>
+							<div class="faq-question">
+								<h2>What do I have to bring?</h2>
+								<p>
+									Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<ul class="shareBtns">
+								<li class="fb">
+									<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
+								</li>
+								<li>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Design.%20Build.%20Create.%20CU's%20first%20women's%20hackathon!%20Hosted%20at%20%40cuatlas%20on%20Feb%2020-21." class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		
+								</li>
+							</ul>
+						</div>
+					</div>
+			
+			
 				</div>
 			</div>
 			
 			
-
+			
 		</div>
 
 	</section>
