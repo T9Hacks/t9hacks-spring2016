@@ -451,6 +451,19 @@ header {
 	margin-left: 58px;
 }
 
+.shareBtns {
+	margin: 0;
+	float: right;
+	list-style-type: none;
+}
+.shareBtns li {
+	display: inline-block;
+	height: 20px;
+	margin-left: 10px;
+}
+.shareBtns li * {
+	vertical-align: top !important;
+}
 
 
 
@@ -842,6 +855,12 @@ footer .quicklinks, footer .copyright {
 }
 .socialSharing {
 	margin-top: 20px;
+}
+.socialSharing .shareBtns {
+	float: none;
+}
+.socialSharing .shareBtns li {
+	margin: 0 5px;
 }
 
 

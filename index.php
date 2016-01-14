@@ -123,7 +123,16 @@
 					</p>
 				</div>
 				<div class="column12">
-					<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
+					<ul class="shareBtns">
+						<li class="fb">
+							<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
+						</li>
+						<li>
+							<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Design.%20Build.%20Create.%20CU's%20first%20women's%20hackathon!%20Hosted%20at%20%40cuatlas%20on%20Feb%2020-21." class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+						</li>
+					</ul>
 				</div>
 			</div>
 			
@@ -245,6 +254,12 @@
 							<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
 						</p>
 					</div>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="column12">
+					
 				</div>
 			</div>
 			

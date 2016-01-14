@@ -10,15 +10,19 @@
 	
 	<!-- CSS -->
 	<?php 
-		$t = 3;
-		if(array_key_exists("t", $_GET))
+		$isParticipant = true;
+		if(array_key_exists("t", $_GET)) {
 			$t = $_GET['t'];
-		if($t != 3 && $t != 4)
-			$t = 3;
+			if($t == 4)
+				$isParticipant = false;
+		}
 		
 		include "../includes/css.php"; 
 		css(true);
-		facebookMeta($t);
+		if($isParticipant)
+			facebookMeta(3);
+		else
+			facebookMeta(4);
 	?>
 	
 	
@@ -48,10 +52,28 @@
 					<div class="column12">
 						<h1 class="blue">Success!</h1>
 						<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be send to your email.  We look forward to seeing you!</p>
-						<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
 						<br/>
 						<br/>
 						<br/>
+						<ul class="shareBtns">
+							<li>
+								<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
+							</li>
+							<li>
+								<?php
+								if($isParticipant) { 
+								?>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20for%20%40T9Hacks!%20A%20female%20creative%20technology%20hackathon%2C%20at%20%40cuatlas%20on%20Feb%2020-21" class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+								<?php 
+								} else { 
+								?>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20to%20mentor%20%40T9Hacks!%20A%20female%20creative%20technology%20hackathon%2C%20at%20%40cuatlas%20on%20Feb%2020-21" class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+								<?php 
+								}
+								?>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							</li>
+						</ul>
 						<a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
 					</div>
 					
