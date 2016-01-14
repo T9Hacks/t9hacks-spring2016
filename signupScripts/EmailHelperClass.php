@@ -393,9 +393,9 @@ class EmailHelperClass {
 		
 		// create message
 		$sendMessage = "<html><head></head><body><table style='border-collapse: collapse'>";
-		$sendMessage .= "<tr><td><b>Name: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorName</p></td></tr>";
-		$sendMessage .= "<tr><td><b>Email: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorEmail</p></td></tr>";
-		$sendMessage .= "<tr><td><b>Message: </b></td><td style='border:1px solid black;padding:10px;'><p>$sponsorMessage</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Name: </b></td><td><p>$sponsorName</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Email: </b></td><td><p>$sponsorEmail</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Message: </b></td><td><p>$sponsorMessage</p></td></tr>";
 		$sendMessage .= "</table></body></html>";
 		
 		// create sender's reply to

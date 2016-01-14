@@ -86,7 +86,7 @@ if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !
 	
 		
 			// send email
-			$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["subject"], $inputValues["message"]);
+			$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["message"]);
 			$resultMessage = ($result) ? "Success!" : "There was a problem sending a email.  Please resubmit the form.";
 			
 			// create result array

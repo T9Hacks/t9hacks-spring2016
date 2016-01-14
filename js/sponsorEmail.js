@@ -18,10 +18,10 @@ $("#sponsorEmailSubmit").click(function(event){
 	var errorCount = 0;
 	
 	// array of divs that must be checked
-	var inputDivs = [$("#sponsorName"), $("#sponsorEmail"), $("#sponsorSubject"), $("#sponsorMessage")];
+	var inputDivs = [$("#sponsorName"), $("#sponsorEmail"), $("#sponsorMessage")];
 	
 	// array of error messages
-	var inputErrors = [ "You must enter your name.", "You must enter your email.", "You must enter a subject.", "You must enter a message." ];
+	var inputErrors = [ "You must enter your name.", "You must enter your email.", "You must enter a message." ];
 	
 	// loop through the inputs
 	for(var i=0; i<inputDivs.length; i++) {
