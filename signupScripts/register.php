@@ -109,6 +109,7 @@ include 'RegisterFunctions.php';
 /* ************************************ */
 /* 		Test For Hidden Inputs			*/
 /* ************************************ */
+$allInputValues["post"] = $_POST;
 // test - hiden inputs
 if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) || !array_key_exists('friends', $_POST) || !array_key_exists('key', $_POST) ) {
 	

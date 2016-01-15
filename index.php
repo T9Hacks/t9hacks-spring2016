@@ -175,7 +175,7 @@
 							<div class="faq-question">
 								<h2>Do you cover travel expenses?</h2>
 								<p>
-									Since this is T9Hacks' first hackathon, we cannot reimburse any travel expences at this time.  However, there is a larger student hackathon called 
+									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel expenses at this time.  However, there is a larger student hackathon called 
 									<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
 								</p>
 							</div>

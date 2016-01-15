@@ -284,7 +284,7 @@
 							</div>
 							
 							<?php 
-							if($completeReg) {
+							if(!$newReg) {
 								?>
 								<hr class="noTop"/>
 								<div class="row">

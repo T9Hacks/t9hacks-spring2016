@@ -6,12 +6,10 @@ $(document).ready(function(){
 	canvasWidth = $("header").width();
 	//console.log(canvasHeight + " " + canvasWidth);
 
-	if(canvasWidth > 768) {
-		$("#headerCanvas")
-			.height(canvasHeight)
-			.width(canvasWidth);
-		canvasWidth = canvasHeight = 0;
-	}
+	$("#headerCanvas")
+		.height(canvasHeight)
+		.width(canvasWidth);
+	
 });
 
 var starsStart = 100;
@@ -42,10 +40,9 @@ var ee1On = false;
 
 
 function setup() {
-	if(canvasWidth > 768) {
-		var canvas = createCanvas(canvasWidth, canvasHeight);
-		canvas.id('headerCanvas');
-	}
+	var canvas = createCanvas(canvasWidth, canvasHeight);
+	canvas.id('headerCanvas');
+	
 	background(backRed, backGreen, backBlue);
 	
 	noStroke();

@@ -288,12 +288,12 @@ class DBHelperClass {
 	
 	
 	function participantEmailRegistered($email) {
-		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_participants` WHERE `email` = :email AND `deleted` = 0";
+		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_participants` WHERE `email` = :email AND `deleted` = 0 AND `unregistered` = 0";
 		return $this->emailRegistered($email, $sql);
 	}
 	
 	function mentorEmailRegistered($email) {
-		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_mentors` WHERE `email` = :email AND `deleted` = 0";
+		$sql = "SELECT COUNT(*) AS c FROM `t9hacks_mentors` WHERE `email` = :email AND `deleted` = 0 AND `unregistered` = 0";
 		return $this->emailRegistered($email, $sql);
 	}
 	

@@ -143,12 +143,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			array(
 				"name"			=> "Participants",
 				"data"			=> $participants,
-				"genericInfo"	=> array("gender", "college", "major", "linkedin", "resume", "website", "github", "company", "position", "facebook", "twitter", "shirt", "comment"),
+				"genericInfo"	=> array("gender", "college", "major", "linkedin", "resume", "website", "github", "company", "position", "facebook", "twitter", "shirt", "unregistered", "comment"),
 			), 
 			array(
 				"name"			=> "Mentors",
 				"data"			=> $mentors,
-				"genericInfo"	=> array("gender", "company", "position", "dinner", "breakfast", "lunch", "area", "comment"),
+				"genericInfo"	=> array("gender", "company", "position", "dinner", "breakfast", "lunch", "area", "unregistered", "comment"),
 			)
 		);
 		
@@ -170,6 +170,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<span class="column6">Name: <b><?php echo $person["name"]; ?></b></span>
 								<span class="column6">Email: <b><?php echo $person["email"]; ?></b></span>
 								<span class="column6">Phone: <b><?php echo $person["phone"]; ?></b></span>
+								<span class="column6">Key: <b><?php echo $person["key"]; ?></b></span>
 								<span class="num">#<?php echo $num; ?></span>
 							</div>
 							

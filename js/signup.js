@@ -431,7 +431,7 @@ $(".reRegBtn").click(function(event){
 	event.preventDefault();
 	var key = $("#key").val();
 	var type = $("#type").val();
-	console.log("key: " + key + " type: " + type);
+	//console.log("key: " + key + " type: " + type);
 	var data = { 
 		"key" : key, 
 		"type" : type
