@@ -268,19 +268,24 @@
 						<p class="text-bold">
 							Registration for T9 hackers is now open! 
 						</p>
-						<p>
-							If you would like to participate in T9Hacks, you will need to sign-up 
-							on our registration page. Click the sign-up button below to start this process.
-						</p>
-						<p>
-							If you would like to participate as a mentor, you can also register by clicking the sign-up button below.
-						</p>
-					<div class="row">
 					</div>
+					<div class="row">
+						<p>
+							If you would like to participate in T9Hacks, you will need to apply 
+							by using our registration page. Click the application button below to start this process.
+						</p>
 						<div class="signupBtn">
-							<center><a href="signup.php" class="btn btn-xl">Sign-Up</a></center>
+							<center><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant Application</a></center>
 						</div>
 					</div>
+					<div class="row">
+						<p>
+							If you would like to participate as a mentor, you can also register by clicking the sign up button below.
+						</p>
+						<div class="signupBtn">
+							<center><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor Sign Up</a></center>
+						</div>
+					<div class="row">
 				</div>
 			</div>
 			

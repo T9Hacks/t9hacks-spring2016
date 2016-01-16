@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>T9Hacks - Sign-up</title>
+	<title>T9Hacks - Sign Up</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,7 +30,6 @@
 				<div class="column12">
 					<div class="signupTitle">
 						<h1>Sign-up for T9Hacks</h1>
-						<p class="tagline">CU's first female hackathon!</p>
 					</div>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>T9Hacks - Sign-up</title>
+	<title>T9Hacks - Sign Up</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -69,8 +69,7 @@
 			<div class="row">
 				<div class="column12">
 					<div class="signupTitle">
-						<h1>Sign-up for T9Hacks</h1>
-						<p class="tagline">CU's first female hackathon!</p>
+						<h1>Apply for T9Hacks</h1>
 					</div>
 				</div>
 			</div>
@@ -81,7 +80,7 @@
 				
 					<div class="row">
 						<div class="column12">
-							<h2>Participant Sign-up</h2>
+							<h2>Participant Application</h2>
 							<p>20-21 February 2016</p>
 						</div>
 					</div>
@@ -112,7 +111,7 @@
 								
 								<div class="row">
 									<p class="column12">
-										To register we require a few pieces of information.  Please register with your university email account.
+										To apply we require a few pieces of information.  Please register with your university email account.
 									</p>
 								</div>
 								<?php 
@@ -120,7 +119,7 @@
 								?>
 								<div class="row">
 									<p class="column12">
-										Congratulations!  You have completed your registraton.  You can edit your information here.
+										Congratulations!  You have completed your application.
 									</p>
 								</div>
 								<hr class="noTop"/>
@@ -130,7 +129,7 @@
 								?>
 								<div class="row">
 									<p class="column12">
-										Please complete this registration form.  To register we require a few pieces of information.  Please register with your university email account.
+										Please complete this application form.  To apply we require a few pieces of information.  Please register with your university email account.
 									</p>
 								</div>
 								<?php 
@@ -180,10 +179,6 @@
 							</div>
 							
 							<div class="row">
-								<p class="column12">
-									By participating in T9Hacks, you get special access to our sponsors and additional technology opportunities.
-								</p>
-								
 								<div class="fieldWrapper column6">
 									<div class="fieldInput">
 										<i class="fa fa-linkedin"></i>
@@ -193,7 +188,7 @@
 								<div class="fieldWrapper column6">
 									<div class="fieldInput" id="upload">
 										<i class="fa fa-file-text-o"></i>
-										<input type="text" id="resumeName" name="resumeOld" placeholder="Upload Resume" value="<?php echo (!is_null($key)) ? $data["resume"] : ""; ?>" />
+										<input type="text" id="pResumeName" name="resumeName" placeholder="Upload Resume" value="<?php echo (!is_null($key)) ? $data["resume"] : ""; ?>" />
 										<input type="file" id="resumeUploadInput" name="resume" class="upload"/>
 										<span id="resumeUploadBtn" class="btn btn-med">Upload</span>
 									</div>
@@ -247,7 +242,7 @@
 							
 							<div class="row">
 								<p class="column12">
-									As part of your registeration, you will receive a free T9Hacks t-shirt.  This t-shirt will be in a standard unisex size.  
+									As a participant of T9Hacks, you will receive a free T9Hacks t-shirt.  This t-shirt will be in a standard unisex size.  
 									What size would you like?
 								</p>
 								
@@ -263,7 +258,9 @@
 									<div class="fieldRadio">
 										<?php 
 											$checked = "";
-											if(is_null($key)|| $data['shirt'] == "Medium" || empty($data['shirt']) || is_null($data['shirt'])) {
+											if( (!is_null($key) && $data['shirt'] == "Medium")
+												||
+												( empty($data['shirt']) || is_null($data['shirt']) ) ) {
 												$checked = 'checked="checked"';
 											}
 										?>
@@ -320,8 +317,8 @@
 									<div class="column12">
 										<h3>Friend Registration</h3>
 										<p>
-											By registering your friend(s), you guarantee them a spot at T9Hacks.  They will then be sent an 
-											email asking them to complete their registration.
+											By adding your friend(s), you will start their application for T9Hacks.  They will then be sent an 
+											email asking them to complete their application.
 										</p>
 									</div>
 								</div>
@@ -375,10 +372,10 @@
 								<div class="row">
 									<div class="column12">
 										<p>
-											<a href="#" class="btn btn-med btn-subtle cancelRegBtn" >Cancel my registration for T9Hacks.</a>
+											<a href="#" class="btn btn-med btn-subtle cancelRegBtn" >Remove my application for T9Hacks.</a>
 										</p>
 										<div class="cancelConfirm">
-											<p>Are you sure you want to cancel your registration? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
+											<p>Are you sure you want to remove your application? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
 										</div>
 									</div>
 								</div>
@@ -392,7 +389,7 @@
 							
 							<div class="row">
 								<p class="column12">
-									Please confirm your registeration information and submit when you are done.  An email will be sent to you with your ticket.
+									Please confirm your application information and submit when you are done.  An email will be sent to you with your application ticket.
 								</p>
 							</div>
 							
@@ -414,25 +411,25 @@
 								<div class="column8">
 									<table class="confirmationTable">
 									<tbody>
-										<tr><td>Name</td>		<td id="pName"></td></tr>
-										<tr><td>Email</td>		<td id="pEmail"></td></tr>
-										<tr><td>College</td>	<td id="pCollege"></td></tr>
-										<tr><td>Major</td>		<td id="pMajor"></td></tr>
-										<tr><td>Phone</td>		<td id="pPhone"></td></tr>
-										<tr><td>Gender</td>		<td id="pGender"></td></tr>
+										<tr><td>Name</td>		<td id="name"></td></tr>
+										<tr><td>Email</td>		<td id="email"></td></tr>
+										<tr><td>College</td>	<td id="college"></td></tr>
+										<tr><td>Major</td>		<td id="major"></td></tr>
+										<tr><td>Phone</td>		<td id="phone"></td></tr>
+										<tr><td>Gender</td>		<td id="gender"></td></tr>
 										
-										<tr><td>Linkedin</td>	<td id="pLinkedin"></td></tr>
-										<tr><td>Resume</td>		<td id="pResume"></td></tr>
-										<tr><td>Website</td>	<td id="pWebsite"></td></tr>
-										<tr><td>Github</td>		<td id="pGithub"></td></tr>
-										<tr><td>Company</td>	<td id="pCompany"></td></tr>
-										<tr><td>Position</td>	<td id="pPosition"></td></tr>
-										<tr><td>Facebook</td>	<td id="pFacebook"></td></tr>
-										<tr><td>Twitter</td>	<td id="pTwitter"></td></tr>
+										<tr><td>Linkedin</td>	<td id="linkedin"></td></tr>
+										<tr><td>Resume</td>		<td id="resumeName"></td></tr>
+										<tr><td>Website</td>	<td id="website"></td></tr>
+										<tr><td>Github</td>		<td id="github"></td></tr>
+										<tr><td>Company</td>	<td id="company"></td></tr>
+										<tr><td>Position</td>	<td id="position"></td></tr>
+										<tr><td>Facebook</td>	<td id="facebook"></td></tr>
+										<tr><td>Twitter</td>	<td id="twitter"></td></tr>
 										
-										<tr><td>Shirt Size</td>	<td id="pShirt"></td></tr>
+										<tr><td>Shirt Size</td>	<td id="shirt"></td></tr>
 										
-										<tr><td>Comments</td>	<td id="pComment"></td></tr>
+										<tr><td>Comments</td>	<td id="comment"></td></tr>
 									</tbody>
 									</table>
 								</div>
@@ -503,7 +500,7 @@
 						<div class="row">
 							<div class="column12">
 								<p>
-									Our records show that you have canceled your registration.  Would you like to re-register with T9Hacks?
+									Our records show that you have removed your application.  Would you like to re-submit your application with T9Hacks?
 									<a href="#" class="btn btn-med btn-subtle reRegBtn" id="mentorReRegBtn">Yes</a>
 									<input type="hidden" name="type" id="type" value="participant" />
 									<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />

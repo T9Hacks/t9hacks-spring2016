@@ -206,11 +206,15 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isParticipant = true;
 					
 					// input data
-					$inputNames = array("name", "email", "college", "major", "phone", "gender", "linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "resumeOld", "comment", "agree");
+					$inputNames = array(
+							"name", "email", "college", "major", "phone", "gender", 
+							"linkedin", "website", "github", "company", "position", "facebook", "twitter", "shirt", "comment", "agree", 
+							"resumeName"
+					);
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
-						'numReqInputs'	=> 6,
-						'numTextInputs'	=> 14,
+						'numReqFilledInputs'	=> 6,
+						'numReqPresentInputs'	=> 16,
 					);					
 					
 					// register participant
@@ -231,11 +235,15 @@ if( !array_key_exists('honeypot', $_POST) || !array_key_exists('type', $_POST) |
 					$isMentor = true;
 					
 					// input data
-					$inputNames = array("name", "email", "phone", "gender", "area", "company", "position", "comment", "breakfast", "lunch", "dinner", "agree");
+					$inputNames = array(
+							"name", "email", "phone", "gender", "area", 
+							"company", "position", "comment", "shirt", "agree", 
+							"breakfast", "lunch", "dinner"
+					);
 					$inputs = array(
 						'inputNames'	=> $inputNames, 
-						'numReqInputs'	=> 5,	
-						'numTextInputs'	=> 8,						
+						'numReqFilledInputs'	=> 5,	
+						'numReqPresentInputs'	=> 10,						
 					);
 					
 					

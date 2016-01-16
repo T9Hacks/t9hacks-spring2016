@@ -89,12 +89,12 @@ class EmailHelperClass {
 	/* 
 	 * Create and send confirmation emails for friends of participant and mentors
 	 */
-	function createAndSendEmail_Registration($inputValues, $key, $isParticipant) {
+	function createAndSendEmail_RegistrationNotice($inputValues, $key, $isParticipant) {
 		// create subject
 		$subject = "A friend registered you for T9Hacks! Please complete your registration.";
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_Registration($inputValues, $key, $isParticipant);
+		$message = EmailHelperClass::createEmail_RegistrationNotice($inputValues, $key, $isParticipant);
 		
 		// create headers
 		$email = $inputValues['email'];
@@ -112,7 +112,7 @@ class EmailHelperClass {
 /*
 	 * Create email message - registration for participant and mentor
 	 */
-	function createEmail_Registration($inputValues, $key, $isParticipant) {
+	function createEmail_RegistrationNotice($inputValues, $key, $isParticipant) {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
@@ -120,47 +120,75 @@ class EmailHelperClass {
 		$friendName = $inputValues['friendName'];
 		
 		if($isParticipant) {
-			$type = "participant";
-			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=".$key;
+			$intro = "This is your application notice for T9Hacks Spring 2016";
+			
+			$note = "
+					<p>
+						Your friend, $friendName, started your application for 
+						<a href='www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a>.
+					</p>
+					<p>
+						T9Hacks is a 24 hour women's hackathon promoting gender diversity in technology.  It is held
+						at the University of Colorado Boulder's ATLAS Institute on Feb 20-21.  T9Hacks brings students together 
+						for a weekend of creativity, building, and hacking.
+					</p>
+					<p>
+						Your friend has started your application, but to be considered for a spot at T9Hacks you will need to 
+						complete your registration form.  
+					</p>
+					<p>
+						Click on this link: 
+						<br/>
+						<a href='www.t9hacks.org/signupPages/signup-participant2.php?key=$key' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
+						<br/>
+						(or copy and paste it into a web browser)  
+						to go to the application page.
+					</p>
+					";
 			
 		} else {
-			$type = "mentor";
-			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=".$key;
+			$intro = "This is your registration notice for T9Hacks Spring 2016";
+			
+			$note = "
+					<p>
+						Your colleague, $friendName, registered you as a mentor for 
+						<a href='www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a>.
+					</p>
+					<p>
+						T9Hacks is a 24 hour women's hackathon promoting gender diversity in technology.  It is held
+						at the University of Colorado Boulder's ATLAS Institute on Feb 20-21.  T9Hacks brings students together 
+						for a weekend of creativity, building, and hacking.
+					</p>
+					<p>
+						Your colleague has reserved you 
+						a spot at T9Hacks, but to participate as a mentor, you will need to complete the process.  
+					</p>
+					<p>
+						Click on this link: 
+						<br/>
+						<a href='www.t9hacks.org/signupPages/signup-mentor2.php?key=$key' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
+						<br/>
+						(or copy and paste it into a web browser)  
+						to go to the registration page.
+					</p>
+					<p>
+						We look forward to seeing you there!
+					</p>
+					";
 		}
 		
 		$message = EmailHelperClass::createEmailHeader() . "
 			<tr><td style='padding: 20px 20px 0 20px;'>
-				<h2>Hi $name, this is your registration notice for T9Hacks Spring 2016</h2>
+				<h2>Hi $name,</h2>
+				<p>$intro</p>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
 				<hr/>
 			</td></tr>
-			
+				
 			<tr><td style='padding: 0 20px;'>
-				<p>
-					Your friend, $friendName, registered you as a $type for 
-					<a href='www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a>.
-				</p>
-				<p>
-					T9Hacks is a 24 hour female hackathon at the University of Colorado Boulder's ATLAS Institute 
-					that brings together students for a day of creativity, building, and hacking.
-				</p>
-				<p>
-					Your friend has reserved you 
-					a spot at T9Hacks, but to participate as a $type, you will need to complete the process.  
-				</p>
-				<p>
-					Click on this link: 
-					<br/>
-					<a href='$link' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
-					<br/>
-					(or copy and paste it into a web browser)  
-					to go to the registration page.
-				</p>
-				<p>
-					We look forward to seeing you there!
-				</p>
+				$note
 			</td></tr>
 		" . EmailHelperClass::createEmailFooter($name);
 		
@@ -182,9 +210,9 @@ class EmailHelperClass {
 		// create subject
 		$subject = "";
 		if($isParticipant)
-			$subject = "Your Ticket for T9Hacks Spring 2016";
+			$subject = "Your Application Ticket for T9Hacks Spring 2016";
 		else 
-			$subject = "Your Confirmation for T9Hacks Spring 2016";
+			$subject = "Your Registration Confirmation for T9Hacks Spring 2016";
 		
 		// create email message
 		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
@@ -212,14 +240,16 @@ class EmailHelperClass {
 		$name = $inputValues['name'];
 		
 		if($isParticipant) {
-			$ticketName = "Ticket";
+			$intro = "This is your application for T9Hacks Spring 2016";
+			$ticketName = "Application Ticket";
 			$ticketType = "Hacker Participant";
 			$extras = "
-				<tr><td style='padding: 5px 10px;'>Shirt: </td>	<td style='padding: 5px 10px;'>" . $inputValues['shirt'] . "</td></tr>
+				
 			";
 			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=".$key;
 			
 		} else {
+			$intro = "This is your signup confirmation for T9Hacks Spring 2016";
 			$ticketName = "Ticket";
 			$ticketType = "Mentor";
 			$extras = "
@@ -233,7 +263,8 @@ class EmailHelperClass {
 		
 		$message = EmailHelperClass::createEmailHeader() . "
 			<tr><td style='padding: 20px 20px 0 20px;'>
-				<h2>Hi $name, this is your signup confirmation for T9Hacks Spring 2016</h2>
+				<h2>Hi $name,</h2>
+				<p>$intro</p>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
@@ -249,12 +280,14 @@ class EmailHelperClass {
 					<tr><td style='padding: 5px 10px;'>Name: </td>	<td style='padding: 5px 10px;'>$name</td></tr>
 					<tr><td style='padding: 5px 10px;'>Type: </td>	<td style='padding: 5px 10px;'>$ticketType</td></tr>
 					$extras
+					<tr><td style='padding: 5px 10px;'>Shirt Size: </td><td style='padding: 5px 10px;'>" . $inputValues['shirt'] . "</td></tr>
+					<tr><td style='padding: 5px 10px;'>Comments: </td><td style='padding: 5px 10px;'>" . $inputValues['comment'] . "</td></tr>
 				</table>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
 				<p>
-					You can edit your confirmation details by clicking on this link: 
+					You can edit your registration details by clicking on this link: 
 					<br/>
 					<a href='$link' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
 					<br/>

@@ -40,8 +40,8 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 	
 	// get inputs
 	$inputNames = $inputs['inputNames'];
-	$numReqInputs = $inputs['numReqInputs'];
-	$numTextInputs = $inputs['numTextInputs'];
+	$numReqFilledInputs = $inputs['numReqFilledInputs'];
+	$numReqPresentInputs = $inputs['numReqPresentInputs'];
 	
 	
 	
@@ -70,7 +70,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 	$doesNotExistNames = "";
 	$i = 0;
 	foreach($inputNames as $name) {
-		if( $i < $numTextInputs && !array_key_exists($name, $_POST) ) {
+		if( $i < $numReqPresentInputs && !array_key_exists($name, $_POST) ) {
 			$doesNotExist++;
 			$doesNotExistNames .= $name;
 		}
@@ -120,7 +120,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 			foreach($inputNames as $name) {
 				if($name == "agree")
 					$inputValues[$name] = 1;
-				else if($i < $numTextInputs)
+				else if($i < $numReqPresentInputs)
 					$inputValues[$name] = $_POST[$name];
 				else 
 					$inputValues[$name] = (array_key_exists($name, $_POST) ? 1 : 0);
@@ -145,7 +145,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 		$i=0;
 		if(!empty($inputValues)) {
 			foreach($inputValues as $k => $v) {
-				if($i < $numReqInputs)
+				if($i < $numReqFilledInputs)
 					if( $v == null || empty($v) || $v == "" || removeWhiteSpace($v) == "" )
 						$emptyInputs++;
 				$i++;
@@ -245,7 +245,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 				$fileUploadErrors = 0;
 				if($isParticipant) {
 					if(empty($_FILES["resume"]["name"])) {
-						$inputValues['resume'] = $inputValues['resumeOld'];
+						$inputValues['resume'] = $inputValues['resumeName'];
 						
 					} else {
 						//echo "uploading resume";
@@ -367,7 +367,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 						if($isParticipant || $isMentor)
 							$emailResult = EmailHelperClass::createAndSendEmail_Confirmation($inputValues, $key, $isParticipant);
 						else if ($isFriend)
-							$emailResult = EmailHelperClass::createAndSendEmail_Registration($inputValues, $key, $isParticipant);
+							$emailResult = EmailHelperClass::createAndSendEmail_RegistrationNotice($inputValues, $key, $isParticipant);
 						
 						// test - send self email
 						if( !$emailResult ) {

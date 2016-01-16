@@ -1,95 +1,74 @@
 var canReload = false;
 $(document).ready(function(){
-	/* get initial values of participant form */
-	pName();
-	pEmail();
-	pCollege();
-	pMajor();
-	pPhone();
-	pGender();
-	
-	pLinkedin();
-	pResume();
-	pWebsite();
-	pGithub();
-	pCompany();
-	pPosition();
-	pFacebook();
-	pTwitter();
-	
-	pComment();
-	
-	pShirt($("input[name=shirt][checked=checked]").val());
+	fillConformationTableWithInputs();
 	
 	
-	/* get initial values of mentor form */
-	mName();
-	mEmail();
-	mPhone();
-	mGender();
-	mCompany();
-	mPosition();
-	
-	mBreakfast();
-	mLunch();
-	mDinner();
-	
-	mArea();
-	mComment();
 });
 
-/* On change events for	participant confirmation table */
-$("#participantName")		.change(function(){ pName();		});
-$("#participantEmail")		.change(function(){ pEmail();		});
-$("#participantCollege")	.change(function(){	pCollege();		});
-$("#participantMajor")		.change(function(){ pMajor();		});
-$("#participantPhone")		.change(function(){ pPhone();		});
-$("#participantGender")		.change(function(){ pGender();		});
-
-$("#participantLinkedin")	.change(function(){ pLinkedin();	});
-$("#participantWebsite")	.change(function(){	pWebsite(); 	});
-$("#participantGithub")		.change(function(){ pGithub(); 		});
-$("#participantCompany")	.change(function(){ pCompany(); 	});
-$("#participantPosition")	.change(function(){	pPosition(); 	});
-$("#participantFacebook")	.change(function(){ pFacebook(); 	});
-$("#participantTwitter")	.change(function(){ pTwitter(); 	});
-
-$("#participantComment")	.change(function(){ pComment(); 	});
-
-$("input[name=shirt]")		.change(function(){ pShirt($(this).val());		});
+function fillConformationTableWithInputs() {
+	// get the text inputs
+	$("input[type=text]").each(function(){
+		var name = $(this).attr("name");
+		$(this).change(function(){
+			var cellValue = $(this).val();
+			$("#"+name).html( cellValue );
+		});
+		var cellValue = $(this).val();
+		$("#"+name).html( cellValue );
+	});
+	
+	// get the textaras
+	$("textarea").each(function(){
+		var name = $(this).attr("name");
+		$(this).change(function(){
+			var cellValue = $(this).val()
+			$("#"+name).html( cellValue );
+		});
+		var cellValue = $(this).val()
+		$("#"+name).html( cellValue );
+	});
+	
+	// get the checkboxes
+	$("input[type=checkbox]").each(function(){
+		var name = $(this).attr("name");
+		$(this).change(function(){
+			var cellValue = ( ($(this).prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "" );
+			$("#"+name).html( cellValue );
+		});
+		var cellValue = ( ($(this).prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "" );
+		$("#"+name).html( cellValue );
+	});
+	
+	// get the radio buttons
+	$("input[type=radio]").each(function(){
+		var name = $(this).attr("name");
+		$(this).change(function(){
+			if($(this).prop("checked")) {
+				var cellValue = $(this).val();
+				$("#"+name).html( cellValue );
+			}
+		});
+		if($(this).prop("checked")) {
+			var cellValue = $(this).val();
+			$("#"+name).html( cellValue );
+		}
+	});
+	
+}
 
 /* On change event for resume uploading */
 $("#resumeUploadInput").change(function() {
 	var res = (this.value).split("\\");
 	var file = res[res.length-1];
-	$("#resumeName").val(file);
-	$("#pResume").html(file);
+	$("#pResumeName").val(file);
+	$("#resumeName").html(file);
 });
 
-/* Functions for participant confirmation table */
-function pName()		{ $("#pName")		.html($("#participantName")		.val()); }
-function pEmail()		{ $("#pEmail")		.html($("#participantEmail")	.val()); }
-function pCollege()		{ $("#pCollege")	.html($("#participantCollege")	.val()); }
-function pMajor()		{ $("#pMajor")		.html($("#participantMajor")	.val()); }
-function pPhone()		{ $("#pPhone")		.html($("#participantPhone")	.val()); }
-function pGender()		{ $("#pGender")		.html($("#participantGender")	.val()); }
 
-function pLinkedin()	{ $("#pLinkedin")	.html($("#participantLinkedin")	.val()); }
-function pResume()		{ $("#pResume")		.html($("#resumeName")			.val()); }
-function pWebsite() 	{ $("#pWebsite")	.html($("#participantWebsite")	.val()); }
-function pGithub() 		{ $("#pGithub")		.html($("#participantGithub")	.val()); }
-function pCompany() 	{ $("#pCompany")	.html($("#participantCompany")	.val()); }
-function pPosition()	{ $("#pPosition")	.html($("#participantPosition")	.val()); }
-function pFacebook() 	{ $("#pFacebook")	.html($("#participantFacebook")	.val()); }
-function pTwitter() 	{ $("#pTwitter")	.html($("#participantTwitter")	.val()); }
-
-function pComment() 	{ $("#pComment")	.html($("#participantComment")	.val()); }
-
-function pShirt(val)	{ $("#pShirt")		.html(val);								 }
 
 
 /* On change events for	mentor confirmation table */
-$("#mentorName")		.change(function(){ mName();		});
+/*$("#mentorName")		.change(function(){ mName();		});
 $("#mentorEmail")		.change(function(){ mEmail();		});
 $("#mentorPhone")		.change(function(){ mPhone();		});
 $("#mentorGender")		.change(function(){ mGender();		});
@@ -101,33 +80,33 @@ $("#mentorLunch")		.change(function(){ mLunch();		});
 $("#mentorDinner")		.change(function(){ mDinner();		});
 
 $("#mentorArea")		.change(function(){ mArea();		});
-$("#mentorComment")		.change(function(){ mComment();		});
+$("#mentorComment")		.change(function(){ mComment();		});*/
 
 
 /* Functions for mentor confirmation table */
-function mName()		{ $("#mName")		.html( $("#mentorName")		.val()); }
+/*function mName()		{ $("#mName")		.html( $("#mentorName")		.val()); }
 function mEmail()		{ $("#mEmail")		.html( $("#mentorEmail")	.val()); }
 function mPhone()		{ $("#mPhone")		.html( $("#mentorPhone")	.val()); }
 function mGender()		{ $("#mGender")		.html( $("#mentorGender")	.val()); }
 function mCompany()		{ $("#mCompany")	.html( $("#mentorCompany")	.val()); }
 function mPosition()	{ $("#mPosition")	.html( $("#mentorPosition")	.val()); }
 
-function mBreakfast()	{ $("#mBreakfast")	.html( (($("#mentorBreakfast")	.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
+function mBreakfast()	{  }
 function mLunch()		{ $("#mLunch")		.html( (($("#mentorLunch")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 function mDinner()		{ $("#mDinner")		.html( (($("#mentorDinner")		.prop("checked")) ? '<i class="fa fa-check-square-o"></i>' : "") ); }
 
 function mArea()		{ $("#mArea")		.html( $("#mentorArea")		.val()); }
-function mComment()		{ $("#mComment")	.html( $("#mentorComment")	.val()); }
+function mComment()		{ $("#mComment")	.html( $("#mentorComment")	.val()); }*/
 
 /* on change friend confirmation table */
-$("#friendName1")	.change(function(){ $("#fName1")	.html( $("#friendName1").val());	});
+/*$("#friendName1")	.change(function(){ $("#fName1")	.html( $("#friendName1").val());	});
 $("#friendEmail1")	.change(function(){ $("#fEmail1")	.html( $("#friendEmail1").val());	});
 
 $("#friendName2")	.change(function(){ $("#fName2")	.html( $("#friendName2").val());	});
 $("#friendEmail2")	.change(function(){ $("#fEmail2")	.html( $("#friendEmail2").val());	});
 
 $("#friendName3")	.change(function(){ $("#fName3")	.html( $("#friendName3").val());	});
-$("#friendEmail3")	.change(function(){ $("#fEmail3")	.html( $("#friendEmail3").val());	});
+$("#friendEmail3")	.change(function(){ $("#fEmail3")	.html( $("#friendEmail3").val());	});*/
 
 
 /* On change events for friends */

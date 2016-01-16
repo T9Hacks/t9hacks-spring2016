@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>T9Hacks - Sign-up</title>
+	<title>T9Hacks - Sign Up</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,8 +41,7 @@
 			<div class="row">
 				<div class="column12">
 					<div class="signupTitle">
-						<h1>Sign-up for T9Hacks</h1>
-						<p class="tagline">CU's first female hackathon!</p>
+						<h1>Apply for T9Hacks</h1>
 					</div>
 				</div>
 			</div>
@@ -53,13 +52,13 @@
 				
 					<div class="row">
 						<div class="column12">
-							<h2>Participant Sign-up</h2>
+							<h2>Participant Application</h2>
 							<p>20-21 February 2016</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="column12">
-							<p>How many people are you registering for?</p>
+							<p>How many people are you applying for?</p>
 						</div>
 					</div>
 					<div class="row">

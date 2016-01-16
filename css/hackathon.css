@@ -503,7 +503,10 @@ header {
 .signupBtn {
 	display: block;
 	margin: 0 auto;
-	width: 181px;
+	tet-align: center;
+}
+.signupBtn .btn {
+	display: inline-block;
 }
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>T9Hacks - Sign-up</title>
+	<title>T9Hacks - Sign Up</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,8 +28,7 @@
 			<div class="row">
 				<div class="column12">
 					<div class="signupTitle">
-						<h1>Sign-up for T9Hacks</h1>
-						<p class="tagline">CU's first female hackathon!</p>
+						<h1>Sign Up for T9Hacks</h1>
 					</div>
 				</div>
 			</div>
@@ -62,14 +61,14 @@
 						<p class="column4">
 							If you are a student, click here:
 						</p>	
-						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Register as <span class="mobileOnly">&nbsp;</span> participant</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
 					
 					</div>
 					<div class="row">	
 						<p class="column4">
 							If you are an external volunteer, click here:
 						</p>
-						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Sign-up as <span class="mobileOnly">&nbsp;</span>a mentor</a></div>
+						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
 					</div>
 				</div>
 			</div>
