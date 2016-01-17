@@ -27,37 +27,29 @@ function facebookMeta($page) {
 	echo '<meta property="og:site_name"			content="T9Hacks" />';
 	echo '<meta property="og:type"				content="website" />';
 	echo '<meta property="og:image"				content="http://www.t9hacks.org/images/block_t9purple.jpg" />';
-	echo '<meta property="og:description"		content="T9Hacks ia a 24-hour women\'s hackathon at CU Boulder\'s ATLAS Institute aimed at increasing women participation in technology and design fields.  Sign up to participate or become a mentor!" />';
+	echo '<meta property="og:description"		content="T9Hacks is a 24 hour women\'s hackathon at the University of Colorado Boulder\'s ATLAS Institute that brings together college students for two days of creativity, building, and hacking. Sign up to participate or become a mentor!" />';
 	
 	switch($page) {
 		case 4:
-			?>
-			<!-- Facebook Share Mark-up -- SIGN UP END MENTOR -->
-			<meta property="og:url"				content="http://www.t9hacks.org/signup.php" />
-			<meta property="og:title"			content="I'm mentoring at T9Hacks! // CU's first female hackathon // Feb 20-21" />
-			<?php 
+			// Facebook Share Mark-up -- SIGN UP END MENTOR
+			echo '<meta property="og:url"			content="http://www.t9hacks.org/signup.php" />';
+			echo '<meta property="og:title"			content="I\'m mentoring at T9Hacks! // A women\'s hackathon promoting gender diversity in technology" />';
 			break;
 		case 3:
-			?>
-			<!-- Facebook Share Mark-up -- SIGN UP END PARTICIPANT -->
-			<meta property="og:url"				content="http://www.t9hacks.org/signup.php" />
-			<meta property="og:title"			content="I'm going to T9Hacks! // CU's first female hackathon // Feb 20-21" />
-			<?php 
+			// Facebook Share Mark-up -- SIGN UP END PARTICIPANT
+			echo '<meta property="og:url"			content="http://www.t9hacks.org/signup.php" />';
+			echo '<meta property="og:title"			content="I\'m going to T9Hacks! // A women\'s hackathon promoting gender diversity in technology" />';
 			break;
 		case 2:
-			?>
-			<!-- Facebook Share Mark-up -- SIGN UP START -->
-			<meta property="og:url"				content="http://www.t9hacks.org/signup.php" />
-			<meta property="og:title"			content="Sign Up for T9Hacks! // Feb 20-21" />
-			<?php 
+			// Facebook Share Mark-up -- SIGN UP START
+			echo '<meta property="og:url"			content="http://www.t9hacks.org/signup.php" />';
+			echo '<meta property="og:title"			content="Sign Up for T9Hacks! // A women\'s hackathon promoting gender diversity in technology" />';
 			break;
 		case 1: 
 		default:
-			?>
-			<!-- Facebook Share Mark-up -- HOME -->
-			<meta property="og:url"				content="http://www.t9hacks.org" />
-			<meta property="og:title"			content="T9Hacks // Feb 20-21" />
-			<?php 
+			// Facebook Share Mark-up -- HOME
+			echo '<meta property="og:url"			content="http://www.t9hacks.org" />';
+			echo '<meta property="og:title"			content="T9Hacks // A women\'s hackathon promoting gender diversity in technology" />';
 			break;
 	}
 }

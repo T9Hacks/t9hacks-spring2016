@@ -35,6 +35,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		}
 	}
 	
+	// check in person
 	if(array_key_exists("checkIn", $_POST) && $_POST["checkIn"] == 1) {
 	
 		// check if id exists
@@ -53,6 +54,27 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			header('Location: view.php');
 			
 		}
+	}
+	
+	// run sql stmt
+	if(array_key_exists("exe", $_POST) && $_POST["exe"] == 1) {
+		
+		// check if exe
+		if(array_key_exists("exeStmt", $_POST)) {
+			// get exeStmt
+			$exe = $_POST["exeStmt"];
+			
+			// check in id
+			$db->runExe($exe);
+			
+			// close helper
+			$db->close();
+			
+			// relocate to same page without post data
+			header('Location: view.php');
+			
+		}
+		
 	}
 	
 	// get participants
@@ -120,7 +142,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	<?php include "../includes/css.php"; css(true); ?>
 	<link href="../css/adminView.css" rel="stylesheet">
 	
-	
 </head>
 <body>
 	<div class="container12">
@@ -143,12 +164,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			array(
 				"name"			=> "Participants",
 				"data"			=> $participants,
-				"genericInfo"	=> array("gender", "college", "major", "linkedin", "resume", "website", "github", "company", "position", "facebook", "twitter", "shirt", "unregistered", "comment"),
+				"genericInfo"	=> array("college", "major", "linkedin", "resume", "website", "github", "company", "position", "facebook", "twitter", "shirt","comment"),
 			), 
 			array(
 				"name"			=> "Mentors",
 				"data"			=> $mentors,
-				"genericInfo"	=> array("gender", "company", "position", "dinner", "breakfast", "lunch", "area", "unregistered", "comment"),
+				"genericInfo"	=> array("company", "position", "dinner", "breakfast", "lunch", "area", "shirt", "comment"),
 			)
 		);
 		
@@ -156,78 +177,92 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		foreach($allPeople as $peopleKey => $people) {
 			?>
 			<div class="row peopleSection">
-			<h1><?php echo $people["name"]; ?></h1>
-				<?php 
-				$num = 1;
-				foreach($people["data"] as $personKey => $person) {
+			
+				<h1><?php echo $people["name"]; ?></h1>
+				
+				<table id="" class="display" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Gender</th>
+							<th>Key</th>
+							<th>Complete</th>
+							<th>Unregistered</th>
+							<th>Approved</th>
+							<th>Checked-In</th>
+							<?php 
+							foreach($people["genericInfo"] as $columnKey => $column) {
+								if($column == "comment")
+									echo "<th style='width: 500px !important; display: inline-block;'>$column</th>";
+								else
+									echo "<th>$column</th>";
+							}
+							?>
+						</tr>
+					</thead>
 					
-					// only print row if deleted is false
-					if($person["deleted"] == 0) {
+					<tbody>
+					<?php 
+					$num = 1;
+					foreach($people["data"] as $personKey => $person) {
+						// only print row if deleted is false
+						if($person["deleted"] == 0) {
 						?>
-						<div class="person">
-						
-							<div class="basicInfo">
-								<span class="column6">Name: <b><?php echo $person["name"]; ?></b></span>
-								<span class="column6">Email: <b><?php echo $person["email"]; ?></b></span>
-								<span class="column6">Phone: <b><?php echo $person["phone"]; ?></b></span>
-								<span class="column6">Key: <b><?php echo $person["key"]; ?></b></span>
-								<span class="num">#<?php echo $num; ?></span>
-							</div>
-							
-							<div class="remainingInfo">
+							<tr>
+								<td><?php echo $num; ?></td>
+								<td><?php echo $person["name"]; ?></td>
+								<td><?php echo $person["email"]; ?></td>
+								<td><?php echo $person["phone"]; ?></td>
+								<td><?php echo $person["gender"]; ?></td>
+								<td><?php echo $person["key"]; ?></td>
+								<td><?php echo $person["complete"]; ?></td>
+								<td><?php echo $person["unregistered"]; ?></td>
+								<td><?php echo $person["approved"]; ?></td>
+								<td><?php echo $person["checked_in"]; ?></td>
 								<?php 
 								foreach($people["genericInfo"] as $columnKey => $column) {
-									echo "<span class='column6'>$column: <b>";
+									echo "";
 									if( $column == "linkedin" || $column == "website" || $column == "github" || $column == "facebook" || $column == "twitter" )
-										echo "<a href='" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
+										echo "<td><a href='" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a></td>";
 									else if($column == "resume")
-										echo "<a href='../hidden/resumes/" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a>";
-									else
-										echo $person[$column];
-									echo "</b></span>";
+										echo "<td><a href='../hidden/resumes/" . $person[$column] . "' target='_blank'>" . $person[$column] . "</a></td>";
+									else if($column == "comment") {
+										echo "<td style='width: 500px !important; display: inline-block;'>" . $person[$column] . "</td>";
+									} else
+										echo "<td>".$person[$column]."</td>";
 								}
 								?>
-							</div>
-					
-							<?php if(false) { ?>
-								<div class="actionBtns">
-									
-									<div class="column3">
-										<form action="view.php" method="POST">
-											<span>Delete Person: </span>
-											<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
-											<input type="hidden" name="delete" value="1">
-											<input type="hidden" name="type" value="<?php echo ($name == "Participants") ? 1 : 2; ?>">
-											<button type="submit" class="deleteBtn"><i class="fa fa-remove"></i></button>
-										</form>
-									</div>
-									
-									<div class="column3">
-										<form action="view.php" method="POST">
-											<span>Check-in Person: </span>
-											<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
-											<input type="hidden" name="checkIn" value="1">
-											<input type="hidden" name="type" value="<?php echo ($name == "Participant") ? 1 : 2; ?>">
-											<button type="submit" class="checkInBtn"><i class="fa fa-check"></i></button>
-										</form>
-									</div>
-								</div>
-							<?php } ?>
-							
-						</div>
+							</tr>
 						<?php 
+						}
 						
-					$num++;
-					} // end if for deleted
-					
-				} // end foreach
-				?>
+						$num++;
+					}
+					?>
+					</tbody>
+				</table>
 			</div>
-			
 		<?php
 		}
 	}
 	?>
+	
+	<div class="row">
+		<div class="column12">
+			<a href="#" class="extraBtn">Extra</a>
+		</div>
+		<div class="column12 extraDiv" style="display: none;">
+			<form action="view.php" method="POST">
+				<textarea name="exeStmt" style="width: 100%;"></textarea>
+				<input type="hidden" name="exe" value="1">
+				<button type="submit" class="btn btn-med">Submit</button>
+			</form>
+			
+		</div>
+	</div>
 	
 	<!-- Javascript -->
 	<?php include "../includes/js.php"; js(true); ?>
@@ -239,7 +274,31 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			if(!y)
 				event.preventDefault();
 		});
+
+	    $(".extraBtn").click(function(event){
+		    event.preventDefault();
+		    $(".extraDiv").slideToggle();
+	    });
 	</script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.0.0/css/responsive.dataTables.css"/>
+	 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.0.0/js/dataTables.responsive.js"></script>
+	
+	<script>
+	$(document).ready(function() {
+	    $('table.display').DataTable({
+	        "scrollX": true,
+	        "scrollY": 500,
+	        "paging":   false,
+	        "info":     false
+	    });
+	} );
+	</script>	
 	
 	</div>
 </body>

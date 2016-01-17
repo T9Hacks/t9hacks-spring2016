@@ -288,8 +288,9 @@
 							
 							<div class="row">
 								<div class="fieldWrapper column12">
-									<div class="fieldInput textarea small">
-										<textarea name="comment" placeholder="Additional comments (dietary restrictions, etc)" id="participantComment"><?php echo (!is_null($key)) ? $data["comment"] : ""; ?></textarea>
+									<div class="fieldInput">
+										<i class="fa fa-edit"></i>
+										<input type="text" placeholder="Additional information (dietary restrictions, accommodations, etc)" name="comment" value="<?php echo (!is_null($key)) ? $data["comment"] : ""; ?>"/>
 									</div>
 								</div>
 							</div>

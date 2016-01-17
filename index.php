@@ -72,12 +72,6 @@
 						<img class="logo" src="images/t9hacks_logo_transparent.png" />
 					</div>
 				</div>
-				
-				<div class="row">
-					<div class="column12 tagline">
-						<p class>CU's first female hackathon!</p>
-					</div>
-				</div>
 
 				<div class="row">
 					<div class="column12 location">
@@ -101,13 +95,14 @@
 
 
 	<!-- Questions Section -->
-	<section id="questions" class="bg-cream">
+	<section id="questions" class="bg-cream questions">
 
 		<div class="container">
 
 			<div class="row">
 				<div class="column12">
 					<h1 class="blue">About Us</h1>
+					<p class="tagline text-center">T9Hacks is a women's hackathon promoting gender diversity in technology!</p>
 				</div>
 			</div>
 
@@ -135,8 +130,8 @@
 							<div class="faq-question">
 								<h2>Do I have to be a programmer?</h2>
 								<p>
-									Absolutely not!  We encourage women with all backgrounds to participate.  It doesn't matter
-									if you are an art, a journalism, or a marketing major, there is a place for you here.
+									Absolutely not!  We encourage women with all backgrounds to participate.  It doesn't matter if you are an art, a 
+									journalism, or a marketing major, there is a place for you here.
 								</p>
 							</div>
 						</div>
@@ -145,9 +140,9 @@
 							<div class="faq-question">
 								<h2>I've never been to a hackathon before, should I still register?</h2>
 								<p>
-									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, we are 
-									expecting our participants to have no experience with hackathons.  We will have fun events, mentors, and a super welcoming 
-									staff to ease everyone into the experience.  
+									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner friendly, we 
+									are expecting some of our participants will have no experience with hackathons.  We will have fun events, mentors, and 
+									a super welcoming staff to ease everyone into the experience.  
 								</p>
 							</div>
 						</div>
@@ -156,8 +151,8 @@
 							<div class="faq-question">
 								<h2>Do I have to have a team to register?</h2>
 								<p>
-									Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a 
-									pre-formed group and idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
+									Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a pre-formed group and 
+									idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
 								</p>
 							</div>
 						</div>
@@ -175,8 +170,9 @@
 							<div class="faq-question">
 								<h2>Do you cover travel expenses?</h2>
 								<p>
-									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel expenses at this time.  However, there is a larger student hackathon called 
-									<a href="http://hackcu.org" target="_blank">HackCU</a> that does provide travel reimbursement.  Give them a shot!
+									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel costs at this time.  However, there 
+									is a larger CU hackathon called <a href="http://hackcu.org" target="_blank">HackCU</a> that does provide some travel 
+									reimbursement.  Give them a shot!
 								</p>
 							</div>
 						</div>
@@ -235,7 +231,7 @@
 									<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
 								</li>
 								<li>
-									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Design.%20Build.%20Create.%20CU's%20first%20women's%20hackathon!%20Hosted%20at%20%40cuatlas%20on%20Feb%2020-21." class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Design.%20Build.%20Create.%20%40T9Hacks%2C%20a%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%20%40cuatlas%20Feb%2020-21" class="twitter-hashtag-button" data-related="Koscida" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
 									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		
 								</li>
@@ -265,7 +261,7 @@
 						<h1 class="white">Design. Build. Create.</h1>
 					</div>
 					<div class="row">
-						<p class="text-bold">
+						<p class="text-bold text-center">
 							Registration for T9 hackers is now open! 
 						</p>
 					</div>
@@ -370,15 +366,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="column4">&nbsp;</div>
+				<div class="column1">&nbsp;</div>
 				<div class="column5 sponsor">
-					<div class="sponsor1 atlas">
-						<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
+					<div class="sponsor1 twitter">
+						<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/TwitterLogo_white.png" /></a>
 					</div>
 				</div>
-				<div class="column3 sponsor">
+				<div class="column4 sponsor">
 					<div class="sponsor3 stickergiant">
 						<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant-logo.png" /></a>
+					</div>
+				</div>
+				<div class="column5 sponsor">
+					<div class="sponsor1 atlas">
+						<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
 					</div>
 				</div>
 			</div>

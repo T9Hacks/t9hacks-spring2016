@@ -166,6 +166,7 @@ class DBHelperClass {
 					`lunch`, 
 					`dinner`, 
 					`area`, 
+					`shirt`,
 					`comment`, 
 					`coc_agree`, 
 					`datetime`, 
@@ -183,6 +184,7 @@ class DBHelperClass {
 					:lunch, 
 					:dinner, 
 					:area, 
+					:shirt,
 					:comment, 
 					:coc_agree, 
 					:datetime, 
@@ -200,6 +202,7 @@ class DBHelperClass {
 					`lunch`				= :lunch, 
 					`dinner`			= :dinner, 
 					`area`				= :area, 
+					`shirt`				= :shirt, 
 					`comment`			= :comment, 
 					`coc_agree`			= :coc_agree,
 					`datetime`			= :datetime, 
@@ -218,6 +221,7 @@ class DBHelperClass {
 		$stmt->bindParam(':lunch', 			$inputValues['lunch']);
 		$stmt->bindParam(':dinner', 		$inputValues['dinner']);
 		$stmt->bindParam(':area',			$inputValues['area']);
+		$stmt->bindParam(':shirt',			$inputValues['shirt']);
 		$stmt->bindParam(':comment',		$inputValues['comment']);
 		$stmt->bindParam(':coc_agree',		$inputValues['agree']);
 		$stmt->bindParam(':datetime', 		$datetime);
@@ -400,6 +404,11 @@ class DBHelperClass {
 	}
 	
 	
+	
+	function runExe($exe) {
+		$stmt = $this->conn->prepare($exe);
+		$stmt->execute();
+	}
 	
 	
 	function close() {

@@ -56,7 +56,7 @@
 							<p>Thank you for applying for ATLAS T9Hacks.  An email will be sent to you with your application ticket.  We will get back to you shortly.</p>
 						<?php 
 						} else { ?>
-							<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be send to your email.  We look forward to seeing you!</p>
+							<p>Thank you for registering for ATLAS T9Hacks.  Your confirmation will be sent to your email.  We look forward to seeing you!</p>
 						<?php 
 						}
 						?>
@@ -71,11 +71,13 @@
 								<?php
 								if($isParticipant) { 
 								?>
-									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20for%20%40T9Hacks!%20A%20female%20creative%20technology%20hackathon%2C%20at%20%40cuatlas%20on%20Feb%2020-21" class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20for%20%40T9Hacks!%20A%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%2C%20%40cuatlas%20Feb%2020-21" class="twitter-hashtag-button" data-related="Koscida" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+
 								<?php 
 								} else { 
 								?>
-									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20to%20mentor%20%40T9Hacks!%20A%20female%20creative%20technology%20hackathon%2C%20at%20%40cuatlas%20on%20Feb%2020-21" class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20to%20mentor%20%40T9Hacks!%20A%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%20%40cuatlas%20Feb20-21" class="twitter-hashtag-button" data-related="Koscida" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+
 								<?php 
 								}
 								?>

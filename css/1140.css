@@ -35,15 +35,15 @@ figure img
 
 
 /* text */
-.text-left 			{ text-align: left; }
-.text-right 		{ text-align: right; }
-.text-center 		{ text-align: center; }
-.text-justify		{ text-align: justify; }
-.text-bold 			{ font-weight: bold; }
-.text-nowrap 		{ white-space: nowrap; }
-.text-lowercase		{ text-transform: lowercase; }
-.text-uppercase 	{ text-transform: uppercase; }
-.text-capitalize	{ text-transform: capitalize; }
+.text-left 			{ text-align: left !important; }
+.text-right 		{ text-align: right !important; }
+.text-center 		{ text-align: center !important; }
+.text-justify		{ text-align: justify !important; }
+.text-bold 			{ font-weight: bold !important; }
+.text-nowrap 		{ white-space: nowrap !important; }
+.text-lowercase		{ text-transform: lowercase !important; }
+.text-uppercase 	{ text-transform: uppercase !important; }
+.text-capitalize	{ text-transform: capitalize !important; }
 
 	
 

@@ -35,3 +35,10 @@ html, body {
 	overflow: hidden;
 }
 
+
+table.display {
+	
+}
+table.display td,
+table.display th {
+}
