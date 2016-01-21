@@ -357,59 +357,83 @@
 	<!-- Sponsors Section -->
 	<section id="sponsors" class="bg-cream">
 	
-		<div class="container16">
-		
+		<div class="container12">
+			<!-- sponsor1 = column5 -->
+			<!-- sponsor2 = column4 -->
+			<!-- sponsor3 = column3 -->
 		
 			<div class="row">
-				<div class="column16">
+				<div class="column12">
 					<h1 class="blue">Our Sponsors</h1>
 				</div>
 			</div>
-			<div class="row">
-				<div class="column1">&nbsp;</div>
-				<div class="column5 sponsor">
-					<div class="sponsor1 twitter">
-						<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/TwitterLogo_white.png" /></a>
-					</div>
-				</div>
-				<div class="column4 sponsor">
-					<div class="sponsor3 stickergiant">
-						<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant-logo.png" /></a>
-					</div>
-				</div>
-				<div class="column5 sponsor">
+			<div class="row sponsorRow"><div class="sponsorRowLg">
+				<div class="sponsor sponsorLeft">
 					<div class="sponsor1 atlas">
-						<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/ATLAS-transparent.png" /></a>
+						<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/atlas_logo.png" /></a>
 					</div>
 				</div>
-			</div>
-			
+				<div class="sponsor sponsorCenter">
+					<div class="sponsor1 twitter">
+						<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/twitter_logo_white.png" /></a>
+					</div>
+				</div>
+				<div class="sponsor sponsorRight">
+					<div class="sponsor1 victorops">
+						<a href="https://victorops.com/" target="_blank"><img src="images/sponsors/victorops_logo.svg" /></a>
+					</div>
+				</div>
+			</div></div>
+			<div class="row sponsorRow"><div class="sponsorRowLg">
+				<div class="sponsor sponsorLeft">
+					<div class="sponsor2 sendgrid">
+						<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
+					</div>
+				</div>
+				<div class="sponsor sponsorCenter">
+					<div class="sponsor1 thinktopic">
+						<a href="http://www.thinktopic.com/" target="_blank"><img src="images/sponsors/thinktopic_logo.png" /></a>
+					</div>
+				</div>
+				<div class="sponsor sponsorRight">
+					<div class="sponsor2 codecraft">
+						<a href="http://www.codecraftschool.com/" target="_blank"><img src="images/sponsors/codecraft_logo.png" /></a>
+					</div>
+				</div>
+			</div></div>
+			<div class="row sponsorRow"><div class="sponsorRowLg">
+				<div class="sponsor sponsorLeft">&nbsp;</div>
+				<div class="sponsor sponsorCenter">
+					<div class="sponsor3 stickergiant">
+						<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
+					</div>
+				</div>
+				<div class="sponsor sponsorRight">&nbsp;</div>
+			</div></div>
 
 			
 			<div class="row extra">
-				<div class="column16">
+				<div class="column12">
 					<h1 class="blue">Community Partners</h1>
 				</div>
 			</div>
-			<div class="row">
-				<div class="column2">&nbsp;</div>
-				<div class="column3 sponsor">
-					<div class="sponsor3 invision">
-						<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision-logo-white.png" /></a>
+			<div class="row sponsorRow"><div class="sponsorRowLg">
+				<div class="column4 sponsor sponsorLeft">
+					<div class="sponsor3 tods">
+						<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
 					</div>
 				</div>
-				<div class="column6 sponsor">
+				<div class="column4 sponsor sponsorCenter">
 					<div class="sponsor1 mlh">
-						<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh-logo.png" /></a>
+						<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
 					</div>
 				</div>
-				<div class="column3 sponsor">
-					<div class="sponsor3 trello">
-						<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello-logo-blue.svg" /></a>
+				<div class="column4 sponsor sponsorRight">
+					<div class="sponsor3 susansbakery">
+						<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
 					</div>
 				</div>
-			</div>
-			
+			</div></div>
 		</div>
 		
 		<div class="container">
