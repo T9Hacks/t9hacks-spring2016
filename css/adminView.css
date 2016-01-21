@@ -2,43 +2,87 @@ html, body {
 	background: white; 
 }
 
-.peopleSection h1 {
-	color: black;
+
+
+
+.filterButtons {
+	position: absolute;
+	width: 220px;
+	padding: 10px;
+	z-index: 10;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: #DAC8DA;
+	overflow-y: hidden;
+}
+.filterGroup {
 	margin-bottom: 20px;
-	text-align: left;
+}
+	.filterGroup.tabs {
+		margin-bottom: 40px;
+	}
+
+.tabBtn, .filterBtn {
+	width: 100%;
+	border: 1px solid #AA88AA;
+	margin: 10px 0;
+	padding: 0 10px;
+}
+.tabBtn.active, .filterBtn.active {
+	background: white;
 }
 
-.person {
-	border: 1px solid #553377;
-	margin-bottom: 10px;
-}
 
-.basicInfo {
-	position: relative;
-	margin-bottom: 10px;
-	overflow: hidden;
-}
-.num {
+.tabSectionWrapper {
+	padding-left: 220px;
 	position: absolute;
 	top: 0;
+	left: 0;
 	right: 0;
-	padding: 10px;
-	background-color: #553377;
-	color: white;
-}
-
-.remainingInfo {
-	overflow: hidden;
-}
-
-.actionBtns {
-	overflow: hidden;
+	bottom: 0;
+	overflow-y: scroll;
+	z-index: 1;
+	background: #ddd;
 }
 
 
-table.display {
+
+.peopleSection {
+	display: none;
+}
+	#participantsDiv { display: block; }
 	
+	
+.person {
+	overflow: hidden;
+	clear: both;
 }
-table.display td,
-table.display th {
+	.person:nth-of-type(2n) { background: white; }
+	.person:nth-of-type(2n-1) { background: #f0f0f0; }
+.beg, .status, .other, .changeBtns {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 10px;
 }
+
+.beg {
+	font-weight: bold;
+}
+
+.status {
+	overflow: hidden;
+	font-size: 0.8em;
+	font-style: italic;
+}
+.status div {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.other {
+	font-size: 0.8em;
+}
+
+
+
