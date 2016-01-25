@@ -1,6 +1,7 @@
 <?php 
 
 include 'DBHelperClass.php';
+include 'EmailHelperClass.php';
 
 $isSession = false;
 
@@ -14,51 +15,47 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	$db = new DBHelperClass();
 	
 	// make submit
-	// check if delete exists and is 1
-	if(array_key_exists("delete", $_POST) && $_POST["delete"] == 1) {
-	
-		// check if id exists
-		if(array_key_exists("id", $_POST)) {
-			// get id
-			$id = $_POST["id"];
-			$type = $_POST["type"];
+	if(array_key_exists("action", $_POST) && array_key_exists("id", $_POST) && array_key_exists("type", $_POST)) {
+		$id = $_POST["id"];
+		$type = $_POST["type"];
 			
-			// delete id
-			$db->deleteRecord($id, $type);
-			
-			// close helper
-			$db->close();
-			
-			// relocate to same page without post data
-			header('Location: view.php');
-			
+		switch($_POST["action"]) {
+			case "delete":
+				$db->updateRecord(($type == 1), $id, "deleted", 1);
+				break;
+			case "approve":
+				$db->updateRecord(($type == 1), $id, "approved", 1);
+				if($type==1)
+					EmailHelperClass::createAndSendEmail_Approval($db->getPeopleFromId(true, $id));
+				break;
+			case "reject":
+				$db->updateRecord(($type == 1), $id, "approved", 2);
+				if($type == 1)
+					EmailHelperClass::createAndSendEmail_Rejection($db->getPeopleFromId(true, $id));
+				break;
+			case "checkIn":
+				$db->updateRecord(($type == 1), $id, "checked_in", 1);
+				break;
+			case "unCheckIn":
+				$db->updateRecord(($type == 1), $id, "checked_in", 0);
+				break;
+			case "unregister":
+				$db->updateRecord(($type == 1), $id, "unregistered", 1);
+				break;
+			case "register":
+				$db->updateRecord(($type == 1), $id, "unregistered", 0);
+				break;
+			default: break;
 		}
+		
+		header('Location: view.php');
+		$db->close();
 	}
 	
-	// check in person
-	if(array_key_exists("checkIn", $_POST) && $_POST["checkIn"] == 1) {
 	
-		// check if id exists
-		if(array_key_exists("id", $_POST)) {
-			// get id
-			$id = $_POST["id"];
-			$type = $_POST["type"];
-			
-			// check in id
-			$db->checkInRecord($id, $type);
-			
-			// close helper
-			$db->close();
-			
-			// relocate to same page without post data
-			header('Location: view.php');
-			
-		}
-	}
 	
 	// run sql stmt
 	if(array_key_exists("exe", $_POST) && $_POST["exe"] == 1) {
-		
 		// check if exe
 		if(array_key_exists("exeStmt", $_POST)) {
 			// get exeStmt
@@ -72,9 +69,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			
 			// relocate to same page without post data
 			header('Location: view.php');
-			
 		}
-		
 	}
 	
 	// get participants
@@ -168,24 +163,24 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			</div> 
 			
 			<div class="filterGroup">
-				<div class="filterBtn active" id="allFilterBtn">All</div>
+				<div class="filterBtn active" id="allFilterBtn">All <span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="approvedFilterBtn">Approved Admission</div>
-				<div class="filterBtn" id="rejectedFilterBtn">Rejected Admission</div>
-				<div class="filterBtn" id="undecidedFilterBtn">Undecided Admission</div>
+				<div class="filterBtn" id="approvedFilterBtn">Approved Admission <span></span></div>
+				<div class="filterBtn" id="rejectedFilterBtn">Rejected Admission <span></span></div>
+				<div class="filterBtn" id="undecidedFilterBtn">Undecided Admission <span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="completeFilterBtn">Registration Complete</div>
-				<div class="filterBtn" id="incompleteFilterBtn">Registration Incomplete</div>
+				<div class="filterBtn" id="completeFilterBtn">Registration Complete <span></span></div>
+				<div class="filterBtn" id="incompleteFilterBtn">Registration Incomplete <span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="regFilterBtn">Registered</div>
-				<div class="filterBtn" id="unregisteredFilterBtn">Cancled Registration</div>
+				<div class="filterBtn" id="regFilterBtn">Registered <span></span></div>
+				<div class="filterBtn" id="unregisteredFilterBtn">Cancled Registration <span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="checkedInFilterBtn">Checked-in</div>
-				<div class="filterBtn" id="notCheckedInFilterBtn">Not Checked-in</div>
+				<div class="filterBtn" id="checkedInFilterBtn">Checked-in <span></span></div>
+				<div class="filterBtn" id="notCheckedInFilterBtn">Not Checked-in <span></span></div>
 			</div>
 		</div>
 			
@@ -217,7 +212,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							<div class="status column12">
 								<div class="cell-key"><?php echo $person["key"]; ?></div>
 								<div class="cell-complete"><?php echo ($person["complete"] == 1) ? "Registration Complete" : "Registration Incomplete"; ?></div>
-								<div class="cell-unregistered"><?php echo ($person["unregistered"] == 1) ? "Canceled Registration" : "Registration Active"; ?></div>
+								<div class="cell-unregistered"><?php echo ($person["unregistered"] == 1) ? "Registration Canceled" : "Registration Active"; ?></div>
 								<div class="cell-approved"><?php echo ($person["approved"] == 1) ? "Approved Admission" : ( ($person["approved"] == 0) ? "Undecided Admission" : "Rejected Admission"); ?></div>
 								<div class="cell-checked-in"><?php echo ($person["checked_in"] == 1) ? "Checked-in" : "Not checked-in"; ?></div>
 							</div>
@@ -241,11 +236,36 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<div class="cell-comment column12">Comments: <?php echo $person["comment"]; ?></div>
 							</div>
 							
-							<div class="changeBtns column12 hide">
-								<div class="btn">Delete</div>
-								<div class="btn">Approve</div>
-								<div class="btn">Check-in</div>
-								<div class="btn">Un-register</div>
+							<div class="actionBtns column12">
+								<form class="actionBtn" action="view.php" method="POST">
+								
+									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+									<input type="hidden" name="type" value="1">
+									
+									<input type="hidden" name="action" class="actionAction" value="">
+									
+									<button type="submit" class="btn deleteBtn">Delete</button>
+									
+									<?php if($person["approved"] == 0) { ?>
+										<button type="submit" class="btn approveBtn">Approve</i></button>
+										<button type="submit" class="btn rejectBtn">Reject</i></button>
+									<?php } else if($person["approved"] == 1) {?>
+										<button type="submit" class="btn rejectBtn">Reject</i></button>
+									<?php } ?>
+									
+									<?php if($person["checked_in"] == 0) { ?>
+										<button type="submit" class="btn checkInBtn">Check-In</i></button>
+									<?php } else { ?>
+										<button type="submit" class="btn unCheckInBtn">Un-Check-In</i></button>
+									<?php } ?>
+									
+									<?php if($person["unregistered"] == 0) { ?>
+										<button type="submit" class="btn unregisterBtn">Cancel Registration</i></button>
+									<?php } else { ?>
+										<button type="submit" class="btn registerBtn">Activate Registration</i></button>
+									<?php } ?>
+									
+								</form>
 							</div>
 							
 						</div>
@@ -304,11 +324,36 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<div class="cell-comment column12">Comment: <?php echo $person["comment"]; ?></div>
 							</div>
 							
-							<div class="changeBtns column12 hide">
-								<div class="btn">Delete</div>
-								<div class="btn">Approve</div>
-								<div class="btn">Check-in</div>
-								<div class="btn">Un-register</div>
+							<div class="actionBtns column12">
+								<form class="actionBtn" action="view.php" method="POST">
+								
+									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
+									<input type="hidden" name="type" value="2">
+									
+									<input type="hidden" name="action" class="actionAction" value="">
+									
+									<button type="submit" class="btn deleteBtn">Delete</button>
+									
+									<?php if($person["approved"] == 0) { ?>
+										<button type="submit" class="btn approveBtn">Approve</i></button>
+										<button type="submit" class="btn rejectBtn">Reject</i></button>
+									<?php } else if($person["approved"] == 1) {?>
+										<button type="submit" class="btn rejectBtn">Reject</i></button>
+									<?php } ?>
+									
+									<?php if($person["checked_in"] == 0) { ?>
+										<button type="submit" class="btn checkInBtn">Check-In</i></button>
+									<?php } else { ?>
+										<button type="submit" class="btn unCheckInBtn">Un-Check-In</i></button>
+									<?php } ?>
+									
+									<?php if($person["unregistered"] == 0) { ?>
+										<button type="submit" class="btn unregisterBtn">Cancel Registration</i></button>
+									<?php } else { ?>
+										<button type="submit" class="btn registerBtn">Re-Activate Registration</i></button>
+									<?php } ?>
+									
+								</form>
 							</div>
 							
 						</div>
@@ -349,13 +394,16 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	<script>
 	// show/hide tabs
 	$("#participantsBtn").click(function(event){
-		toggleFilter(".peopleSection", "#participantsDiv", ".tabBtn", "#participantsBtn")
+		toggleFilter(".peopleSection", "#participantsDiv", ".tabBtn", "#participantsBtn");
+		doCounters(true);
 	});
 	$("#mentorsBtn").click(function(event){
 		toggleFilter(".peopleSection", "#mentorsDiv", ".tabBtn", "#mentorsBtn");
+		doCounters(false);
 	});
 	$("#extrasBtn").click(function(event){
 		toggleFilter(".peopleSection", "#extrasDiv", ".tabBtn", "#extrasBtn");
+		doCounters(true);
 	});
 	
 	
@@ -396,28 +444,78 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		$(divShow).show();
 		$(tabClass).removeClass("active");
 		$(tabActive).addClass("active");
-		
 	}
 	
 	
-    $(".deleteBtn").click(function(event){
-    	//event.preventDefault();
-		var y = confirm("Are you sure you want to delete this record?  This is permanent.");
-		if(!y)
-			event.preventDefault();
-	});
+	// counters
+	doCounters(true);
+	function doCounters(isParticipant) {
+		var sectionDiv = (isParticipant) ? "#participantsDiv" : "#mentorsDiv";
 
-    $(".extraBtn").click(function(event){
-	    event.preventDefault();
-	    $(".extraDiv").slideToggle();
-    });
+		$("#allFilterBtn span").html( $(sectionDiv + " .person").size() );
+		
+		$("#approvedFilterBtn span").html( $(sectionDiv + " .approved").size() );
+		$("#rejectedFilterBtn span").html( $(sectionDiv + " .rejected").size() );
+		$("#undecidedFilterBtn span").html( $(sectionDiv + " .undecided").size() );
+
+		$("#completeFilterBtn span").html( $(sectionDiv + " .complete").size() );
+		$("#incompleteFilterBtn span").html( $(sectionDiv + " .incomplete").size() );
+
+		$("#unregisteredFilterBtn span").html( $(sectionDiv + " .unregistered").size() );
+		$("#regFilterBtn span").html( $(sectionDiv + " .reg").size() );
+
+		$("#checkedInFilterBtn span").html( $(sectionDiv + " .checkedIn").size() );
+		$("#notCheckedInFilterBtn span").html( $(sectionDiv + " .notCheckedIn").size() );
+	}
+	
+	$("#participantsDiv .person")
+	
+
+	// action buttons
+	$(".deleteBtn").click(function(event){
+		var y = confirm("Are you sure you want to delete this record?  This is permanent.");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("delete");
+	});
+	$(".approveBtn").click(function(event){
+		var y = confirm("Are you sure you want to approve this person? This will send an email to the person notifying them of this action.");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("approve");
+	});
+	$(".rejectBtn").click(function(event){
+		var y = confirm("Are you sure you want to reject this person? This will send an email to the person notifying them of this action.");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("reject");
+	});
+	$(".checkInBtn").click(function(event){
+		var y = confirm("Are you sure you want to cancel this person's registeration?");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("checkIn");
+	});
+	$(".unCheckInBtn").click(function(event){
+		var y = confirm("Are you sure you want to activate this person's registeration?");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("unCheckIn");
+	});
+	$(".unregisterBtn").click(function(event){
+		var y = confirm("Are you sure you want to cancel this person's registeration?");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("unregister");
+	});
+	$(".registerBtn").click(function(event){
+		var y = confirm("Are you sure you want to re-activate this person's registeration?");
+		if(!y) event.preventDefault();
+		else  $(".actionAction").val("register");
+	});
+	
+	
+	// extra
+	$(".extraBtn").click(function(event){
+		event.preventDefault();
+		$(".extraDiv").slideToggle();
+	});
 	</script>
 	
-	
-	
-	</script>	
-	
-	 
 	
 </body>
 </html>

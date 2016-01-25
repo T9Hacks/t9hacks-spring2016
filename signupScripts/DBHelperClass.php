@@ -260,21 +260,32 @@ class DBHelperClass {
 	
 	// getters 
 	function getParticipants($key = null) {
-		return $this->getPeople(1, $key);
+		return $this->getPeopleFromKey(1, $key);
 	}
 	
 	function getMentors($key = null) {
-		return $this->getPeople(0, $key);
+		return $this->getPeopleFromKey(0, $key);
 	}
 	
-	function getPeople($isParticipant, $key = null) {
+	function getPeopleFromKey($isParticipant, $key = null) {
+		return $this->getPeople($isParticipant, $key, null);
+	}
+	
+	function getPeopleFromId($isParticipant, $id = null) {
+		return $this->getPeople($isParticipant, null, $id);
+	}
+	
+	function getPeople($isParticipant, $key = null, $id = null) {
 		// prepare statement
 		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
-		if(!is_null($key)) {
+		if(is_null($key) && is_null($id)) {
+			$stmt = $this->conn->prepare("SELECT * FROM $table");
+		} else if(is_null($key)) {
+			$stmt = $this->conn->prepare("SELECT * FROM $table WHERE `id` = :id");
+			$stmt->bindParam(':id', $id);
+		} else {
 			$stmt = $this->conn->prepare("SELECT * FROM $table WHERE `key` = :key");
 			$stmt->bindParam(':key', $key);
-		} else {
-			$stmt = $this->conn->prepare("SELECT * FROM $table");
 		}
 		
 		// run
@@ -322,31 +333,11 @@ class DBHelperClass {
 	
 	
 	
-	function deleteRecord($id, $type) {
-		// prepare statement
-		if($type == 1)
-			$prepStmt = "UPDATE `t9hacks_participants` SET `deleted` = 1 WHERE `id` = :id";
-		if($type == 2)
-			$prepStmt = "UPDATE `t9hacks_mentors` SET `deleted` = 1 WHERE `id` = :id";
-		$stmt = $this->conn->prepare($prepStmt);
-		$stmt->bindParam(':id',$id);
-		
-		// use exec() because no results are returned
-		$stmt->execute();
-		
-		// echo a message to say the UPDATE succeeded
-		$updateCount = $stmt->rowCount();
-		return($updateCount>0);
-	}
-	
-	function checkInRecord($id, $type) {
-		// prepare statement
-		if($type == 1)
-			$prepStmt = "UPDATE `t9hacks_participants` SET `checked_in` = 1 WHERE `id` = :id";
-		if($type == 2)
-			$prepStmt = "UPDATE `t9hacks_mentors` SET `checked_in` = 1 WHERE `id` = :id";
-		$stmt = $this->conn->prepare($prepStmt);
-		$stmt->bindParam(':id',$id);
+	function updateRecord($isParticipant, $id, $column, $value) {
+		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
+		$stmt = $this->conn->prepare("UPDATE $table SET $column = :value WHERE `id` = :id");
+		$stmt->bindParam(':id', $id);
+		$stmt->bindParam(':value', $value);
 		
 		// use exec() because no results are returned
 		$stmt->execute();

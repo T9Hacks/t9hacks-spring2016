@@ -28,9 +28,16 @@ html, body {
 	border: 1px solid #AA88AA;
 	margin: 10px 0;
 	padding: 0 10px;
+	overflow: hidden;
 }
 .tabBtn.active, .filterBtn.active {
 	background: white;
+}
+.tabBtn span, .filterBtn span {
+	font-size: 0.9em;
+	float: right;
+	color: #331155;
+	font-weight: bold;
 }
 
 
@@ -82,6 +89,14 @@ html, body {
 
 .other {
 	font-size: 0.8em;
+}
+
+.actionBtns {
+	
+}
+.actionBtn {
+	display: inline-block;
+	margin-right: 20px;
 }
 
 

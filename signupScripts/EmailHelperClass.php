@@ -61,7 +61,7 @@ class EmailHelperClass {
 							</td></tr>
 							
 							<tr><td style='padding: 0 20px;'>
-								<h3>Questions about this event?</h3>
+								<h3 style='padding: 0; margin: 0 0 10px ;'>Questions about this event?</h3>
 							</td></tr>
 							<tr><td style='padding: 0 20px 20px;'>
 								<p>
@@ -332,20 +332,18 @@ class EmailHelperClass {
 	/* 
 	 * Create and send approval emails for participants
 	 */
-	function createAndSendEmail_Approval() {
+	function createAndSendEmail_Approval($personRecord) {
+		$name = $personRecord[0]["name"];
+		$email = $personRecord[0]["email"];
+		$sendTo = $name . " <$email>";
+		
 		// create subject
-		$subject = "";
-		if($isParticipant)
-			$subject = "Your Application Ticket for T9Hacks Spring 2016";
-		else 
-			$subject = "Your Registration Confirmation for T9Hacks Spring 2016";
+		$subject = "Welcome to T9Hacks!";
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
+		$message = EmailHelperClass::createEmail_Approval($name);
 		
 		// create headers
-		$email = $inputValues['email'];
-		$sendTo = $inputValues['name'] . " <$email>";
 		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
 		
 		// send email
@@ -362,7 +360,32 @@ class EmailHelperClass {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
-		$message = EmailHelperClass::createEmailHeader() . "<tr><td style='padding: 20px 20px 0 20px;'>Approved</td></tr>" . EmailHelperClass::createEmailFooter($name);
+		$message = EmailHelperClass::createEmailHeader() . "
+			<tr><td style='padding: 20px 20px 0 20px;'>
+				<h2>Hi $name,</h2>
+				<p>Welcome to T9Hacks!</p>
+			</td></tr>
+			
+			<tr><td style='padding: 0 20px;'>
+				<hr/>
+			</td></tr>
+				
+			<tr><td style='padding: 20px 20px 0 20px;'>
+				<p style='padding: 0 0 10px;'>
+					We are amazed by the incredible number and quality of applications for T9Hack's first hackathon and  
+					we are excited to invite you to this spring's edition!
+				</p>
+				<p style='padding: 0 0 10px;'>
+					We will be sending out more information about the hackathon as the event draws closer.  Please be on 
+					the lookout for future emails coming from the T9Hacks team.  We look forward to seeing you there!
+				</p>
+				<p style='padding: 0 0 10px;'>
+					Best,
+					<br/>
+					The T9Hacks Team
+				</p>
+			</td></tr>
+			" . EmailHelperClass::createEmailFooter($name);
 		
 		return $message;
 	}
@@ -372,16 +395,12 @@ class EmailHelperClass {
 	/* 
 	 * Create and send approval emails for participants
 	 */
-	function createAndSendEmail_Rejection() {
+	function createAndSendEmail_Rejection($personRecord) {
 		// create subject
-		$subject = "";
-		if($isParticipant)
-			$subject = "Your Application Ticket for T9Hacks Spring 2016";
-		else 
-			$subject = "Your Registration Confirmation for T9Hacks Spring 2016";
+		$subject = "Thanks for applying to T9Hacks";
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
+		$message = EmailHelperClass::createEmail_Rejection($name);
 		
 		// create headers
 		$email = $inputValues['email'];
@@ -402,7 +421,36 @@ class EmailHelperClass {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
-		$message = EmailHelperClass::createEmailHeader() . "<tr><td style='padding: 20px 20px 0 20px;'>Rejected</td></tr>" . EmailHelperClass::createEmailFooter($name);
+		$message = EmailHelperClass::createEmailHeader() . "
+			<tr><td style='padding: 20px 20px 0 20px;'>
+				<h2>Hi $name,</h2>
+				<p>Thanks for applying to T9Hacks.</p>
+			</td></tr>
+			
+			<tr><td style='padding: 0 20px;'>
+				<hr/>
+			</td></tr>
+			
+			<tr><td style='padding: 20px 20px 0 20px;'>
+				<p style='padding: 0 0 10px;'>
+					We are amazed at how many participants and supporters signed up for T9Hack's first hackathon! 
+					Unfortunately, we were unable to invite you to this spring's edition. We're limited by the size of 
+					the our hackathon space and with the ever-increasing number of applicants, we unfortunately can't accept 
+					everyone.
+				</p>
+				<p style='padding: 0 0 10px;'>
+					We're going to continue working on making T9Hacks even more accessible (and possibly even larger), so 
+					definitely do apply for the next T9Hacks! We are planning on growing more every year, so definitely apply 
+					again next Spring when we will try our best to continue scaling up. We hope to see you at the next one, 
+					and we'll try our hardest to continue growing the hacker community.
+				</p>
+				<p style='padding: 0 0 10px;'>
+					Best,
+					<br/>
+					The T9Hacks Team
+				</p>
+			</td></tr>
+		" . EmailHelperClass::createEmailFooter($name);
 		
 		return $message;
 	}
