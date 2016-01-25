@@ -271,7 +271,7 @@
 							by using our registration page. Click the application button below to start this process.
 						</p>
 						<div class="signupBtn">
-							<center><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant Application</a></center>
+							<center><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></center>
 						</div>
 					</div>
 					<div class="row">
@@ -279,7 +279,7 @@
 							If you would like to participate as a mentor, you can also register by clicking the sign up button below.
 						</p>
 						<div class="signupBtn">
-							<center><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor Sign Up</a></center>
+							<center><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></center>
 						</div>
 					<div class="row">
 				</div>
@@ -367,49 +367,105 @@
 					<h1 class="blue">Our Sponsors</h1>
 				</div>
 			</div>
-			<div class="row sponsorRow"><div class="sponsorRowLg">
-				<div class="sponsor sponsorLeft">
-					<div class="sponsor1 atlas">
-						<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/atlas_logo.png" /></a>
+			
+			<!-- Platinum -->
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper platinum">
+					<!-- ATLAS -->
+					<div class="sponsor sponsorLeft">
+						<div class="sponsor1 atlas">
+							<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/atlas_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Twitter -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor1 twitter">
+							<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/twitter_logo_white.png" /></a>
+						</div>
+					</div>
+					<!-- Victor Ops -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor1 victorops">
+							<a href="https://victorops.com/" target="_blank"><img src="images/sponsors/victorops_logo.svg" /></a>
+						</div>
 					</div>
 				</div>
-				<div class="sponsor sponsorCenter">
-					<div class="sponsor1 twitter">
-						<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/twitter_logo_white.png" /></a>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper platinum">
+					<!-- Think Topic -->
+					<div class="sponsor sponsorLeftNoCenter">
+						<div class="sponsor1 thinktopic">
+							<a href="http://www.thinktopic.com/" target="_blank"><img src="images/sponsors/thinktopic_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Workday -->
+					<div class="sponsor sponsorRightNoCenter">
+						<div class="sponsor1 workday">
+							<a href="http://www.workday.com/" target="_blank"><img src="images/sponsors/workday_logo.png" /></a>
+						</div>
 					</div>
 				</div>
-				<div class="sponsor sponsorRight">
-					<div class="sponsor1 victorops">
-						<a href="https://victorops.com/" target="_blank"><img src="images/sponsors/victorops_logo.svg" /></a>
+			</div>
+				
+				
+			<!-- Gold -->
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper gold">
+					<!-- Send Grid -->
+					<div class="sponsor sponsorLeft">
+						<div class="sponsor2 sendgrid">
+							<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
+						</div>
+					</div>
+					<!-- Google -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor2 google">
+							<a href="http://www.google.com/" target="_blank"><img src="images/sponsors/google_logo.svg" /></a>
+						</div>
+					</div>
+					<!-- Code Craft School -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor2 codecraft">
+							<a href="http://www.codecraftschool.com/" target="_blank"><img src="images/sponsors/codecraft_logo.png" /></a>
+						</div>
 					</div>
 				</div>
-			</div></div>
-			<div class="row sponsorRow"><div class="sponsorRowLg">
-				<div class="sponsor sponsorLeft">
-					<div class="sponsor2 sendgrid">
-						<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper gold">
+					<!-- Cardinal Peak -->
+					<div class="sponsor sponsorLeftNoCenter">
+						<div class="sponsor2 cardinalpeak">
+							<a href="https://cardinalpeak.com/" target="_blank"><img src="images/sponsors/cardinalpeak_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Lockheed Martin -->
+					<div class="sponsor sponsorRightNoCenter">
+						<div class="sponsor2 lockheed">
+							<a href="http://www.lockheedmartin.com/" target="_blank"><img src="images/sponsors/lockheedmartin_logo.png" /></a>
+						</div>
 					</div>
 				</div>
-				<div class="sponsor sponsorCenter">
-					<div class="sponsor1 thinktopic">
-						<a href="http://www.thinktopic.com/" target="_blank"><img src="images/sponsors/thinktopic_logo.png" /></a>
+			</div>
+			
+			<!-- Silver -->
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper silver">
+					<!-- Quick Left -->
+					<div class="sponsor sponsorLeftNoCenter">
+						<div class="sponsor3 quickleft">
+							<a href="https://quickleft.com/" target="_blank"><img src="images/sponsors/quickleft_logo.svg" /></a>
+						</div>
+					</div>
+					<!-- Sticker Giant -->
+					<div class="sponsor sponsorRightNoCenter">
+						<div class="sponsor3 stickergiant">
+							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
+						</div>
 					</div>
 				</div>
-				<div class="sponsor sponsorRight">
-					<div class="sponsor2 codecraft">
-						<a href="http://www.codecraftschool.com/" target="_blank"><img src="images/sponsors/codecraft_logo.png" /></a>
-					</div>
-				</div>
-			</div></div>
-			<div class="row sponsorRow"><div class="sponsorRowLg">
-				<div class="sponsor sponsorLeft">&nbsp;</div>
-				<div class="sponsor sponsorCenter">
-					<div class="sponsor3 stickergiant">
-						<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
-					</div>
-				</div>
-				<div class="sponsor sponsorRight">&nbsp;</div>
-			</div></div>
+			</div>
 
 			
 			<div class="row extra">
@@ -417,23 +473,25 @@
 					<h1 class="blue">Community Partners</h1>
 				</div>
 			</div>
-			<div class="row sponsorRow"><div class="sponsorRowLg">
-				<div class="column4 sponsor sponsorLeft">
-					<div class="sponsor3 tods">
-						<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper gold">
+					<div class="sponsor sponsorLeft">
+						<div class="sponsor2 tods">
+							<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
+						</div>
+					</div>
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor2 mlh">
+							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
+						</div>
+					</div>
+					<div class="sponsor sponsorRight">
+						<div class="sponsor2 susansbakery">
+							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
+						</div>
 					</div>
 				</div>
-				<div class="column4 sponsor sponsorCenter">
-					<div class="sponsor1 mlh">
-						<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
-					</div>
-				</div>
-				<div class="column4 sponsor sponsorRight">
-					<div class="sponsor3 susansbakery">
-						<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
-					</div>
-				</div>
-			</div></div>
+			</div>
 		</div>
 		
 		<div class="container">
@@ -442,7 +500,7 @@
 				<div class="column12">
 					<div class="sponsorInterested">
 						<div class="sponsorBtnContainer">
-							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in becoming <span class="mobileOnly">&nbsp;</span>a sponsor or partner?</div>
+							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a <span class="mobileOnly">&nbsp;</span>sponsor or partner?</div>
 							<p>Interested in volunteering as a mentor?  <a href="signup.php">Register here!</a></p>
 						</div>
 					</div>
