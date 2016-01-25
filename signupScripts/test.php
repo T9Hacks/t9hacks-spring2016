@@ -7,40 +7,36 @@ $key = "Test Key";
 
 // create input values for all
 $inputValues = array(
-	"name" => "Tester McTesterson",
-	"email" => "test@email.com",
+	"name"		=> "Tester McTesterson",
+	"email"		=> "test@email.com",
+	"shirt"		=> "Medium",
+	"comment"	=> "None",
+	
+	"area"		=> "Web Dev",
+	"dinner"	=> 0,
+	"breakfast"	=> 0,
+	"lunch"		=> 1,
+	
+	"friendName"=> "Friend of Tester",
+	"link"		=> "",
 );
 
 // test confirmation email
 if(true) {
-	// 1 = participant
-	// 2 = mentor
-	$type = 2;
-	
-	// participant
-	if($type == 1) {
-		$inputValues['shirt'] = "Medium";
-		
-	// mentor
-	} else if($type == 2) {
-		$inputValues['breakfast'] = 0;
-		$inputValues['lunch'] = 1;
-		$inputValues['dinner'] = 0;
-	}
-	
-	echo EmailHelperClass::createEmail_Confirmation($inputValues, $key, $type);
-	
+	echo EmailHelperClass::createEmail_Confirmation($inputValues, $key, true);
+	echo EmailHelperClass::createEmail_Confirmation($inputValues, $key, false);
 }
 
 // test registration email
 if(true) {
-	// 1 = participant's friend
-	// 2 = mentor's friend
-	$type = 2;
-	
-	$inputValues['friendName'] = "Friend Tester";
-	
-	echo EmailHelperClass::createEmail_Registration($inputValues, $key, $type);
+	echo EmailHelperClass::createEmail_RegistrationNotice($inputValues, $key, true);
+	echo EmailHelperClass::createEmail_RegistrationNotice($inputValues, $key, false);
+}
+
+// test registration email
+if(true) {
+	echo EmailHelperClass::createEmail_Approval("a");
+	echo EmailHelperClass::createEmail_Rejection("a");
 }
 
 ?>

@@ -57,6 +57,14 @@
 						</div>
 					</div>
 					<div class="row">
+						<p class="column12">
+							If you are planning on attending T9Hacks, we kindly ask you to register.  This allows us to keep track of 
+							tickets to make sure that we can provide enough space, food, and supplies for everyone.
+						</p>
+						<p class="column12">
+							We require that mentors be present for at least 2 hours during the hackathon.  For more specific 
+							information about mentorship at T9Hacks, please visit our <a href="../documents/T9Hacks_MentorGuide.pdf" target="_blank">Mentor Guide</a>.
+						</p>
 						<div class="column12">
 							<p>How many people are you registering for?</p>
 						</div>

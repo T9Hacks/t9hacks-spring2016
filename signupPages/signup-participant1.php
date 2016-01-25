@@ -57,6 +57,10 @@
 						</div>
 					</div>
 					<div class="row">
+						<p class="column12">
+							If you are planning on attending T9Hacks, we require that you apply.  This allows us to keep track of 
+							tickets to make sure that we can provide enough space, food, and supplies for everyone.
+						</p>
 						<div class="column12">
 							<p>How many people are you applying for?</p>
 						</div>

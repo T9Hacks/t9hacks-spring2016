@@ -118,6 +118,7 @@ class EmailHelperClass {
 		
 		$name = $inputValues['name'];
 		$friendName = $inputValues['friendName'];
+		$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
 		
 		if($isParticipant) {
 			$intro = "This is your application notice for T9Hacks Spring 2016";
@@ -139,7 +140,7 @@ class EmailHelperClass {
 					<p>
 						Click on this link: 
 						<br/>
-						<a href='www.t9hacks.org/signupPages/signup-participant2.php?key=$key' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
+						<a href='$link' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
 						<br/>
 						(or copy and paste it into a web browser)  
 						to go to the application page.
@@ -166,7 +167,7 @@ class EmailHelperClass {
 					<p>
 						Click on this link: 
 						<br/>
-						<a href='www.t9hacks.org/signupPages/signup-mentor2.php?key=$key' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
+						<a href='$link' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
 						<br/>
 						(or copy and paste it into a web browser)  
 						to go to the registration page.
@@ -293,12 +294,125 @@ class EmailHelperClass {
 					<br/>
 					(or by copying and pasting it into a web browser).
 				</p>
-			</td></tr>
+			</td></tr>";
+			
+		if(!$isParticipant) {
+			$message .= "
+				<tr><td style='padding: 10px 20px;'>
+					<p>
+						We require that mentors be present for at least 2 hours during the hackathon.  For more specific 
+						information about mentorship at T9Hacks, please visit our 
+						<a href='http://t9hacks.org/documents/T9Hacks_MentorGuide.pdf' target='_blank' style='$linkStyles'>Mentor Guide</a>.
+					</p>
+				</td></tr>
+			";
+		}
 				
-		" . EmailHelperClass::createEmailFooter($name);
+		$message .= EmailHelperClass::createEmailFooter($name);
 		
 		return $message;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* 
+	 * Create and send approval emails for participants
+	 */
+	function createAndSendEmail_Approval() {
+		// create subject
+		$subject = "";
+		if($isParticipant)
+			$subject = "Your Application Ticket for T9Hacks Spring 2016";
+		else 
+			$subject = "Your Registration Confirmation for T9Hacks Spring 2016";
+		
+		// create email message
+		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
+		
+		// create headers
+		$email = $inputValues['email'];
+		$sendTo = $inputValues['name'] . " <$email>";
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $subject, $message, $headers);
+		
+		// return result
+		return $emailResult;
+	}
+	
+	/*
+	 * Create email message - confirmation for participant and mentor
+	 */
+	function createEmail_Approval($name) {
+		$styles = EmailHelperClass::getEmailStyles();
+		$linkStyles = $styles['linkStyles'];
+		
+		$message = EmailHelperClass::createEmailHeader() . "<tr><td style='padding: 20px 20px 0 20px;'>Approved</td></tr>" . EmailHelperClass::createEmailFooter($name);
+		
+		return $message;
+	}
+	
+	
+	
+	/* 
+	 * Create and send approval emails for participants
+	 */
+	function createAndSendEmail_Rejection() {
+		// create subject
+		$subject = "";
+		if($isParticipant)
+			$subject = "Your Application Ticket for T9Hacks Spring 2016";
+		else 
+			$subject = "Your Registration Confirmation for T9Hacks Spring 2016";
+		
+		// create email message
+		$message = EmailHelperClass::createEmail_Confirmation($inputValues, $key, $isParticipant);
+		
+		// create headers
+		$email = $inputValues['email'];
+		$sendTo = $inputValues['name'] . " <$email>";
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $subject, $message, $headers);
+		
+		// return result
+		return $emailResult;
+	}
+	
+	/*
+	 * Create email message - confirmation for participant and mentor
+	 */
+	function createEmail_Rejection($name) {
+		$styles = EmailHelperClass::getEmailStyles();
+		$linkStyles = $styles['linkStyles'];
+		
+		$message = EmailHelperClass::createEmailHeader() . "<tr><td style='padding: 20px 20px 0 20px;'>Rejected</td></tr>" . EmailHelperClass::createEmailFooter($name);
+		
+		return $message;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -376,7 +490,7 @@ class EmailHelperClass {
 	
 	
 	/*
-	 * Create and send email for every registration
+	 * Create and send email for every sponsor notice
 	 */
 	function createAndSendEmail_Sponsor($resultArray, $inputValues) {
 		// res
@@ -423,36 +537,6 @@ class EmailHelperClass {
 	
 	
 	
-	/*
-	 * Create and send email for index page sponsor interest
-	 */
-	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorMessage) {
-		// create subject
-		$sendSubject = "T9Hacks - Sponsor Question";
-		
-		// create message
-		$sendMessage = "<html><head></head><body><table style='border-collapse: collapse'>";
-		$sendMessage .= "<tr><td><b>Name: </b></td><td><p>$sponsorName</p></td></tr>";
-		$sendMessage .= "<tr><td><b>Email: </b></td><td><p>$sponsorEmail</p></td></tr>";
-		$sendMessage .= "<tr><td><b>Message: </b></td><td><p>$sponsorMessage</p></td></tr>";
-		$sendMessage .= "</table></body></html>";
-		
-		// create sender's reply to
-		$replyTo = "$sponsorName <$sponsorEmail>";
-		
-		// create send to
-		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
-		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
-		
-		// create headers
-		$sendHeaders = EmailHelperClass::createHeaders($sendSubject, $sendTo, $replyTo);
-		
-		// send email
-		$emailResult = mail($sendTo, $sendSubject, $sendMessage, $sendHeaders);
-		
-		// return result
-		return ($emailResult);
-	}
 	
 } // end class
 	
