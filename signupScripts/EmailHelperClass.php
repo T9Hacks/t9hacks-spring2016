@@ -33,7 +33,7 @@ class EmailHelperClass {
 			<html>
 				<head></head>
 				<body style='font-family:helvetica,arial,sans-serif;'>
-					<div style='height: 100%; width: 100%; background: #eee; padding: 20px;' >
+					<div style='height: 100%; width: 100%; background: #DAC8DA; padding: 20px;' >
 						<table style='width: 600px; max-width: 600px; margin: 0 auto; background: white; border-collapse: collapse;'>
 		";
 		return $header;
@@ -370,7 +370,7 @@ class EmailHelperClass {
 				<hr/>
 			</td></tr>
 				
-			<tr><td style='padding: 20px 20px 0 20px;'>
+			<tr><td style='padding: 0 20px;'>
 				<p style='padding: 0 0 10px;'>
 					We are amazed by the incredible number and quality of applications for T9Hack's first hackathon and  
 					we are excited to invite you to this spring's edition!
@@ -396,6 +396,10 @@ class EmailHelperClass {
 	 * Create and send approval emails for participants
 	 */
 	function createAndSendEmail_Rejection($personRecord) {
+		$name = $personRecord[0]["name"];
+		$email = $personRecord[0]["email"];
+		$sendTo = $name . " <$email>";
+		
 		// create subject
 		$subject = "Thanks for applying to T9Hacks";
 		
@@ -403,8 +407,6 @@ class EmailHelperClass {
 		$message = EmailHelperClass::createEmail_Rejection($name);
 		
 		// create headers
-		$email = $inputValues['email'];
-		$sendTo = $inputValues['name'] . " <$email>";
 		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
 		
 		// send email
@@ -413,10 +415,6 @@ class EmailHelperClass {
 		// return result
 		return $emailResult;
 	}
-	
-	/*
-	 * Create email message - confirmation for participant and mentor
-	 */
 	function createEmail_Rejection($name) {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
@@ -431,7 +429,7 @@ class EmailHelperClass {
 				<hr/>
 			</td></tr>
 			
-			<tr><td style='padding: 20px 20px 0 20px;'>
+			<tr><td style='padding: 0 20px;'>
 				<p style='padding: 0 0 10px;'>
 					We are amazed at how many participants and supporters signed up for T9Hack's first hackathon! 
 					Unfortunately, we were unable to invite you to this spring's edition. We're limited by the size of 
@@ -458,6 +456,78 @@ class EmailHelperClass {
 	
 	
 	
+	function createAndSendEmail_ReminderToCompleteRegistration($personRecord) {
+		// get person's data
+		$name = $personRecord[0]["name"];
+		$email = $personRecord[0]["email"];
+		$key = $personRecord[0]["key"];
+		$reminderNum = $personRecord[0]["reminder_num"];
+		
+		// create send to
+		$sendTo = $name . " <$email>";
+		
+		// create subject
+		$subject = "Reminder: Please complete your registration for T9Hacks.";
+		
+		// create email message
+		$message = EmailHelperClass::createEmail_ReminderToCompleteRegistration($name, $key);
+		
+		// create headers
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $subject, $message, $headers);
+		
+		// return result
+		return $emailResult;
+	}
+	function createEmail_ReminderToCompleteRegistration($name, $key) {
+		$styles = EmailHelperClass::getEmailStyles();
+		$linkStyles = $styles['linkStyles'];
+		
+		$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
+		
+		$message = EmailHelperClass::createEmailHeader() . "
+			<tr><td style='padding: 20px 20px 0 20px;'>
+				<h2>Hi $name,</h2>
+				<p>This is your second application notice for T9Hacks Spring 2016!</p>
+			</td></tr>
+			
+			<tr><td style='padding: 0 20px;'>
+				<hr/>
+			</td></tr>
+				
+			<tr><td style='padding: 0 20px;'>
+				<p>
+					Your friend started your application for 
+					<a href='www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a>.
+				</p>
+				<p>
+					T9Hacks is a 24 hour women's hackathon promoting gender diversity in technology.  It is held
+					at the University of Colorado Boulder's ATLAS Institute on Feb 20-21.  T9Hacks brings students together 
+					for a weekend of creativity, building, and hacking.
+				</p>
+				<p><b>
+					Your friend has started your application, but to be considered for a spot at T9Hacks you will need to 
+					complete your registration form.  
+				</b></p>
+				<p>
+					Click on this link: 
+					<br/>
+					<a href='$link' style='$linkStyles' target='_blank' wotsearchprocessed='true'>$link</a> 
+					<br/>
+					(or copy and paste it into a web browser)  
+					to go to the application page.
+				</p>
+				<p>
+					Thank you,<br/>
+					T9Hacks Team
+				</p>
+			</td></tr>
+		" . EmailHelperClass::createEmailFooter($name);
+		
+		return $message;
+	}
 	
 	
 	

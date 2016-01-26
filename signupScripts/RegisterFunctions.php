@@ -183,7 +183,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 			
 			// process email for mentor and participant
 			if($isParticipant || $isMentor)
-				$inputValues['email'] = removeWhiteSpace($inputValues['email']);
+				$inputValues['email'] = strtolower(removeWhiteSpace($inputValues['email']));
 			
 			// process name and email for friend
 			else if($isFriend) {
@@ -191,13 +191,13 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 				
 				if ($isFriend1) {
 					$inputValues['name'] = $inputValues['friendName1'];
-					$inputValues['email'] = removeWhiteSpace($inputValues['friendEmail1']);
+					$inputValues['email'] = strtolower(removeWhiteSpace($inputValues['friendEmail1']));
 				} else if ($isFriend2) {
 					$inputValues['name'] = $inputValues['friendName2'];
-					$inputValues['email'] = removeWhiteSpace($inputValues['friendEmail2']);
+					$inputValues['email'] = strtolower(removeWhiteSpace($inputValues['friendEmail2']));
 				} else if ($isFriend3) {
 					$inputValues['name'] = $inputValues['friendName3'];
-					$inputValues['email'] = removeWhiteSpace($inputValues['friendEmail3']);
+					$inputValues['email'] = strtolower(removeWhiteSpace($inputValues['friendEmail3']));
 				}
 			}
 					

@@ -45,6 +45,33 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "register":
 				$db->updateRecord(($type == 1), $id, "unregistered", 0);
 				break;
+			case "reminderReg" :
+				if($type == 1) {
+					$db->updateRecord(($type == 1), $id, "reminder_num", 1);
+					EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration($db->getPeopleFromId(true, $id));
+				}
+				break;
+			case "setFemale":
+				$db->updateRecord(($type == 1), $id, "set_gender", 1);
+				break;
+			case "setMale":
+				$db->updateRecord(($type == 1), $id, "set_gender", 2);
+				break;
+			case "setX":
+				$db->updateRecord(($type == 1), $id, "set_gender", 3);
+				break;
+			case "setCU":
+				$db->updateRecord(($type == 1), $id, "set_college", 1);
+				break;
+			case "setCO":
+				$db->updateRecord(($type == 1), $id, "set_college", 2);
+				break;
+			case "setUS":
+				$db->updateRecord(($type == 1), $id, "set_college", 3);
+				break;
+			case "setWorld":
+				$db->updateRecord(($type == 1), $id, "set_college", 4);
+				break;
 			default: break;
 		}
 		
@@ -163,24 +190,37 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			</div> 
 			
 			<div class="filterGroup">
-				<div class="filterBtn active" id="allFilterBtn">All <span></span></div>
+				<div class="filterBtn active" id="allFilterBtn">All<span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="approvedFilterBtn">Approved Admission <span></span></div>
-				<div class="filterBtn" id="rejectedFilterBtn">Rejected Admission <span></span></div>
-				<div class="filterBtn" id="undecidedFilterBtn">Undecided Admission <span></span></div>
+				<div class="filterBtn" id="approvedFilterBtn">Approved Admission<span></span></div>
+				<div class="filterBtn" id="rejectedFilterBtn">Rejected Admission<span></span></div>
+				<div class="filterBtn" id="undecidedFilterBtn">Undecided Admission<span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="completeFilterBtn">Registration Complete <span></span></div>
-				<div class="filterBtn" id="incompleteFilterBtn">Registration Incomplete <span></span></div>
+				<div class="filterBtn" id="completeFilterBtn">Registration Complete<span></span></div>
+				<div class="filterBtn" id="incompleteFilterBtn">Registration Incomplete<span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="regFilterBtn">Registered <span></span></div>
-				<div class="filterBtn" id="unregisteredFilterBtn">Cancled Registration <span></span></div>
+				<div class="filterBtn" id="activeRegFilterBtn">Active Registration<span></span></div>
+				<div class="filterBtn" id="cancledRegFilterBtn">Cancled Registration<span></span></div>
 			</div>
 			<div class="filterGroup">
-				<div class="filterBtn" id="checkedInFilterBtn">Checked-in <span></span></div>
-				<div class="filterBtn" id="notCheckedInFilterBtn">Not Checked-in <span></span></div>
+				<div class="filterBtn" id="checkedInFilterBtn">Checked-in<span></span></div>
+				<div class="filterBtn" id="notCheckedInFilterBtn">Not Checked-in<span></span></div>
+			</div>
+			<div class="filterGroup">
+				<div class="filterBtn" id="genderFemaleFilterBtn">Women<span></span></div>
+				<div class="filterBtn" id="genderMaleFilterBtn">Men<span></span></div>
+				<div class="filterBtn" id="genderXFilterBtn">X<span></span></div>
+				<div class="filterBtn" id="genderUnknownFilterBtn">Unknown<span></span></div>
+			</div>
+			<div class="filterGroup">
+				<div class="filterBtn" id="collegeCUFilterBtn">CU<span></span></div>
+				<div class="filterBtn" id="collegeCOFilterBtn">CO<span></span></div>
+				<div class="filterBtn" id="collegeUSFilterBtn">US<span></span></div>
+				<div class="filterBtn" id="collegeWorldFilterBtn">World<span></span></div>
+				<div class="filterBtn" id="collegeUnknownFilterBtn">Unknown<span></span></div>
 			</div>
 		</div>
 			
@@ -198,15 +238,29 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 						<div class="person <?php 
 							echo ($person["approved"] == 1) ? "approved " : ( ($person["approved"] == 0) ? "undecided " : "rejected ");
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
-							echo ($person["unregistered"] == 1) ? "unregistered " : "reg ";
+							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
+							if($person["set_gender"] == 1) echo "genderFemale ";
+							else if($person["set_gender"] == 2) echo "genderMale ";
+							else if($person["set_gender"] == 3) echo "genderX ";
+							else echo "genderUnknown ";
+							if($person["set_college"] == 1) echo "collegeCU ";
+							else if($person["set_college"] == 2) echo "collegeCO ";
+							else if($person["set_college"] == 3) echo "collegeUS ";
+							else if($person["set_college"] == 4) echo "collegeWorld ";
+							else echo "collegeUnknown ";
 						?>">
 						
 							<div class="beg">
 								<div class="cell-name column4"><?php echo $person["name"]; ?></div>
 								<div class="cell-email column4"><?php echo $person["email"]; ?></div>
-								<div class="cell-gender column3"><?php echo $person["gender"]; ?></div>
-								<div class="cell-num column1"># <?php echo $num; ?></div>
+								<div class="cell-gender column4">
+									<?php 
+									if($person["set_gender"] == 1) echo "Female"; 
+									else if ($person["set_gender"] == 2) echo "Male"; 
+									else if($person["set_gender"] == 3) echo "Other Gendered";
+									?>
+								</div>
 							</div>
 							
 							<div class="status column12">
@@ -226,18 +280,18 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<div class="cell-company column4">Company: <?php echo $person["company"]; ?></div>
 								<div class="cell-position column4">Position: <?php echo $person["position"]; ?></div>
 								
-								<div class="cell-linkedin column4"><?php echo ($person["linkedin"] == "") ? "No Linkedin" : $person["linkedin"]; ?></div>
-								<div class="cell-resume column4"><?php echo ($person["resume"] == "") ? "No Resume" : $person["resume"]; ?></div>
-								<div class="cell-website column4"><?php echo ($person["website"] == "") ? "No Website" : $person["website"]; ?></div>
-								<div class="cell-github column4"><?php echo ($person["github"] == "") ? "No Github" : $person["github"]; ?></div>
-								<div class="cell-facebook column4"><?php echo ($person["facebook"] == "") ? "No Facebook" : $person["facebook"]; ?></div>
-								<div class="cell-twitter column4"><?php echo ($person["twitter"] == "") ? "No Twitter" : $person["twitter"]; ?></div>
+								<div class="cell-linkedin column4"><?php echo ($person["linkedin"] == "") ? "No Linkedin" : "<a href='" . $person["linkedin"] . "' target='_blank'>" . $person["linkedin"] . "</a>"; ?></div>
+								<div class="cell-resume column4"><?php echo ($person["resume"] == "") ? "No Resume" : "<a href='../hidden/resumes/" . $person["resume"] . "' target='_blank'>" . $person["resume"] . "</a>"; ?></div>
+								<div class="cell-website column4"><?php echo ($person["website"] == "") ? "No Website" : "<a href='" . $person["website"] . "' target='_blank'>" . $person["website"] . "</a>"; ?></div>
+								<div class="cell-github column4"><?php echo ($person["github"] == "") ? "No Github" : "<a href='" . $person["github"] . "' target='_blank'>" . $person["github"] . "</a>"; ?></div>
+								<div class="cell-facebook column4"><?php echo ($person["facebook"] == "") ? "No Facebook" : "<a href='" . $person["facebook"] . "' target='_blank'>" . $person["facebook"] . "</a>"; ?></div>
+								<div class="cell-twitter column4"><?php echo ($person["twitter"] == "") ? "No Twitter" : "<a href='" . $person["twitter"] . "' target='_blank'>" . $person["twitter"] . "</a>"; ?></div>
 								
 								<div class="cell-comment column12">Comments: <?php echo $person["comment"]; ?></div>
 							</div>
 							
 							<div class="actionBtns column12">
-								<form class="actionBtn" action="view.php" method="POST">
+								<form action="view.php" method="POST">
 								
 									<input type="hidden" name="id" value="<?php echo $person["id"]; ?>">
 									<input type="hidden" name="type" value="1">
@@ -246,7 +300,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 									
 									<button type="submit" class="btn deleteBtn">Delete</button>
 									
-									<?php if($person["approved"] == 0) { ?>
+									<?php if($person["approved"] == 0 || $person["key"] == "P-cdyRYz") { ?>
 										<button type="submit" class="btn approveBtn">Approve</i></button>
 										<button type="submit" class="btn rejectBtn">Reject</i></button>
 									<?php } else if($person["approved"] == 1) {?>
@@ -263,6 +317,25 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn unregisterBtn">Cancel Registration</i></button>
 									<?php } else { ?>
 										<button type="submit" class="btn registerBtn">Activate Registration</i></button>
+									<?php } ?>
+									
+									<?php if( ($person["complete"] == 0 && $person["reminder_num"] == 0) || $person["key"] == "P-cdyRYz" ) { ?>
+										<button type="submit" class="btn reminderRegBtn">Reminder to complete Registration</i></button>
+									<?php } ?>
+									
+									<br/>
+									
+									<?php if($person["set_gender"] == 0) { ?>
+										<button type="submit" class="btn setFemaleBtn">Mark as Female</i></button>
+										<button type="submit" class="btn setMaleBtn">Mark as Male</i></button>
+										<button type="submit" class="btn setXBtn">Mark as X</i></button>
+									<?php } ?>
+									
+									<?php if($person["set_college"] == 0) { ?>
+										<button type="submit" class="btn setCUBtn">Mark as CU</i></button>
+										<button type="submit" class="btn setCOBtn">Mark as CO</i></button>
+										<button type="submit" class="btn setUSBtn">Mark as US</i></button>
+										<button type="submit" class="btn setWorldBtn">Mark as World</i></button>
 									<?php } ?>
 									
 								</form>
@@ -290,8 +363,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 						<div class="person <?php 
 							echo ($person["approved"] == 1) ? "approved " : ( ($person["approved"] == 0) ? "undecided " : "rejected ");
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
-							echo ($person["unregistered"] == 1) ? "unregistered " : "reg ";
+							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
+							if($person["set_gender"] == 1) echo "genderFemale ";
+							else if($person["set_gender"] == 2) echo "genderMale ";
+							else if($person["set_gender"] == 3) echo "genderX ";
+							else echo "genderUnknown ";
 						?>">
 						
 							<div class="beg">
@@ -353,6 +430,14 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn registerBtn">Re-Activate Registration</i></button>
 									<?php } ?>
 									
+									<br/>
+									
+									<?php if($person["set_gender"] == 0) { ?>
+										<button type="submit" class="btn setFemaleBtn">Mark as Female</i></button>
+										<button type="submit" class="btn setMaleBtn">Mark as Male</i></button>
+										<button type="submit" class="btn setXBtn">Mark as X</i></button>
+									<?php } ?>
+									
 								</form>
 							</div>
 							
@@ -376,7 +461,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 						<input type="hidden" name="exe" value="1">
 						<button type="submit" class="btn btn-med">Submit</button>
 					</form>
-					
+				</div>
+				
+				<div class="column12">
+					<div class="btn" id="turnOnEditing">Turn on editing</div>
 				</div>
 			</div>
 		
@@ -394,56 +482,77 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	<script>
 	// show/hide tabs
 	$("#participantsBtn").click(function(event){
-		toggleFilter(".peopleSection", "#participantsDiv", ".tabBtn", "#participantsBtn");
+		$(".peopleSection").hide();
+		$("#participantsDiv").show();
+		$(this).parent().children().removeClass("active");
+		$(this).addClass("active");
 		doCounters(true);
 	});
 	$("#mentorsBtn").click(function(event){
-		toggleFilter(".peopleSection", "#mentorsDiv", ".tabBtn", "#mentorsBtn");
+		$(".peopleSection").hide();
+		$("#mentorsDiv").show();
+		$(this).parent().children().removeClass("active");
+		$(this).addClass("active");
 		doCounters(false);
 	});
 	$("#extrasBtn").click(function(event){
-		toggleFilter(".peopleSection", "#extrasDiv", ".tabBtn", "#extrasBtn");
+		$(".peopleSection").hide();
+		$("#extrasDiv").show();
+		$(this).parent().children().removeClass("active");
+		$(this).addClass("active");
 		doCounters(true);
 	});
 	
 	
 	// filters
 	$("#allFilterBtn").click(function(event){
-		toggleFilter("", ".person", ".filterBtn", "#allFilterBtn");
+		$(".person").show();
+		$(".filterBtn").removeClass("active");
+		$(this).addClass("active");
 	});
-	$("#approvedFilterBtn").click(function(event){
-		toggleFilter(".person", ".approved", ".filterBtn", "#approvedFilterBtn");
-	});
-	$("#rejectedFilterBtn").click(function(event){
-		toggleFilter(".person", ".rejected", ".filterBtn", "#rejectedFilterBtn");
-	});
-	$("#undecidedFilterBtn").click(function(event){
-		toggleFilter(".person", ".undecided", ".filterBtn", "#undecidedFilterBtn");
-	});
-	$("#completeFilterBtn").click(function(event){
-		toggleFilter(".person", ".complete", ".filterBtn", "#completeFilterBtn");
-	});
-	$("#incompleteFilterBtn").click(function(event){
-		toggleFilter(".person", ".incomplete", ".filterBtn", "#incompleteFilterBtn");
-	});
-	$("#unregisteredFilterBtn").click(function(event){
-		toggleFilter(".person", ".unregistered", ".filterBtn", "#unregisteredFilterBtn");
-	});
-	$("#regFilterBtn").click(function(event){
-		toggleFilter(".person", ".reg", ".filterBtn", "#regFilterBtn");
-	});
-	$("#checkedInFilterBtn").click(function(event){
-		toggleFilter(".person", ".checkedIn", ".filterBtn", "#checkedInFilterBtn");
-	});
-	$("#notCheckedInFilterBtn").click(function(event){
-		toggleFilter(".person", ".notCheckedIn", ".filterBtn", "#notCheckedInFilterBtn");
+	// approved, rejected, or undecided filters
+	$("#approvedFilterBtn, #rejectedFilterBtn, #undecidedFilterBtn, " +
+		"#completeFilterBtn, #incompleteFilterBtn, " +
+		"#activeRegFilterBtn, #cancledRegFilterBtn, " +
+		"#checkedInFilterBtn, #notCheckedInFilterBtn, " +
+		"#genderFemaleFilterBtn, #genderMaleFilterBtn, #genderXFilterBtn, #genderUnknownFilterBtn, " + 
+		"#collegeCUFilterBtn, #collegeCOFilterBtn, #collegeUSFilterBtn, #collegeWorldFilterBtn, #collegeUnknownFilterBtn").click(function(event){
+		event.preventDefault();
+		if($(this).hasClass("active")) {
+			$(this).removeClass("active");
+		} else {
+			$(this).parent().children().removeClass("active");
+			$(this).addClass("active");
+		}
+		toggleFilters();
 	});
 
-	function toggleFilter(divHide, divShow, tabClass, tabActive) {
-		$(divHide).hide();
-		$(divShow).show();
-		$(tabClass).removeClass("active");
-		$(tabActive).addClass("active");
+	function toggleFilters() {
+		$(".person").show();
+		
+		if($("#approvedFilterBtn").hasClass("active"))		$(".rejected, .undecided").hide();
+		if($("#rejectedFilterBtn").hasClass("active"))		$(".approved, .undecided").hide();
+		if($("#undecidedFilterBtn").hasClass("active"))		$(".approved, .rejected").hide();
+
+		if($("#completeFilterBtn").hasClass("active"))		$(".incomplete").hide();
+		if($("#incompleteFilterBtn").hasClass("active"))	$(".complete").hide();
+
+		if($("#activeRegFilterBtn").hasClass("active"))		$(".cancledReg").hide();
+		if($("#cancledRegFilterBtn").hasClass("active"))	$(".activeReg").hide();
+
+		if($("#checkedInFilterBtn").hasClass("active"))		$(".notCheckedIn").hide();
+		if($("#notCheckedInFilterBtn").hasClass("active"))	$(".checkedIn").hide();
+
+		if($("#genderFemaleFilterBtn").hasClass("active"))	$(".genderMale, .genderX, .genderUnknown").hide();
+		if($("#genderMaleFilterBtn").hasClass("active"))	$(".genderFemale, .genderX, .genderUnknown").hide();
+		if($("#genderXFilterBtn").hasClass("active"))		$(".genderFemale, .genderMale, .genderUnknown").hide();
+		if($("#genderUnknownFilterBtn").hasClass("active"))	$(".genderFemale, .genderMale, .genderX").hide();
+
+		if($("#collegeCUFilterBtn").hasClass("active"))		$(".collegeCO, .collegeUS, .collegeWorld, .collegeUnknown").hide();
+		if($("#collegeCOFilterBtn").hasClass("active"))		$(".collegeCU, .collegeUS, .collegeWorld, .collegeUnknown").hide();
+		if($("#collegeUSFilterBtn").hasClass("active"))		$(".collegeCU, .collegeCO, .collegeWorld, .collegeUnknown").hide();
+		if($("#collegeWorldFilterBtn").hasClass("active"))	$(".collegeCU, .collegeCO, .collegeUS, .collegeUnknown").hide();
+		if($("#collegeUnknownFilterBtn").hasClass("active"))$(".collegeCU, .collegeCO, .collegeUS, .collegeWorld").hide();
 	}
 	
 	
@@ -461,14 +570,23 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		$("#completeFilterBtn span").html( $(sectionDiv + " .complete").size() );
 		$("#incompleteFilterBtn span").html( $(sectionDiv + " .incomplete").size() );
 
-		$("#unregisteredFilterBtn span").html( $(sectionDiv + " .unregistered").size() );
-		$("#regFilterBtn span").html( $(sectionDiv + " .reg").size() );
+		$("#activeRegFilterBtn span").html( $(sectionDiv + " .activeReg").size() );
+		$("#cancledRegFilterBtn span").html( $(sectionDiv + " .cancledReg").size() );
 
 		$("#checkedInFilterBtn span").html( $(sectionDiv + " .checkedIn").size() );
 		$("#notCheckedInFilterBtn span").html( $(sectionDiv + " .notCheckedIn").size() );
+
+		$("#genderFemaleFilterBtn span").html( $(sectionDiv + " .genderFemale").size() );
+		$("#genderMaleFilterBtn span").html( $(sectionDiv + " .genderMale").size() );
+		$("#genderXFilterBtn span").html( $(sectionDiv + " .genderX").size() );
+		$("#genderUnknownFilterBtn span").html( $(sectionDiv + " .genderUnknown").size() );
+
+		$("#collegeCUFilterBtn span").html( $(sectionDiv + " .collegeCU").size() );
+		$("#collegeCOFilterBtn span").html( $(sectionDiv + " .collegeCO").size() );
+		$("#collegeUSFilterBtn span").html( $(sectionDiv + " .collegeUS").size() );
+		$("#collegeWorldFilterBtn span").html( $(sectionDiv + " .collegeWorld").size() );
+		$("#collegeUnknownFilterBtn span").html( $(sectionDiv + " .collegeUnknown").size() );
 	}
-	
-	$("#participantsDiv .person")
 	
 
 	// action buttons
@@ -488,14 +606,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		else  $(".actionAction").val("reject");
 	});
 	$(".checkInBtn").click(function(event){
-		var y = confirm("Are you sure you want to cancel this person's registeration?");
-		if(!y) event.preventDefault();
-		else  $(".actionAction").val("checkIn");
+		$(".actionAction").val("checkIn");
 	});
 	$(".unCheckInBtn").click(function(event){
-		var y = confirm("Are you sure you want to activate this person's registeration?");
-		if(!y) event.preventDefault();
-		else  $(".actionAction").val("unCheckIn");
+		$(".actionAction").val("unCheckIn");
 	});
 	$(".unregisterBtn").click(function(event){
 		var y = confirm("Are you sure you want to cancel this person's registeration?");
@@ -507,12 +621,42 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		if(!y) event.preventDefault();
 		else  $(".actionAction").val("register");
 	});
+	$(".reminderRegBtn").click(function(event) {
+		$(".actionAction").val("reminderReg");
+	});
+
+	$(".setFemaleBtn").click(function(event){
+		$(".actionAction").val("setFemale");
+	});
+	$(".setMaleBtn").click(function(event){
+		$(".actionAction").val("setMale");
+	});
+	$(".setXBtn").click(function(event){
+		$(".actionAction").val("setX");
+	});
+	$(".setCUBtn").click(function(event){
+		$(".actionAction").val("setCU");
+	});
+	$(".setCOBtn").click(function(event){
+		$(".actionAction").val("setCO");
+	});
+	$(".setUSBtn").click(function(event){
+		$(".actionAction").val("setUS");
+	});
+	$(".setWorldBtn").click(function(event){
+		$(".actionAction").val("setWorld");
+	});
 	
 	
 	// extra
 	$(".extraBtn").click(function(event){
 		event.preventDefault();
 		$(".extraDiv").slideToggle();
+	});
+
+	$("#turnOnEditing").click(function(event){ 
+		event.preventDefault();
+		$(".actionBtns").toggle();
 	});
 	</script>
 	

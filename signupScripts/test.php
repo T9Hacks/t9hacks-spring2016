@@ -37,6 +37,7 @@ if(true) {
 if(true) {
 	echo EmailHelperClass::createEmail_Approval("a");
 	echo EmailHelperClass::createEmail_Rejection("a");
+	echo EmailHelperClass::createEmail_ReminderToCompleteRegistration("a", "key");
 }
 
 ?>
