@@ -577,7 +577,16 @@
 								<p>The T9Hacks Team</p>
 								<br/>
 								<br/>
-								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
+								<div>
+									<a href="../index.php" class="btn btn-l left"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+								
+									<a href="#" class="btn btn-med btn-subtle cancelRegBtn right" >Remove my application for T9Hacks.</a>
+									<div class="cancelConfirm text-right">
+										<p>Are you sure you want to remove your application? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
+										<input type="hidden" name="type" id="type" value="participant" />
+										<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
+									</div>
+								</div>
 							</div>
 						</div>
 					<?php 

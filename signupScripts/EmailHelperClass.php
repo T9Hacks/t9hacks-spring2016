@@ -61,7 +61,7 @@ class EmailHelperClass {
 							</td></tr>
 							
 							<tr><td style='padding: 0 20px;'>
-								<h3 style='padding: 0; margin: 0 0 10px ;'>Questions about this event?</h3>
+								<h3 style='padding: 0; margin: 0;'>Questions about this event?</h3>
 							</td></tr>
 							<tr><td style='padding: 0 20px 20px;'>
 								<p>
@@ -467,7 +467,7 @@ class EmailHelperClass {
 		$sendTo = $name . " <$email>";
 		
 		// create subject
-		$subject = "Reminder: Please complete your registration for T9Hacks.";
+		$subject = "Reminder: Please complete your application for T9Hacks.";
 		
 		// create email message
 		$message = EmailHelperClass::createEmail_ReminderToCompleteRegistration($name, $key);
