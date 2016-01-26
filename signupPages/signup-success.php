@@ -19,10 +19,10 @@
 		
 		include "../includes/css.php"; 
 		css(true);
-		if($isParticipant)
-			facebookMeta(3);
-		else
+		if(!$isParticipant)
 			facebookMeta(4);
+		else
+			facebookMeta(3);
 	?>
 	
 	
@@ -68,19 +68,8 @@
 								<div class="fb-share-button" data-href="http://t9hacks.org/" data-layout="button_count"></div>
 							</li>
 							<li>
-								<?php
-								if($isParticipant) { 
-								?>
-									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20for%20%40T9Hacks!%20A%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%2C%20%40cuatlas%20Feb%2020-21" class="twitter-hashtag-button" data-related="Koscida" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
-
-								<?php 
-								} else { 
-								?>
-									<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20to%20mentor%20%40T9Hacks!%20A%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%20%40cuatlas%20Feb20-21" class="twitter-hashtag-button" data-related="Koscida" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
-
-								<?php 
-								}
-								?>
+								<a href="https://twitter.com/intent/tweet?button_hashtag=T9Hacks&text=Just%20signed%20up%20for%20%40T9Hacks!%20A%20women's%20hackathon%20promoting%20gender%20diversity%20in%20tech%2C%20%40cuatlas%20Feb%2020-21" class="twitter-hashtag-button" data-related="T9Hacks" data-url="http://www.t9hacks.org">Tweet #T9Hacks</a>
+								
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 							</li>
 						</ul>

@@ -270,7 +270,7 @@
 									</div>
 									<div class="fieldRadio">
 										<input class="tgl tgl-flip" id="agree" type="checkbox" name="agree" value="agree" <?php echo (!is_null($key) && $data['coc_agree'] == 1 ) ? 'checked="checked"' : ""; ?>>
-		   								<label class='tgl-btn' data-tg-off='Disagree' data-tg-on='Agree' for="agree"></label>
+		   								<label class='tgl-btn' data-tg-off='Agree' data-tg-on='Agree' for="agree"></label>
 									</div>
 									
 								</div>
