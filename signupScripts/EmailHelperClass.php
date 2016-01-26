@@ -653,6 +653,38 @@ class EmailHelperClass {
 	
 	
 	
+	/*
+	 * Create and send email for index page sponsor interest
+	 */
+	function createAndSendEmail_SponsorEmail($sponsorName, $sponsorEmail, $sponsorMessage) {
+		// create subject
+		$sendSubject = "T9Hacks - Sponsor Question";
+		
+		// create message
+		$sendMessage = "<html><head></head><body><table style='border-collapse: collapse'>";
+		$sendMessage .= "<tr><td><b>Name: </b></td><td><p>$sponsorName</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Email: </b></td><td><p>$sponsorEmail</p></td></tr>";
+		$sendMessage .= "<tr><td><b>Message: </b></td><td><p>$sponsorMessage</p></td></tr>";
+		$sendMessage .= "</table></body></html>";
+		
+		// create sender's reply to
+		$replyTo = "$sponsorName <$sponsorEmail>";
+		
+		// create send to
+		//$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>, Jessie Albarian <jessica.albarian@colorado.edu>';
+		$sendTo = 'Brittany Ann Kos <brittany.kos@colorado.edu>';
+		
+		// create headers
+		$sendHeaders = EmailHelperClass::createHeaders($sendSubject, $sendTo, $replyTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $sendSubject, $sendMessage, $sendHeaders);
+		
+		// return result
+		return ($emailResult);
+	}
+	
+	
 	
 	
 	

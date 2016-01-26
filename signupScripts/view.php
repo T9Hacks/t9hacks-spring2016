@@ -287,7 +287,8 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<div class="cell-facebook column4"><?php echo ($person["facebook"] == "") ? "No Facebook" : "<a href='" . $person["facebook"] . "' target='_blank'>" . $person["facebook"] . "</a>"; ?></div>
 								<div class="cell-twitter column4"><?php echo ($person["twitter"] == "") ? "No Twitter" : "<a href='" . $person["twitter"] . "' target='_blank'>" . $person["twitter"] . "</a>"; ?></div>
 								
-								<div class="cell-comment column12">Comments: <?php echo $person["comment"]; ?></div>
+								<div class="cell-gender column4">Gender: <?php echo $person["gender"]; ?></div>
+								<div class="cell-comment column8">Comments: <?php echo $person["comment"]; ?></div>
 							</div>
 							
 							<div class="actionBtns column12">
@@ -325,13 +326,13 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 									
 									<br/>
 									
-									<?php if($person["set_gender"] == 0) { ?>
+									<?php if( ($person["set_gender"] == 0 && $person["complete"] == 1) || $person["key"] == "P-cdyRYz") { ?>
 										<button type="submit" class="btn setFemaleBtn">Mark as Female</i></button>
 										<button type="submit" class="btn setMaleBtn">Mark as Male</i></button>
 										<button type="submit" class="btn setXBtn">Mark as X</i></button>
 									<?php } ?>
 									
-									<?php if($person["set_college"] == 0) { ?>
+									<?php if( ($person["set_college"] == 0 && $person["complete"] == 1) || $person["key"] == "P-cdyRYz") { ?>
 										<button type="submit" class="btn setCUBtn">Mark as CU</i></button>
 										<button type="submit" class="btn setCOBtn">Mark as CO</i></button>
 										<button type="submit" class="btn setUSBtn">Mark as US</i></button>
@@ -361,7 +362,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					?>
 					
 						<div class="person <?php 
-							echo ($person["approved"] == 1) ? "approved " : ( ($person["approved"] == 0) ? "undecided " : "rejected ");
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
 							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
@@ -374,15 +374,19 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							<div class="beg">
 								<div class="cell-name column4"><?php echo $person["name"]; ?></div>
 								<div class="cell-email column4"><?php echo $person["email"]; ?></div>
-								<div class="cell-gender column3"><?php echo $person["gender"]; ?></div>
-								<div class="cell-num column1"># <?php echo $num; ?></div>
+								<div class="cell-gender column4">
+									<?php 
+									if($person["set_gender"] == 1) echo "Female"; 
+									else if ($person["set_gender"] == 2) echo "Male"; 
+									else if($person["set_gender"] == 3) echo "Other Gendered";
+									?>
+								</div>
 							</div>
 							
 							<div class="status column12">
 								<div class="cell-key"><?php echo $person["key"]; ?></div>
 								<div class="cell-complete"><?php echo ($person["complete"] == 1) ? "Registration Complete" : "Registration Incomplete"; ?></div>
 								<div class="cell-unregistered"><?php echo ($person["unregistered"] == 1) ? "Canceled Registration" : "Registration Active"; ?></div>
-								<div class="cell-approved"><?php echo ($person["approved"] == 1) ? "Approved Admission" : ( ($person["approved"] == 0) ? "Undecided Admission" : "Rejected Admission"); ?></div>
 								<div class="cell-checked-in"><?php echo ($person["checked_in"] == 1) ? "Checked-in" : "Not checked-in"; ?></div>
 							</div>
 							
@@ -393,12 +397,14 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								
 								<div class="cell-shirt column4">Shirt Size: <?php echo $person["shirt"]; ?></div>
 								<div class="cell-area column8">Area: <?php echo $person["area"]; ?></div>
+								<div></div>
 								
 								<div class="cell-dinner column4">Dinner: <?php echo ($person["dinner"] == 1) ? "Yes" : "No"; ?></div>
 								<div class="cell-breakfast column4">Breakfast: <?php echo ($person["breakfast"] == 1) ? "Yes" : "No"; ?></div>
 								<div class="cell-lunch column4">Lunch: <?php echo ($person["lunch"] == 1) ? "Yes" : "No"; ?></div>
 								
-								<div class="cell-comment column12">Comment: <?php echo $person["comment"]; ?></div>
+								<div class="cell-gender column4">Gender: <?php echo $person["gender"]; ?></div>
+								<div class="cell-comment column8">Comment: <?php echo $person["comment"]; ?></div>
 							</div>
 							
 							<div class="actionBtns column12">
@@ -410,13 +416,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 									<input type="hidden" name="action" class="actionAction" value="">
 									
 									<button type="submit" class="btn deleteBtn">Delete</button>
-									
-									<?php if($person["approved"] == 0) { ?>
-										<button type="submit" class="btn approveBtn">Approve</i></button>
-										<button type="submit" class="btn rejectBtn">Reject</i></button>
-									<?php } else if($person["approved"] == 1) {?>
-										<button type="submit" class="btn rejectBtn">Reject</i></button>
-									<?php } ?>
 									
 									<?php if($person["checked_in"] == 0) { ?>
 										<button type="submit" class="btn checkInBtn">Check-In</i></button>
@@ -432,7 +431,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 									
 									<br/>
 									
-									<?php if($person["set_gender"] == 0) { ?>
+									<?php if($person["set_gender"] == 0 && $person["complete"] == 1) { ?>
 										<button type="submit" class="btn setFemaleBtn">Mark as Female</i></button>
 										<button type="submit" class="btn setMaleBtn">Mark as Male</i></button>
 										<button type="submit" class="btn setXBtn">Mark as X</i></button>

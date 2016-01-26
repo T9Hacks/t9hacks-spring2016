@@ -13,6 +13,7 @@ $resultArray = array(
 	"EMPTY_INPUTS"		=> -1,
 );
 $inputValues = array();
+$inputValues = $_POST;
 
 
 /* **************************** */

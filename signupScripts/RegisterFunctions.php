@@ -280,7 +280,7 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 						
 						// test - successful upload
 						$targetFile = "../hidden/resumes/" . $updatedFileName;
-						if( !move_uploaded_file($_FILES["resume"]["tmp_name"], $targetFile) ) {
+						if( !move_uploaded_file($tmpFileName, $targetFile) ) {
 							// bad - successful upload
 							$fileUploadErrors++;
 							$resultArray[$FILE_UPLOAD_ERROR] = 1;

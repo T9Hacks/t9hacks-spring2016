@@ -14,7 +14,7 @@ html, body {
 	bottom: 0;
 	left: 0;
 	background: #DAC8DA;
-	overflow-y: hidden;
+	overflow-y: scroll;
 	font-size: 0.9em;
 }
 .filterGroup {
@@ -98,6 +98,9 @@ html, body {
 
 .other {
 	font-size: 0.8em;
+}
+.other div:nth-child(3n-2) {
+	clear: both;
 }
 
 .actionBtns {
