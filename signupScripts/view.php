@@ -180,13 +180,13 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		</form>
 		<?php 
 	} else if($isSession) {
-		$xsCount = 0;
-		$smCount = 0;
-		$medCount = 0;
-		$lgCount = 0;
-		$xlCount = 0;
-		$xxlCount = 0;
-		$noneCount = 0;
+		$shirtCounts = array();
+		$shirtTypes = array("X-Small", "Small", "Medium", "Large", "X-Large", "XX-Large", "None", "", "Total");
+		foreach($shirtTypes as $key => $type) {
+			$shirtCounts[0]["all"][$type] = 0;
+			$shirtCounts[0]["admitted"][$type] = 0;
+			$shirtCounts[1][$type] = 0;
+		}
 		
 		$lunchCount = 0;
 		$breakfastCount = 0;
@@ -360,15 +360,15 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					
 					$num++;
 					
-					switch($person["shirt"]) {
-						case "X-Small":	$xsCount++; break;
-						case "Small":	$smCount++; break;
-						case "Medium":	$medCount++; break;
-						case "Large":	$lgCount++; break;
-						case "X-Large":	$xlCount++; break;
-						case "XX-Large":$xxlCount++; break;
-						case "None":	$noneCount++; break;
+					$shirtCounts[0]["all"][$person["shirt"]]++;
+					if($person["shirt"] != "") {
+						$shirtCounts[0]["all"]["Total"]++;
 					}
+					if($person["approved"] == 1) {
+						$shirtCounts[0]["admitted"][$person["shirt"]]++;
+						$shirtCounts[0]["admitted"]["Total"]++;
+					}
+					
 				}
 				?>
 				
@@ -468,15 +468,9 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					
 					$num++;
 					
-					switch($person["shirt"]) {
-						case "X-Small":	$xsCount++; break;
-						case "Small":	$smCount++; break;
-						case "Medium":	$medCount++; break;
-						case "Large":	$lgCount++; break;
-						case "X-Large":	$xlCount++; break;
-						case "XX-Large":$xxlCount++; break;
-						case "None":	$noneCount++; break;
-					}
+					$shirtCounts[1][$person["shirt"]]++;
+					if($person["shirt"] != "")
+						$shirtCounts[1]["Total"]++;
 					
 					if($person["dinner"] == 1) $dinnerCount++;
 					if($person["breakfast"] == 1) $breakfastCount++;
@@ -499,30 +493,48 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 						</form>
 					</div>
 				</div>
+				<?php 
+				$shirtCounts[0]["all"]["Unknown"] = $shirtCounts[0]["all"][""];
+				unset($shirtCounts[0]["all"][""]);
 				
+				$shirtCounts[0]["admitted"]["Unknown"] = $shirtCounts[0]["admitted"][""];
+				unset($shirtCounts[0]["admitted"][""]);
+				
+				$shirtCounts[1]["Unknown"] = $shirtCounts[1][""];
+				unset($shirtCounts[1][""]);
+				
+				//echo "<pre>" . print_r($shirtCounts, true) . "</pre>"; 
+				?>
 				<div class="row">
 					<div class="column12">
+						<h2>Participant T-Shirt Counts</h2>
 						<table class="counts">
 							<thead>
 								<tr>
-									<td>X-Small</td>
-									<td>Small</td>
-									<td>Medium</td>
-									<td>Large</td>
-									<td>X-Large</td>
-									<td>XX-Large</td>
-									<td>None</td>
+									<td></td>
+									<?php foreach($shirtCounts[0]["all"] as $type => $count) {
+										echo "<td>" . $type . "</td>";
+									}?>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td><?php echo $xsCount; ?></td>
-									<td><?php echo $smCount; ?></td>
-									<td><?php echo $medCount; ?></td>
-									<td><?php echo $lgCount; ?></td>
-									<td><?php echo $xlCount; ?></td>
-									<td><?php echo $xxlCount; ?></td>
-									<td><?php echo $noneCount; ?></td>
+									<td>Admitted</td>
+									<?php foreach($shirtCounts[0]["admitted"] as $type => $count) {
+										if($type != "Unknown" && $type != "Total")
+											echo "<td>" . $count . " (" . round(($count/$shirtCounts[0]["admitted"]["Total"])*100, 0) . "%)</td>";
+										else
+											echo "<td>" . $count . "</td>";
+									}?>
+								</tr>
+								<tr>
+									<td>All</td>
+									<?php foreach($shirtCounts[0]["all"] as $type => $count) {
+										if($type != "Unknown" && $type != "Total")
+											echo "<td>" . $count . " (" . round(($count/$shirtCounts[0]["all"]["Total"])*100, 0) . "%)</td>";
+										else
+											echo "<td>" . $count . "</td>";
+									}?>
 								</tr>
 							</tbody>
 						</table>
@@ -531,7 +543,34 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				
 				<div class="row">
 					<div class="column12">
+						<h2>Mentor T-Shirt Counts</h2>
 						<table class="counts">
+							<thead>
+								<tr>
+									<td></td>
+									<?php foreach($shirtCounts[1] as $type => $count) {
+										echo "<td>" . $type . "</td>";
+									}?>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>All</td>
+									<?php foreach($shirtCounts[1] as $type => $count) {
+										if($type != "Unknown" && $type != "Total")
+											echo "<td>" . $count . " (" . round(($count/$shirtCounts[1]["Total"])*100, 0) . "%)</td>";
+										else
+											echo "<td>" . $count . "</td>";
+									}?>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="column12">
+						<h2>Mentor Meal Counts</h2>
 						<table class="counts">
 							<thead>
 								<tr>
