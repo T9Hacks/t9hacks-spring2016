@@ -180,6 +180,18 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		</form>
 		<?php 
 	} else if($isSession) {
+		$xsCount = 0;
+		$smCount = 0;
+		$medCount = 0;
+		$lgCount = 0;
+		$xlCount = 0;
+		$xxlCount = 0;
+		$noneCount = 0;
+		
+		$lunchCount = 0;
+		$breakfastCount = 0;
+		$lunchCount = 0;
+		
 	?>
 		
 		<div class="filterButtons">
@@ -347,6 +359,16 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					}
 					
 					$num++;
+					
+					switch($person["shirt"]) {
+						case "X-Small":	$xsCount++; break;
+						case "Small":	$smCount++; break;
+						case "Medium":	$medCount++; break;
+						case "Large":	$lgCount++; break;
+						case "X-Large":	$xlCount++; break;
+						case "XX-Large":$xxlCount++; break;
+						case "None":	$noneCount++; break;
+					}
 				}
 				?>
 				
@@ -445,21 +467,88 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					}
 					
 					$num++;
+					
+					switch($person["shirt"]) {
+						case "X-Small":	$xsCount++; break;
+						case "Small":	$smCount++; break;
+						case "Medium":	$medCount++; break;
+						case "Large":	$lgCount++; break;
+						case "X-Large":	$xlCount++; break;
+						case "XX-Large":$xxlCount++; break;
+						case "None":	$noneCount++; break;
+					}
+					
+					if($person["dinner"] == 1) $dinnerCount++;
+					if($person["breakfast"] == 1) $breakfastCount++;
+					if($person["lunch"] == 1) $lunchCount++;
 				}
 				?>
 				
 			</div>
 			
 			<div id="extrasDiv" class="peopleSection">
-				<div class="column12">
-					<a href="#" class="extraBtn">Extra</a>
+				<div class="row">
+					<div class="column12">
+						<a href="#" class="extraBtn">Extra</a>
+					</div>
+					<div class="column12 extraDiv" style="display: none;">
+						<form action="view.php" method="POST">
+							<textarea name="exeStmt" style="width: 100%;"></textarea>
+							<input type="hidden" name="exe" value="1">
+							<button type="submit" class="btn btn-med">Submit</button>
+						</form>
+					</div>
 				</div>
-				<div class="column12 extraDiv" style="display: none;">
-					<form action="view.php" method="POST">
-						<textarea name="exeStmt" style="width: 100%;"></textarea>
-						<input type="hidden" name="exe" value="1">
-						<button type="submit" class="btn btn-med">Submit</button>
-					</form>
+				
+				<div class="row">
+					<div class="column12">
+						<table class="counts">
+							<thead>
+								<tr>
+									<td>X-Small</td>
+									<td>Small</td>
+									<td>Medium</td>
+									<td>Large</td>
+									<td>X-Large</td>
+									<td>XX-Large</td>
+									<td>None</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><?php echo $xsCount; ?></td>
+									<td><?php echo $smCount; ?></td>
+									<td><?php echo $medCount; ?></td>
+									<td><?php echo $lgCount; ?></td>
+									<td><?php echo $xlCount; ?></td>
+									<td><?php echo $xxlCount; ?></td>
+									<td><?php echo $noneCount; ?></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="column12">
+						<table class="counts">
+						<table class="counts">
+							<thead>
+								<tr>
+									<td>Dinner</td>
+									<td>Breakfast</td>
+									<td>Lunch</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><?php echo $dinnerCount; ?></td>
+									<td><?php echo $breakfastCount; ?></td>
+									<td><?php echo $lunchCount; ?></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 				
 			</div>
