@@ -581,6 +581,9 @@ header {
 #sponsors h1 {
 	margin-bottom: 30px;
 }
+.extra {
+	margin-top: 50px;
+}
 
 .sponsor a { 
 	border: 0;
@@ -632,12 +635,15 @@ header {
 	.cardinalpeak	{ background-color: #f7f6f6; border: 0; }
 	.codecraft		{ background-color: #22262e; border: 0; }
 	.lockheed		{ background-color: #112940; border: 0; }
+	.fitterfaster	{ background-color: #222222; bordeR: 0; }
 	.quickleft		{ background-color: #42dca3; border: 0; }
 	.stickergiant	{ background-color: #FCDE54; border: 0; }
+	.undergroundprinting { background-color: #383838; border: 0; }
 	
 	.mlh 			{ background-color: #F7F9F9; border: 1px solid #A9AFB0; }
 	.susansbakery	{ background-color: #92CCE5; border: 1px solid #1E7D9C; }
 	.tods			{ background-color: #ffffff; border: 1px solid #55250A; }
+	.dash			{ background-color: #B175D0; border: 1px solid #78579E; }
 	
 	.invision 		{ background-color: #FF005e; border: 0; }
 	.trello 		{ background-color: #FFFFFF; border: 1px solid #5E98BA; }

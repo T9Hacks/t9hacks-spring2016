@@ -112,3 +112,9 @@ html, body {
 
 
 
+.counts td, .counts th {
+	border: 1px solid #aaa;
+	padding: 5px 10px;
+}
+
+

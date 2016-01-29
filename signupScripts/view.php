@@ -462,9 +462,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					</form>
 				</div>
 				
-				<div class="column12">
-					<div class="btn" id="turnOnEditing">Turn on editing</div>
-				</div>
 			</div>
 		
 		</div> <!-- end tabSectionWrapper -->

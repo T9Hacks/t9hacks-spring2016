@@ -453,15 +453,27 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
 					<!-- Quick Left -->
-					<div class="sponsor sponsorLeftNoCenter">
+					<div class="sponsor sponsorLeft">
 						<div class="sponsor3 quickleft">
 							<a href="https://quickleft.com/" target="_blank"><img src="images/sponsors/quickleft_logo.svg" /></a>
 						</div>
 					</div>
+					<!-- Fitter Faster -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 fitterfaster">
+							<a href="http://fitterfaster.com/" target="_blank"><img src="images/sponsors/fitterfaster_logo_vertical.png" /></a>
+						</div>
+					</div>
 					<!-- Sticker Giant -->
-					<div class="sponsor sponsorRightNoCenter">
+					<div class="sponsor sponsorRight">
 						<div class="sponsor3 stickergiant">
 							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Underground Printing -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor3 undergroundprinting">
+							<a href="https://undergroundshirts.com/" target="_blank"><img src="images/sponsors/undergroundprinting_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -488,6 +500,15 @@
 					<div class="sponsor sponsorRight">
 						<div class="sponsor2 susansbakery">
 							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper silver">
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 dash">
+							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
 						</div>
 					</div>
 				</div>
