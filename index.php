@@ -109,12 +109,12 @@
 			<div class="row">
 				<div class="column12">
 					<p>
-						T9Hacks is a 24 hour women's hackathon at the University of Colorado Boulder's ATLAS Institute 
+						T9Hacks is a 24-hour women's hackathon at the University of Colorado Boulder's ATLAS Institute 
 						that brings together college students for two days of creativity, building, and hacking.
-						Our goals this upcoming spring is to increase participation of women in hackathons and to create an opportunity for 
+						Our goal is to increase participation of women in hackathons and to create an opportunity for 
 						students to explore new technologies, solve problems, and create something amazing with a 
-						team. Women occupy only 26% of IT positions and 18% of engineering majors in universities, and we want to help raise
-						those numbers!
+						team. In the US, women occupy only 26% of IT positions and represent 18% of engineering majors in 
+						universities and we want to help raise those numbers!
 					</p>
 				</div>
 			</div>
@@ -140,9 +140,9 @@
 							<div class="faq-question">
 								<h2>I've never been to a hackathon before, should I still register?</h2>
 								<p>
-									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner friendly, we 
-									are expecting some of our participants will have no experience with hackathons.  We will have fun events, mentors, and 
-									a super welcoming staff to ease everyone into the experience.  
+									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, so  
+									there is no expectation that our participants are familiar with these types of events.  We will have fun events, 
+									plenty of mentors, and a super welcoming staff to ease everyone into the experience.  
 								</p>
 							</div>
 						</div>
@@ -152,7 +152,7 @@
 								<h2>Do I have to have a team to register?</h2>
 								<p>
 									Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a pre-formed group and 
-									idea, an idea of your own and no team, or have a desire to help someone else's idea along.  
+									idea, an idea of your own and no team, or a desire to help someone else's idea along.  
 								</p>
 							</div>
 						</div>
@@ -196,8 +196,8 @@
 								<h2>Do you really mean 24 hours?</h2>
 								<p>
 									We know, that sounds like a long time! But it goes quickly when you are collaborating, planning, and creating 
-									projects.  We wanted to see what kinds of projects students would come up with if they were given a full day to 
-									devote themselves to one thing.
+									projects.  We wanted to see what kinds of projects students would come up with if they were given a full 24 
+									hours to devote themselves to their work.
 								</p>
 							</div>
 						</div>
@@ -206,12 +206,12 @@
 							<div class="faq-question">
 								<h2>What kind of project should I make?</h2>
 								<p>
-									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community", 
-									where we encourage students to build solutions, prototypes, or raise awareness of problems they see in their communities.  
-									If you are really stumped for ideas, we will have some ideas ready at start of the hackathon.
+									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community".   
+									We encourage students to build solutions, prototypes, or raise awareness for problems they see in their communities.  
+									If you are really stumped, we will have some ideas ready at start of the hackathon.
 								</p>
 								<p>
-									T9Hacks is also a "creative technology" hackathon.  This means that we encourage our participants to create projects with 
+									T9Hacks is also a <i>creative technology</i> hackathon.  This means that we encourage our participants to create projects with 
 									tangible, artistic, media, or electronic components.  
 								</p>
 							</div>
@@ -221,7 +221,7 @@
 							<div class="faq-question">
 								<h2>What do I have to bring?</h2>
 								<p>
-									Bring your laptop, phone, chargers, a well-rested open mind, but most of all, your creativity.
+									Bring your laptop, phone, chargers, a well rested open mind, but most of all, your creativity.
 								</p>
 							</div>
 						</div>
@@ -268,7 +268,7 @@
 					<div class="row">
 						<p>
 							If you would like to participate in T9Hacks, you will need to apply 
-							by using our registration page. Click the application button below to start this process.
+							by using our registration page. Click the application button below to get started.
 						</p>
 						<div class="signupBtn">
 							<center><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></center>
@@ -470,12 +470,6 @@
 							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
 						</div>
 					</div>
-					<!-- Underground Printing -->
-					<div class="sponsor sponsorRight">
-						<div class="sponsor3 undergroundprinting">
-							<a href="https://undergroundshirts.com/" target="_blank"><img src="images/sponsors/undergroundprinting_logo.png" /></a>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -506,9 +500,16 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
+					<!-- Dash -->
 					<div class="sponsor sponsorCenter">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Sticker Giant -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor3 cuwic">
+							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -589,7 +590,7 @@
 					<i class="fa fa-question"></i>
 					<h2 class="white">What does "T9" stand for?</h2>
 					<p>
-						T9 stands for Title IX, the ninth title of the United States Education Amendments of 1972.  It states:
+						T9 stands for Title IX, the ninth title of the United States Education Amendments of 1972 which states:
 					</p>
 					<p>
 						<span>
@@ -597,7 +598,7 @@
 							of, or be subjected to discrimination under any education program or activity receiving federal financial assistance.
 						</span>
 					</p>
-					<p>T9Hacks believes everyone deserves to learn, and we are here to help make that happen.</p>
+					<p>T9Hacks believes everyone deserves to learn.  We are here to help make that happen.</p>
 				</div>
 				<div class="column6 omega infoSection">
 					<i class="fa fa-venus"></i>
@@ -616,7 +617,7 @@
 					<i class="fa fa-transgender-alt"></i>
 					<h2 class="white">What about other genders?</h2>
 					<p>
-						We welcome all college and university students to participate; however, we especially encourage all students who 
+						We welcome all college and university students to participate; we especially encourage all students who 
 						self-identify as female to participate.
 					</p>
 				</div>
@@ -625,7 +626,7 @@
 					<h2 class="white">Code of Conduct</h2>
 					<p>
 						At T9Hacks, we believe in creating a safe and welcoming environment for everyone.  Our organizers and our 
-						participants follow the <a href="https://mlh.io/">MLH</a> code of conduct.
+						participants follow the <a href="https://mlh.io/">MLH Code of Conduct</a>.
 					</p>
 					<a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf" class="btn btn-l" target="_blank">Learn More</a>
 				</div>
