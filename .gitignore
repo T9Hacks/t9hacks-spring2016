@@ -1,5 +1,8 @@
 # eclipse project file
 .project
+.buildpath
+.settings/
+/.settings/
 
 # netbeans project files
 /nbproject/

@@ -252,41 +252,49 @@
 
 
 	<!-- Join Section -->
-	<section id="join" class="bg-image bg-signup"><div class="joinn">
+	<section id="join" class="bg-image bg-signup">
+		<div class="joinn">
 		<div class="container">
 			
 			<div class="column5">
 				<div class="joinWrapper">
 					<div class="row">
-						<h1 class="white">Design. Build. Create.</h1>
+						<div class="column12">
+							<h1 class="white">Design. Build. Create.</h1>
+						</div>
 					</div>
 					<div class="row">
-						<p class="text-bold text-center">
+						<p class="column12 text-bold text-center">
 							Registration for T9 hackers is now open! 
 						</p>
 					</div>
 					<div class="row">
-						<p>
-							If you would like to participate in T9Hacks, you will need to apply 
-							by using our registration page. Click the application button below to get started.
-						</p>
-						<div class="signupBtn">
-							<center><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></center>
+						<div class="column12">
+							<p>
+								If you would like to participate in T9Hacks, you will need to apply 
+								by using our registration page. Click the application button below to get started.
+							</p>
+							<div class="signupBtns">
+								<div class="signupBtn"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
-						<p>
-							If you would like to participate as a mentor, you can also register by clicking the sign up button below.
-						</p>
-						<div class="signupBtn">
-							<center><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></center>
+						<div class="column12">
+							<p>
+								If you would like to participate as a mentor, you can also register by clicking the sign up button below.
+							</p>
+							<div class="signupBtns">
+								<div class="signupBtn"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+							</div>
 						</div>
-					<div class="row">
+					</div>
 				</div>
 			</div>
 			
 		</div>
-	</div></section>
+		</div>
+	</section>
 
 
 
@@ -412,16 +420,16 @@
 			<!-- Gold -->
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper gold">
-					<!-- Send Grid -->
-					<div class="sponsor sponsorLeft">
-						<div class="sponsor2 sendgrid">
-							<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
+					<!-- Cardinal Peak -->
+					<div class="sponsor sponsorLeftNoCenter">
+						<div class="sponsor2 cardinalpeak">
+							<a href="https://cardinalpeak.com/" target="_blank"><img src="images/sponsors/cardinalpeak_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Google -->
 					<div class="sponsor sponsorCenter">
 						<div class="sponsor2 google">
-							<a href="http://www.google.com/" target="_blank"><img src="images/sponsors/google_logo.svg" /></a>
+							<a href="https://www.google.com/about/careers/students/" target="_blank"><img src="images/sponsors/google_logo.svg" /></a>
 						</div>
 					</div>
 					<!-- Code Craft School -->
@@ -434,10 +442,11 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper gold">
-					<!-- Cardinal Peak -->
-					<div class="sponsor sponsorLeftNoCenter">
-						<div class="sponsor2 cardinalpeak">
-							<a href="https://cardinalpeak.com/" target="_blank"><img src="images/sponsors/cardinalpeak_logo.png" /></a>
+					
+					<!-- Send Grid -->
+					<div class="sponsor sponsorLeft">
+						<div class="sponsor2 sendgrid">
+							<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
 						</div>
 					</div>
 					<!-- Lockheed Martin -->
@@ -481,35 +490,60 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper gold">
-					<div class="sponsor sponsorLeft">
-						<div class="sponsor2 tods">
-							<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
-						</div>
-					</div>
-					<div class="sponsor sponsorCenter">
+					<!-- MLH -->
+					<div class="sponsor sponsorLeftNoCenter">
 						<div class="sponsor2 mlh">
 							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
 						</div>
 					</div>
+					<!-- Jason's Deli -->
+					<div class="sponsor sponsorRightNoCenter">
+						<div class="sponsor2 jasonsdeli">
+							<a href="http://www.jasonsdeli.com/" target="_blank"><img src="images/sponsors/jasonsdeli_logo.png" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper silver">	
+					<!-- Susan's Bakery -->
 					<div class="sponsor sponsorRight">
-						<div class="sponsor2 susansbakery">
+						<div class="sponsor3 susansbakery">
 							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Moe's Bagels -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 moesbagels">
+							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Tods -->
+					<div class="sponsor sponsorLeft">
+						<div class="sponsor3 tods">
+							<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
+					<!-- CU WiC -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor3 cuwic">
+							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Noodles and Company -->
+					<div class="sponsor sponsorRight">
+						<div class="sponsor3 noodles">
+							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
+						</div>
+					</div>
 					<!-- Dash -->
 					<div class="sponsor sponsorCenter">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
-						</div>
-					</div>
-					<!-- Sticker Giant -->
-					<div class="sponsor sponsorRight">
-						<div class="sponsor3 cuwic">
-							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -523,7 +557,7 @@
 					<div class="sponsorInterested">
 						<div class="sponsorBtnContainer">
 							<div class="btn btn-xl" id="sponsorEmailBtn">Interested in <span class="mobileOnly">&nbsp;</span>becoming a <span class="mobileOnly">&nbsp;</span>sponsor or partner?</div>
-							<p>Interested in volunteering as a mentor?  <a href="signup.php">Register here!</a></p>
+							<p>Interested in volunteering as a mentor?  <a href="signupPages/signup-mentor1.php">Register here!</a></p>
 						</div>
 					</div>
 				</div>
