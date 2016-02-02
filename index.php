@@ -467,6 +467,12 @@
 							<a href="https://quickleft.com/" target="_blank"><img src="images/sponsors/quickleft_logo.svg" /></a>
 						</div>
 					</div>
+					<!-- Zayo -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 zayo">
+							<a href="http://www.zayo.com/" target="_blank"><img src="images/sponsors/zayo_logo_white.png" /></a>
+						</div>
+					</div>
 					<!-- Fitter Faster -->
 					<div class="sponsor sponsorCenter">
 						<div class="sponsor3 fitterfaster">
