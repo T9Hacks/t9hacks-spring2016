@@ -495,11 +495,21 @@
 				</div>
 			</div>
 			<div class="row sponsorRow">
-				<div class="sponsorRowWrapper gold">
+				<div class="sponsorRowWrapper platinum">
 					<!-- MLH -->
-					<div class="sponsor sponsorLeftNoCenter">
-						<div class="sponsor2 mlh">
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor1 mlh">
 							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper gold">
+					<!-- Noodles and Company -->
+					<div class="sponsor sponsorLeftNoCenter">
+						<div class="sponsor2 noodles">
+							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Jason's Deli -->
@@ -512,16 +522,16 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">	
-					<!-- Susan's Bakery -->
+					<!-- CU WiC -->
 					<div class="sponsor sponsorRight">
-						<div class="sponsor3 susansbakery">
-							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
+						<div class="sponsor3 cuwic">
+							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
 						</div>
 					</div>
-					<!-- Moe's Bagels -->
+					<!-- Vics -->
 					<div class="sponsor sponsorCenter">
-						<div class="sponsor3 moesbagels">
-							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
+						<div class="sponsor3 vics">
+							<a href="" target="_blank"><img src="images/sponsors/vics_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Tods -->
@@ -534,20 +544,20 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
-					<!-- CU WiC -->
+					<!-- Susan's Bakery -->
 					<div class="sponsor sponsorRight">
-						<div class="sponsor3 cuwic">
-							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
+						<div class="sponsor3 susansbakery">
+							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
 						</div>
 					</div>
-					<!-- Noodles and Company -->
-					<div class="sponsor sponsorRight">
-						<div class="sponsor3 noodles">
-							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
+					<!-- Moe's Bagels -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 moesbagels">
+							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Dash -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor sponsorLeft">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
 						</div>
