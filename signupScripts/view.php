@@ -324,7 +324,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn approveBtn" data-action="approve">Approve</i></button>
 										<button type="submit" class="btn actionBtn waitBtn" data-action="wait">Wait</i></button>
 										<button type="submit" class="btn actionBtn rejectBtn" data-action="reject">Reject</i></button>
-									<?php } else if($person["approved"] == 1) {?>
+									<?php } else if($person["approved"] == 1) { ?>
+										<button type="submit" class="btn actionBtn rejectBtn" data-action="reject">Reject</i></button>
+									<?php }  else if($person["approved"] == 3) { ?>
+										<button type="submit" class="btn actionBtn approveBtn" data-action="approve">Approve</i></button>
 										<button type="submit" class="btn actionBtn rejectBtn" data-action="reject">Reject</i></button>
 									<?php } ?>
 									
@@ -462,9 +465,9 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 									<br/>
 									
 									<?php if($person["set_gender"] == 0 && $person["complete"] == 1) { ?>
-										<button type="submit" class="btn actionBtn setFemaleBtn" data-action="setFemale">Mark as Female</i></button>
-										<button type="submit" class="btn actionBtn setMaleBtn" data-action="setMale">Mark as Male</i></button>
-										<button type="submit" class="btn actionBtn setXBtn" data-action="setX">Mark as X</i></button>
+										<button type="submit" class="btn actionBtn setFemaleBtn" data-action="markFemale">Mark as Female</i></button>
+										<button type="submit" class="btn actionBtn setMaleBtn" data-action="markMale">Mark as Male</i></button>
+										<button type="submit" class="btn actionBtn setXBtn" data-action="markX">Mark as X</i></button>
 									<?php } ?>
 									
 								</form>
@@ -632,7 +635,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		$("#extrasDiv").show();
 		$(this).parent().children().removeClass("active");
 		$(this).addClass("active");
-		doCounters(true);
 	});
 	
 	
@@ -652,6 +654,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			$(this).addClass("active");
 		}
 		toggleFilters();
+		doCounters($("#participantsBtn").is(":visible"));
 	});
 
 	function toggleFilters() {
@@ -687,9 +690,18 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 	// counters
 	doCounters(true);
 	function doCounters(isParticipant) {
-		var sectionDiv = (isParticipant) ? "#participantsDiv" : "#mentorsDiv";
 		$(".filterBtn").each(function(){
-			$(this).find("span").html( $(sectionDiv + " ." + $(this).attr("data-self")).size() );
+			var sectionDiv = (isParticipant) ? "#participantsDiv " : "#mentorsDiv ";
+			var divToCount = "." + $(this).attr("data-self");
+			var count = 0;
+			var size = 0;
+			$(sectionDiv + divToCount).each(function(){
+				if( $(this).is(":visible") )
+					count++;
+			});
+			size = $(sectionDiv + divToCount).size();
+			
+			$(this).find("span").html("<b>" + count + "</b> / " + size + "");
 		});
 	}
 	

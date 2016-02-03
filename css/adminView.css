@@ -28,7 +28,7 @@ html, body {
 	width: 100%;
 	border: 1px solid #AA88AA;
 	margin: 5px 0;
-	padding: 0 35px 0 5px;
+	padding: 0 65px 0 5px;
 	overflow: hidden;
 	position: relative;
 }
@@ -36,17 +36,19 @@ html, body {
 	background: white;
 }
 .tabBtn span, .filterBtn span {
-	font-size: 0.9em;
+	font-size: 0.7em;
 	color: white;
 	background: #AA88AA;
-	font-weight: bold;
-	width: 30px;
+	width: 50px;
+	padding: 0 5px;
 	text-align: center;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	right: 0;
-	
+}
+.tabBtn span b, .filterBtn span b {
+	font-size: 1.2em;
 }
 
 
