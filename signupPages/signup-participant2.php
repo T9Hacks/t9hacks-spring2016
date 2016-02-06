@@ -92,7 +92,49 @@
 					</div>
 					
 					
-					<?php if(!$unregistered && $undecided) { ?>
+					<?php 
+					if($rejected) {
+					?>
+						<div class="row">
+							<div class="column12">
+								<h2>Thanks for applying to T9Hacks!</h2>
+								<p>
+									We are amazed at how many participants and supporters signed up for T9Hack's first hackathon! 
+									Unfortunately, we were unable to invite you to this spring's edition. We're limited by the size of 
+									the our hackathon space and with the ever-increasing number of applicants, we unfortunately can't accept 
+									everyone.
+								</p>
+								<p>
+									We're going to continue working on making T9Hacks even more accessible (and possibly even larger), so 
+									definitely do apply for the next T9Hacks! We are planning on growing more every year, so definitely apply 
+									again next Spring when we will try our best to continue scaling up. We hope to see you at the next one, 
+									and we'll try our hardest to continue growing the hacker community.
+								</p>
+								<p>Best,</p>
+								<p>The T9Hacks Team</p>
+								<br/>
+								<br/>
+								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
+							</div>
+						</div>
+					<?php 
+					} else if($unregistered) {
+					?>
+						<div class="row">
+							<div class="column12">
+								<p>
+									Our records show that you have canceled your application.
+								</p>
+								<p>
+									If you would like to activate your registration again, please contact Brittany Kos at <b>Brittany.Kos@colorado.edu</b>.  Thank you.
+								</p>
+								<br/>
+								<br/>
+								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
+							</div>
+						</div>
+					<?php 
+					} else { ?>
 				
 						<div id="participantLoading" class="signupLoading"><i class="fa fa-spinner fa-pulse"></i></div>
 					
@@ -121,7 +163,7 @@
 									</p>
 								</div>
 								<?php 
-							} else if ($completeReg) {
+							} else if ($completeReg && $undecided) {
 								?>
 								<div class="row">
 									<p class="column12">
@@ -131,6 +173,33 @@
 								<hr class="noTop"/>
 								
 								<?php 
+							} else if($accepted) {
+							?>
+								<hr class="noTop"/>
+								<div class="row">
+									<div class="column12">
+										<h2>Welcome to T9Hacks!</h2>
+										<p>
+											We are amazed by the incredible number and quality of applications for T9Hack's first hackathon and  
+											we are excited to invite you to this spring's edition!
+										</p>
+										<p>
+											We will be sending out more information about the hackathon as the event draws closer.  Please be on 
+											the lookout for future emails coming from the T9Hacks team.  We look forward to seeing you there!
+										</p>
+										<p>Best,</p>
+										<p>The T9Hacks Team</p>
+										<br/>
+										<br/>
+										<div>
+											<a href="../index.php" class="btn btn-l left"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+										
+										</div>
+									</div>
+								</div>
+								
+								<hr class="noTop"/>
+							<?php 
 							} else {
 								?>
 								<div class="row">
@@ -374,15 +443,16 @@
 							
 							<?php 
 							if(!$newReg) {
+								$app = ($accepted) ? "registration" : "application";
 								?>
 								<hr class="noTop"/>
 								<div class="row">
 									<div class="column12">
 										<p>
-											<a href="#" class="btn btn-med btn-subtle cancelRegBtn" >Remove my application for T9Hacks.</a>
+											<a href="#" class="btn btn-med btn-subtle cancelRegBtn" >Remove my <?php echo $app; ?> for T9Hacks.</a>
 										</p>
 										<div class="cancelConfirm">
-											<p>Are you sure you want to remove your application? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
+											<p>Are you sure you want to remove your <?php echo $app; ?>? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
 										</div>
 									</div>
 								</div>
@@ -497,101 +567,8 @@
 							
 						</div>
 						
+					<?php  } ?>
 						
-					
-					
-					<?php 
-					// end if for unregistered
-					} else if($unregistered && false) {
-					?>
-						<div class="row">
-							<div class="column12">
-								<p>
-									Our records show that you have canceled your application.  Would you like to re-submit your application with T9Hacks?
-									<a href="#" class="btn btn-med btn-subtle reRegBtn" id="mentorReRegBtn">Yes</a>
-									<input type="hidden" name="type" id="type" value="participant" />
-									<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
-								</p>
-								<br/>
-								<br/>
-								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
-							</div>
-						</div>
-					<?php 
-					// end if for unregistered
-					} else if($unregistered) {
-					?>
-						<div class="row">
-							<div class="column12">
-								<p>
-									Our records show that you have canceled your application.
-								</p>
-								<p>
-									If you would like to activate your registration again, please contact Brittany Kos at <b>Brittany.Kos@colorado.edu</b>.  Thank you.
-								</p>
-								<br/>
-								<br/>
-								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
-							</div>
-						</div>
-					<?php 
-					} else if($rejected) {
-					?>
-						<div class="row">
-							<div class="column12">
-								<h2>Thanks for applying to T9Hacks!</h2>
-								<p>
-									We are amazed at how many participants and supporters signed up for T9Hack's first hackathon! 
-									Unfortunately, we were unable to invite you to this spring's edition. We're limited by the size of 
-									the our hackathon space and with the ever-increasing number of applicants, we unfortunately can't accept 
-									everyone.
-								</p>
-								<p>
-									We're going to continue working on making T9Hacks even more accessible (and possibly even larger), so 
-									definitely do apply for the next T9Hacks! We are planning on growing more every year, so definitely apply 
-									again next Spring when we will try our best to continue scaling up. We hope to see you at the next one, 
-									and we'll try our hardest to continue growing the hacker community.
-								</p>
-								<p>Best,</p>
-								<p>The T9Hacks Team</p>
-								<br/>
-								<br/>
-								<p><a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a></p>
-							</div>
-						</div>
-					<?php 
-					} else if($accepted) {
-					?>
-						<div class="row">
-							<div class="column12">
-								<h2>Welcome to T9Hacks!</h2>
-								<p>
-									We are amazed by the incredible number and quality of applications for T9Hack's first hackathon and  
-									we are excited to invite you to this spring's edition!
-								</p>
-								<p>
-									We will be sending out more information about the hackathon as the event draws closer.  Please be on 
-									the lookout for future emails coming from the T9Hacks team.  We look forward to seeing you there!
-								</p>
-								<p>Best,</p>
-								<p>The T9Hacks Team</p>
-								<br/>
-								<br/>
-								<div>
-									<a href="../index.php" class="btn btn-l left"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
-								
-									<a href="#" class="btn btn-med btn-subtle cancelRegBtn right" >Remove my application for T9Hacks.</a>
-									<div class="cancelConfirm text-right">
-										<p>Are you sure you want to remove your application? <a href="#" class="btn btn-med btn-subtle cancelRegConfirm">Yes</a></p>
-										<input type="hidden" name="type" id="type" value="participant" />
-										<input type="hidden" name="key" id="key" value="<?php echo ( !is_null($key) ? $key : "-1" ); ?>" />
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php 
-					}
-					?>
 					
 				</div> <!-- end signupWrapper -->
 			</div> <!-- end participantSignup -->

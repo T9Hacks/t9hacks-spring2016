@@ -32,9 +32,19 @@ class EmailHelperClass {
 		$header = "
 			<html>
 				<head></head>
-				<body>
+				<body style='background: #DAC8DA;'>
 					<div style='height: 100%; width: 100%; background: #DAC8DA; padding: 20px;' >
-						<table style='width: 600px; max-width: 600px; margin: 0 auto; background: white; border-collapse: collapse;font-family:helvetica,arial,sans-serif;font-size:13px; color: #222;'>
+						<table style='
+							width: 600px; 
+							max-width: 600px; 
+							margin: 0 auto; 
+							background: white; 
+							border-collapse: collapse;
+							font-family:helvetica,arial,sans-serif;
+							font-size:13px; 
+							color: #500050;
+							line-height: 1.4em;
+						'>
 		";
 		return $header;
 	}
@@ -44,25 +54,50 @@ class EmailHelperClass {
 		$linkStyles = $styles['linkStyles'];
 		
 		$footer = "
-							<tr><td style='padding: 0 20px 10px;'>
-								<hr/>
+							<tr><td style='padding: 0 30px;'>
+								<hr style='margin: 10px 0;'/>
 							</td></tr>
 							
-							<tr><td style='padding: 0 20px;'>
-								<h3 style='padding: 0; margin: 0;'>When and Where?</h3>
-								<p style='margin: 10px 0 5px'><a href='http://www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a></p>
-								<p style='margin: 5px 0'>20-21 February 2016</p>
-								<p style='margin: 5px 0'><a href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB' style='$linkStyles' target='_blank' wotsearchprocessed='true'>
-									ATLAS Institute, University of Colorado Boulder</a></p>
-								<p style='margin: 5px 0'>Black Box Experimental Studio</p>
+							<tr><td style='padding: 10px 30px;'>
+								<h2 style='padding: 0; margin: 0;font-weight: normal;color: #331155;'>About this event</h2>
+								<div style='float: left;width: 60%;'>
+									<p style='margin: 10px 0 5px'>
+										<a href='http://www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a>
+									</p>
+									<div>
+										<p style='color: #553377;font-weight: bold;'>When</p>
+										<p>
+											Saturday, February 20, 2016 at 3:00 AM (MST) &nbsp;&ndash;&nbsp; 
+											Sunday, February 21, 2016 at 6:00 PM (MST)
+										</p>
+									</div>
+									<div>
+										<p style='color: #553377;font-weight: bold;'>Where</p>
+										<p>
+											<a href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB' style='$linkStyles' target='_blank' wotsearchprocessed='true'>
+												ATLAS Institute, University of Colorado Boulder
+											</a>
+										</p>
+										<p>
+											Black Box Experimental Studio
+										</p>
+									</div>
+								</div>
+								<div style='float: right;width: 40%;'>
+									<p style=''>
+										<a style='padding-left: 10px;' target='_blank' href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB'>
+											<img style='width: 100%;' src='http://www.t9hacks.org/images/map_atlas.png'>
+										</a>
+									</p>
+								</div>
 							</td></tr>
 							
-							<tr><td style='padding: 10px 20px;'>
-								<hr/>
+							<tr><td style='padding: 0 30px;'>
+								<hr style='margin: 10px 0;'/>
 							</td></tr>
 							
-							<tr><td style='padding: 0 20px 20px;'>
-								<h3 style='padding: 0; margin: 0;'>Questions about this event?</h3>
+							<tr><td style='padding: 10px 30px;'>
+								<h2 style='padding: 0; margin: 0;font-weight: normal;color: #331155;'>Questions about this event?</h2>
 								<p>
 									Contact Brittany at 
 									<a href='mailto:brittany.kos@colorado.edu?subject=T9Hacks+-+Question+from+$name' style='$linkStyles' target='_blank' wotsearchprocessed='true'>brittany.kos@colorado.edu</a>
@@ -573,15 +608,48 @@ class EmailHelperClass {
 		$name = $personRecord[0]["name"];
 		$email = $personRecord[0]["email"];
 		$key = $personRecord[0]["key"];
+		$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
 		
 		// create send to
 		$sendTo = $name . " <$email>";
 		
 		// create subject
-		$subject = "Reminder for T9Hacks";
+		$subject = "";
+		if($time == "2weeks")
+			$subject = "Reminder for T9Hacks";
+		if($time == "2weeksfar")
+			$subject = "Updates for T9Hacks - RESPONSE REQUIRED";
+		
 		
 		// create email message
-		$message = EmailHelperClass::createEmail_ReminderTimeAway($name, $key, $time);
+		$styles = EmailHelperClass::getEmailStyles();
+		$linkStyles = $styles['linkStyles'];
+		$message = file_get_contents("emails/2weeksparticipant.php");
+		
+		// replace variables
+		$message = str_replace("[[NAME]]", $name, $message);
+		$message = str_replace("[[LINK]]", $link, $message);
+		$message = str_replace("[[LINKSTYLES]]", $linkStyles, $message);
+		$message = str_replace("[[HEADER]]", EmailHelperClass::createEmailHeader(), $message);
+		$message = str_replace("[[FOOTER]]", EmailHelperClass::createEmailFooter($name), $message);
+		$dist = "";
+		if($time == "2weeksfar") {
+			$dist = "
+				<li style='padding: 0 0 20px;'>
+					<p> style='margin: 0; padding: 0;'>
+						<b style='color: #553377;font-size: 1.2em;'>CONFIRM THAT YOU ARE COMING!</b>  We noticed
+						that you are traveling to T9Hacks from out of state.  We require confirmation from participants
+						that are traveling from a distance. Keep in mind that we we cannot cover or reimburse any 
+						travel costs.  Please confirm with Brittany (brittany.kos@colorado.edu) if you are attending or 
+						not.  If we do not hear from you by the end of Monday, February 8, 2016, we will remove your 
+						registration.
+					</p>
+				</li>
+					";
+		} 
+		$message = str_replace("[[DISTANCE_REQ]]", $dist, $message);
+
+		
 		
 		// create headers
 		$headers = EmailHelperClass::createHeaders($subject, $sendTo);

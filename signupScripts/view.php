@@ -84,15 +84,15 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				break;
 				
 			case "2weeksmentors" :
-				$db->updateRecord(($type == 1), $id, "2_weeks_sent", 1);
+				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
 				EmailHelperClass::createAndSendEmail_ReminderFollowUpMentors($db->getPeopleFromId(true, $id));
 				break;
 			case "2weeksparticipants" :
-				$db->updateRecord(($type == 1), $id, "2_weeks_sent", 1);
+				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
 				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipants($db->getPeopleFromId(true, $id));
 				break;
 			case "2weeksparticipantsfar" :
-				$db->updateRecord(($type == 1), $id, "2_weeks_sent", 1);
+				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
 				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipantsFar($db->getPeopleFromId(true, $id));
 				break;
 				/*
@@ -240,6 +240,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			
 			<div class="filterGroup">
 				<div class="filterBtn active" id="allFilterBtn" data-self="all">All<span></span></div>
+				<div class="filterBtn" id="send2weeksFilterBtn" data-self="send2weeks">Send 2 Weeks<span></span></div>
 			</div>
 			<div class="filterGroup">
 				<div class="filterBtn" id="approvedFilterBtn" data-self="approved">Approved Admission<span></span></div>
@@ -319,6 +320,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							else if($person["set_college"] == 3) echo "collegeUS ";
 							else if($person["set_college"] == 4) echo "collegeWorld ";
 							else echo "collegeUnknown ";
+							if($person["approved"] == 1 && $person["sent_2_weeks"] == 0) echo "send2weeks ";
 						?>">
 						
 							<div class="beg">
@@ -418,7 +420,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn setWorldBtn" data-action="markWorld">Mark as World</button>
 									<?php } ?>
 									
-									<?php if( ($person["approved"] == 1 && $person["2_week_sent"] == 0) || $person["key"] == "P-cdyRYz") { ?>
+									<?php if( ($person["approved"] == 1 && $person["sent_2_weeks"] == 0) || $person["key"] == "P-cdyRYz") { ?>
 										<button type="submit" class="btn actionBtn " data-action="2weeksparticipants">2 weeks away participants</i></button>
 										<button type="submit" class="btn actionBtn " data-action="2weeksparticipantsfar">2 weeks away participants far</i></button>
 									<?php } ?>
@@ -859,7 +861,12 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		else  
 			$(".actionAction").val($(this).attr("data-action"));
 	});
-	
+
+
+
+	$(".extraBtn").click(function(event){
+		$(".extraDiv").toggle();
+	});
 	
 	</script>
 	

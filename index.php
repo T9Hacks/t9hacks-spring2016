@@ -38,7 +38,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="navigation-links" id="navigationLinks">
 				<ul>
-					<li><a class="page-scroll" href="#questions">About</a></li>
+					<li><a class="page-scroll" href="#about">About</a></li>
 					<li><a class="page-scroll" href="#join">Sign Up</a></li>
 					<li><a class="page-scroll" href="#schedule">Schedule</a></li>
 					<li><a class="page-scroll" href="#sponsors">Sponsors</a></li>
@@ -94,8 +94,9 @@
 	</header>
 
 
-	<!-- Questions Section -->
-	<section id="questions" class="bg-cream questions">
+	<!-- About Us Section -->
+	<section id="about" class="bg-cream questions">
+	<a id="about"></a>
 
 		<div class="container">
 
@@ -136,6 +137,16 @@
 							</div>
 						</div>
 						<div class="row faq">
+							<i class="faq-icon fa fa-ticket"></i>
+							<div class="faq-question">
+								<h2>How much does it cost?</h2>
+								<p>
+									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.  
+									We only require that everyone <a href="signupPages/signup-participant1.php">register</a> before the event to come.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
 							<i class="faq-icon fa fa-thumbs-o-up"></i>
 							<div class="faq-question">
 								<h2>I've never been to a hackathon before, should I still register?</h2>
@@ -143,16 +154,6 @@
 									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, so  
 									there is no expectation that our participants are familiar with these types of events.  We will have fun events, 
 									plenty of mentors, and a super welcoming team to ease everyone into the experience.  
-								</p>
-							</div>
-						</div>
-						<div class="row faq">
-							<i class="faq-icon fa fa-ticket"></i>
-							<div class="faq-question">
-								<h2>How much does it cost?</h2>
-								<p>
-									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.  
-									We only require that everyone <a href="signupPages/signup-participant1.php">register</a> before the event to come.
 								</p>
 							</div>
 						</div>
@@ -168,6 +169,24 @@
 								<p>
 									T9Hacks is also a <i>creative technology</i> hackathon.  This means that we encourage our participants to create projects with 
 									tangible, artistic, media, or electronic components.  
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-laptop"></i>
+							<div class="faq-question">
+								<h2>What do I have to bring?</h2>
+								<p>
+									Bring your laptop, phone, chargers, change of clothes, a well-rested open mind, but most of all, your creativity.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-plane"></i>
+							<div class="faq-question">
+								<h2>Do you cover travel expenses?</h2>
+								<p>
+									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel costs.
 								</p>
 							</div>
 						</div>
@@ -217,21 +236,22 @@
 							</div>
 						</div>
 						<div class="row faq">
-							<i class="faq-icon fa fa-laptop"></i>
+							<i class="faq-icon fa fa-car"></i>
 							<div class="faq-question">
-								<h2>What do I have to bring?</h2>
+								<h2>How do I get to CU's campus?</h2>
 								<p>
-									Bring your laptop, phone, chargers, change of clothes, a well-rested open mind, but most of all, your creativity.
+									CU has a great public transit system.  There are local RTD busses that drop off directly in front of the 
+									ATLAS building and many more regional busses that drop off at CU.  For more information about the bus system, 
+									you can visit <a href="http://www.colorado.edu/pts/node/265">CU's Public Transit Page</a> or the 
+									<a href="http://www.rtd-denver.com/">RTD website</a>.  If you are unsure of what bus to take, Google Maps is a 
+									great way to plan your trip!
 								</p>
-							</div>
-						</div>
-						<div class="row faq">
-							<i class="faq-icon fa fa-plane"></i>
-							<div class="faq-question">
-								<h2>Do you cover travel expenses?</h2>
 								<p>
-									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel costs.
-								</p>
+									If you plan on driving, you can park at the 
+									<a href="https://www.google.com/maps/place/Euclid+Avenue+AutoPark/@40.0062224,-105.2725278,17z/data=!3m1!4b1!4m2!3m1!1s0x876bec346ecef901:0x42c56530fccd25dd" target="_blank">Euclid Avenue AutoPark</a> 
+									parking garage for $4 a day on weekends. If you don’t mind walking, it is free to park at the 
+									<a href="https://www.google.com/maps/place/Regent+Drive+AutoPark,+Boulder,+CO+80305/@40.0068572,-105.2614824,18z/data=!3m1!4b1!4m2!3m1!1s0x876bedcbd93d7161:0x8d630ccb6bb5d575" target="_blank">Regent Drive AutoPark</a> 
+									on weekends and in a few nearby neighborhoods.
 							</div>
 						</div>
 						<div class="row">
@@ -262,6 +282,8 @@
 
 	<!-- Join Section -->
 	<section id="join" class="bg-image bg-signup">
+	<a id="join"></a>
+	
 		<div class="joinn">
 		<div class="container">
 			
@@ -274,7 +296,7 @@
 					</div>
 					<div class="row">
 						<p class="column12 text-bold text-center">
-							Registration for T9 hackers is now open! 
+							Registration is closing on Friday, February 12, 2016!
 						</p>
 					</div>
 					<div class="row">
@@ -309,6 +331,8 @@
 
 	<!-- Schedule Section -->
 	<section id="schedule" class="bg-trianglePurple">
+	<a id="schedule"></a>
+	
 		<div class="container">
 
 			<div class="row">
@@ -373,6 +397,7 @@
 
 	<!-- Sponsors Section -->
 	<section id="sponsors" class="bg-cream">
+	<a id="sponsors"></a>
 	
 		<div class="container12">
 			<!-- sponsor1 = column5 -->
@@ -646,6 +671,8 @@
 
 	<!-- Info Section -->
 	<section id="info" class="bg-grey">
+	<a id="info"></a>
+	
 		<div class="container">
 
 			<div class="row">
