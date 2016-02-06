@@ -45,7 +45,6 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
 						<img src="images/team/jessie.jpg" alt="Photo of Jessie Albarian">
@@ -56,13 +55,42 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
 						<img src="images/team/aileen.jpg" alt="Photo of Aileen Pierce">
 						<h3>Aileen Pierce</h3>
 						<ul class="socialButtons">
 							<li><a href="https://www.linkedin.com/in/aileenpierce" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column4 teamMemberContainer">
+					<div class="teamMember">
+						<img src="images/team/zach.jpg" alt="Photo of Zach Lamb">
+						<h3>Zach Lamb</h3>
+						<ul class="socialButtons">
+							<li><a href="https://https://www.linkedin.com/in/lambzachary" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="column4 teamMemberContainer">
+					<div class="teamMember">
+						<img src="images/team/susie.jpg" alt="Photo of Susie Gomez">
+						<h3>Susie Gomez</h3>
+						<ul class="socialButtons">
+							<li><a href="https://www.linkedin.com/in/susana-gomez-burgos-b9a1b567" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="column4 teamMemberContainer">
+					<div class="teamMember">
+						<img src="images/team/keren.jpg" alt="Photo of Keren Megory-Cohen">
+						<h3>Keren Megory-Cohen</h3>
+						<ul class="socialButtons">
+							<li><a href="https://www.linkedin.com/in/keren-megory-cohen-951b78101" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -78,30 +106,6 @@
 						</ul>
 					</div>
 				</div>
-
-				<div class="column4 teamMemberContainer">
-					<div class="teamMember">
-						<img src="images/team/chris.jpg" alt="Photo of Chris Bopp">
-						<h3>Chris Bopp</h3>
-						<ul class="socialButtons">
-							<li><a href="https://www.linkedin.com/in/cbopp" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="column4 teamMemberContainer">
-					<div class="teamMember">
-						<img src="images/team/susie.jpg" alt="Photo of Susie Gomez">
-						<h3>Susie Gomez</h3>
-						<ul class="socialButtons">
-							<li><a href="https://www.linkedin.com/in/susana-gomez-burgos-b9a1b567" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row">
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
 						<img src="images/team/alex.jpg" alt="Photo of Alex Kessock">
@@ -113,19 +117,10 @@
 				</div>
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
-						<img src="images/team/kelly.jpg" alt="Photo of Kelly Linehan">
-						<h3>Kelly Linehan</h3>
+						<img src="images/team/chris.jpg" alt="Photo of Chris Bopp">
+						<h3>Chris Bopp</h3>
 						<ul class="socialButtons">
-							<li><a href="https://www.linkedin.com/in/kelly-linehan-15a24b98" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="column4 teamMemberContainer">
-					<div class="teamMember">
-						<img src="images/team/zach.jpg" alt="Photo of Zach Lamb">
-						<h3>Zach Lamb</h3>
-						<ul class="socialButtons">
-							<li><a href="https://https://www.linkedin.com/in/lambzachary" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/cbopp" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -135,10 +130,10 @@
 				<div class="column4">&nbsp;</div>
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
-						<img src="images/team/keren.jpg" alt="Photo of Keren Megory-Cohen">
-						<h3>Keren Megory-Cohen</h3>
+						<img src="images/team/kelly.jpg" alt="Photo of Kelly Linehan">
+						<h3>Kelly Linehan</h3>
 						<ul class="socialButtons">
-							<li><a href="https://www.linkedin.com/in/keren-megory-cohen-951b78101" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/kelly-linehan-15a24b98" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>

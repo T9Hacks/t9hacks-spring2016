@@ -32,9 +32,9 @@ class EmailHelperClass {
 		$header = "
 			<html>
 				<head></head>
-				<body style='font-family:helvetica,arial,sans-serif;'>
+				<body>
 					<div style='height: 100%; width: 100%; background: #DAC8DA; padding: 20px;' >
-						<table style='width: 600px; max-width: 600px; margin: 0 auto; background: white; border-collapse: collapse;'>
+						<table style='width: 600px; max-width: 600px; margin: 0 auto; background: white; border-collapse: collapse;font-family:helvetica,arial,sans-serif;font-size:13px; color: #222;'>
 		";
 		return $header;
 	}
@@ -44,26 +44,25 @@ class EmailHelperClass {
 		$linkStyles = $styles['linkStyles'];
 		
 		$footer = "
-							<tr><td style='padding: 0 20px;'>
+							<tr><td style='padding: 0 20px 10px;'>
 								<hr/>
 							</td></tr>
 							
 							<tr><td style='padding: 0 20px;'>
-								<p style='margin: 5px 0'>T9Hacks</p>
+								<h3 style='padding: 0; margin: 0;'>When and Where?</h3>
+								<p style='margin: 10px 0 5px'><a href='http://www.t9hacks.org' style='$linkStyles' target='_blank' wotsearchprocessed='true'>T9Hacks</a></p>
 								<p style='margin: 5px 0'>20-21 February 2016</p>
 								<p style='margin: 5px 0'><a href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB' style='$linkStyles' target='_blank' wotsearchprocessed='true'>
 									ATLAS Institute, University of Colorado Boulder</a></p>
 								<p style='margin: 5px 0'>Black Box Experimental Studio</p>
 							</td></tr>
 							
-							<tr><td style='padding: 0 20px;'>
+							<tr><td style='padding: 10px 20px;'>
 								<hr/>
 							</td></tr>
 							
-							<tr><td style='padding: 0 20px;'>
-								<h3 style='padding: 0; margin: 0;'>Questions about this event?</h3>
-							</td></tr>
 							<tr><td style='padding: 0 20px 20px;'>
+								<h3 style='padding: 0; margin: 0;'>Questions about this event?</h3>
 								<p>
 									Contact Brittany at 
 									<a href='mailto:brittany.kos@colorado.edu?subject=T9Hacks+-+Question+from+$name' style='$linkStyles' target='_blank' wotsearchprocessed='true'>brittany.kos@colorado.edu</a>
@@ -456,7 +455,15 @@ class EmailHelperClass {
 	
 	
 	
-	function createAndSendEmail_ReminderToCompleteRegistration($personRecord) {
+	function createAndSendEmail_ReminderToCompleteRegistration1($personRecord) {
+		$subject = "Reminder: Please complete your application for T9Hacks";
+		EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration($personRecord, $subject, true);
+	}
+	function createAndSendEmail_ReminderToCompleteRegistration2($personRecord) {
+		$subject = "Last Chance: Please complete your application for T9Hacks!";
+		EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration($personRecord, $subject, false);
+	}
+	function createAndSendEmail_ReminderToCompleteRegistration($personRecord, $subject, $isFirst) {
 		// get person's data
 		$name = $personRecord[0]["name"];
 		$email = $personRecord[0]["email"];
@@ -466,11 +473,8 @@ class EmailHelperClass {
 		// create send to
 		$sendTo = $name . " <$email>";
 		
-		// create subject
-		$subject = "Reminder: Please complete your application for T9Hacks.";
-		
 		// create email message
-		$message = EmailHelperClass::createEmail_ReminderToCompleteRegistration($name, $key);
+		$message = EmailHelperClass::createEmail_ReminderToCompleteRegistration($name, $key, $isFirst);
 		
 		// create headers
 		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
@@ -481,16 +485,20 @@ class EmailHelperClass {
 		// return result
 		return $emailResult;
 	}
-	function createEmail_ReminderToCompleteRegistration($name, $key) {
+	function createEmail_ReminderToCompleteRegistration($name, $key, $isFirst) {
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
 		
 		$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
 		
+		$tagline = ($isFirst) ? "This is your second application notice for T9Hacks Spring 2016!" : "This is your last application notice for T9Hacks Spring 2016!" ;
+		
+		$lastChanceMessage = ($isFirst) ? "" : "If you do not complete your registration form by the end of Sunday, February 7, 2016, we will remove your registration.";
+		
 		$message = EmailHelperClass::createEmailHeader() . "
 			<tr><td style='padding: 20px 20px 0 20px;'>
 				<h2>Hi $name,</h2>
-				<p>This is your second application notice for T9Hacks Spring 2016!</p>
+				<p>$tagline</p>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
@@ -509,7 +517,7 @@ class EmailHelperClass {
 				</p>
 				<p><b>
 					Your friend has started your application, but to be considered for a spot at T9Hacks you will need to 
-					complete your registration form.  
+					complete your registration form.  $lastChanceMessage
 				</b></p>
 				<p>
 					Click on this link: 
@@ -528,6 +536,64 @@ class EmailHelperClass {
 		
 		return $message;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	function createAndSendEmail_Reminder2WeeksParticipants($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeks");
+	}
+	function createAndSendEmail_Reminder2WeeksParticipantsFar($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeksfar");
+	}
+	/*
+	function createAndSendEmail_Reminder1WeekMentors($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "1week");
+	}
+	function createAndSendEmail_Reminder1WeekParticipants($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "1week");
+	}
+	function createAndSendEmail_ReminderTomorrowMentors($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "tomorrow");
+	}
+	function createAndSendEmail_ReminderTomorrowParticipants($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "tomorrow");
+	}
+	*/
+	
+	function createAndSendEmail_ReminderTimeAway($personRecord, $time) {
+		// get person's data
+		$name = $personRecord[0]["name"];
+		$email = $personRecord[0]["email"];
+		$key = $personRecord[0]["key"];
+		
+		// create send to
+		$sendTo = $name . " <$email>";
+		
+		// create subject
+		$subject = "Reminder for T9Hacks";
+		
+		// create email message
+		$message = EmailHelperClass::createEmail_ReminderTimeAway($name, $key, $time);
+		
+		// create headers
+		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
+		
+		// send email
+		$emailResult = mail($sendTo, $subject, $message, $headers);
+		
+		// return result
+		return $emailResult;
+	}
+	
+	
 	
 	
 	

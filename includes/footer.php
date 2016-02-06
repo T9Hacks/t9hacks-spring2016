@@ -30,7 +30,7 @@ function footer($up = false) {
 			<div class="column4">
 				<ul class="socialButtons">
 					<li>
-						<a href="https://www.facebook.com/groups/414618935414757" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
 					</li>
 					<li>
 						<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>

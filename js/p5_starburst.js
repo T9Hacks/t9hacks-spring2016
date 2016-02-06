@@ -166,7 +166,7 @@ var canvasHeight = 0;
 
 function setup() {
 	canvasWidth = windowWidth;
-	canvasHeight = windowHeight;
+	canvasHeight = $("#header").height();
 	
 	var canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.id('headerCanvas');

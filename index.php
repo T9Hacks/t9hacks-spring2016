@@ -142,17 +142,7 @@
 								<p>
 									Absolutely!  Register yourself, your best friend, your sister, and your roommate.  T9Hacks is a beginner hackathon, so  
 									there is no expectation that our participants are familiar with these types of events.  We will have fun events, 
-									plenty of mentors, and a super welcoming staff to ease everyone into the experience.  
-								</p>
-							</div>
-						</div>
-						<div class="row faq">
-							<i class="faq-icon fa fa-group"></i>
-							<div class="faq-question">
-								<h2>Do I have to have a team to register?</h2>
-								<p>
-									Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a pre-formed group and 
-									idea, an idea of your own and no team, or a desire to help someone else's idea along.  
+									plenty of mentors, and a super welcoming team to ease everyone into the experience.  
 								</p>
 							</div>
 						</div>
@@ -161,18 +151,23 @@
 							<div class="faq-question">
 								<h2>How much does it cost?</h2>
 								<p>
-									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.
+									Participating is completely free! We will provide food, snacks, and drinks to energize you throughout the event.  
+									We only require that everyone <a href="signupPages/signup-participant1.php">register</a> before the event to come.
 								</p>
 							</div>
 						</div>
 						<div class="row faq">
-							<i class="faq-icon fa fa-plane"></i>
+							<i class="faq-icon fa fa-object-group"></i>
 							<div class="faq-question">
-								<h2>Do you cover travel expenses?</h2>
+								<h2>What kind of project should I make?</h2>
 								<p>
-									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel costs at this time.  However, there 
-									is a larger CU hackathon called <a href="http://hackcu.org" target="_blank">HackCU</a> that does provide some travel 
-									reimbursement.  Give them a shot!
+									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community".   
+									We encourage students to build solutions, prototypes, or raise awareness for problems they see in their communities.  
+									If you are really stumped, we will have some ideas ready at start of the hackathon.
+								</p>
+								<p>
+									T9Hacks is also a <i>creative technology</i> hackathon.  This means that we encourage our participants to create projects with 
+									tangible, artistic, media, or electronic components.  
 								</p>
 							</div>
 						</div>
@@ -202,17 +197,22 @@
 							</div>
 						</div>
 						<div class="row faq">
-							<i class="faq-icon fa fa-object-group"></i>
+							<i class="faq-icon fa fa-hourglass-end"></i>
 							<div class="faq-question">
-								<h2>What kind of project should I make?</h2>
+								<h2>Do I have to stay the entire time?</h2>
 								<p>
-									T9Hacks is an open hackathon, so if you have an idea, bring it!  Our theme this year is "helping the community".   
-									We encourage students to build solutions, prototypes, or raise awareness for problems they see in their communities.  
-									If you are really stumped, we will have some ideas ready at start of the hackathon.
+									Students are strongly encouraged to stay for the entire event. T9Hacks is a group effort and we want every team 
+									to have the same opportunities as each other; this can only happen when all members are 100% committed!
 								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-group"></i>
+							<div class="faq-question">
+								<h2>Do I have to have a team to register?</h2>
 								<p>
-									T9Hacks is also a <i>creative technology</i> hackathon.  This means that we encourage our participants to create projects with 
-									tangible, artistic, media, or electronic components.  
+									Nope!  T9Hacks is a great place to meet new women with different skillsets.  You can come with a pre-formed group and 
+									idea, an idea of your own and no team, or a desire to help someone else's idea along.  
 								</p>
 							</div>
 						</div>
@@ -221,7 +221,16 @@
 							<div class="faq-question">
 								<h2>What do I have to bring?</h2>
 								<p>
-									Bring your laptop, phone, chargers, a well rested open mind, but most of all, your creativity.
+									Bring your laptop, phone, chargers, change of clothes, a well-rested open mind, but most of all, your creativity.
+								</p>
+							</div>
+						</div>
+						<div class="row faq">
+							<i class="faq-icon fa fa-plane"></i>
+							<div class="faq-question">
+								<h2>Do you cover travel expenses?</h2>
+								<p>
+									Since this is T9Hacks' first hackathon, we cannot cover or reimburse any travel costs.
 								</p>
 							</div>
 						</div>
@@ -554,6 +563,12 @@
 					<div class="sponsor sponsorCenter">
 						<div class="sponsor3 moesbagels">
 							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Invision -->
+					<div class="sponsor sponsorCenter">
+						<div class="sponsor3 invision">
+							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision_logo_white.png" /></a>
 						</div>
 					</div>
 					<!-- Dash -->
