@@ -847,7 +847,7 @@ header {
 .link a { 
 	font-size: 1.5em;
 	color: #331155;
-	border-bottom: #331155;
+	border: 0 !important;
 }
 .author {
 	color: #555;
