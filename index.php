@@ -400,9 +400,6 @@
 	<a id="sponsors"></a>
 	
 		<div class="container12">
-			<!-- sponsor1 = column5 -->
-			<!-- sponsor2 = column4 -->
-			<!-- sponsor3 = column3 -->
 		
 			<div class="row">
 				<div class="column12">
@@ -414,19 +411,19 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper platinum">
 					<!-- ATLAS -->
-					<div class="sponsor sponsorLeft">
+					<div class="sponsor">
 						<div class="sponsor1 atlas">
 							<a href="http://atlas.colorado.edu" target="_blank"><img src="images/sponsors/atlas_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Twitter -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor1 twitter">
 							<a href="https://twitter.com/twitter" target="_blank"><img src="images/sponsors/twitter_logo_white.png" /></a>
 						</div>
 					</div>
 					<!-- Victor Ops -->
-					<div class="sponsor sponsorRight">
+					<div class="sponsor">
 						<div class="sponsor1 victorops">
 							<a href="https://victorops.com/" target="_blank"><img src="images/sponsors/victorops_logo.svg" /></a>
 						</div>
@@ -436,13 +433,13 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper platinum">
 					<!-- Think Topic -->
-					<div class="sponsor sponsorLeftNoCenter">
+					<div class="sponsor">
 						<div class="sponsor1 thinktopic">
 							<a href="http://www.thinktopic.com/" target="_blank"><img src="images/sponsors/thinktopic_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Workday -->
-					<div class="sponsor sponsorRightNoCenter">
+					<div class="sponsor">
 						<div class="sponsor1 workday">
 							<a href="http://www.workday.com/" target="_blank"><img src="images/sponsors/workday_logo.png" /></a>
 						</div>
@@ -455,19 +452,19 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper gold">
 					<!-- Cardinal Peak -->
-					<div class="sponsor sponsorLeftNoCenter">
+					<div class="sponsor">
 						<div class="sponsor2 cardinalpeak">
 							<a href="https://cardinalpeak.com/" target="_blank"><img src="images/sponsors/cardinalpeak_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Google -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor2 google">
 							<a href="https://www.google.com/about/careers/students/" target="_blank"><img src="images/sponsors/google_logo.svg" /></a>
 						</div>
 					</div>
 					<!-- Code Craft School -->
-					<div class="sponsor sponsorRight">
+					<div class="sponsor">
 						<div class="sponsor2 codecraft">
 							<a href="http://www.codecraftschool.com/" target="_blank"><img src="images/sponsors/codecraft_logo.png" /></a>
 						</div>
@@ -478,13 +475,13 @@
 				<div class="sponsorRowWrapper gold">
 					
 					<!-- Send Grid -->
-					<div class="sponsor sponsorLeft">
+					<div class="sponsor">
 						<div class="sponsor2 sendgrid">
 							<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
 						</div>
 					</div>
 					<!-- Lockheed Martin -->
-					<div class="sponsor sponsorRightNoCenter">
+					<div class="sponsor">
 						<div class="sponsor2 lockheed">
 							<a href="http://www.lockheedmartin.com/" target="_blank"><img src="images/sponsors/lockheedmartin_logo.png" /></a>
 						</div>
@@ -495,28 +492,38 @@
 			<!-- Silver -->
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
-					<!-- Quick Left -->
-					<div class="sponsor sponsorLeft">
-						<div class="sponsor3 quickleft">
-							<a href="https://quickleft.com/" target="_blank"><img src="images/sponsors/quickleft_logo.svg" /></a>
-						</div>
-					</div>
-					<!-- Zayo -->
-					<div class="sponsor sponsorCenter">
-						<div class="sponsor3 zayo">
-							<a href="http://www.zayo.com/" target="_blank"><img src="images/sponsors/zayo_logo_white.png" /></a>
-						</div>
-					</div>
 					<!-- Fitter Faster -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor3 fitterfaster">
 							<a href="http://fitterfaster.com/" target="_blank"><img src="images/sponsors/fitterfaster_logo_vertical.png" /></a>
 						</div>
 					</div>
+					<!-- Quick Left -->
+					<div class="sponsor">
+						<div class="sponsor3 quickleft">
+							<a href="https://quickleft.com/" target="_blank"><img src="images/sponsors/quickleft_logo.svg" /></a>
+						</div>
+					</div>
+					<!-- RefactorU -->
+					<div class="sponsor">
+						<div class="sponsor3 refactoru">
+							<a href="http://www.refactoru.com/" target="_blank"><img src="images/sponsors/refactoru_logo.png" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper silver">
 					<!-- Sticker Giant -->
-					<div class="sponsor sponsorRight">
+					<div class="sponsor">
 						<div class="sponsor3 stickergiant">
 							<a href="http://www.stickergiant.com/" target="_blank"><img src="images/sponsors/stickergiant_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Zayo -->
+					<div class="sponsor">
+						<div class="sponsor3 zayo">
+							<a href="http://www.zayo.com/" target="_blank"><img src="images/sponsors/zayo_logo_white.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -531,7 +538,7 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper platinum">
 					<!-- MLH -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor1 mlh">
 							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
 						</div>
@@ -541,13 +548,19 @@
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper gold">
 					<!-- Noodles and Company -->
-					<div class="sponsor sponsorLeftNoCenter">
+					<div class="sponsor">
 						<div class="sponsor2 noodles">
 							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
 						</div>
 					</div>
+					<!-- Shpero -->
+					<div class="sponsor">
+						<div class="sponsor2 sphero">
+							<a href="http://www.sphero.com/" target="_blank"><img src="images/sponsors/sphero_logo.png" /></a>
+						</div>
+					</div>
 					<!-- Jason's Deli -->
-					<div class="sponsor sponsorRightNoCenter">
+					<div class="sponsor">
 						<div class="sponsor2 jasonsdeli">
 							<a href="http://www.jasonsdeli.com/" target="_blank"><img src="images/sponsors/jasonsdeli_logo.png" /></a>
 						</div>
@@ -556,50 +569,57 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">	
-					<!-- CU WiC -->
-					<div class="sponsor sponsorRight">
-						<div class="sponsor3 cuwic">
-							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
-						</div>
-					</div>
+					
 					<!-- Vics -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor3 vics">
 							<a href="" target="_blank"><img src="images/sponsors/vics_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Tods -->
-					<div class="sponsor sponsorLeft">
+					<div class="sponsor">
 						<div class="sponsor3 tods">
 							<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Susan's Bakery -->
+					<div class="sponsor">
+						<div class="sponsor3 susansbakery">
+							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Moe's Bagels -->
+					<div class="sponsor">
+						<div class="sponsor3 moesbagels">
+							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
-					<!-- Susan's Bakery -->
-					<div class="sponsor sponsorRight">
-						<div class="sponsor3 susansbakery">
-							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
-						</div>
-					</div>
-					<!-- Moe's Bagels -->
-					<div class="sponsor sponsorCenter">
-						<div class="sponsor3 moesbagels">
-							<a href="http://www.moesbagel.com/" target="_blank"><img src="images/sponsors/moes_logo.png" /></a>
-						</div>
-					</div>
 					<!-- Invision -->
-					<div class="sponsor sponsorCenter">
+					<div class="sponsor">
 						<div class="sponsor3 invision">
 							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision_logo_white.png" /></a>
 						</div>
 					</div>
 					<!-- Dash -->
-					<div class="sponsor sponsorLeft">
+					<div class="sponsor">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
+						</div>
+					</div>
+					<!-- CU WiC -->
+					<div class="sponsor">
+						<div class="sponsor3 cuwic">
+							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
+						</div>
+					</div>
+					<!-- HackCU -->
+					<div class="sponsor">
+						<div class="sponsor3 hackcu">
+							<a href="https://hackcu.org" target="_blank"><img src="images/sponsors/hackcu_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -666,18 +686,54 @@
 
 		</div>
 	</section>
+	
+	
+	
+	
+	<!-- Press Section -->
+	<section id="press" class="bg-lightPurple">
+	<a id="press"></a>
+	
+		<div class="container">
 
+			<div class="row">
+				<div class="column12">
+					<h1 class="black">News</h1>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="column12 article">
+					<p class="link">
+						<a href="https://victorops.com/blog/t9hacks-supporting-diversity-tech/" target="_blank">T9Hacks: Supporting Diversity in Tech</a>
+					</p>
+					<p class="author">
+						3 February 2016 &nbsp;|&nbsp; <a href="https://victorops.com/" target="_blank">Victor Ops</a>
+					</p>
+				</div>
+				<div class="column12 article">
+					<p class="link">
+						<a href="https://quickleft.com/blog/cu-atlas-t9hacks-bridging-gap-women-tech/" target="_blank">CU ATLAS T9Hacks: Bridging the Gap Between Women & Tech</a>
+					</p>
+					<p class="author">
+						27 January 2016 &nbsp;|&nbsp; <a href="https://quickleft.com/" target="_blank">QuickLeft</a>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+		
+	</section>
+	
 
 
 	<!-- Info Section -->
-	<section id="info" class="bg-grey">
+	<section id="info" class="bg-darkPurple">
 	<a id="info"></a>
 	
 		<div class="container">
 
 			<div class="row">
-
-
 				<div class="column6 beta infoSection hack-def">
 					<i class="fa fa-question"></i>
 					<h2 class="white">What does "T9" stand for?</h2>

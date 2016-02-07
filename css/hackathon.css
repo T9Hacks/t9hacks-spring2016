@@ -36,6 +36,7 @@ h1 {
 	margin-bottom: 50px;
 	}
 	h1.blue { color: #5ab8e2; }
+	h1.black { color: #000; }
 h2 { font-size: 1.5em; line-height: 1.5em; color: #5ab8e2; }
 	h2.white { color: #ffffff; }
 h3 {
@@ -161,8 +162,12 @@ img::selection, img::-moz-selection {
 	background-image: url(../images/backgrounds/new_year_background_AA88AA.png);
 	background-position: center center;
 }
+/* Press */
+.bg-lightPurple {
+	background: #DAC8DA;
+}
 /* Info */
-.bg-grey {
+.bg-darkPurple {
 	background: #553377;
 }
 
@@ -656,18 +661,24 @@ header {
 	.quickleft		{ background-color: #42DCA3; }
 	.stickergiant	{ background-color: #FCDE54; }
 	.zayo 			{ background-color: #F47521; }
+	.refactoru		{ background-color: #050708; }
 	
 	.mlh 			{ background-color: #F7F9F9; border: 1px solid #A9AFB0; }
 	.jasonsdeli		{ background-color: #bf311a; }
+	.noodles		{ background-color: #B02A27; }
 	.susansbakery	{ background-color: #92CCE5; }
 	.moesbagels		{ background-color: #222222; }
 	.tods			{ background-color: #FFFFFF; border: 1px solid #BC6B19; }
-	.cuwic			{ background-color: #FFFFFF; border: 1px solid #3774CE; }
-	.noodles		{ background-color: #B02A27; }
-	.dash			{ background-color: #B175D0; }
 	.vics			{ background-color: #F29B26; }
 	
+	.sphero 		{ background-color: #0083c0; }
+	.dash			{ background-color: #B175D0; }
 	.invision 		{ background-color: #FF005E; }
+	
+	.cuwic			{ background-color: #FFFFFF; border: 1px solid #3774CE; }
+	.hackcu			{ background-color: #000000; }
+	
+	
 	.trello 		{ background-color: #FFFFFF; border: 1px solid #5E98BA; }
 	
 .sponsorRowWrapper.platinum .sponsor1 { width: 100%; height: 100%; }
@@ -819,6 +830,31 @@ header {
 	height: 40px;
 	line-height: 40px;
 	font-size: 20px;
+}
+
+
+
+
+/* ******************************** */
+/*		Section Styles -- Press		*/
+/* ******************************** */
+.article {
+	overflow: hidden;
+	border-bottom: 1px solid #AA88AA;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+.link a { 
+	font-size: 1.5em;
+	color: #331155;
+	border-bottom: #331155;
+}
+.author {
+	color: #555;
+}
+.author a { 
+	color: #555;
+	border: 0 !important;
 }
 
 
