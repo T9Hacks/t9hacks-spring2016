@@ -83,10 +83,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				$db->updateRecord(($type == 1), $id, "set_college", 4);
 				break;
 				
-			case "2weeksmentors" :
-				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
-				EmailHelperClass::createAndSendEmail_ReminderFollowUpMentors($db->getPeopleFromId(true, $id));
-				break;
 			case "2weeksparticipants" :
 				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
 				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipants($db->getPeopleFromId(true, $id));
@@ -94,6 +90,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "2weeksparticipantsfar" :
 				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
 				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipantsFar($db->getPeopleFromId(true, $id));
+				break;
+			case "2weeksmentors" :
+				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
+				EmailHelperClass::createAndSendEmail_Reminder2WeeksMentors($db->getPeopleFromId(false, $id));
 				break;
 				/*
 			case "1weekmentors" :
@@ -169,7 +169,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				// close helper
 				$db->close();
 				
-				// relocate to same page without post data
+			// relocate to same page without post data
 			header('Location: view.php');
 			}
 			
@@ -225,7 +225,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			$shirtCounts[1][$type] = 0;
 		}
 		
-		$lunchCount = 0;
+		$dinnerCount = 0;
 		$breakfastCount = 0;
 		$lunchCount = 0;
 		
@@ -240,6 +240,8 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			
 			<div class="filterGroup">
 				<div class="filterBtn active" id="allFilterBtn" data-self="all">All<span></span></div>
+			</div>
+			<div class="filterGroup">
 				<div class="filterBtn" id="send2weeksFilterBtn" data-self="send2weeks">Send 2 Weeks<span></span></div>
 			</div>
 			<div class="filterGroup">
@@ -305,22 +307,22 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					
 						<div class="person all <?php 
 							if($person["approved"] == 1) echo "approved ";
-							else if($person["approved"] == 2) echo "rejected ";
-							else if($person["approved"] == 3) echo "wait ";
-							else echo "undecided ";
+								else if($person["approved"] == 2) echo "rejected ";
+								else if($person["approved"] == 3) echo "wait ";
+								else echo "undecided ";
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
 							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
 							if($person["set_gender"] == 1) echo "genderFemale ";
-							else if($person["set_gender"] == 2) echo "genderMale ";
-							else if($person["set_gender"] == 3) echo "genderX ";
-							else echo "genderUnknown ";
+								else if($person["set_gender"] == 2) echo "genderMale ";
+								else if($person["set_gender"] == 3) echo "genderX ";
+								else echo "genderUnknown ";
 							if($person["set_college"] == 1) echo "collegeCU ";
-							else if($person["set_college"] == 2) echo "collegeCO ";
-							else if($person["set_college"] == 3) echo "collegeUS ";
-							else if($person["set_college"] == 4) echo "collegeWorld ";
-							else echo "collegeUnknown ";
-							if($person["approved"] == 1 && $person["sent_2_weeks"] == 0) echo "send2weeks ";
+								else if($person["set_college"] == 2) echo "collegeCO ";
+								else if($person["set_college"] == 3) echo "collegeUS ";
+								else if($person["set_college"] == 4) echo "collegeWorld ";
+								else echo "collegeUnknown ";
+							echo ($person["approved"] == 1 && $person["sent_2_weeks"] == 0) ? "send2weeks " : "sent2weeks ";
 						?>">
 						
 							<div class="beg">
@@ -486,9 +488,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
 							if($person["set_gender"] == 1) echo "genderFemale ";
-							else if($person["set_gender"] == 2) echo "genderMale ";
-							else if($person["set_gender"] == 3) echo "genderX ";
-							else echo "genderUnknown ";
+								else if($person["set_gender"] == 2) echo "genderMale ";
+								else if($person["set_gender"] == 3) echo "genderX ";
+								else echo "genderUnknown ";
+							echo ($person["sent_2_weeks"] == 0) ? "send2weeks " : "sent2weeks ";
 						?>">
 						
 							<div class="beg">
@@ -557,8 +560,8 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn setXBtn" data-action="markX">Mark as X</button>
 									<?php } ?>
 									
-									<?php if( ($person["approved"] == 1 && $person["2_week_sent"] == 0) || $person["key"] == "P-cdyRYz") { ?>
-										<button type="submit" class="btn actionBtn" data-action="2weeksmentor">follow up mentors</i></button>
+									<?php if( ($person["sent_2_weeks"] == 0) || $person["key"] == "M-aKgmYU" ) { ?>
+										<button type="submit" class="btn actionBtn" data-action="2weeksmentors">2 weeks away mentors</i></button>
 									<?php } ?>
 									
 								</form>
@@ -791,7 +794,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		$(".filterBtn").removeClass("active");
 		$(this).addClass("active");
 	});
-	// approved, rejected, or undecided filters
 	$(".filterBtn").click(function(event){
 		event.preventDefault();
 		if($(this).hasClass("active")) {
@@ -801,11 +803,15 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			$(this).addClass("active");
 		}
 		toggleFilters();
-		doCounters($("#participantsBtn").is(":visible"));
+		doCounters($("#participantsBtn").hasClass("active"));
 	});
 
 	function toggleFilters() {
-		$(".person").show();
+		var sectionDiv = ($("#participantsBtn").hasClass("active")) ? "#participantsDiv " : "#mentorsDiv ";
+		
+		$(sectionDiv+".person").show();
+
+		if($("#send2weeksFilterBtn").hasClass("active"))	$(sectionDiv+".sent2weeks").hide();
 		
 		if($("#approvedFilterBtn").hasClass("active"))		$("				.rejected,	.wait,	.undecided	").hide();
 		if($("#rejectedFilterBtn").hasClass("active"))		$(".approved,				.wait,	.undecided	").hide();

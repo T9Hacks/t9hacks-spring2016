@@ -33,7 +33,7 @@ class EmailHelperClass {
 			<html>
 				<head></head>
 				<body style='background: #DAC8DA;'>
-					<div style='height: 100%; width: 100%; background: #DAC8DA; padding: 20px;' >
+					<div style='width: 100%; background: #DAC8DA; padding: 20px;' >
 						<table style='
 							width: 600px; 
 							max-width: 600px; 
@@ -55,7 +55,7 @@ class EmailHelperClass {
 		
 		$footer = "
 							<tr><td style='padding: 0 30px;'>
-								<hr style='margin: 10px 0;'/>
+								<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 							</td></tr>
 							
 							<tr><td style='padding: 10px 30px;'>
@@ -85,7 +85,7 @@ class EmailHelperClass {
 								</div>
 								<div style='float: right;width: 40%;'>
 									<p style=''>
-										<a style='padding-left: 10px;' target='_blank' href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB'>
+										<a style='padding-left: 10px; display: block;' target='_blank' href='https://www.google.com/maps?q=ATLAS+Institute,+University+of+Colorado+Boulder&um=1&ie=UTF-8&sa=X&ved=0ahUKEwitkd7m0-zJAhVC5iYKHUNyDcsQ_AUIBygB'>
 											<img style='width: 100%;' src='http://www.t9hacks.org/images/map_atlas.png'>
 										</a>
 									</p>
@@ -93,10 +93,10 @@ class EmailHelperClass {
 							</td></tr>
 							
 							<tr><td style='padding: 0 30px;'>
-								<hr style='margin: 10px 0;'/>
+								<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 							</td></tr>
 							
-							<tr><td style='padding: 10px 30px;'>
+							<tr><td style='padding: 10px 30px 30px;'>
 								<h2 style='padding: 0; margin: 0;font-weight: normal;color: #331155;'>Questions about this event?</h2>
 								<p>
 									Contact Brittany at 
@@ -219,7 +219,7 @@ class EmailHelperClass {
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
-				<hr/>
+				<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 			</td></tr>
 				
 			<tr><td style='padding: 0 20px;'>
@@ -303,7 +303,7 @@ class EmailHelperClass {
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
-				<hr/>
+				<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
@@ -401,7 +401,7 @@ class EmailHelperClass {
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
-				<hr/>
+				<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 			</td></tr>
 				
 			<tr><td style='padding: 0 20px;'>
@@ -460,7 +460,7 @@ class EmailHelperClass {
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
-				<hr/>
+				<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
@@ -537,7 +537,7 @@ class EmailHelperClass {
 			</td></tr>
 			
 			<tr><td style='padding: 0 20px;'>
-				<hr/>
+				<hr style='margin: 10px 0;border-color:transparent;border-top-color:#500050;border-top-style:dotted;'/>
 			</td></tr>
 				
 			<tr><td style='padding: 0 20px;'>
@@ -583,10 +583,13 @@ class EmailHelperClass {
 	
 	
 	function createAndSendEmail_Reminder2WeeksParticipants($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeks");
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeksp");
 	}
 	function createAndSendEmail_Reminder2WeeksParticipantsFar($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeksfar");
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weekspfar");
+	}
+	function createAndSendEmail_Reminder2WeeksMentors($personRecord) {
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeksm");
 	}
 	/*
 	function createAndSendEmail_Reminder1WeekMentors($personRecord) {
@@ -608,23 +611,29 @@ class EmailHelperClass {
 		$name = $personRecord[0]["name"];
 		$email = $personRecord[0]["email"];
 		$key = $personRecord[0]["key"];
-		$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
+		if($time == "2weeksp" || $time == "2weekspfar")
+			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
+		else if($time == "2weeksm")
+			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=$key";
 		
 		// create send to
 		$sendTo = $name . " <$email>";
 		
 		// create subject
 		$subject = "";
-		if($time == "2weeks")
+		if($time == "2weeksp" || $time == "2weeksm")
 			$subject = "Reminder for T9Hacks";
-		if($time == "2weeksfar")
+		else if($time == "2weekspfar")
 			$subject = "Updates for T9Hacks - RESPONSE REQUIRED";
 		
 		
 		// create email message
 		$styles = EmailHelperClass::getEmailStyles();
 		$linkStyles = $styles['linkStyles'];
-		$message = file_get_contents("emails/2weeksparticipant.php");
+		if($time == "2weeksp" || $time == "2weekspfar")
+			$message = file_get_contents("emails/2weeksparticipant.php");
+		else if($time == "2weeksm")
+			$message = file_get_contents("emails/2weeksmentor.php");
 		
 		// replace variables
 		$message = str_replace("[[NAME]]", $name, $message);
@@ -632,23 +641,24 @@ class EmailHelperClass {
 		$message = str_replace("[[LINKSTYLES]]", $linkStyles, $message);
 		$message = str_replace("[[HEADER]]", EmailHelperClass::createEmailHeader(), $message);
 		$message = str_replace("[[FOOTER]]", EmailHelperClass::createEmailFooter($name), $message);
-		$dist = "";
-		if($time == "2weeksfar") {
-			$dist = "
-				<li style='padding: 0 0 20px;'>
-					<p> style='margin: 0; padding: 0;'>
-						<b style='color: #553377;font-size: 1.2em;'>CONFIRM THAT YOU ARE COMING!</b>  We noticed
-						that you are traveling to T9Hacks from out of state.  We require confirmation from participants
-						that are traveling from a distance. Keep in mind that we we cannot cover or reimburse any 
-						travel costs.  Please confirm with Brittany (brittany.kos@colorado.edu) if you are attending or 
-						not.  If we do not hear from you by the end of Monday, February 8, 2016, we will remove your 
-						registration.
-					</p>
-				</li>
-					";
-		} 
-		$message = str_replace("[[DISTANCE_REQ]]", $dist, $message);
-
+		if($time == "2weeksp" || $time == "2weekspfar") {
+			$dist = "";
+			if($time == "2weeksfar") {
+				$dist = "
+					<li style='padding: 0 0 20px;'>
+						<p style='margin: 0; padding: 0;'>
+							<b style='color: #553377;font-size: 1.2em;'>CONFIRM THAT YOU ARE COMING!</b>  We noticed
+							that you are traveling to T9Hacks from out of state.  We require confirmation from participants
+							that are traveling from a distance. Keep in mind that we we cannot cover or reimburse any 
+							travel costs.  Please confirm with Brittany (brittany.kos@colorado.edu) if you are attending or 
+							not.  If we do not hear from you by the end of Monday, February 8, 2016, we will remove your 
+							registration.
+						</p>
+					</li>
+						";
+			} 
+			$message = str_replace("[[DISTANCE_REQ]]", $dist, $message);
+		}
 		
 		
 		// create headers
