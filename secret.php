@@ -132,7 +132,7 @@
 						<div class="item">
 							<div class="time"><p>10:00am</p></div>
 							<div class="event">
-								<p>To ensoure your Purple Status</p>
+								<p>To ensure your Purple Status</p>
 								<span>you must do one thing: </span>
 							</div>
 						</div>
