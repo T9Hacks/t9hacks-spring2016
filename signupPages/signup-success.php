@@ -18,7 +18,7 @@
 		}
 		
 		include "../includes/css.php"; 
-		css(true);
+		css("signup");
 		if(!$isParticipant)
 			facebookMeta(4);
 		else
@@ -73,7 +73,7 @@
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 							</li>
 						</ul>
-						<a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+						<a href="../" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
 					</div>
 					
 				</div> <!-- end signupWrapper -->

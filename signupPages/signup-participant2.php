@@ -11,7 +11,7 @@
 	<!-- CSS -->
 	<?php 
 		include "../includes/css.php"; 
-		css(true);
+		css("signup");
 		facebookMeta(3);
 	?>
 	

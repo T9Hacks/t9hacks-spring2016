@@ -11,7 +11,7 @@
 	<!-- CSS -->
 	<?php 
 		include "includes/css.php"; 
-		css();
+		css("signupStart");
 		facebookMeta(2);
 	?>
 	
@@ -53,22 +53,34 @@
 							If you are planning on attending T9Hacks, we kindly ask you to register.  This allows us to keep track of 
 							tickets to make sure that we can provide enough space, food, and supplies for everyone.
 						</p>
-						<p class="column12 text-bold">
+						<p class="column12">
 							You can register yourself and your friends and colleagues here!
 						</p>
 					</div>
+					<?php if(true) { ?>
 					<div class="row">	
 						<p class="column4">
 							If you are a student, click here:
 						</p>	
-						<div class="column8 btnHolder"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
+						<div class="column8 btnHolder">
+							<a href="signupPages/signup-participant1" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a>
+						</div>
 					
 					</div>
+					<?php } else { ?>
+					<div class="row">	
+						<p class="column12 text-bold">
+							Registration for participants is now closed.
+						</p>
+					</div>					
+					<?php } ?>
 					<div class="row">	
 						<p class="column4">
 							If you are an external volunteer, click here:
 						</p>
-						<div class="column8 btnHolder"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+						<div class="column8 btnHolder">
+							<a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a>
+						</div>
 					</div>
 				</div>
 			</div>

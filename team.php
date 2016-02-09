@@ -11,7 +11,7 @@
 	<!-- CSS -->
 	<?php 
 		include "includes/css.php"; 
-		css();
+		css("team");
 		facebookMeta(1);
 	?>
 
@@ -69,6 +69,15 @@
 			<div class="row">
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
+						<img src="images/team/swish.jpg" alt="Photo of Michael Swisher">
+						<h3>Michael Swisher</h3>
+						<ul class="socialButtons">
+							<li><a href="https://www.linkedin.com/in/michaelvswisher" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="column4 teamMemberContainer">
+					<div class="teamMember">
 						<img src="images/team/zach.jpg" alt="Photo of Zach Lamb">
 						<h3>Zach Lamb</h3>
 						<ul class="socialButtons">
@@ -85,24 +94,15 @@
 						</ul>
 					</div>
 				</div>
+			</div>
+
+			<div class="row">
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
 						<img src="images/team/keren.jpg" alt="Photo of Keren Megory-Cohen">
 						<h3>Keren Megory-Cohen</h3>
 						<ul class="socialButtons">
 							<li><a href="https://www.linkedin.com/in/keren-megory-cohen-951b78101" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="column4 teamMemberContainer">
-					<div class="teamMember">
-						<img src="images/team/swish.jpg" alt="Photo of Michael Swisher">
-						<h3>Michael Swisher</h3>
-						<ul class="socialButtons">
-							<li><a href="https://www.linkedin.com/in/michaelvswisher" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>

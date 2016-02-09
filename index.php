@@ -11,7 +11,7 @@
 	<!-- CSS -->
 	<?php 
 		include "includes/css.php"; 
-		css();
+		css("home");
 		facebookMeta(1);
 	?>
 
@@ -240,7 +240,7 @@
 							<div class="faq-question">
 								<h2>How do I get to CU's campus?</h2>
 								<p>
-									CU has a great public transit system.  There are local RTD busses that drop off directly in front of the 
+									CU has a great public transit system! There are local RTD busses that drop off directly in front of the 
 									ATLAS building and many more regional busses that drop off at CU.  For more information about the bus system, 
 									you can visit <a href="http://www.colorado.edu/pts/node/265">CU's Public Transit Page</a> or the 
 									<a href="http://www.rtd-denver.com/">RTD website</a>.  If you are unsure of what bus to take, Google Maps is a 
@@ -306,17 +306,20 @@
 								by using our registration page. Click the application button below to get started.
 							</p>
 							<div class="signupBtns">
-								<div class="signupBtn"><a href="signupPages/signup-participant1.php" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
+								<div class="signupBtn"><a href="signupPages/signup-participant1" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="column12">
 							<p>
+								Sign up for mentors is closing on Friday, February 12, 2016!
+							</p>
+							<p>
 								If you would like to participate as a mentor, you can also register by clicking the sign up button below.
 							</p>
 							<div class="signupBtns">
-								<div class="signupBtn"><a href="signupPages/signup-mentor1.php" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+								<div class="signupBtn"><a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
 							</div>
 						</div>
 					</div>
@@ -349,19 +352,22 @@
 								<p>3:00pm</p>
 								<p>3:30pm</p>
 								<p>4:00pm</p>
+								<p>4:00pm</p>
+								<p>6:00pm</p>
 								<p>6:30pm</p>
 								<p>8:00pm</p>
-								<p>11:00pm</p>
+								<p>10:00pm</p>
 
 							</div>
 							<div class="events">
 								<p>Check-in Starts</p>
 								<p>Opening Ceremonies</p>
 								<p>Hacking Begins</p>
+								<p>Team Formation</p>
+								<p>Professional Photoshoot</p>
 								<p>Dinner</p>
 								<p>Mini Challenge #1</p>
 								<p>Dessert</p>
-
 							</div>
 						</div>
 						<div class="scheduleSection">
@@ -369,19 +375,25 @@
 							<div class="times">
 								<p>Midnight</p>
 								<p>2:00am</p>
-								<p>7:30am</p>
+								<p>3:00am</p>
+								<p>5:00am</p>
+								<p>8:00am</p>
 								<p>10:00am</p>
-								<p>12:30pm</p>
+								<p>12:00pm</p>
+								<p>3:00pm</p>
 								<p>4:00pm</p>
 								<p>4:30pm</p>
 								<p>5:30pm</p>
 							</div>
 							<div class="events">
-								<p>Mini Challenge #2</p>
 								<p>Snack</p>
+								<p>Mini Challenge #2</p>
+								<p>Another Snack</p>
+								<p>Yet Another Snack</p>
 								<p>Breakfast</p>
 								<p>Mini Challenge #3</p>
 								<p>Lunch</p>
+								<p>We're Serious About Snacking</p>
 								<p>Hacking Ends</p>
 								<p>Presentations</p>
 								<p>End Ceremonies</p>
@@ -698,7 +710,7 @@
 
 			<div class="row">
 				<div class="column12">
-					<h1 class="black">News</h1>
+					<h1 class="black">Press</h1>
 				</div>
 			</div>
 			

@@ -11,7 +11,7 @@
 	<!-- CSS -->
 	<?php 
 		include "../includes/css.php"; 
-		css(true);
+		css("signup");
 		facebookMeta(1);
 	?>
 	
@@ -40,10 +40,10 @@
 				
 					<div>
 						<h1 class="blue">Complete</h1>
-						<p>We are sorry to see you go.  If you change your mind, you can always re-register again!</p>
+						<p>We are sorry to see you go.  If you change your mind, you contact us!</p>
 						<br/>
 						<br/>
-						<a href="../index.php" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+						<a href="../" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
 					</div>
 					
 				</div> <!-- end signupWrapper -->

@@ -1,22 +1,73 @@
 <?php 
-function css($up = false) {
-	$p = ($up) ? "../" : "";
-?>
-<!-- Favicon -->
-<link rel="shortcut icon" href="<?php echo $p; ?>images/favicon.ico" type="image/x-icon">
-
-<!-- Bootstrap Core CSS -->
-<link href="<?php echo $p; ?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="<?php echo $p; ?>plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-
-<!-- Custom CSS -->
-<link href="<?php echo $p; ?>css/1140.css" rel="stylesheet" type="text/css" media="all">
-<link href="<?php echo $p; ?>css/hackathon.css" rel="stylesheet" type="text/css" media="all">
+function css($page) {
+	$p = "";
+	if ($page == "signup")
+		$p = "../";
+	?>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="<?php echo $p; ?>images/favicon.ico" type="image/x-icon">
+	
+	<!-- Bootstrap Core CSS -->
+	<link href="<?php echo $p; ?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+	<link href="<?php echo $p; ?>plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	
+	<!-- Custom CSS -->
+	<link href="<?php echo $p; ?>css/1140.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo $p; ?>css/hackathon.css" rel="stylesheet" type="text/css" media="all">
+	<?php 
+	switch ($page) {
+		case "home":
+			?> <link href="css/home.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+		case "team":
+			?> <link href="css/team.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+		case "schedule":
+			?> <link href="css/schedule.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+		case "signupStart":
+			$p = "";
+		case "signup":
+			?> <link href="<?php echo $p; ?>css/signup.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+		case "slack":
+			?> <link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+		case "secret":
+			?> <link href="css/secret.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			break;
+	}
+	?>
+	
 <?php 
 }
+
+
+function cssSchedule() {
+	?>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	
+	<!-- Bootstrap Core CSS -->
+	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+	<link href="<?php echo $p; ?>plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	
+	<!-- Custom CSS -->
+	<link href="css/1140.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/hackathon.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/schedule.css" rel="stylesheet" type="text/css" media="all">
+	
+<?php 
+}
+
 
 // $page = 1 => home
 // $page = 2 => sign up page (start)
