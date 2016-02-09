@@ -256,7 +256,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			</div>
 			<div class="filterGroup">
 				<div class="filterBtn" id="activeRegFilterBtn" data-self="active">Active Registration<span></span></div>
-				<div class="filterBtn" id="cancledRegFilterBtn" data-self="cancled">Cancled Registration<span></span></div>
+				<div class="filterBtn" id="cancledRegFilterBtn" data-self="canceled">Cancled Registration<span></span></div>
 			</div>
 			<div class="filterGroup">
 				<div class="filterBtn" id="checkedInFilterBtn" data-self="checkedIn">Checked-in<span></span></div>
@@ -311,7 +311,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								else if($person["approved"] == 3) echo "wait ";
 								else echo "undecided ";
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
-							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
+							echo ($person["unregistered"] == 1) ? "canceled " : "active ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
 							if($person["set_gender"] == 1) echo "genderFemale ";
 								else if($person["set_gender"] == 2) echo "genderMale ";
@@ -485,7 +485,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					
 						<div class="person all <?php 
 							echo ($person["complete"] == 1) ? "complete " : "incomplete ";
-							echo ($person["unregistered"] == 1) ? "cancledReg " : "activeReg ";
+							echo ($person["unregistered"] == 1) ? "canceled " : "active ";
 							echo ($person["checked_in"] == 1) ? "checkedIn " : "notCheckedIn ";
 							if($person["set_gender"] == 1) echo "genderFemale ";
 								else if($person["set_gender"] == 2) echo "genderMale ";

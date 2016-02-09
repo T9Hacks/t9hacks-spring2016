@@ -1,0 +1,18 @@
+#errors {
+	margin-bottom: 20px;
+}
+
+.fieldRadio, .fieldCheckbox {
+	width: 48%;
+	margin-right: 4%;
+}
+.fieldRadio:last-child, .fieldCheckbox:ast-child {
+	margin-right: 0;
+}
+.tgl + .tgl-btn {
+	width: 100%;
+	height: 2.5em;
+}
+.tgl-flip + .tgl-btn:after, .tgl-flip + .tgl-btn:before {
+	line-height: 2.5em;
+}

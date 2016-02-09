@@ -35,7 +35,8 @@ function css($page) {
 			?> <link href="<?php echo $p; ?>css/signup.css" rel="stylesheet" type="text/css" media="all"> <?php 
 			break;
 		case "slack":
-			?> <link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?><link href="css/signup.css" rel="stylesheet" type="text/css" media="all">
+			  <link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> <?php 
 			break;
 		case "secret":
 			?> <link href="css/secret.css" rel="stylesheet" type="text/css" media="all"> <?php 
