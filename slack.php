@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="column12">
 					<h1>Slack</h1>
-					<p>Sigh up for the T9Hacks Slack here!</p>
+					<p>Sign up for the T9Hacks Slack here!</p>
 				</div>
 			</div>
 			
