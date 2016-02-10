@@ -34,7 +34,7 @@
 				<div class="scheduleOuter">
 				<div class="scheduleInner">
 					<div class="scheduleSection">
-						<h2 class="white">Saturday, February 20</h2>
+						<h2>Saturday, February 20</h2>
 						<div class="item">
 							<div class="time"><p>3:00pm</p></div>
 							<div class="event">
@@ -64,10 +64,12 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="time"><p>6:00pm</p></div>
-							<div class="event">
-								<p>Professional Photoshoot</p>
-								<span>Get your headshot photo taken</span>
+							<div class="head">
+								<div class="time"><p>4:00pm</p></div>
+								<div class="event"><p>Professional Photoshoot</p></div>
+							</div>
+							<div class="details">
+								<span>Get a professional headshot photo taken, use it for Linkedin</span>
 							</div>
 						</div>
 						<div class="item">
@@ -93,7 +95,7 @@
 						</div>
 					</div>
 					<div class="scheduleSection">
-						<h2 class="white">Sunday, February 21</h2>
+						<h2>Sunday, February 21</h2>
 						<div class="item">
 							<div class="time"><p>Midnight</p></div>
 							<div class="event">

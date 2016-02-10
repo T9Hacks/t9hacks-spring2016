@@ -370,7 +370,7 @@
 								<p>3:30pm</p>
 								<p>4:00pm</p>
 								<p>4:00pm</p>
-								<p>6:00pm</p>
+								<p>4:00pm</p>
 								<p>6:30pm</p>
 								<p>8:00pm</p>
 								<p>10:00pm</p>
@@ -633,12 +633,22 @@
 							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision_logo_white.png" /></a>
 						</div>
 					</div>
+					<!-- Trello -->
+					<div class="sponsor">
+						<div class="sponsor3 trello">
+							<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello_logo_white.svg" /></a>
+						</div>
+					</div>
 					<!-- Dash -->
 					<div class="sponsor">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row sponsorRow">
+				<div class="sponsorRowWrapper silver">
 					<!-- CU WiC -->
 					<div class="sponsor">
 						<div class="sponsor3 cuwic">
