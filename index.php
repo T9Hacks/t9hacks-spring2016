@@ -312,15 +312,32 @@
 					</div>
 					<div class="row">
 						<div class="column12">
-							<p>
-								Sign up for mentors is closing on Friday, February 12, 2016!
-							</p>
-							<p>
-								If you would like to participate as a mentor, you can also register by clicking the sign up button below.
-							</p>
-							<div class="signupBtns">
-								<div class="signupBtn"><a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
-							</div>
+							<?php if(false) { ?>
+								<p>
+									If you would like to participate as a mentor, you can also register by clicking the sign up button below.
+								</p>
+								<div class="signupBtns">
+									<div class="signupBtn"><a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+								</div>
+							<?php } else { ?>
+								<p>
+									Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
+									informed about T9Hacks, you can follow us on social media!
+								</p>
+								<div class="socialMediaLinks">
+									<ul class="socialButtons">
+										<li>
+											<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
+										</li>
+										<li>
+											<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
+										</li>
+										<li>
+											<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
+										</li>
+									</ul>
+								</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

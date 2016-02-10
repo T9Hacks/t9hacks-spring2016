@@ -442,6 +442,9 @@ footer .quicklinks, footer .copyright {
 /* ************************ */
 /*		Social Buttons		*/
 /* ************************ */
+.socialMediaLinks {
+	text-align: center;
+}
 .socialButtons {
 	list-style-type: none;
 	margin-left: 0;
