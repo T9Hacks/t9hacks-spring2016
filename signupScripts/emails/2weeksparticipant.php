@@ -1,7 +1,7 @@
 [[HEADER]]
 
 <tr><td style='padding: 10px; background: #315'>
-	<h2 style='padding: 0; margin: 15px 0; color: white; text-align: center;font-weight: normal;'>T9Hacks is 2 weeks away!</h2>
+	<h2 style='padding: 0; margin: 15px 0; color: white; text-align: center;font-weight: normal;'>T9Hacks is [[TIME]] away!</h2>
 </td></tr>
 
 

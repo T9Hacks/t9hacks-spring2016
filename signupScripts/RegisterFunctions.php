@@ -364,10 +364,14 @@ function registerPerson($db, $resultArray, $errorMessages, $inputs, $key, $typeC
 						
 						// send email
 						$emailResult = false;
-						if($isParticipant || $isMentor)
-							$emailResult = EmailHelperClass::createAndSendEmail_Confirmation($inputValues, $key, $isParticipant);
-						else if ($isFriend)
-							$emailResult = EmailHelperClass::createAndSendEmail_RegistrationNotice($inputValues, $key, $isParticipant);
+						if($isNew){
+							if($isParticipant || $isMentor)
+								$emailResult = EmailHelperClass::createAndSendEmail_Confirmation($inputValues, $key, $isParticipant);
+							else if ($isFriend)
+								$emailResult = EmailHelperClass::createAndSendEmail_RegistrationNotice($inputValues, $key, $isParticipant);
+						} else {
+							$emailResult = true;
+						}
 						
 						// test - send self email
 						if( !$emailResult ) {

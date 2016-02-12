@@ -641,9 +641,15 @@ class EmailHelperClass {
 		$message = str_replace("[[LINKSTYLES]]", $linkStyles, $message);
 		$message = str_replace("[[HEADER]]", EmailHelperClass::createEmailHeader(), $message);
 		$message = str_replace("[[FOOTER]]", EmailHelperClass::createEmailFooter($name), $message);
+		$event = new DateTime('2016-02-20');
+		$today = new DateTime(date("Y-m-d"));
+		$interval = $today->diff($event);
+		$daysAway = $interval->format('%d');
+		$message = str_replace("[[TIME]]", $daysAway . " days ", $message);
+		//echo $daysAway;
 		if($time == "2weeksp" || $time == "2weekspfar") {
 			$dist = "";
-			if($time == "2weeksfar") {
+			if($time == "2weekspfar") {
 				$dist = "
 					<li style='padding: 0 0 20px;'>
 						<p style='margin: 0; padding: 0;'>
