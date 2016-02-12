@@ -1,3 +1,6 @@
+h1 {
+	color: black;
+}
 .scheduleOuter {
 	text-align: center;
 }
@@ -10,23 +13,24 @@
 	overflow: hidden;
 	display: inline-block;
 	float: left;
-	padding: 0 20px;
-	width: 50%;
+	margin: 0 3%;
+	width: 44%;
+	background: #FFFFF0;
 }
 .scheduleSection h2 {
 	margin-bottom: 20px;
 	text-align: left;
 	font-weight: bold;
-	color: white;
 	padding: 5px 0;
 	background: #553377;
 	text-align: center;
+	color: white;
 }
 
 .item {
 	overflow: hidden;
 	clear: both;
-	margin-bottom: 20px;
+	margin: 0 20px 20px;
 }
 .time, .event {
 	display: inline-block;
