@@ -56,41 +56,70 @@
 							<p>20-21 February 2016</p>
 						</div>
 					</div>
-					<div class="row">
-						<p class="column12">
-							If you are planning on attending T9Hacks, we require that you apply.  This allows us to keep track of 
-							tickets to make sure that we can provide enough space, food, and supplies for everyone.
-						</p>
-						<div class="column12">
-							<p>How many people are you applying for?</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="fieldWrapper column12 friends">
-							<div class="fieldRadio">
-								<input class="tgl tgl-flip" id="myself" type="radio" name="friends" value="0" <?php echo ($numFriends == 0 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself" data-tg-on="Myself" for="myself"></label>
-							</div>
-							<div class="fieldRadio">
-								<input class="tgl tgl-flip" id="friend1" type="radio" name="friends" value="1" <?php echo ($numFriends == 1 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 1 Friend" data-tg-on="Myself and 1 Friend" for="friend1"></label>
-							</div>
-							<div class="fieldRadio">
-								<input class="tgl tgl-flip" id="friend2" type="radio" name="friends" value="2"<?php echo ($numFriends == 2 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 2 Friends" data-tg-on="Myself and 2 Friends" for="friend2"></label>
-							</div>
-							<div class="fieldRadio">
-								<input class="tgl tgl-flip" id="friend3" type="radio" name="friends" value="3"<?php echo ($numFriends == 3 ) ? "checked='checked'" : ""; ?> >
-   								<label class="tgl-btn" data-tg-off="Myself and 3 Friends" data-tg-on="Myself and 3 Friends" for="friend3"></label>
+					<?php if(false) { ?>
+						<div class="row">
+							<p class="column12">
+								If you are planning on attending T9Hacks, we require that you apply.  This allows us to keep track of 
+								tickets to make sure that we can provide enough space, food, and supplies for everyone.
+							</p>
+							<div class="column12">
+								<p>How many people are you applying for?</p>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="fieldWrapper column12">
-							<a href="../signup.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
-							<a href="signup-participant2.php?n=<?php echo $numFriends; ?>" class="btn btn-l right regBtn" id="participantRegBtn">Registration &nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+						<div class="row">
+							<div class="fieldWrapper column12 friends">
+								<div class="fieldRadio">
+									<input class="tgl tgl-flip" id="myself" type="radio" name="friends" value="0" <?php echo ($numFriends == 0 ) ? "checked='checked'" : ""; ?> >
+	   								<label class="tgl-btn" data-tg-off="Myself" data-tg-on="Myself" for="myself"></label>
+								</div>
+								<div class="fieldRadio">
+									<input class="tgl tgl-flip" id="friend1" type="radio" name="friends" value="1" <?php echo ($numFriends == 1 ) ? "checked='checked'" : ""; ?> >
+	   								<label class="tgl-btn" data-tg-off="Myself and 1 Friend" data-tg-on="Myself and 1 Friend" for="friend1"></label>
+								</div>
+								<div class="fieldRadio">
+									<input class="tgl tgl-flip" id="friend2" type="radio" name="friends" value="2"<?php echo ($numFriends == 2 ) ? "checked='checked'" : ""; ?> >
+	   								<label class="tgl-btn" data-tg-off="Myself and 2 Friends" data-tg-on="Myself and 2 Friends" for="friend2"></label>
+								</div>
+								<div class="fieldRadio">
+									<input class="tgl tgl-flip" id="friend3" type="radio" name="friends" value="3"<?php echo ($numFriends == 3 ) ? "checked='checked'" : ""; ?> >
+	   								<label class="tgl-btn" data-tg-off="Myself and 3 Friends" data-tg-on="Myself and 3 Friends" for="friend3"></label>
+								</div>
+							</div>
 						</div>
-					</div>
+						<div class="row">
+							<div class="fieldWrapper column12">
+								<a href="../signup.php" class="backBtn"><i class="fa fa-angle-double-left"></i> Back</a>
+								<a href="signup-participant2.php?n=<?php echo $numFriends; ?>" class="btn btn-l right regBtn" id="participantRegBtn">Registration &nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+							</div>
+						</div>
+					<?php } else { ?>
+						<div class="row">
+							<div class="fieldWrapper column12">
+								<p>
+									Participant registration is now closed.  If you want to keep 
+									informed about T9Hacks, you can follow us on social media!
+								</p>
+								<div class="socialMediaLinks">
+									<ul class="socialButtons">
+										<li>
+											<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
+										</li>
+										<li>
+											<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
+										</li>
+										<li>
+											<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
+										</li>
+									</ul>
+								</div>
+								<br/>
+								<br/>
+								<a href="../" class="btn btn-l"><i class="fa fa-arrow-circle-o-left"></i> &nbsp;Back to Home</a>
+							</div>
+						</div>
+					
+					<?php } ?>
+					
 					
 				</div> <!-- end signupWrapper -->
 			</div> <!-- end participantSignup -->

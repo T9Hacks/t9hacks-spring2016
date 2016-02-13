@@ -398,14 +398,15 @@ header {
 /* ******************************** */
 .article {
 	overflow: hidden;
-	border-bottom: 1px solid #AA88AA;
+	border-bottom: 1px dotted #AA88AA;
 	margin-bottom: 30px;
 	padding-bottom: 10px;
 }
 .link a { 
 	font-size: 1.5em;
 	color: #331155;
-	border: 0 !important;
+	border-color: #331155;
+	padding-bottom: 3px;
 }
 .author {
 	color: #555;

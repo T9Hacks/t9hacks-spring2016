@@ -57,7 +57,7 @@
 							You can register yourself and your friends and colleagues here!
 						</p>
 					</div>
-					<?php if(true) { ?>
+					<?php if(false) { ?>
 					<div class="row">	
 						<p class="column4">
 							If you are a student, click here:
@@ -69,7 +69,7 @@
 					</div>
 					<?php } else { ?>
 					<div class="row">	
-						<p class="column12 text-bold">
+						<p class="column12">
 							Registration for participants is now closed.
 						</p>
 					</div>					
@@ -85,22 +85,26 @@
 							</div>
 						</div>
 					<?php } else { ?>
-						<p>
-							Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
-							informed about T9Hacks, you can follow us on social media!
-						</p>
-						<div class="socialMediaLinks">
-							<ul class="socialButtons">
-								<li>
-									<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
-								</li>
-							</ul>
+						<div class="row">	
+							<div class="column12">
+								<p>
+									Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
+									informed about T9Hacks, you can follow us on social media!
+								</p>
+								<div class="socialMediaLinks">
+									<ul class="socialButtons">
+										<li>
+											<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
+										</li>
+										<li>
+											<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
+										</li>
+										<li>
+											<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					<?php } ?>
 				</div>

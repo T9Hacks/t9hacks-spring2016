@@ -49,14 +49,14 @@
 		
 			<div class="row" id="participantTop">
 				<div class="signupWrapper">
-				
-					<?php if(false) { ?>
-						<div class="row">
-							<div class="column12">
-								<h2>Mentor Sign Up</h2>
-								<p>20-21 February 2016</p>
-							</div>
+					
+					<div class="row">
+						<div class="column12">
+							<h2>Mentor Sign Up</h2>
+							<p>20-21 February 2016</p>
 						</div>
+					</div>
+					<?php if(false) { ?>
 						<div class="row">
 							<p class="column12">
 								If you are planning on attending T9Hacks, we kindly ask you to register.  This allows us to keep track of 

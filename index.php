@@ -294,32 +294,60 @@
 							<h1 class="white">Design. Build. Create.</h1>
 						</div>
 					</div>
-					<div class="row">
-						<p class="column12 text-bold text-center">
-							Registration is closing on Friday, February 12, 2016!
-						</p>
-					</div>
-					<div class="row">
-						<div class="column12">
-							<p>
-								If you would like to participate in T9Hacks, you will need to apply 
-								by using our registration page. Click the application button below to get started.
+					<?php if(false) { ?>
+						<div class="row">
+							<p class="column12 text-bold text-center">
+								Registration is closing on Friday, February 12, 2016!
 							</p>
-							<div class="signupBtns">
-								<div class="signupBtn"><a href="signupPages/signup-participant1" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
-							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="column12">
-							<?php if(false) { ?>
+						<div class="row">
+							<div class="column12">
 								<p>
-									If you would like to participate as a mentor, you can also register by clicking the sign up button below.
+									If you would like to participate in T9Hacks, you will need to apply 
+									by using our registration page. Click the application button below to get started.
 								</p>
 								<div class="signupBtns">
-									<div class="signupBtn"><a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+									<div class="signupBtn"><a href="signupPages/signup-participant1" class="btn btn-xl">Participant <span class="mobileOnly">&nbsp;</span>Application</a></div>
 								</div>
-							<?php } else { ?>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column12">
+								<?php if(false) { ?>
+									<p>
+										If you would like to participate as a mentor, you can also register by clicking the sign up button below.
+									</p>
+									<div class="signupBtns">
+										<div class="signupBtn"><a href="signupPages/signup-mentor1" class="btn btn-xl">Mentor <span class="mobileOnly">&nbsp;</span>Sign Up</a></div>
+									</div>
+								<?php } else { ?>
+									<p>
+										Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
+										informed about T9Hacks, you can follow us on social media!
+									</p>
+									<div class="socialMediaLinks">
+										<ul class="socialButtons">
+											<li>
+												<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
+											</li>
+											<li>
+												<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
+											</li>
+											<li>
+												<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
+											</li>
+										</ul>
+									</div>
+								<?php } ?>
+							</div>
+						</div>
+					<?php } else { ?>
+						<div class="row">
+							<div class="column12">
+								<p>
+									Registration is not closed for participants.  If you want to keep 
+									informed about T9Hacks, you can follow us on social media!
+								</p>
 								<p>
 									Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
 									informed about T9Hacks, you can follow us on social media!
@@ -337,9 +365,9 @@
 										</li>
 									</ul>
 								</div>
-							<?php } ?>
+							</div>
 						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 			
@@ -649,16 +677,16 @@
 			</div>
 			<div class="row sponsorRow">
 				<div class="sponsorRowWrapper silver">
+					<!-- HackCU -->
+					<div class="sponsor">
+						<div class="sponsor3 hackcu">
+							<a href="http://hackcu.org" target="_blank"><img src="images/sponsors/hackcu_logo.png" /></a>
+						</div>
+					</div>
 					<!-- CU WiC -->
 					<div class="sponsor">
 						<div class="sponsor3 cuwic">
 							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
-						</div>
-					</div>
-					<!-- HackCU -->
-					<div class="sponsor">
-						<div class="sponsor3 hackcu">
-							<a href="https://hackcu.org" target="_blank"><img src="images/sponsors/hackcu_logo.png" /></a>
 						</div>
 					</div>
 				</div>
