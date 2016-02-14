@@ -311,6 +311,16 @@
 								</div>
 							</div>
 						</div>
+					<?php } else { ?>
+						<div class="row">
+							<div class="column12">
+								<p>
+									Registration is now closed for participants.  If you want to keep 
+									informed about T9Hacks, you can follow us on social media!
+								</p>
+							</div>
+						</div>
+					<?php } ?>
 						<div class="row">
 							<div class="column12">
 								<?php if(false) { ?>
@@ -325,33 +335,13 @@
 										Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
 										informed about T9Hacks, you can follow us on social media!
 									</p>
-									<div class="socialMediaLinks">
-										<ul class="socialButtons">
-											<li>
-												<a href="https://www.facebook.com/t9hacks/" target="_blank"><i class="fa fa-facebook"></i></a>
-											</li>
-											<li>
-												<a href="https://twitter.com/t9hacks" target="_blank"><i class="fa fa-twitter"></i></a>
-											</li>
-											<li>
-												<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
-											</li>
-										</ul>
-									</div>
+									
 								<?php } ?>
 							</div>
 						</div>
-					<?php } else { ?>
+					<?php if(true) { ?>
 						<div class="row">
 							<div class="column12">
-								<p>
-									Registration is not closed for participants.  If you want to keep 
-									informed about T9Hacks, you can follow us on social media!
-								</p>
-								<p>
-									Due to overwhelming response for mentors, we've had to close sign up early.  If you want to keep 
-									informed about T9Hacks, you can follow us on social media!
-								</p>
 								<div class="socialMediaLinks">
 									<ul class="socialButtons">
 										<li>
@@ -734,7 +724,10 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="fieldWrapper column12">
+								<div class="fieldWrapper column6">
+									<div class="fieldInput"><i class="fa fa-plus"></i><input type="text" placeholder="What is 2+3? (Required)" name="addition" id="sponsorAddition"/></div>
+								</div>
+								<div class="fieldWrapper column6">
 									<input class="honeypot" type="text" name="honeypot" placeholder="Leave Blank"/>
 									<button id="sponsorEmailSubmit" class="btn btn-l right">Send &nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
 								</div>

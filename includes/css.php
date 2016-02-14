@@ -21,25 +21,39 @@ function css($page) {
 	<?php 
 	switch ($page) {
 		case "home":
-			?> <link href="css/home.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?> 
+			<link href="css/home.css" rel="stylesheet" type="text/css" media="all"> 
+			<link href="css/inputs.css" rel="stylesheet" type="text/css" media="all"> 
+			<?php 
 			break;
 		case "team":
-			?> <link href="css/team.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?> 
+			<link href="css/team.css" rel="stylesheet" type="text/css" media="all"> 
+			<?php 
 			break;
 		case "schedule":
-			?> <link href="css/schedule.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?> 
+			<link href="css/schedule.css" rel="stylesheet" type="text/css" media="all"> 
+			<?php 
 			break;
 		case "signupStart":
 			$p = "";
 		case "signup":
-			?> <link href="<?php echo $p; ?>css/signup.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?> 
+			<link href="<?php echo $p; ?>css/signup.css" rel="stylesheet" type="text/css" media="all"> 
+			<link href="<?php echo $p; ?>css/inputs.css" rel="stylesheet" type="text/css" media="all">
+			<?php 
 			break;
 		case "slack":
-			?><link href="css/signup.css" rel="stylesheet" type="text/css" media="all">
-			  <link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?>
+			<link href="css/signup.css" rel="stylesheet" type="text/css" media="all">
+			<link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> 
+			<?php 
 			break;
 		case "secret":
-			?> <link href="css/secret.css" rel="stylesheet" type="text/css" media="all"> <?php 
+			?> 
+			<link href="css/secret.css" rel="stylesheet" type="text/css" media="all"> 
+			<?php 
 			break;
 	}
 	?>

@@ -10,6 +10,7 @@ $resultArray = array(
 	
 	"MISSING_INPUTS"	=> -1,
 	"HONEYPOT_FILLED"	=> -1,
+	"ADDITION_WRONG"	=> -1,
 	"EMPTY_INPUTS"		=> -1,
 );
 $inputValues = array();
@@ -40,65 +41,90 @@ if( !array_key_exists('name', $_POST) || !array_key_exists('email', $_POST) || !
 	/* 			Test Honeypot			*/
 	/* ******************************** */
 	// test - honeypot
-	if( !empty($_POST['honeypot']) ) {
+	if( $_POST['addition'] != 5 ) {
 		
 		// bad - honeypot
-		$resultArray["HONEYPOT_FILLED"] = 1;
-		$resultArray["MESSAGE"] = "There was a problem verifying that you are human. If a field says to leave it blank, please do so.";
+		$resultArray["ADDITION_WRONG"] = 1;
+		$resultArray["MESSAGE"] = "There was a problem verifying that you are human. Please complete the math problem set by the field.";
 	
 	// success - honeypot
 	} else {
 		
 		// good - honeypot
-		$resultArray["HONEYPOT_FILLED"] = 0;
-	
-	
-	
-	
-		$inputValues = array(
-			"name"		=> $_POST["name"],
-			"email"		=> $_POST["email"],
-			"message"	=> $_POST["message"]
-		);
+		$resultArray["ADDITION_WRONG"] = 0;
+		
+		
+		
 		
 		
 		/* ******************************** */
-		/* 		Test For Empty Inputs		*/
+		/* 			Test Honeypot			*/
 		/* ******************************** */
-		// count empty inputs
-		$emptyInputs = 0;
-		foreach($inputValues as $k => $v) {
-			if( $v == null || empty($v) || $v == "" || removeWhiteSpace($v) == "" )
-				$emptyInputs++;
-		}
-		
-		// test - empty inputs
-		if($emptyInputs != 0) {
+		// test - honeypot
+		if( !empty($_POST['honeypot']) ) {
 			
-			// bad - empty inputs
-			$resultArray["EMPTY_INPUTS"] = 1;
-			$resultArray["MESSAGE"] = "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.";
+			// bad - honeypot
+			$resultArray["HONEYPOT_FILLED"] = 1;
+			$resultArray["MESSAGE"] = "There was a problem verifying that you are human. If a field says to leave it blank, please do so.";
 		
-		// success - empty inputs
+		// success - honeypot
 		} else {
 			
-			// good - empty inputs
-			$resultArray["EMPTY_INPUTS"] = 0;
-	
-		
-			// send email
-			$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["message"]);
-			$resultMessage = ($result) ? "Success!" : "There was a problem sending a email.  Please resubmit the form.";
+			// good - honeypot
+			$resultArray["HONEYPOT_FILLED"] = 0;
 			
-			// create result array
-			$resultArray = array(
-				"SUCCESS"	=> $result, 
-				"MESSAGE"	=> $resultMessage
+			
+			
+			
+			
+		
+		
+			$inputValues = array(
+				"name"		=> $_POST["name"],
+				"email"		=> $_POST["email"],
+				"message"	=> $_POST["message"]
 			);
+			
+			
+			/* ******************************** */
+			/* 		Test For Empty Inputs		*/
+			/* ******************************** */
+			// count empty inputs
+			$emptyInputs = 0;
+			foreach($inputValues as $k => $v) {
+				if( $v == null || empty($v) || $v == "" || removeWhiteSpace($v) == "" )
+					$emptyInputs++;
+			}
+			
+			// test - empty inputs
+			if($emptyInputs != 0) {
+				
+				// bad - empty inputs
+				$resultArray["EMPTY_INPUTS"] = 1;
+				$resultArray["MESSAGE"] = "There was a problem with your registration.  Please check to make sure you have the required information entered in the form.";
+			
+			// success - empty inputs
+			} else {
+				
+				// good - empty inputs
+				$resultArray["EMPTY_INPUTS"] = 0;
 		
-		} // end - empty test
-		
-	} // end - honeypot
+			
+				// send email
+				$result = EmailHelperClass::createAndSendEmail_SponsorEmail($inputValues["name"], $inputValues["email"], $inputValues["message"]);
+				$resultMessage = ($result) ? "Success!" : "There was a problem sending a email.  Please resubmit the form.";
+				
+				// create result array
+				$resultArray = array(
+					"SUCCESS"	=> $result, 
+					"MESSAGE"	=> $resultMessage
+				);
+			
+			} // end - empty test
+			
+		} // end - addition test
+			
+	} // end - honeypot test
 	
 } // end - inputs exist
 
