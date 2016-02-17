@@ -381,60 +381,127 @@
 
 			<div class="row">
 				<div class="scheduleOuter"><div class="scheduleInner">
-						<div class="scheduleSection">
-							<h2 class="white">Saturday, February 20</h2>
-							<div class="times">
-								<p>3:00pm</p>
-								<p>3:30pm</p>
-								<p>4:00pm</p>
-								<p>4:00pm</p>
-								<p>4:00pm</p>
-								<p>6:30pm</p>
-								<p>8:00pm</p>
-								<p>10:00pm</p>
-
-							</div>
-							<div class="events">
+					<div class="scheduleSection">
+						<h2 class="white">Saturday, February 20</h2>
+						<div class="item">
+							<div class="time"><p>2:30pm</p></div>
+							<div class="event">
 								<p>Check-in Starts</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>3:30pm</p></div>
+							<div class="event">
 								<p>Opening Ceremonies</p>
-								<p>Hacking Begins</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>3:45pm</p></div>
+							<div class="event">
 								<p>Team Formation</p>
-								<p>Professional Photoshoot</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>4:00pm</p></div>
+							<div class="event">
+								<p>Hacking Begins</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>4:00pm</p></div>
+							<div class="event"><p>Professional Photoshoot</p></div>
+						</div>
+						<div class="item">
+							<div class="time"><p>6:30pm</p></div>
+							<div class="event">
 								<p>Dinner</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>8:00pm</p></div>
+							<div class="event">
 								<p>Mini Challenge #1</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>10:00pm</p></div>
+							<div class="event">
 								<p>Dessert</p>
 							</div>
 						</div>
-						<div class="scheduleSection">
-							<h2 class="white">Sunday, February 21</h2>
-							<div class="times">
-								<p>Midnight</p>
-								<p>2:00am</p>
-								<p>3:00am</p>
-								<p>5:00am</p>
-								<p>8:00am</p>
-								<p>10:00am</p>
-								<p>12:00pm</p>
-								<p>3:00pm</p>
-								<p>4:00pm</p>
-								<p>4:30pm</p>
-								<p>5:30pm</p>
-							</div>
-							<div class="events">
+					</div>
+					
+					<div class="scheduleSection">
+						<h2 class="white">Sunday, February 21</h2>
+						<div class="item">
+							<div class="time"><p>Midnight</p></div>
+							<div class="event">
 								<p>Snack</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>2:00am</p></div>
+							<div class="event">
 								<p>Mini Challenge #2</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>3:00am</p></div>
+							<div class="event">
 								<p>Another Snack</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>5:00am</p></div>
+							<div class="event">
 								<p>Yet Another Snack</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>8:00am</p></div>
+							<div class="event">
 								<p>Breakfast</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>10:00am</p></div>
+							<div class="event">
 								<p>Mini Challenge #3</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>12:00pm</p></div>
+							<div class="event">
 								<p>Lunch</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>3:00pm</p></div>
+							<div class="event">
 								<p>We're Serious About Snacking</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>4:00pm</p></div>
+							<div class="event">
 								<p>Hacking Ends</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>4:30pm</p></div>
+							<div class="event">
 								<p>Presentations</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="time"><p>5:30pm</p></div>
+							<div class="event">
 								<p>End Ceremonies</p>
 							</div>
 						</div>
-					</div></div>
+					</div>
+					
+				</div></div>
 			</div>
 
 		</div>

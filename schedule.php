@@ -36,7 +36,7 @@
 					<div class="scheduleSection">
 						<h2>Saturday, February 20</h2>
 						<div class="item">
-							<div class="time"><p>3:00pm</p></div>
+							<div class="time"><p>2:30pm</p></div>
 							<div class="event">
 								<p>Check-in Starts</p>
 								<span>Come join us!</span>
@@ -50,25 +50,25 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="time"><p>4:00pm</p></div>
-							<div class="event">
-								<p>Hacking Begins</p>
-								<span>Ready. Set. GO!</span>
-							</div>
-						</div>
-						<div class="item">
-							<div class="time"><p>4:00pm</p></div>
+							<div class="time"><p>3:45pm</p></div>
 							<div class="event">
 								<p>Team Formation</p>
 								<span>Find other people</span>
 							</div>
 						</div>
 						<div class="item">
-							<div class="head">
-								<div class="time"><p>4:00pm</p></div>
-								<div class="event"><p>Professional Photoshoot</p></div>
+							<div class="time"><p>4:00pm</p></div>
+							<div class="event">
+								<p>Hacking Begins</p>
+								<span>Ready. Set. GO!</span>
 							</div>
-							<div class="details">
+						</div>
+						
+						<div class="item">
+							<div class="time"><p>4:00pm</p></div>
+							<div class="event">
+								<p>Professional Photoshoot</p>
+								<span>Fabien Ardillo</span>
 								<span>Get a professional headshot photo taken, use it for Linkedin</span>
 							</div>
 						</div>
@@ -76,21 +76,24 @@
 							<div class="time"><p>6:30pm</p></div>
 							<div class="event">
 								<p>Dinner</p>
-								<span>From Noodles & Company</span>
+								<span>Sponsored by VictorOps and SendGrid</span>
+								<span>Generously Catered by Noodles & Company</span>
+								
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>8:00pm</p></div>
 							<div class="event">
-								<p>Mini Challenge #1</p>
-								<span>Code in the Dark</span>
+								<p>Code in the Dark</p>
+								<span>Mini Challenge #1</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>10:00pm</p></div>
 							<div class="event">
-								<p>Dessert</p>
-								<span>From Susan's Bakery</span>
+								<p>Dessert and Coffee</p>
+								<span>Sponsored by WorkDay and Cardinal Peak</span>
+								<span>Generously Catered by Susan's Bakery and Vic's Coffee</span>
 							</div>
 						</div>
 					</div>
@@ -100,35 +103,36 @@
 							<div class="time"><p>Midnight</p></div>
 							<div class="event">
 								<p>Snack</p>
-								<span></span>
+								<span>Sponsored by FitterFaster</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>2:00am</p></div>
 							<div class="event">
-								<p>Mini Challenge #2</p>
-								<span></span>
+								<p>Scavenger Hunt</p>
+								<span>Mini Challenge #2</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>3:00am</p></div>
 							<div class="event">
 								<p>Another Snack</p>
-								<span></span>
+								<span>Sponsored by Zayo</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>5:00am</p></div>
 							<div class="event">
 								<p>Yet Another Snack</p>
-								<span></span>
+								<span>Sponsored by QuickLeft</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>8:00am</p></div>
 							<div class="event">
 								<p>Breakfast</p>
-								<span>From Moe's Bagels</span>
+								<span>Sponsored by Twitter and Code Craft School</span>
+								<span>Generously Catered by Moe's Bagels and Tod's Espresso</span>
 							</div>
 						</div>
 						<div class="item">
@@ -139,17 +143,18 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="time"><p>12:00pm</p></div>
+							<div class="time"><p>Noon</p></div>
 							<div class="event">
 								<p>Lunch</p>
-								<span>From Jason's Deli</span>
+								<span>Sponsored by Google and ThinkTopic</span>
+								<span>Generously Catered by Jason's Deli</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>3:00pm</p></div>
 							<div class="event">
 								<p>We're Serious About Snacking</p>
-								<span>Seriously.</span>
+								<span>Sponsored by RefactorU</span>
 							</div>
 						</div>
 						<div class="item">
@@ -175,6 +180,12 @@
 						</div>
 					</div>
 				</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="column12 text-center">
+					<a href="documents/T9Hacks_Schedule.pdf" class="btn btn-xl">Download Schedule (PDF)</a>
 				</div>
 			</div>
 			

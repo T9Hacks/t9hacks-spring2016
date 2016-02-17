@@ -132,30 +132,42 @@ header {
 	overflow: hidden;
 	display: inline-block;
 	float: left;
-	margin: 0 100px;
+	padding: 0 100px;
+	width: 50%;
 }
 .scheduleSection h2 {
 	margin-bottom: 20px;
 	text-align: left;
 	font-weight: bold;
 }
-.times, .events {
+
+.item {
+	overflow: hidden;
+	clear: both;
+	margin: 0 0 10px;
+}
+.time, .event {
 	display: inline-block;
 	float: left;
 	text-align: left;
 }
-.times { width: 100px; }
-.times i { 
-	width: 23px; 
-	margin-right: 10px;
-	display: none;
+.time { 
+	width: 33%;
 }
+.event {
+	width: 67%;
+}
+.time p, .event p {
+	margin: 0;
+	font-size: 1.3em;
+}
+
 @media (max-width: 991px) {
 	.scheduleSection:first-child { 
-		margin: 0 50px 0 0;
+		padding: 0 50px 0 0;
 	}
 	.scheduleSection:last-child {
-		margin: 0 0 0 50px;
+		padding: 0 0 0 50px;
 	}
 }
 @media only screen and (max-width: 767px) {
@@ -170,7 +182,8 @@ header {
 	.scheduleSection:first-child, .scheduleSection:last-child {
 		display: block;
 		float: none;
-		margin: 0;
+		padding: 0;
+		width: 100%;
 	}
 	.scheduleSection:last-child { margin-top: 50px; }
 }
