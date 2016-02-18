@@ -347,6 +347,22 @@ class DBHelperClass {
 		return($updateCount>0);
 	}
 	
+	function updateRecordIdKey($id, $key, $column, $value) {
+		$isParticipant = ( substr($key, 0, 1) == "P" );
+		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
+		$stmt = $this->conn->prepare("UPDATE $table SET $column = :value WHERE `id` = :id AND `key` = :key");
+		$stmt->bindParam(':id', $id);
+		$stmt->bindParam(':key', $key);
+		$stmt->bindParam(':value', $value);
+		
+		// use exec() because no results are returned
+		$stmt->execute();
+		
+		// echo a message to say the UPDATE succeeded
+		$updateCount = $stmt->rowCount();
+		return($updateCount>0);
+	}
+	
 	function cancelRegistration($isParticipant, $key) {
 		$table = ($isParticipant) ? "`t9hacks_participants`" : "`t9hacks_mentors`";
 		$stmt = $this->conn->prepare("UPDATE $table SET `unregistered` = 1 WHERE `key` = :key");
@@ -382,6 +398,23 @@ class DBHelperClass {
 		$stmt = $this->conn->prepare("SELECT COUNT(*) AS c FROM `t9hacks_users` WHERE `username` = :username AND `password_hash` = :passwordHash");
 		$stmt->bindParam(':username', $username);
 		$stmt->bindParam(':passwordHash', $passwordHash);
+		$stmt->execute();
+		
+		// store data in array
+		$pCount = array();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
+			$pCount = $row;
+		}
+		
+		// test if email used
+		return ($pCount["c"] == 1);
+	}
+	
+	
+	function loginToken($token) {
+		
+		$stmt = $this->conn->prepare("SELECT COUNT(*) AS c FROM `t9hacks_users` WHERE `password_hash` = :token");
+		$stmt->bindParam(':token', $token);
 		$stmt->execute();
 		
 		// store data in array

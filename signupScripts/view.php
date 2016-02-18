@@ -1,7 +1,7 @@
 <?php 
 
-include 'DBHelperClass.php';
-include 'EmailHelperClass.php';
+include_once 'DBHelperClass.php';
+include_once 'EmailHelperClass.php';
 
 $isSession = false;
 
@@ -248,6 +248,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			<div class="filterGroup">
 				<div class="filterBtn active" id="allFilterBtn" data-self="all">All<span></span></div>
 			</div>
+			
 			<div class="filterGroup">
 				<div class="specialFilterBtn">Toggle Special Filters</div>
 			</div>
@@ -264,6 +265,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					<div class="filterBtn" id="definitelyNotConfirmedFilterBtn" data-self="definitelyNotConfirmed">Definitely Not Confirmed<span></span></div>
 				</div>
 			</div>
+			
 			<div class="filterGroup">
 				<div class="specificFilterBtn">Toggle Specific Filters</div>
 			</div>
@@ -303,6 +305,10 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					<div class="filterBtn" id="collegeWorldFilterBtn" data-self="collegeWorld">World<span></span></div>
 					<div class="filterBtn" id="collegeUnknownFilterBtn" data-self="collegeUnknown">Unknown<span></span></div>
 				</div>
+			</div>
+			
+			<div class="filterGroup">
+				<a href="downloadViewCSV.php" class="btn btn-l" target="_blank">Download CSV</a>
 			</div>
 		</div>
 			

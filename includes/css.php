@@ -48,6 +48,7 @@ function css($page) {
 			?>
 			<link href="css/signup.css" rel="stylesheet" type="text/css" media="all">
 			<link href="css/slack.css" rel="stylesheet" type="text/css" media="all"> 
+			<link href="css/inputs.css" rel="stylesheet" type="text/css" media="all"> 
 			<?php 
 			break;
 		case "secret":

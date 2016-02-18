@@ -685,21 +685,23 @@
 				<div class="sponsorRowWrapper silver">	
 					
 					<!-- Vics -->
+					<!-- 
 					<div class="sponsor">
 						<div class="sponsor3 vics">
 							<a href="" target="_blank"><img src="images/sponsors/vics_logo.png" /></a>
+						</div>
+					</div>
+					-->
+					<!-- Susan's Bakery -->
+					<div class="sponsor">
+						<div class="sponsor3 susansbakery">
+							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Tods -->
 					<div class="sponsor">
 						<div class="sponsor3 tods">
 							<a href="http://www.todscafe.com/" target="_blank"><img src="images/sponsors/tods_logo.png" /></a>
-						</div>
-					</div>
-					<!-- Susan's Bakery -->
-					<div class="sponsor">
-						<div class="sponsor3 susansbakery">
-							<a href="http://susansbakeryboulder.com/" target="_blank"><img src="images/sponsors/susansbakery_logo.png" /></a>
 						</div>
 					</div>
 					<!-- Moe's Bagels -->
@@ -718,16 +720,16 @@
 							<a href="http://www.invisionapp.com/" target="_blank"><img src="images/sponsors/invision_logo_white.png" /></a>
 						</div>
 					</div>
-					<!-- Trello -->
-					<div class="sponsor">
-						<div class="sponsor3 trello">
-							<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello_logo_white.svg" /></a>
-						</div>
-					</div>
 					<!-- Dash -->
 					<div class="sponsor">
 						<div class="sponsor3 dash">
 							<a href="https://kapeli.com/dash" target="_blank"><img src="images/sponsors/dash_logo.png" /></a>
+						</div>
+					</div>
+					<!-- Trello -->
+					<div class="sponsor">
+						<div class="sponsor3 trello">
+							<a href="https://trello.com/" target="_blank"><img src="images/sponsors/trello_logo_white.svg" /></a>
 						</div>
 					</div>
 				</div>
@@ -738,12 +740,6 @@
 					<div class="sponsor">
 						<div class="sponsor3 hackcu">
 							<a href="http://hackcu.org" target="_blank"><img src="images/sponsors/hackcu_logo.png" /></a>
-						</div>
-					</div>
-					<!-- CU WiC -->
-					<div class="sponsor">
-						<div class="sponsor3 cuwic">
-							<a href="http://wic.cs.colorado.edu/" target="_blank"><img src="images/sponsors/cuwic_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -829,7 +825,25 @@
 				</div>
 			</div>
 			
+			
+			
 			<div class="row">
+				<div class="column12 article">
+					<p class="link">
+						<a href="http://www.businesswire.com/news/home/20160217005388/en/" target="_blank">VictorOps to Provide Mentors for 24-hour Women's Hackathon at the University of Colorado Boulder</a>
+					</p>
+					<p class="author">
+						17 February 2016 &nbsp;|&nbsp; <a href="http://www.businesswire.com/portal/site/home/" target="_blank">Business Wire</a>
+					</p>
+				</div>
+				<div class="column12 article">
+					<p class="link">
+						<a href="http://atlas.colorado.edu/t9hacks/" target="_blank">ATLAS To Host CU’s First-Ever Women’s Hackathon Feb 20-21</a>
+					</p>
+					<p class="author">
+						16 February 2016 &nbsp;|&nbsp; <a href="http://atlas.colorado.edu/" target="_blank">ATLAS Institute</a>
+					</p>
+				</div>
 				<div class="column12 article">
 					<p class="link">
 						<a href="https://victorops.com/blog/t9hacks-supporting-diversity-tech/" target="_blank">T9Hacks: Supporting Diversity in Tech</a>

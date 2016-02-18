@@ -299,7 +299,7 @@
 									</div>
 								</div>
 								
-								<div class="fieldWrapper column6">
+								<div class="fieldWrapper column6 types">
 									<div class="fieldRadio">
 										<input class="tgl tgl-flip" id='p' type='radio' name="type" value="Participant" >
 		   								<label class='tgl-btn' data-tg-off='Participant' data-tg-on='Participant' for='p'></label>
