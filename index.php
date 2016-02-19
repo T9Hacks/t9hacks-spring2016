@@ -242,8 +242,8 @@
 								<p>
 									CU has a great public transit system! There are local RTD busses that drop off directly in front of the 
 									ATLAS building and many more regional busses that drop off at CU.  For more information about the bus system, 
-									you can visit <a href="http://www.colorado.edu/pts/node/265">CU's Public Transit Page</a> or the 
-									<a href="http://www.rtd-denver.com/">RTD website</a>.  If you are unsure of what bus to take, Google Maps is a 
+									you can visit <a href="http://www.colorado.edu/pts/node/265" target='_blank'>CU's Public Transit Page</a> or the 
+									<a href="http://www.rtd-denver.com/" target='_blank'>RTD website</a>.  If you are unsure of what bus to take, Google Maps is a 
 									great way to plan your trip!
 								</p>
 								<p>

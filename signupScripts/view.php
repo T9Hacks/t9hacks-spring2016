@@ -26,7 +26,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "approve":
 				$db->updateRecord(($type == 1), $id, "approved", 1);
 				if($type==1)
-					EmailHelperClass::createAndSendEmail_Approval($db->getPeopleFromId(true, $id));
+					EmailHelperClass::createAndSendEmail_Approval($db->getPeopleFromId(($type == 1), $id));
 				break;
 			case "wait":
 				$db->updateRecord(($type == 1), $id, "approved", 3);
@@ -34,7 +34,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "reject":
 				$db->updateRecord(($type == 1), $id, "approved", 2);
 				if($type == 1)
-					EmailHelperClass::createAndSendEmail_Rejection($db->getPeopleFromId(true, $id));
+					EmailHelperClass::createAndSendEmail_Rejection($db->getPeopleFromId(($type == 1), $id));
 				break;
 			case "checkIn":
 				$db->updateRecord(($type == 1), $id, "checked_in", 1);
@@ -51,13 +51,13 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "reminder1" :
 				if($type == 1) {
 					$db->updateRecord(($type == 1), $id, "reminder_num", 1);
-					EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration1($db->getPeopleFromId(true, $id));
+					EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration1($db->getPeopleFromId(($type == 1), $id));
 				}
 				break;
 			case "reminder2" :
 				if($type == 1) {
 					$db->updateRecord(($type == 1), $id, "reminder_num", 2);
-					EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration2($db->getPeopleFromId(true, $id));
+					EmailHelperClass::createAndSendEmail_ReminderToCompleteRegistration2($db->getPeopleFromId(($type == 1), $id));
 				}
 				break;
 				
@@ -85,15 +85,24 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				
 			case "2weeksparticipants" :
 				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
-				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipants($db->getPeopleFromId(true, $id));
+				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipants($db->getPeopleFromId(($type == 1), $id));
 				break;
 			case "2weeksparticipantsfar" :
 				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
-				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipantsFar($db->getPeopleFromId(true, $id));
+				EmailHelperClass::createAndSendEmail_Reminder2WeeksParticipantsFar($db->getPeopleFromId(($type == 1), $id));
 				break;
 			case "2weeksmentors" :
 				$db->updateRecord(($type == 1), $id, "sent_2_weeks", 1);
-				EmailHelperClass::createAndSendEmail_Reminder2WeeksMentors($db->getPeopleFromId(false, $id));
+				EmailHelperClass::createAndSendEmail_Reminder2WeeksMentors($db->getPeopleFromId(($type == 1), $id));
+				break;
+				
+			case "tomorrowparticipants" :
+				$db->updateRecord(($type == 1), $id, "sent_tomorrow", 1);
+				EmailHelperClass::createAndSendEmail_ReminderTomorrowParticipants($db->getPeopleFromId(($type == 1), $id));
+				break;
+			case "tomorrowmentors" :
+				$db->updateRecord(($type == 1), $id, "sent_tomorrow", 1);
+				EmailHelperClass::createAndSendEmail_ReminderTomorrowMentors($db->getPeopleFromId(($type == 1), $id));
 				break;
 				
 			case "confirmed" :
@@ -102,23 +111,9 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			case "unconfirmed" :
 				$db->updateRecord(($type == 1), $id, "confirmed_attending", 0);
 				break;
-				/*
-			case "1weekmentors" :
-				EmailHelperClass::createAndSendEmail_Reminder1WeekMentors();
-				break;
-			case "1weekparticipants" :
-				EmailHelperClass::createAndSendEmail_Reminder1WeekParticipants();
-				break;
-			case "tomorrowmentors" :
-				EmailHelperClass::createAndSendEmail_ReminderTomorrowMentors();
-				break;
-			case "tomorrowparticipants" :
-				EmailHelperClass::createAndSendEmail_ReminderTomorrowParticipants();
-				break;
-				*/
 			default: break;
 		}
-		
+		//die();
 		header('Location: view.php');
 		$db->close();
 	}
@@ -254,7 +249,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 			</div>
 			<div class="specialFilterGroup">
 				<div class="filterGroup">
-					<div class="filterBtn" id="send2weeksFilterBtn" data-self="send2weeks">Send 2 Weeks<span></span></div>
+					<div class="filterBtn" id="sendTomorrowFilterBtn" data-self="sendTomorrow">Send Tomorrow<span></span></div>
 				</div>
 				<div class="filterGroup">
 					<div class="filterBtn" id="definitelyApprovedFilterBtn" data-self="definitelyApproved">Definitely Approved<span></span></div>
@@ -270,6 +265,9 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 				<div class="specificFilterBtn">Toggle Specific Filters</div>
 			</div>
 			<div class="specificFilterGroup" style="display: none;">
+				<div class="filterGroup">
+					<div class="filterBtn" id="send2weeksFilterBtn" data-self="send2weeks">Send 2 Weeks<span></span></div>
+				</div>
 				<div class="filterGroup">
 					<div class="filterBtn" id="approvedFilterBtn" data-self="approved">Approved Admission<span></span></div>
 					<div class="filterBtn" id="rejectedFilterBtn" data-self="rejected">Rejected Admission<span></span></div>
@@ -359,6 +357,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								else if($person["set_college"] == 4) echo "collegeWorld ";
 								else echo "collegeUnknown ";
 							echo ($person["approved"] == 1 && $person["sent_2_weeks"] == 0) ? "send2weeks " : "sent2weeks ";
+							echo ($person["approved"] == 1 && $person["unregistered"] == 0 && $person["sent_tomorrow"] == 0) ? "sendTomorrow " : "sentTomorrow ";
 							echo( $person["approved"] == 1 && $person["complete"] == 1 && $person["unregistered"] == 0) ? "definitelyApproved " : "definitelyNotApproved ";
 							echo( $person["approved"] == 1 && $person["complete"] == 1 && $person["unregistered"] == 0 && $person["confirmed_attending"] == 1) ? "definitelyConfirmed " : "definitelyNotConfirmed ";
 						?>">
@@ -464,16 +463,17 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn setWorldBtn" data-action="markWorld">Mark as World</button>
 									<?php } ?>
 									
-									<?php if( ($person["approved"] == 1 && $person["sent_2_weeks"] == 0) || $person["key"] == "P-cdyRYz") { ?>
-										<button type="submit" class="btn actionBtn " data-action="2weeksparticipants">2 weeks away participants</i></button>
-										<button type="submit" class="btn actionBtn " data-action="2weeksparticipantsfar">2 weeks away participants far</i></button>
-									<?php } ?>
+										<button type="submit" class="btn actionBtn " data-action="2weeksparticipants">2 weeks away participants</button>
+										<button type="submit" class="btn actionBtn " data-action="2weeksparticipantsfar">2 weeks away participants far</button>
+									
+										<button type="submit" class="btn actionBtn" data-action="tomorroparticipants">tomorrow participants</button>
+									
 									
 									<?php if( ($person["confirmed_attending"] == 0) || $person["key"] == "P-cdyRYz") { ?>
-										<button type="submit" class="btn actionBtn " data-action="confirmed">Confirmed Attending</i></button>
+										<button type="submit" class="btn actionBtn " data-action="confirmed">Confirmed Attending</button>
 									<?php } 
 									if(($person["confirmed_attending"] == 1) || $person["key"] == "P-cdyRYz") { ?>
-										<button type="submit" class="btn actionBtn " data-action="unconfirmed">Un-Confirmed Attending</i></button>
+										<button type="submit" class="btn actionBtn " data-action="unconfirmed">Un-Confirmed Attending</button>
 									<?php }?>
 									
 								</form>
@@ -542,6 +542,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								else if($person["set_gender"] == 3) echo "genderX ";
 								else echo "genderUnknown ";
 							echo ($person["sent_2_weeks"] == 0) ? "send2weeks " : "sent2weeks ";
+							echo ($person["sent_tomorrow"] == 0 && $person["unregistered"] == 0) ? "sendTomorrow " : "sentTomorrow ";
 						?>">
 						
 							<div class="beg">
@@ -614,15 +615,14 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn setXBtn" data-action="markX">Mark as X</button>
 									<?php } ?>
 									
-									<?php if( ($person["sent_2_weeks"] == 0) || $person["key"] == "M-aKgmYU" ) { ?>
-										<button type="submit" class="btn actionBtn" data-action="2weeksmentors">2 weeks away mentors</i></button>
-									<?php } ?>
+										<button type="submit" class="btn actionBtn" data-action="2weeksmentors">2 weeks away mentors</button>
+										<button type="submit" class="btn actionBtn" data-action="tomorrowmentors">tomorrow mentors</button>
 									
 									<?php if( ($person["confirmed_attending"] == 0) || $person["key"] == "M-aKgmYU") { ?>
-										<button type="submit" class="btn actionBtn " data-action="confirmed">Confirmed Attending</i></button>
+										<button type="submit" class="btn actionBtn " data-action="confirmed">Confirmed Attending</button>
 									<?php } 
 									if(($person["confirmed_attending"] == 1) || $person["key"] == "M-aKgmYU") { ?>
-										<button type="submit" class="btn actionBtn " data-action="unconfirmed">Un-Confirmed Attending</i></button>
+										<button type="submit" class="btn actionBtn " data-action="unconfirmed">Un-Confirmed Attending</button>
 									<?php }?>
 									
 								</form>
@@ -779,20 +779,6 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 					</div>
 				</div>
 				
-				<div class="row">
-					<div class="column12">
-					<!-- 
-						<h2>Emails</h2>
-						<button type="submit" class="btn actionBtn" data-action="followupmentors">follow up mentors</i></button>
-						<button type="submit" class="btn actionBtn " data-action="2weeksparticipants">2 weeks away participants</i></button>
-						<button type="submit" class="btn actionBtn" data-action="1weekmentors">1 week away mentors</i></button>
-						<button type="submit" class="btn actionBtn " data-action="1weekparticipants">1 week away participants</i></button>
-						<button type="submit" class="btn actionBtn" data-action="tomorrowmentors">tomorrow mentors</i></button>
-						<button type="submit" class="btn actionBtn " data-action="tomorrowparticipants">tomorrow participants</i></button>
-						 -->
-					</div>
-				</div>
-				
 			</div>
 		
 		</div> <!-- end tabSectionWrapper -->
@@ -874,6 +860,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 		$(sectionDiv+".person").show();
 
 		if($("#send2weeksFilterBtn").hasClass("active"))			$(sectionDiv + ".sent2weeks").hide();
+		if($("#sendTomorrowFilterBtn").hasClass("active"))			$(sectionDiv + ".sentTomorrow").hide();
 		if($("#definitelyApprovedFilterBtn").hasClass("active"))	$(sectionDiv + ".definitelyNotApproved").hide();
 		if($("#definitelyNotApprovedFilterBtn").hasClass("active"))	$(sectionDiv + ".definitelyApproved").hide();
 		if($("#definitelyConfirmedFilterBtn").hasClass("active"))	$(sectionDiv + ".definitelyNotConfirmed").hide();

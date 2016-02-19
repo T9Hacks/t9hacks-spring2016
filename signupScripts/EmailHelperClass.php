@@ -10,6 +10,7 @@ class EmailHelperClass {
 		$headers[] = "MIME-Version: 1.0";
 		$headers[] = "Content-Type: text/html; charset=ISO-8859-1";
 		$headers[] = "To: $sendTo";
+		$headers[] = "Bcc: brittany.kos@colorado.edu";
 		$headers[] = "From: \"T9Hacks\" <no-reply@t9hacks.org>";
 		$headers[] = "Subject: $subject";
 		$headers[] = "Reply-To: $replyTo";
@@ -591,29 +592,23 @@ class EmailHelperClass {
 	function createAndSendEmail_Reminder2WeeksMentors($personRecord) {
 		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "2weeksm");
 	}
-	/*
-	function createAndSendEmail_Reminder1WeekMentors($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "1week");
-	}
-	function createAndSendEmail_Reminder1WeekParticipants($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "1week");
-	}
+	
 	function createAndSendEmail_ReminderTomorrowMentors($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "tomorrow");
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "tomorrowm");
 	}
 	function createAndSendEmail_ReminderTomorrowParticipants($personRecord) {
-		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, $subject, "tomorrow");
+		EmailHelperClass::createAndSendEmail_ReminderTimeAway($personRecord, "tomorrowp");
 	}
-	*/
+	
 	
 	function createAndSendEmail_ReminderTimeAway($personRecord, $time) {
 		// get person's data
 		$name = $personRecord[0]["name"];
 		$email = $personRecord[0]["email"];
 		$key = $personRecord[0]["key"];
-		if($time == "2weeksp" || $time == "2weekspfar")
+		if($time == "2weeksp" || $time == "2weekspfar" || $time == "tomorrowp")
 			$link = "www.t9hacks.org/signupPages/signup-participant2.php?key=$key";
-		else if($time == "2weeksm")
+		else if($time == "2weeksm" || $time == "tomorrowm")
 			$link = "www.t9hacks.org/signupPages/signup-mentor2.php?key=$key";
 		
 		// create send to
@@ -625,6 +620,8 @@ class EmailHelperClass {
 			$subject = "Reminder for T9Hacks";
 		else if($time == "2weekspfar")
 			$subject = "Updates for T9Hacks - RESPONSE REQUIRED";
+		else if ($time == "tomorrowm" || $time == "tomorrowp")
+			$subject = "Reminder for T9Hacks Spring 2016";
 		
 		
 		// create email message
@@ -634,6 +631,10 @@ class EmailHelperClass {
 			$message = file_get_contents("emails/2weeksparticipant.php");
 		else if($time == "2weeksm")
 			$message = file_get_contents("emails/2weeksmentor.php");
+		else if($time == "tomorrowp")
+			$message = file_get_contents("emails/tomorrowparticipant.php");
+		else if($time == "tomorrowm")
+			$message = file_get_contents("emails/tomorrowmentor.php");
 		
 		// replace variables
 		$message = str_replace("[[NAME]]", $name, $message);
