@@ -466,7 +466,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 										<button type="submit" class="btn actionBtn " data-action="2weeksparticipants">2 weeks away participants</button>
 										<button type="submit" class="btn actionBtn " data-action="2weeksparticipantsfar">2 weeks away participants far</button>
 									
-										<button type="submit" class="btn actionBtn" data-action="tomorroparticipants">tomorrow participants</button>
+										<button type="submit" class="btn actionBtn" data-action="tomorrowparticipants">tomorrow participants</button>
 									
 									
 									<?php if( ($person["confirmed_attending"] == 0) || $person["key"] == "P-cdyRYz") { ?>

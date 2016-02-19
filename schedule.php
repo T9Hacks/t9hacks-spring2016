@@ -138,7 +138,7 @@
 						<div class="item">
 							<div class="time"><p>10:00am</p></div>
 							<div class="event">
-								<p>Mini Challenge #3</p>
+								<p>Secret Challenge</p>
 								<span></span>
 							</div>
 						</div>

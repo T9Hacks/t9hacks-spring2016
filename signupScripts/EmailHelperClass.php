@@ -666,7 +666,7 @@ class EmailHelperClass {
 			} 
 			$message = str_replace("[[DISTANCE_REQ]]", $dist, $message);
 		}
-		
+		//echo $message; die();
 		
 		// create headers
 		$headers = EmailHelperClass::createHeaders($subject, $sendTo);
