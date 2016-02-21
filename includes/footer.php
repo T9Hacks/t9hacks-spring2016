@@ -38,11 +38,16 @@ function footer($up = false) {
 						<li>
 							<a href="https://www.instagram.com/t9hacks" target="_blank"><i class="fa fa-instagram"></i></a>
 						</li>
+						<!-- 
 						<li>
 							<a href="https://www.linkedin.com/groups/8448877" target="_blank"><i class="fa fa-linkedin"></i></a>
 						</li>
+						 -->
 						<li>
 							<a href="https://github.com/t9hacks" target="_blank"><i class="fa fa-github"></i></a>
+						</li>
+						<li>
+							<a href="https://t9hacks.slack.com" target="_blank"><i class="fa fa-slack"></i></a>
 						</li>
 					</ul>
 					<div class="socialSharing">

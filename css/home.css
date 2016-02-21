@@ -247,18 +247,17 @@ header {
 	.thinktopic		{ background-color: #FFFFFF; border: 1px solid #81C685; }
 	.workday		{ background-color: #FFFFFF; border: 1px solid #EF9F00; }
 	
-	.sendgrid		{ background-color: #2F3645; }
-	.google			{ background-color: #FBFBFB; border: 1px solid #D6D6D6; }
 	.cardinalpeak	{ background-color: #FFFFFF; border: 1px solid #B00421; }
+	.google			{ background-color: #FBFBFB; border: 1px solid #D6D6D6; }
 	.codecraft		{ background-color: #FFFFFF; border: 1px solid #009BDF; }
+	.sendgrid		{ background-color: #2F3645; }
 	.lockheed		{ background-color: #112940; }
 	
 	.fitterfaster	{ background-color: #222222; }
 	.quickleft		{ background-color: #42DCA3; }
+	.refactoru		{ background-color: #050708; }
 	.stickergiant	{ background-color: #FCDE54; }
 	.zayo 			{ background-color: #F47521; }
-	.refactoru		{ background-color: #050708; }
-	
 	
 	
 	.mlh 			{ background-color: #F7F9F9; border: 1px solid #A9AFB0; }

@@ -376,6 +376,7 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 							
 							<div class="status column12">
 								<div class="cell-key">
+									Key: 
 									<a href="../signupPages/signup-participant2.php?key=<?php echo $person["key"]; ?>" target="_blank">
 										<?php echo $person["key"]; ?>
 									</a>
@@ -384,6 +385,8 @@ if(array_key_exists("t9hacks_login", $_COOKIE) && $_COOKIE["t9hacks_login"] == 1
 								<div class="cell-unregistered"><?php echo ($person["unregistered"] == 1) ? "Registration Canceled" : "Registration Active"; ?></div>
 								<div class="cell-approved"><?php echo ($person["approved"] == 1) ? "Approved Admission" : ( ($person["approved"] == 0) ? "Undecided Admission" : "Rejected Admission"); ?></div>
 								<div class="cell-checked-in"><?php echo ($person["checked_in"] == 1) ? "Checked-in" : "Not checked-in"; ?></div>
+								<div class="">ID: <?php echo $person["id"]; ?></div>
+								<div class="">Badge: <?php echo (is_null($person["badge_id"]) ? "No Badge" : $person["badge_id"]); ?></div>
 							</div>
 							
 							<div class="other">

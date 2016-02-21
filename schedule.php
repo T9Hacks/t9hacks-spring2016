@@ -124,14 +124,14 @@
 							<div class="time"><p>5:00am</p></div>
 							<div class="event">
 								<p>Yet Another Snack</p>
-								<span>Sponsored by QuickLeft</span>
+								<span>Sponsored by Quick Left</span>
 							</div>
 						</div>
 						<div class="item">
 							<div class="time"><p>8:00am</p></div>
 							<div class="event">
 								<p>Breakfast</p>
-								<span>Sponsored by Twitter and Code Craft School</span>
+								<span>Sponsored by Twitter and CodeCraft School</span>
 								<span>Generously Catered by Moe's Bagels and Tod's Espresso</span>
 							</div>
 						</div>
@@ -139,7 +139,7 @@
 							<div class="time"><p>10:00am</p></div>
 							<div class="event">
 								<p>Secret Challenge</p>
-								<span></span>
+								<span>Mini Challenge #3</span>
 							</div>
 						</div>
 						<div class="item">

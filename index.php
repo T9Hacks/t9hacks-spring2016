@@ -829,6 +829,8 @@
 			
 			<div class="row">
 				<div class="column12 article">
+				http://bizwest.com/victorops-adds-mentorship-to-womens-24-hour-hackathon-at-cu/
+				
 					<p class="link">
 						<a href="http://www.businesswire.com/news/home/20160217005388/en/" target="_blank">VictorOps to Provide Mentors for 24-hour Women's Hackathon at the University of Colorado Boulder</a>
 					</p>
