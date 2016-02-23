@@ -667,12 +667,6 @@
 							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
 						</div>
 					</div>
-					<!-- Shpero -->
-					<div class="sponsor">
-						<div class="sponsor2 sphero">
-							<a href="http://www.sphero.com/" target="_blank"><img src="images/sponsors/sphero_logo.png" /></a>
-						</div>
-					</div>
 					<!-- Jason's Deli -->
 					<div class="sponsor">
 						<div class="sponsor2 jasonsdeli">
@@ -682,16 +676,7 @@
 				</div>
 			</div>
 			<div class="row sponsorRow">
-				<div class="sponsorRowWrapper silver">	
-					
-					<!-- Vics -->
-					<!-- 
-					<div class="sponsor">
-						<div class="sponsor3 vics">
-							<a href="" target="_blank"><img src="images/sponsors/vics_logo.png" /></a>
-						</div>
-					</div>
-					-->
+				<div class="sponsorRowWrapper silver">
 					<!-- Susan's Bakery -->
 					<div class="sponsor">
 						<div class="sponsor3 susansbakery">
