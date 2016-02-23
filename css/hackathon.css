@@ -523,3 +523,21 @@ footer .quicklinks, footer .copyright {
 
 
 
+/* extra */
+.scavengerHunt {
+	width: 100%;
+	min-height: 200px;
+}
+.scavengerHuntHint {
+	display: none;
+	overflow: hidden;
+	text-align: center;
+	
+	padding: 20px;
+	background: rgba(255, 255, 255, .6);
+	
+}
+.scavengerHunt:hover .scavengerHuntHint {
+	display: block;
+}
+

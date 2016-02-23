@@ -28,7 +28,7 @@ function css($page) {
 			break;
 		case "team":
 			?> 
-			<link href="css/team.css" rel="stylesheet" type="text/css" media="all"> 
+			<link href="css/team1.css" rel="stylesheet" type="text/css" media="all"> 
 			<?php 
 			break;
 		case "schedule":

@@ -820,47 +820,62 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="column12">
+				<div class="column8">
 					<h1 class="black">Press</h1>
+					<div class="article">
+						<p class="link">
+							<a href="http://www.dailycamera.com/news/ci_29545069/cuboulders-atlas-institute-hosts-inaugural-womencentric-hackathon" target="_blank">CU-Boulder's Atlas Institute hosts inaugural women-centric hack-a-thon</a>
+						</p>
+						<p class="author">
+							21 February 2016 &nbsp;|&nbsp; <a href="http://www.dailycamera.com/" target="_blank">Daily Camera</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="http://bizwest.com/victorops-adds-mentorship-to-womens-24-hour-hackathon-at-cu/" target="_blank">VictorOps adds mentorship to women’s 24-hour hackathon at CU</a>
+						</p>
+						<p class="author">
+							18 February 2016 &nbsp;|&nbsp; <a href="http://bizwest.com/" target="_blank">BizWest</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="http://www.businesswire.com/news/home/20160217005388/en/" target="_blank">VictorOps to Provide Mentors for 24-hour Women's Hackathon at the University of Colorado Boulder</a>
+						</p>
+						<p class="author">
+							17 February 2016 &nbsp;|&nbsp; <a href="http://www.businesswire.com/portal/site/home/" target="_blank">Business Wire</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="http://atlas.colorado.edu/t9hacks/" target="_blank">ATLAS To Host CU’s First-Ever Women’s Hackathon Feb 20-21</a>
+						</p>
+						<p class="author">
+							16 February 2016 &nbsp;|&nbsp; <a href="http://atlas.colorado.edu/" target="_blank">ATLAS Institute</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="https://victorops.com/blog/t9hacks-supporting-diversity-tech/" target="_blank">T9Hacks: Supporting Diversity in Tech</a>
+						</p>
+						<p class="author">
+							3 February 2016 &nbsp;|&nbsp; <a href="https://victorops.com/" target="_blank">Victor Ops</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="https://quickleft.com/blog/cu-atlas-t9hacks-bridging-gap-women-tech/" target="_blank">CU ATLAS T9Hacks: Bridging the Gap Between Women & Tech</a>
+						</p>
+						<p class="author">
+							27 January 2016 &nbsp;|&nbsp; <a href="https://quickleft.com/" target="_blank">QuickLeft</a>
+						</p>
+					</div>
 				</div>
-			</div>
-			
-			
-			
-			<div class="row">
-				<div class="column12 article">
-				http://bizwest.com/victorops-adds-mentorship-to-womens-24-hour-hackathon-at-cu/
 				
-					<p class="link">
-						<a href="http://www.businesswire.com/news/home/20160217005388/en/" target="_blank">VictorOps to Provide Mentors for 24-hour Women's Hackathon at the University of Colorado Boulder</a>
-					</p>
-					<p class="author">
-						17 February 2016 &nbsp;|&nbsp; <a href="http://www.businesswire.com/portal/site/home/" target="_blank">Business Wire</a>
-					</p>
-				</div>
-				<div class="column12 article">
-					<p class="link">
-						<a href="http://atlas.colorado.edu/t9hacks/" target="_blank">ATLAS To Host CU’s First-Ever Women’s Hackathon Feb 20-21</a>
-					</p>
-					<p class="author">
-						16 February 2016 &nbsp;|&nbsp; <a href="http://atlas.colorado.edu/" target="_blank">ATLAS Institute</a>
-					</p>
-				</div>
-				<div class="column12 article">
-					<p class="link">
-						<a href="https://victorops.com/blog/t9hacks-supporting-diversity-tech/" target="_blank">T9Hacks: Supporting Diversity in Tech</a>
-					</p>
-					<p class="author">
-						3 February 2016 &nbsp;|&nbsp; <a href="https://victorops.com/" target="_blank">Victor Ops</a>
-					</p>
-				</div>
-				<div class="column12 article">
-					<p class="link">
-						<a href="https://quickleft.com/blog/cu-atlas-t9hacks-bridging-gap-women-tech/" target="_blank">CU ATLAS T9Hacks: Bridging the Gap Between Women & Tech</a>
-					</p>
-					<p class="author">
-						27 January 2016 &nbsp;|&nbsp; <a href="https://quickleft.com/" target="_blank">QuickLeft</a>
-					</p>
+				<div class="column4">
+					<h1 class="black">Tweets</h1>
+					<a class="twitter-timeline" href="https://twitter.com/search?q=t9hacks" data-widget-id="702032161797353472">Tweets about t9hacks</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
 			</div>
 			

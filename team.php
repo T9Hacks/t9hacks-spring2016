@@ -127,7 +127,6 @@
 			</div>
 			
 			<div class="row">
-				<div class="column4">&nbsp;</div>
 				<div class="column4 teamMemberContainer">
 					<div class="teamMember">
 						<img src="images/team/kelly.jpg" alt="Photo of Kelly Linehan">
@@ -135,6 +134,22 @@
 						<ul class="socialButtons">
 							<li><a href="https://www.linkedin.com/in/kelly-linehan-15a24b98" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
+					</div>
+				</div>
+				<div class="column8">
+					<div class="scavengerHunt">
+						<div class="scavengerHuntHint">
+							<p>
+								Great job finding the hidden link!<br/>
+								For the next step, you and your team must be in sync.
+							</p>
+							<p>
+								Write a letter to the girl who speaks.<br/>
+								List the names of your team and one thing each of you have learned.<br/>
+								If you want to be the winner that she seeks,<br/>
+								write something sincere or else you will be returned.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
