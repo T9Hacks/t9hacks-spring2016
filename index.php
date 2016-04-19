@@ -583,21 +583,10 @@
 							<a href="http://www.codecraftschool.com/" target="_blank"><img src="images/sponsors/codecraft_logo.png" /></a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row sponsorRow">
-				<div class="sponsorRowWrapper gold">
-					
 					<!-- Send Grid -->
 					<div class="sponsor">
 						<div class="sponsor2 sendgrid">
 							<a href="https://sendgrid.com/" target="_blank"><img src="images/sponsors/sendgrid_logo_white.png" /></a>
-						</div>
-					</div>
-					<!-- Lockheed Martin -->
-					<div class="sponsor">
-						<div class="sponsor2 lockheed">
-							<a href="http://www.lockheedmartin.com/" target="_blank"><img src="images/sponsors/lockheedmartin_logo.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -657,19 +646,9 @@
 							<a href="http://mlh.io" target="_blank"><img src="images/sponsors/mlh_logo.png" /></a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row sponsorRow">
-				<div class="sponsorRowWrapper gold">
-					<!-- Noodles and Company -->
-					<div class="sponsor">
-						<div class="sponsor2 noodles">
-							<a href="http://www.noodles.com/" target="_blank"><img src="images/sponsors/noodles_logo.png" /></a>
-						</div>
-					</div>
 					<!-- Jason's Deli -->
 					<div class="sponsor">
-						<div class="sponsor2 jasonsdeli">
+						<div class="sponsor1 jasonsdeli">
 							<a href="http://www.jasonsdeli.com/" target="_blank"><img src="images/sponsors/jasonsdeli_logo.png" /></a>
 						</div>
 					</div>
@@ -807,6 +786,22 @@
 			<div class="row">
 				<div class="column8">
 					<h1 class="black">Press</h1>
+					<div class="article">
+						<p class="link">
+							<a href="http://atlas.colorado.edu/t9-hacks-highlights/" target="_blank">T9 Hacks Highlights</a>
+						</p>
+						<p class="author">
+							3 Mar 2016 &nbsp;|&nbsp; <a href="http://atlas.colorado.edu/" target="_blank">ATLAS Institute</a>
+						</p>
+					</div>
+					<div class="article">
+						<p class="link">
+							<a href="http://cuindependent.com/2016/02/29/71520/" target="_blank">T9Hacks brings women together for 24 hours of hacking</a>
+						</p>
+						<p class="author">
+							29 February 2016 &nbsp;|&nbsp; <a href="http://cuindependent.com/" target="_blank">CU Independent</a>
+						</p>
+					</div>
 					<div class="article">
 						<p class="link">
 							<a href="http://www.dailycamera.com/news/ci_29545069/cuboulders-atlas-institute-hosts-inaugural-womencentric-hackathon" target="_blank">CU-Boulder's Atlas Institute hosts inaugural women-centric hack-a-thon</a>
